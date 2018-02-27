@@ -52,11 +52,11 @@ public class SoService {
 	}//end of login
 	
 	
-	public SoDTO myPage(String oId) throws MyException{
+	public SoDTO myPage(String soId) throws MyException{
 		SqlSession session = MySqlSessionFactory.getSession();
 		SoDTO dto=null;
 		try {
-			dto=session.selectOne("SoMapper.myPage", oId);
+			dto=session.selectOne("SoMapper.myPage", soId);
 		}catch(Exception e){
 			//e.printStackTrace();
 			throw new MyException("mypage 접근 에러");

@@ -18,13 +18,13 @@ public class SoIdCheckServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//1.변수선언
-		String oId=request.getParameter("oId");
+		String soId=request.getParameter("soId");
 		//2. service 생성
 		SoService service = new SoService();
 		String mesg = "아이디 사용 가능";
 		
 		try {
-			int count=service.soIdCheck(oId);
+			int count=service.soIdCheck(soId);
 			if(count==1) {
 				mesg = "아이디 중복";
 			}

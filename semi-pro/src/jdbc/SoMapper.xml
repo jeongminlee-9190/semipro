@@ -6,24 +6,24 @@
 	<select id="soIdCheck" parameterType="string" resultType="int">
 		select count(*) 
 		from shopowner
-		where oId=#{oId}
+		where soId=#{soId}
 	</select>
 	
 	<insert id="soAdd" parameterType="SoDTO">
-		insert into shopowner(oId,oPasswd,oName,oPhone,sName,sPhone,sLicense,sPost,sAddr)
-		values(#{oId},#{oPasswd},#{oName},#{oPhone},#{sName},#{sPhone},#{sLicense},#{sPost},#{sAddr})
+		insert into shopowner(soId,soPasswd,soName,soPhone,soLicense,soPost,soAddr)
+		values(#{soId},#{soPasswd},#{soName},#{soPhone},#{soLicense},#{soPost},#{soAddr})
 	</insert>
 	
 	<select id="login" parameterType="hashmap" resultType="SoDTO">
-    	select oId,oPasswd,oName,oPhone,sName,sPhone,sLicense,sPost,sAddr,sLevel,to_char(sJoindate,'YYYY-MM-DD') as sJoindate
+    	select soId,soPasswd,soName,soPhone,soLicense,soPost,soAddr,soLevel,to_char(soJoindate,'YYYY-MM-DD') as soJoindate
    		from shopowner
-   		where oId = #{oId} and oPasswd=#{oPasswd}
+   		where soId = #{soId} and soPasswd=#{soPasswd}
   	</select>	
   	
   	<select id="myPage" parameterType="string" resultType="SoDTO">
-    	select oId,oPasswd,oName,oPhone,sName,sPhone,sLicense,sPost,sAddr,sLevel,to_char(sJoindate,'YYYY-MM-DD') as sJoindate
+    	select soId,soPasswd,soName,soPhone,soLicense,soPost,soAddr,soLevel,to_char(soJoindate,'YYYY-MM-DD') as soJoindate
    		from shopowner
-   		where oId = #{oId}
+   		where soId = #{soId}
 	</select>	
   
 </mapper>

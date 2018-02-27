@@ -4,7 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>   
 <c:if test="${!empty login}">
-	${login.oId}&nbsp;
+	${login.soId}&nbsp;
 	<a href="SoLogoutServlet">로그아웃</a>
 	<a href="SoMyPageServlet">MyPage</a>
 </c:if>

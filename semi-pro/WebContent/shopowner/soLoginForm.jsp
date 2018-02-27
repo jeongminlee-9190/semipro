@@ -9,14 +9,14 @@
 <c:if test="${empty login}">
 	<form action="SoLoginServlet" method="post" >
 		<span class="login">로그인을 해주세요!</span><br>
-		<input type="text" name="oId" placeholder="아이디(이메일 형식)">
-		<input type="password" name="oPasswd" placeholder="비밀번호"><br>
+		<input type="text" name="soId" placeholder="아이디(이메일 형식)">
+		<input type="password" name="soPasswd" placeholder="비밀번호"><br>
 		<input type="submit" value="로그인"><input type="reset" value="취소">
 	</form>
 </c:if>
 
 <c:if test="${!empty login}">
-	${login.oId}&nbsp;
+	${login.soId}&nbsp;
 	<a href="SoLogoutServlet">로그아웃</a>
 	<a href="SoMyPageServlet">MyPage</a>
 </c:if>

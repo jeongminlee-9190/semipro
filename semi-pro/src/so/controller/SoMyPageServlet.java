@@ -26,10 +26,10 @@ public class SoMyPageServlet extends HttpServlet {
 			nextPage="SoLoginForm.jsp";
 			session.setAttribute("mesg", "로그인이 되지 않았습니다.");
 		} else {
-			String oId=dto.getoId();
+			String soId=dto.getSoId();
 			SoService service = new SoService();
 			try {
-				SoDTO xxx= service.myPage(oId);
+				SoDTO xxx= service.myPage(soId);
 				session.setAttribute("login",xxx);
 				nextPage="soMyPage.jsp";
 			}catch(Exception e) {

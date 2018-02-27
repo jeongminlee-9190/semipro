@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<span class="logo">(로고)상점 관리 센터</span><br>
-<jsp:include page="shopowner/include/top.jsp" flush="true"/>
-<jsp:include page="soLoginForm.jsp" flush="true"/>
-<h4>상점 기본 정보 등록</h4>
-<jsp:include page="shop/sEnrollment.jsp" flush="true" />
+
 </body>
 </html>

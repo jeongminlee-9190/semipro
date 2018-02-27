@@ -19,11 +19,11 @@ public class SoLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String oId=request.getParameter("oId");
-		String oPasswd=request.getParameter("oPasswd");
+		String oId=request.getParameter("soId");
+		String oPasswd=request.getParameter("soPasswd");
 		HashMap<String, String> map = new HashMap<>();
-		map.put("oId", oId);
-		map.put("oPasswd", oPasswd);
+		map.put("soId", oId);
+		map.put("soPasswd", oPasswd);
 
 		SoService service = new SoService();
 		String nextPage=null;

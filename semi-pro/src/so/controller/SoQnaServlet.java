@@ -37,8 +37,8 @@ public class SoQnaServlet extends HttpServlet {
 			nextPage="SoLoginForm.jsp";
 			session.setAttribute("mesg", "로그인이 되지 않았습니다.");
 		} else {
-			String oId=dto.getoId();
-			map.put("oId", oId);
+			String soId=dto.getSoId();
+			map.put("soId", soId);
 			SoQnaService service = new SoQnaService();
 			try {
 				list = service.list(map);

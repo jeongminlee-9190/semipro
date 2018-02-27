@@ -45,7 +45,7 @@
 		xmlRequest=new XMLHttpRequest();
   		xmlRequest.onreadystatechange=x;	
   		// MemberIdCheckServlet에 요청
-  		xmlRequest.open("get","SoIdCheckServlet?oId="+id, true);
+  		xmlRequest.open("get","SoIdCheckServlet?soId="+id, true);
   		xmlRequest.send(null); // null은 get일때
   	
   		console.log(id.length);
@@ -92,55 +92,41 @@
 	<table>
 		<tr>
 			 <th>아이디</th>
-			 <td><input type="text" name="oId" id="oId" placeholder="(예시)zzz@naver.com" onkeyup="idCheck(this.value)">
+			 <td><input type="text" name="soId" id="soId" placeholder="(예시)zzz@naver.com" onkeyup="idCheck(this.value)">
 				<span id="result1"></span></td>
 		</tr>
 		
 		<tr>
 			<th>비밀번호</th>
-			<td><input type="password" name="oPasswd" id="passwd" placeholder="비밀번호" maxlength="10" size="12" onkeyup="pwCheck1(this.value)">
-			    <input type="password" id="oPasswd2" placeholder="비밀번호 재입력" maxlength="10" size="12" onkeyup="pwCheck2(this.value)">
+			<td><input type="password" name="soPasswd" id="passwd" placeholder="비밀번호" maxlength="10" size="12" onkeyup="pwCheck1(this.value)">
+			    <input type="password" id="soPasswd2" placeholder="비밀번호 재입력" maxlength="10" size="12" onkeyup="pwCheck2(this.value)">
 				<span id="result2"></span></td>
 		</tr>
 		
 		<tr>
 			<th>사업주 이름</th>
-			<td><input type="text" name="oName" id="oName" placeholder="이름"></td>
+			<td><input type="text" name="soName" id="soName" placeholder="이름"></td>
 		</tr>
 		
 		<tr>
 			<th>사업주 휴대전화</th>
-			<td><input type="text" name="oPhone1" id="oPhone1" size="3" maxlength="3" placeholder="010">-
-				<input type="text" name="oPhone2" id="oPhone2"size="4" maxlength="4" placeholder="휴대전화">-
-				<input type="text" name="oPhone3" id="oPhone3" size="4" maxlength="4" placeholder="휴대전화">			
+			<td><input type="text" name="soPhone1" id="soPhone1" size="3" maxlength="3" placeholder="010">-
+				<input type="text" name="soPhone2" id="soPhone2"size="4" maxlength="4" placeholder="휴대전화">-
+				<input type="text" name="soPhone3" id="soPhone3" size="4" maxlength="4" placeholder="휴대전화">			
 			</td>
-		</tr>
-		
-		<tr>
-			<th>상점 이름</th>
-			<td><input type="text" name="sName" placeholder="상점이름"></td>
-		</tr>
-
-		<tr>
-			<th>상점 전화번호</th>
-			<td><input type="text" name="sPhone1" size="4" maxlength="4" placeholder="상점전화">-
-				<input type="text" name="sPhone2" size="4" maxlength="4" placeholder="상점전화">-
-				<input type="text" name="sPhone3" size="4" maxlength="4" placeholder="상점전화">			
-			</td>
-		</tr>
-		
+		</tr>		
 		<tr>
 			<th>사업자번호</th>
-			<td><input type="text" name="sLicense" placeholder="- 하이픈 없이 숫자 10자리만 기재" maxlength="10"></td>
+			<td><input type="text" name="soLicense" placeholder="- 하이픈 없이 숫자 10자리만 기재" maxlength="10"></td>
 		</tr>
 		
 		<tr>
 			<th>주소</th>
 			<td>
 			<input type="text" name="post" id="sample6_postcode" size="5" placeholder="우편번호">
-			<input type="text" name="sAddr1" id="sample6_address" placeholder="사업자 등록증 상의 주소">
+			<input type="text" name="soAddr1" id="sample6_address" placeholder="사업자 등록증 상의 주소">
 			<input type="button" onclick="sample6_execDaumPostcode()" value="주소 찾기"><br>
-			<input type="text" name="sAddr2" id="sample6_address2" placeholder="상세 주소"></td>
+			<input type="text" name="soAddr2" id="sample6_address2" placeholder="상세 주소"></td>
 		</tr>
 	</table>
 	<table>

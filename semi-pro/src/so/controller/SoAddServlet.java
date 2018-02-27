@@ -21,26 +21,21 @@ public class SoAddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String oId= request.getParameter("oId");
-		String oPasswd = request.getParameter("oPasswd");
-		String oName = request.getParameter("oName");
-		String oPhone1 = request.getParameter("oPhone1");
-		String oPhone2 = request.getParameter("oPhone2");
-		String oPhone3 = request.getParameter("oPhone3");
-		String sName = request.getParameter("sName");
-		String sPhone1= request.getParameter("sPhone1");
-		String sPhone2 = request.getParameter("sPhone2");
-		String sPhone3 = request.getParameter("sPhone3");
-		String sLicense = request.getParameter("sLicense");
-		String sPost = request.getParameter("post");
-		String sAddr1 = request.getParameter("sAddr1");
-		String sAddr2 = request.getParameter("sAddr2");
+		String soId= request.getParameter("soId");
+		String soPasswd = request.getParameter("soPasswd");
+		String soName = request.getParameter("soName");
+		String soPhone1 = request.getParameter("soPhone1");
+		String soPhone2 = request.getParameter("soPhone2");
+		String soPhone3 = request.getParameter("soPhone3");
+		String soLicense = request.getParameter("soLicense");
+		String soPost = request.getParameter("post");
+		String soAddr1 = request.getParameter("soAddr1");
+		String soAddr2 = request.getParameter("soAddr2");
 		
 		
-		String oPhone = oPhone1+"-"+oPhone2+"-"+oPhone3;
-		String sPhone = sPhone1+"-"+sPhone2+"-"+sPhone3;
-		String sAddr = sAddr1+"/"+sAddr2;
-		SoDTO dto = new SoDTO(oId, oPasswd, oName, oPhone, sName, sPhone, sLicense, sPost, sAddr);
+		String soPhone = soPhone1+"-"+soPhone2+"-"+soPhone3;
+		String soAddr = soAddr1+"/"+soAddr2;
+		SoDTO dto = new SoDTO(soId, soPasswd, soName, soPhone, soLicense, soPost, soAddr);
 		SoService service = new SoService();
 		String nextPage=null;
 		try {

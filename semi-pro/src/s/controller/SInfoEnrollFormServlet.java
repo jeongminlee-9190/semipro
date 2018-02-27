@@ -10,16 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 상점등록
+ * 상점 기본 정보 등록
  */
-@WebServlet("/SEnrollmentServlet")
-public class SEnrollmentServlet extends HttpServlet {
+@WebServlet("/SInfoEnrollFormServlet")
+public class SInfoEnrollFormServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//포워딩
-		RequestDispatcher dis = request.getRequestDispatcher("sEnrollment.jsp");
-		dis.forward(request, response);
+				RequestDispatcher dis = request.getRequestDispatcher("sInfoEnrollForm.jsp");
+				dis.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -8,6 +8,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <c:set var="dto" value="${login}"></c:set>
+<input Type="hidden" name="soId" id="soId" value="${dto.soId}">
 <form action="" method="get">
 	<table>
 		<tr>
@@ -31,9 +32,9 @@
 		<tr>
 			<td>카테고리: </td>
 			<td><select id="sCategory">
-					<option>카페</option>
-					<option>디저트</option>
-					<option>와인</option>
+					<option value="카페">카페</option>
+					<option value="디저트">디저트</option>
+					<option value="와인">와인</option>
 			</select>
 			</td>
 		</tr>
@@ -42,6 +43,7 @@
 </form>
 
 
+<!-- 
 <form action="SImageUploadServlet" method="post" enctype="multipart/form-data">	
 	<table>
 		<tr>
@@ -60,7 +62,7 @@
 		</tr>
 	</table>
 </form>
-
+ -->
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>

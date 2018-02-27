@@ -1,3 +1,22 @@
+--0227 update
+CREATE TABLE shopowner
+(
+	soId varchar2(50) NOT NULL,
+	soPasswd varchar2(20) NOT NULL,
+	soName varchar2(20) NOT NULL,
+	soPhone varchar2(13) NOT NULL,
+	-- 하이픈 제외하고 숫자로만 10자리 입력
+	soLicense varchar2(10) NOT NULL UNIQUE,
+	soPost varchar2(5) NOT NULL,
+	soAddr varchar2(500) NOT NULL,
+	-- 0: 미승인 / 1: 승인, 체험 / 2: 승인, 유료
+	soLevel varchar2(1) default 0,
+	soJoindate date default sysdate,
+	PRIMARY KEY (soId)
+);
+
+
+
 CREATE TABLE shopowner
 (
 	oId varchar2(50) NOT NULL,
