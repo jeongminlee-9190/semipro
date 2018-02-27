@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SoQnaMapper">
+    <!-- 1:1 문의 리스트 -->
+	<select id="soQnaList" parameterType="string" resultType="SoQnaDTO">
+		select qnaNum, oId, sName, qnaTitle, qnaContent,
+		to_char(qnaWritedate,'YYYY-MM-DD') as qnaWritedate,qnaComplete,qnaCategory
+		from soqnaboard
+		where oId=#{oId}
+		order by qnaNum desc
+	</select>
+
+
+	<!--페이징 처리 
+	<select id="totalCnt" parameterType="hashmap" resultType="int">
+    	select count(*) from soqnaboard where oId=#{oId}
+    </select>
+    -->
+    
+    <!-- 1:1 문의 자세히 보기 -->
+    <select id="soQnaRetrieve" parameterType="int" resultType="SoQnaDTO">
+		select qnaNum, oId, sName, qnaTitle, qnaContent,
+		to_char(qnaWritedate,'YYYY-MM-DD') as qnaWritedate,qnaComplete,qnaCategory
+		from soqnaboard
+		where qnaNum=#{qnaNum}
+	</select>
+    
+</mapper>
