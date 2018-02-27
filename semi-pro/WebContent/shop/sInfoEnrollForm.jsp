@@ -6,10 +6,15 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<form action="SInfoEnrollServlet" method="get">
+	<c:set var="dto" value="${login}"></c:set>
+	<!-- sCode를 위한 사업자번호 뒤 7자리 가져오기 -->
+	<c:set var="soLicense1" value="${dto.soLicense}"></c:set>
+	<c:set var="soLicense" value="${fn:substring(soLicense1,3,10)}"></c:set>
+	<!--  -->
+	<input Type="hidden" name="soId" id="soId" value="${dto.soId}">
+	<input Type="text" name="soLicense" id="soLicense" value="${soLicense}">
 
-<c:set var="dto" value="${login}"></c:set>
-<input Type="hidden" name="soId" id="soId" value="${dto.soId}">
-<form action="" method="get">
 	<table>
 		<tr>
 			<td>상점 이름: </td>
@@ -31,14 +36,19 @@
 		</tr>
 		<tr>
 			<td>카테고리: </td>
-			<td><select id="sCategory">
-					<option value="카페">카페</option>
-					<option value="디저트">디저트</option>
-					<option value="와인">와인</option>
+			<td><select id="sCategory" name="sCategory">
+					<option value="c" selected="selected">카페</option>
+					<option value="d">디저트</option>
+					<option value="w">와인</option>
 			</select>
 			</td>
 		</tr>
-		
+		<tr>
+			<td colspan="2">
+			<input type="submit" name="submit" value="등록">
+			<input type="button" name="cancel" value="취소">
+			</td>
+		</tr>
 	</table>
 </form>
 

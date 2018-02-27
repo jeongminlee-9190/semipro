@@ -11,6 +11,7 @@
    <typeAlias type="dto.PageDTO" alias="PageDTO"/>
    <typeAlias type="dto.SoQnaDTO" alias="SoQnaDTO"/>
    <typeAlias type="dto.SFileDTO" alias="SFileDTO"/>
+   <typeAlias type="dto.SDTO" alias="SDTO"/>
   </typeAliases>
   
   
@@ -30,5 +31,6 @@
     <mapper resource="jdbc/SoBoardMapper.xml"/>
     <mapper resource="jdbc/SoQnaMapper.xml"/>
     <mapper resource="jdbc/SFileMapper.xml"/>
+    <mapper resource="jdbc/SMapper.xml"/>
   </mappers>
 </configuration>
