@@ -8,11 +8,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style>
+</style>
 </head>
 <body>
 <span class="logo">(로고)상점 관리 센터</span><br>
 <jsp:include page="shopowner/include/top.jsp" flush="true"/>
 <jsp:include page="soLoginForm.jsp" flush="true"/>
-<jsp:include page="shop/sManagement.jsp" flush="true"/>
+<div class="sManagement"><jsp:include page="shop/sManagement.jsp" flush="true" /></div>
 </body>
 </html>

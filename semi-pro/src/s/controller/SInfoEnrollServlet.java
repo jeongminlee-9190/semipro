@@ -54,7 +54,7 @@ public class SInfoEnrollServlet extends HttpServlet {
 		String nextPage=null;
 		try {
 			service.sAdd(dto);
-			nextPage="index_shopowner.jsp";
+			nextPage="sManagement.jsp";
 			request.setAttribute("success", "상점 등록 성공");
 		} catch (MyException e) {
 			// TODO Auto-generated catch block

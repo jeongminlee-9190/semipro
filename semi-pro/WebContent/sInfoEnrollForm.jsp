@@ -7,16 +7,20 @@
 <title>Insert title here</title>
 <style>
 	.sInfoEnrollForm {
-		border: 1px solid grey;
-		padding-left: 300px;
-		padding-top: 10px;
+		position: fixed;
+		top:20%;
+		left:35%;
+		width: 450px;
+		height: 60%;
 	}
-	.sManagement{
+	
+	.bottom{
+		text-align: center;
 		border: 1px solid grey;
 		position: fixed;
-		width: 200px;
-		height:80%;
-	
+		top: 80%;
+		width: 99%;
+		height: 19%;
 	}
 
 </style>
@@ -25,12 +29,12 @@
 <span class="logo">(로고)상점 관리 센터</span><br>
 <jsp:include page="shopowner/include/top.jsp" flush="true"/>
 <jsp:include page="soLoginForm.jsp" flush="true"/>
-<div class="sManagement"><jsp:include page="shop/sManagement.jsp" flush="true" /></div>
-
-
 <div class="sInfoEnrollForm">
 <h4>상점 기본 정보 등록</h4>
 <jsp:include page="shop/sInfoEnrollForm.jsp" flush="true" />
+</div>
+<div class="bottom">
+<jsp:include page="shopowner/include/bottom.jsp" flush="true" />
 </div>
 </body>
 </html>

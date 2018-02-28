@@ -7,4 +7,22 @@
 		insert into shop(sCode,sName,soId,sPost,sAddr,sPhone,sCategory)
 		values(#{sCode},#{sName},#{soId},#{sPost},#{sAddr},#{sPhone},#{sCategory})
 	</insert>
+	
+	<update id="sImageAdd" parameterType="hashmap">
+		update shop 
+		set  sImage1=#{sImage1}, sImage2=#{sImage2}
+		where soId = #{soId}
+	</update>
+	
+	<select id="sInfo" parameterType="string" resultType="SDTO">
+		select sCode,sName,soId,sPost,sAddr,sPhone,sCategory,sImage1,sImage2
+		from shop
+		where soId=#{soId}
+	</select>
+	
+	<select id="sCodeInfo" parameterType="string" resultType="string">
+		select sCode
+		from shop
+		where soId=#{soId}
+	</select>
 </mapper>

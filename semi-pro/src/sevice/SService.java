@@ -1,9 +1,12 @@
 package sevice;
 
+import java.util.HashMap;
+
 import org.apache.ibatis.session.SqlSession;
 
 import dao.MySqlSessionFactory;
 import dto.SDTO;
+import dto.SoDTO;
 import exception.MyException;
 
 public class SService {
@@ -20,4 +23,59 @@ public class SService {
 		}
 	}
 	
+	
+	public SDTO sInfo(String soId) throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();
+		SDTO dto = null;
+		try {
+			dto=session.selectOne("SMapper.sInfo",soId);
+			session.commit();
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new MyException("상점 등록 에러");
+		}finally {
+			session.close();
+		}
+		return dto;
+	}
+	
+	public String sCodeInfo(String soId) throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();
+		String sCode=null;
+		try {
+			sCode=session.selectOne("SMapper.sCodeInfo",soId);
+			session.commit();
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new MyException("sCode 검색 에러");
+		}finally {
+			session.close();
+		}
+		return sCode;
+	}
+	
+	public void sImageAdd(HashMap<String, String> map) throws MyException {
+		SqlSession session = MySqlSessionFactory.getSession();
+		HashMap<String, String> map2 = new HashMap<>();
+		String soId = map.get("soId");
+		String sImage1 = map.get("fileName1");
+		String sImage2 = map.get("fileName2");
+
+		map2.put("soId",soId);
+		map2.put("sImage1", sImage1);
+		map2.put("sImage2", sImage2);
+		
+		System.out.println(map2.get("sImage1"));
+		System.out.println(map2.get("sImage2"));
+		System.out.println(map2.get("soId"));
+		
+		try {
+			int n=session.update("SMapper.sImageAdd",map2);
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new MyException("이미지 DB 등록 에러");
+		}finally {
+			
+		}
+	}
 }

@@ -1,19 +1,24 @@
 <%@page import="java.io.File"%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<style>
+	h5{
+		color: red;
+	}
+</style>
 <form action="SInfoEnrollServlet" method="get">
+	<h5>상점은 한 곳만 등록 가능합니다.</h5>
 	<c:set var="dto" value="${login}"></c:set>
 	<!-- sCode를 위한 사업자번호 뒤 7자리 가져오기 -->
 	<c:set var="soLicense1" value="${dto.soLicense}"></c:set>
 	<c:set var="soLicense" value="${fn:substring(soLicense1,3,10)}"></c:set>
 	<!--  -->
 	<input Type="hidden" name="soId" id="soId" value="${dto.soId}">
-	<input Type="text" name="soLicense" id="soLicense" value="${soLicense}">
+	<input Type="hidden" name="soLicense" id="soLicense" value="${soLicense}">
 
 	<table>
 		<tr>
@@ -46,7 +51,7 @@
 		<tr>
 			<td colspan="2">
 			<input type="submit" name="submit" value="등록">
-			<input type="button" name="cancel" value="취소">
+			<a href="sManagement.jsp"><input type="button" name="cancel" value="취소"></a>
 			</td>
 		</tr>
 	</table>
