@@ -4,17 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style>
-	.loginForm{
-		text-align:center;
-		padding-top: 3%;
-	}
-</style>
 <title>Insert title here</title>
 </head>
 <body>
-<div class="loginForm">
 <jsp:include page="shopowner/soLoginForm.jsp" flush="true" />
-</div>
 </body>
 </html>

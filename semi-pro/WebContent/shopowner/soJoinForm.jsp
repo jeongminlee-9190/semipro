@@ -1,42 +1,68 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!--
 <style>
 	@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
 	body { font-family:"Nanum Gothic"; }
+	.welcome{
+		margin-top: 50px;
+		font-size: 20px;
+		text-align: center;
+		color: grey;
+	}
 	
+	/* 회원정보 입력 테이블*/
 	.jointable {
 		position: fixed;
 		top:70px;
-		padding-top: 50px;
-		border:1px solid grey;
+		margin-top: 100px;
 		height:700px;
-		left:30%
+		width: 500px;
+		left:33%;
+	}
+	th{
+		width: 150px;
 	}
 	input{
-		height:20px;
+		height:30px;
+		margin-top: 5px;
 	}
 	#result1,#result2{
 		font-size:10px;
 		color: red;
 	}
-	.submitbtn {
-		border: 1px solid lightgrey;
-		background-color: lightgrey;
-		padding:5px;
-		height:20px;
-		
+	.btn_addr{
+		border: 1px solid #99e6ff;
+		background-color: white;
+	
 	}
 	
-	.cancelbtn{
-		border: 1px solid grey;
-		background-color: grey;
-		padding:5px;
-		color: white;
+	/* 회원가입 완료, 취소 테이블  */
+	.joincomplete{
+		margin-left: auto;
+        margin-right: auto;
 	}
+	
+	.btn_submit {
+		border: 1px solid #99e6ff;
+		background-color: #99e6ff;
+		margin-top: 20px;
+		height:35px;
+		width: 300px;
+		/*color: white;*/
+	}
+	
+	.btn_cancel{
+		border: 1px solid #99e6ff;
+		background-color: white;
+		margin-top: 10px;
+		height:35px;
+		width: 300px;
+		/*color: white;*/
+	}
+
 </style>
-  -->
+
 <script>
 /*idCheck*/
 //요청용
@@ -63,10 +89,9 @@
   		} //end if
 	}//end response()
 /*end of idCheck*/
-  
   	function pwCheck1(pw){
 		var mesg = null;
-		if(pw.length<10){
+		if(pw.length<8 || pw.length>10){
 			 mesg="비밀번호는 8자 이상 10자 이하여야 합니다.";
 		}
 		document.querySelector("#result2").innerText=mesg;
@@ -75,64 +100,144 @@
 	function pwCheck2(pw){
 		var passwd1 = document.querySelector("#passwd").value;
 		console.log(passwd1);
-		var mesg = "비번일치";
+		var mesg = "비밀번호 일치";
 		  if(passwd1 != pw){
-			 mesg = "비번 불일치";
+			 mesg = "비밀번호 불일치";
 		  }
 		  document.querySelector("#result2").innerText=mesg;
 	}
- 	
-	
+/* 유효성 체크*/
+	function formCheck(e){
+		var soId = document.querySelector("#soId").value;
+		if(soId.length==0){
+			alert("아이디를 입력하세요");
+			document.querySelector("#soId").focus();
+			e.preventDefault();
+		}
+		if(soId.includes("@")==false||soId.includes(".")==false){
+			alert("아이디가 이메일 형식이 아닙니다. 다시 입력해주세요.");
+			document.querySelector("#soId").focus();
+			e.preventDefault();
+		}
+		/* 비밀번호 체크  */
+		var passwd = document.querySelector("#passwd").value;
+		if(passwd.length==0){
+			alert("비밀번호를 입력하세요");
+			document.querySelector("#passwd").focus();
+			e.preventDefault();
+		}
+		var passwd2 = document.querySelector("#passwd2").value;
+		if(passwd2.length==0){
+			alert("비밀번호를 입력하세요");
+			document.querySelector("#passwd2").focus();
+			e.preventDefault();
+		}
+		if(passwd!=passwd2){
+			alert("비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
+			document.querySelector("#passwd2").focus();
+			e.preventDefault();
+		}
+		if(passwd.length<8 || passwd.length>10){
+			alert("비밀번호는 8자 이상 10자 이하여야 합니다.");
+			document.querySelector("#passwd2").focus();
+			e.preventDefault();
+		}
+		
+		/* 이름 체크 */
+		var soName = document.querySelector("#soName").value;
+		if(soName.length==0){
+			alert("이름을 입력하세요");
+			document.querySelector("#soName").focus();
+			e.preventDefault();
+		}
+		var soPhone1 = document.querySelector("#soPhone1").value;
+		if(soPhone1.length==0){
+			alert("전화번호를 입력하세요");
+			document.querySelector("#soPhone1").focus();
+			e.preventDefault();
+		}
+		var soPhone2 = document.querySelector("#soPhone2").value;
+		if(soPhone2.length==0){
+			alert("전화번호를 입력하세요");
+			document.querySelector("#soPhone2").focus();
+			e.preventDefault();
+		}
+		var soPhone3 = document.querySelector("#soPhone3").value;
+		if(soPhone3.length==0){
+			alert("전화번호를 입력하세요");
+			document.querySelector("#soPhone3").focus();
+			e.preventDefault();
+		}
+		var soLicense = document.querySelector("#soLicense").value;
+		if(soLicense.length==0){
+			alert("사업자번호를 입력하세요");
+			document.querySelector("#soLicense").focus();
+			e.preventDefault();
+		}
+		var sample6_address = document.querySelector("#sample6_address").value;
+		if(sample6_address.length==0){
+			alert("주소를 입력하세요");
+			document.querySelector("#sample6_address").focus();
+			e.preventDefault();
+		}
+		var sample6_address = document.querySelector("#sample6_address2").value;
+		if(sample6_address.length==0){
+			alert("주소를 입력하세요");
+			document.querySelector("#sample6_address2").focus();
+			e.preventDefault();
+		}
+	}
 	  
   </script>
-
-
+<div class="welcome">
+	<span>갬성갱단에서는 상점을 등록하고 홍보할 수 있어요!</span>
+</div>
 <form action="SoAddServlet" method="get" onsubmit="formCheck(event)">
 <div class="jointable">
 	<table>
 		<tr>
 			 <th>아이디</th>
-			 <td><input type="text" name="soId" id="soId" placeholder="(예시)zzz@naver.com" onkeyup="idCheck(this.value)">
+			 <td><input type="text" name="soId" id="soId" placeholder="(예)zzz@naver.com" onkeyup="idCheck(this.value)" maxlength="30"size="32px">
 				<span id="result1"></span></td>
 		</tr>
 		
 		<tr>
 			<th>비밀번호</th>
-			<td><input type="password" name="soPasswd" id="passwd" placeholder="비밀번호" maxlength="10" size="12" onkeyup="pwCheck1(this.value)">
-			    <input type="password" id="soPasswd2" placeholder="비밀번호 재입력" maxlength="10" size="12" onkeyup="pwCheck2(this.value)">
+			<td><input type="password" name="soPasswd" id="passwd" placeholder="비밀번호" maxlength="10" size="13" onkeyup="pwCheck1(this.value)">
+			    <input type="password" id="passwd2" placeholder="비밀번호 재입력" maxlength="10" size="13" onkeyup="pwCheck2(this.value)">
 				<span id="result2"></span></td>
 		</tr>
 		
 		<tr>
-			<th>사업주 이름</th>
-			<td><input type="text" name="soName" id="soName" placeholder="이름"></td>
+			<th>이름</th>
+			<td><input type="text" name="soName" id="soName" placeholder="(예)홍길동" size="20" maxlength="20"></td>
 		</tr>
 		
 		<tr>
-			<th>사업주 휴대전화</th>
+			<th>휴대전화</th>
 			<td><input type="text" name="soPhone1" id="soPhone1" size="3" maxlength="3" placeholder="010">-
-				<input type="text" name="soPhone2" id="soPhone2"size="4" maxlength="4" placeholder="휴대전화">-
+				<input type="text" name="soPhone2" id="soPhone2" size="4" maxlength="4" placeholder="휴대전화">-
 				<input type="text" name="soPhone3" id="soPhone3" size="4" maxlength="4" placeholder="휴대전화">			
 			</td>
 		</tr>		
 		<tr>
 			<th>사업자번호</th>
-			<td><input type="text" name="soLicense" placeholder="- 하이픈 없이 숫자 10자리만 기재" maxlength="10"></td>
+			<td><input type="text" name="soLicense" id="soLicense" placeholder="- 하이픈 없이 숫자 10자리만 기재" maxlength="10" size="30"></td>
 		</tr>
 		
 		<tr>
 			<th>주소</th>
 			<td>
-			<input type="text" name="post" id="sample6_postcode" size="5" placeholder="우편번호">
-			<input type="text" name="soAddr1" id="sample6_address" placeholder="사업자 등록증 상의 주소">
-			<input type="button" onclick="sample6_execDaumPostcode()" value="주소 찾기"><br>
-			<input type="text" name="soAddr2" id="sample6_address2" placeholder="상세 주소"></td>
+			<input type="text" name="post" id="sample6_postcode" size="5" placeholder="우편번호"><br>
+			<input type="text" name="soAddr1" id="sample6_address" placeholder="사업자 등록증 상의 주소" size="40px">
+			<input type="button" class="btn_addr" onclick="sample6_execDaumPostcode()" value="주소 찾기"><br>
+			<input type="text" name="soAddr2" id="sample6_address2" placeholder="상세 주소" size="52px"></td>
 		</tr>
 	</table>
-	<table>
-		<tr align="center">
-			<th align="center"><input type="submit" value="동의하고 회원가입하기" class="submitbtn">
-			<a href="index_shopowner.jsp"><input type="button" value="취소" class="cancelbtn"></a></th>
+	<table class="joincomplete">
+		<tr>
+			<th colspan="2"><input type="submit" value="회원가입하기" class="btn_submit">
+			<a href="index_shopowner.jsp"><input type="button" value="취소" class="btn_cancel"></a></th>
 		</tr>
 	</table>
 </div>

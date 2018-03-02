@@ -9,6 +9,16 @@
 <style>
 	@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
 	body { font-family:"Nanum Gothic"; }
+	
+	.main {
+		/*background-color: #99e6ff;*/
+		text-align: center;
+		padding-top: 5%;
+	}
+	.logo{
+		
+		font-size: 40px;
+	}
 </style>
 </head>
 <body>
@@ -23,8 +33,14 @@
     	alert('${logout}');
     </script>
 </c:if>
-<span class="logo">(로고)상점 관리 센터</span><br>
-<jsp:include page="shopowner/include/top.jsp" flush="true"/>
+
+<div class="main">
+	<span class="logo">(갬성갱단)<br>상점 관리 센터</span><br>
+	<jsp:include page="shopowner/include/top.jsp" flush="true"/>
+</div>
+
+<div class="loginForm">
 <jsp:include page="soLoginForm.jsp" flush="true"/>
+</div>
 </body>
 </html>
