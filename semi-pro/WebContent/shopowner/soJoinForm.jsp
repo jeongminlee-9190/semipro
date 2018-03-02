@@ -63,7 +63,7 @@
 	/* 약관  */
 	.term_1,.term_2,.term_3{
 		position: fixed;
-		left:45%;
+		left:40%;
 		font-size: 13px;
 	}
 	.term_1{
@@ -74,6 +74,10 @@
 	}
 	.term_3{
 		margin-top:400px;
+	}
+	/* 약관 동의 체크박스 */
+	#term_1{
+		
 	}
 	.term_headline{
 	
@@ -119,6 +123,7 @@
 		border: 1px solid grey;
 		height: 20px;
 	}
+	
 </style>
 
 <script>
@@ -295,7 +300,7 @@
 		
 		<table class="joincomplete">
 			<tr>
-				<th colspan="2"><input type="submit" value="회원가입하기" class="btn_submit">
+				<th colspan="2"><input type="submit" value="모두 동의하고 회원가입하기" class="btn_submit">
 				<a href="index_shopowner.jsp"><input type="button" value="취소" class="btn_cancel"></a></th>
 			</tr>
 		</table>
