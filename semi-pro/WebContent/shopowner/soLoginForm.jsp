@@ -40,7 +40,7 @@
 		<input type="text" name="soId" class="input_soId" placeholder="아이디(이메일 형식)" maxlength="30"><br>
 		<input type="password" name="soPasswd" class="input_soPasswd" placeholder="비밀번호" maxlength="10"><br>
 		<input type="submit" class="btn_submit" value="로그인"><br>
-		<a href="SoUIServlet"><input type="button" class="btn_join" value="회원가입"></a>
+		<a href="SoJoinUIServlet"><input type="button" class="btn_join" value="회원가입"></a>
 	</form>
 </c:if>
 

@@ -15,10 +15,10 @@
 	.jointable {
 		position: fixed;
 		top:70px;
-		margin-top: 100px;
+		margin-top:50px;
 		height:700px;
 		width: 500px;
-		left:33%;
+		left:10%;
 	}
 	th{
 		width: 150px;
@@ -61,6 +61,29 @@
 		/*color: white;*/
 	}
 
+	/* 약관  */
+	.term{
+		position: fixed;
+		margin-top:20px;
+		left:50%;
+	}
+	.term_headline{
+		
+	}
+	.term_stress{
+		color:red;	
+	}
+	.bx_term_agree {
+		position: fixed;
+		border:1px solid #ccc;
+		height:157px;
+		left:50%;
+		overflow:hidden;
+		overflow-y:scroll;
+		margin-top:20px;
+		color:#666;
+	}
+	
 </style>
 
 <script>
@@ -190,10 +213,12 @@
 	  
   </script>
 <div class="welcome">
-	<span>갬성갱단에서는 상점을 등록하고 홍보할 수 있어요!</span>
+	<span>갬성갱단에서 상점을 등록하고 홍보할 수 있어요!</span>
 </div>
+
 <form action="SoAddServlet" method="get" onsubmit="formCheck(event)">
 <div class="jointable">
+	<h2 style="text-align:center">회원 정보 입력</h2>
 	<table>
 		<tr>
 			 <th>아이디</th>
@@ -241,7 +266,30 @@
 		</tr>
 	</table>
 </div>
+
+
+<div class="term">
+	<span class="term_headline">이용약관<em class="term_stress">(필수)</em></span>
+</div>
+<div class="bx_term_agree">
+	<span class="term_headline">이용약관<em class="term_tress">(필수)</em></span>
+</div>
+
 </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

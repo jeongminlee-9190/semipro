@@ -41,14 +41,6 @@
 	}
  */
 </style>
-
-<!-- 
-<div class="join">
-<c:if test="${empty login}">
-	<a href="SoUIServlet">회원가입</a>&nbsp;&nbsp;
-</c:if>
-</div>
- -->
 <span class="logo">(갬성갱단)상점 관리 센터</span><br>
 <c:if test="${!empty login}">
 	<a href="SManagementUIServlet">상점 관리</a>&nbsp;&nbsp;
