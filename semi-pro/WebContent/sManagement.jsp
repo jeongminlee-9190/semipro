@@ -50,6 +50,10 @@
 		height: 13%;
 		text-align:center;
 	}
+	.sManagement{
+		position: absolute;
+		top: 20%;
+	}
 </style>
 </head>
 <body>
