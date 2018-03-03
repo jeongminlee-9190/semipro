@@ -69,16 +69,6 @@ public class SInfoEnrollServlet extends HttpServlet {
 		String sBusinesshours = sBusinessDay+"/"+sOpenTime+"/"+sEndTime;
 		String sMenu = sMenu1+":"+sPrice1+"/"+sMenu2+":"+sPrice2+"/"+sMenu3+":"+sPrice3+"/"+sMenu4+":"+sPrice4+"/"+sMenu5+":"+sPrice5;
 		
-		
-		
-		
-		
-		
-		
-		
-		
-
-		
 		SDTO dto = new SDTO(sCode, sName, soId, sPost, sAddr, sPhone, sCategory, sBusinesshours, sParkinglot, sTerrace, sMenu);
 		SService service = new SService();
 		String nextPage=null;

@@ -15,7 +15,7 @@
 	</update>
 	
 	<select id="sInfo" parameterType="string" resultType="SDTO">
-		select sCode,sName,soId,sPost,sAddr,sPhone,sCategory,sBusinesshours,sParkinglot,sTerrace,sImage,sLike,sHate,sMenu}
+		select sCode,sName,soId,sPost,sAddr,sPhone,sCategory,sBusinesshours,sParkinglot,sTerrace,sImage,sLike,sHate,sMenu
 		from shop
 		where soId=#{soId}
 	</select>

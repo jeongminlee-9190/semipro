@@ -4,41 +4,62 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 <style>
-	img{
-		border: 1px solid grey;
-		position: fixed;
-		top: 20%;
-		left: 0%;
-		width:350px;
-		height:350px:
-	}
-	.sInfo{
-		border: 1px solid grey;
-		position: fixed;
-		top: 25%;
-		left:37%;
-	}
-	.review{
-		border: 1px solid grey;
-		position: fixed;
-		top: 25%;
-		left:75%;
-	}
+
 	#map{
 		border: 1px solid grey;
-		position: fixed;
-		top: 150px;
-		left:100px;
+		position: absolute;
+		top: 500px;
+		left: 20%;
+	}
+	.sbasicInfo{
+		position: absolute;
+		top: 0px;
+		padding: 10px 0px 10px 0px;
+		left: 0px;
+		height: 100px;
+		background-color: #FA8072;
+		width: 100%;
+	}
+	.sName{
+		position: absolute;
+		font-size: 30px;
+		font-weight: bold;
+		left: 20%;
+		color: white;	
+	}
+	.sbasicInfo_tbl1{
+		position: absolute;
+		border-top: 1px solid white;
+		top: 50%;
+		left: 20%;
+		color: white;
+	}
+	.sbasicInfo_tbl1 td{
+		width: 150px;
+		text-align: center;
+		
+	}
+	
+	.sbasicInfo_tbl2{
+		position: absolute;
+		top: 20%;
+		left: 20%;
+	}
+	.sbasicInfo_tbl2 td{
+		padding: 10px 0px 10px 0px;
 	}
 </style>
+
 
 <c:set var="sdto" value="${sinfo}"></c:set>
 <c:set var="saddr" value="${sinfo.sAddr}"></c:set>
 
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=ip9MzYUcGqHV9etI8TeJ&submodules=geocoder"></script>
-    <input Type="text" value="${saddr}" id="sAddr">
-    <div id="map" style="width:500px;height:300px;"></div>
-    <script>
+<div class="wrapper">
+	<!-- 네이버 지도 api -->
+	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=ip9MzYUcGqHV9etI8TeJ&submodules=geocoder"></script>
+   	 <input Type="hidden" value="${saddr}" id="sAddr">
+   	 <div id="map" style="width:900px;height:300px;"></div>
+   	 <script>
       var map = new naver.maps.Map('map');
       var myaddress = document.getElementById("sAddr").value;// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
       console.log(myaddress);
@@ -70,52 +91,57 @@
               content: '<h4> [네이버 개발자센터]</h4><a href="https://developers.naver.com" target="_blank"><img src="https://developers.naver.com/inc/devcenter/images/nd_img.png"></a>'
           });
       });
-      </script>
+     </script>
+
+	<div class="sbasicInfo">
+		<span class="sName">${sdto.sName}</span>
+		<table class="sbasicInfo_tbl1">
+			<tr>
+				<td>${sdto.sCategory}</td>
+				<td>좋아요</td>
+				<td>싫어요</td>
+				<td>후기</td>
+				<td></td>
+				<td></td>
+				<td>♥</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>${sdto.sLike}</td>
+				<td>${sdto.sHate}</td>
+				<td>0</td>
+				<td></td>
+				<td></td>
+				<td></td>	
+			</tr>
+		</table>
+	</div>
+		
+		<table class="sbasicInfo_tbl2">
+			<tr>
+				<td>(상점 주소)</td>
+				<td>${sdto.sAddr}<br></td> 
+				<td></td>
+			</tr>
+			<tr>
+				<td>(상점 전화)</td>
+				<td>${sdto.sPhone}<br></td> 
+				<td></td>
+			</tr>
+		</table>
+		
+	
 
 
 
 
 
-
-
-
+<!-- 
 <div class="sImg">
 	<img src="upload/${sinfo.sImage1}">
 </div>
+ -->
 
 
 
-<div class="sInfo">
-	<table>
-		<br><br><br>
-		<tr>
-			<td>상점 상호:</td>
-			<td>${sdto.sName}<br></td>
-			<td></td> 
-		</tr>
-		<tr>
-			<td>상점 전화:</td>
-			<td>${sdto.sPhone}<br></td> 
-			<td></td>
-		</tr>
-		<tr>
-			<td>상점 주소:</td>
-			<td>${sdto.sAddr}<br></td> 
-			<td></td>
-		</tr>
-		<tr>
-			<td colspan="2"><a href="SMapViewServlet" target="_blank">
-			<input type="button" value="지도" name="mapview" id="mapview" ></a></td>
-			<td></td>
-			<td></td>
-		</tr>
-	</table>
-</div>
-
-
-<div class="review">
-	<h4>평가</h4>
-	단콤:...<br>
-	짠맛:...<br>
-	신맛:...<br>
 </div>
