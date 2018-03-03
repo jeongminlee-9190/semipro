@@ -1,3 +1,5 @@
+--0303 update
+
 --------------------------------------------관리자------------------------------------------
 CREATE TABLE admin
 (
@@ -20,11 +22,10 @@ CREATE TABLE shopowner
 	soJoindate date default sysdate
 );
 --------------------------------------------상점 등록(상점 회원)-------------------------------------------
---0303 update
 drop table shop cascade constraint;
 CREATE TABLE shop
 (
-	-- 사업자등록번호 뒤 7자리
+	-- 카테고리+사업자등록번호 뒤 7자리
 	sCode varchar2(9) PRIMARY KEY,
 	sName varchar2(20) NOT NULL,
 	soId varchar2(50) references shopowner(soId),

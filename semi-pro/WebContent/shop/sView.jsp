@@ -8,7 +8,7 @@
 	#map{
 		border: 1px solid grey;
 		position: absolute;
-		top: 500px;
+		top: 600px;
 		left: 20%;
 	}
 	.sbasicInfo{
@@ -24,14 +24,14 @@
 		position: absolute;
 		font-size: 30px;
 		font-weight: bold;
-		left: 20%;
+		left: 15%;
 		color: white;	
 	}
 	.sbasicInfo_tbl1{
 		position: absolute;
 		border-top: 1px solid white;
 		top: 50%;
-		left: 20%;
+		left: 15%;
 		color: white;
 	}
 	.sbasicInfo_tbl1 td{
@@ -43,10 +43,16 @@
 	.sbasicInfo_tbl2{
 		position: absolute;
 		top: 20%;
-		left: 20%;
+		left: 15%;
 	}
 	.sbasicInfo_tbl2 td{
 		padding: 10px 0px 10px 0px;
+	}
+	
+	.sMenu_tbl{
+		position: absolute;
+		top: 20%;
+		left: 60%;
 	}
 </style>
 
@@ -121,15 +127,50 @@
 			<tr>
 				<td>(상점 주소)</td>
 				<td>${sdto.sAddr}<br></td> 
-				<td></td>
 			</tr>
 			<tr>
 				<td>(상점 전화)</td>
 				<td>${sdto.sPhone}<br></td> 
-				<td></td>
+			</tr>
+			
+			<tr>
+				<td>(테라스)${sdto.sTerrace}</td>
+				<td>(주차)${sdto.sParkinglot}<br></td> 
+			</tr>
+			<tr>
+				<td>(영업시간)</td>
+				<td>${fn: split(sdto.sBusinesshours,"/")[0]}&nbsp;${fn: split(sdto.sBusinesshours,"/")[1]}~${fn: split(sdto.sBusinesshours,"/")[2]}<br></td> 
 			</tr>
 		</table>
 		
+		<c:set var="sMenu1" value="${fn: split(sdto.sMenu,'/')[0]}"></c:set>
+		<c:set var="sMenu2" value="${fn: split(sdto.sMenu,'/')[1]}"></c:set>
+		<c:set var="sMenu3" value="${fn: split(sdto.sMenu,'/')[2]}"></c:set>
+		<c:set var="sMenu4" value="${fn: split(sdto.sMenu,'/')[3]}"></c:set>
+		<c:set var="sMenu5" value="${fn: split(sdto.sMenu,'/')[4]}"></c:set>
+		
+		<table class="sMenu_tbl">
+			<tr>
+				<th align="left"><span>메뉴</span><th>
+			</tr>
+
+			<tr>
+				<td>${fn: split(sMenu1,":")[0]} - ${fn: split(sMenu1,":")[1]}원</td>
+			</tr>
+			<tr>
+				<td>${fn: split(sMenu2,":")[0]} - ${fn: split(sMenu2,":")[1]}원</td>
+			</tr>
+			
+			<tr>
+				<td>${fn: split(sMenu3,":")[0]} - ${fn: split(sMenu3,":")[1]}원</td>
+			</tr>
+			<tr>
+				<td>${fn: split(sMenu4,":")[0]} - ${fn: split(sMenu4,":")[1]}원</td>
+			</tr>
+			<tr>
+				<td>${fn: split(sMenu5,":")[0]} - ${fn: split(sMenu5,":")[1]}원</td>
+			</tr>
+		</table>
 	
 
 
