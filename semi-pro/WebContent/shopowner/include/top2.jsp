@@ -5,48 +5,19 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
  
-<style>
-	.logo{
-		font-size: 25px;
-	}
-
-
-/* 
-
-	.header_top_left {
-		border:1px solid grey;
-		font-size: 30px;
-		float:left;
-		height:50px;
-		position:fixed;
-		top:10px;
-	}
-	.header_top_right{
-		position:fixed;
-		right:1000px;
-		height:20px;
-	 	margin-top:20px;
-	}
-	 
-	.header_bottom{
-		border:1px solid grey;
-		position: fixed;
-		top: 40px;
-		left:500px;
-		font-size: 20px;
-	}
-	
+<style>	
 	a{
 		text-decoration: none;
 	}
+	span{
+		font-size: 20px;
+	}
  */
 </style>
-<span class="logo">(갬성갱단)상점 관리 센터</span><br>
 <c:if test="${!empty login}">
-	<a href="SManagementUIServlet">상점 관리</a>&nbsp;&nbsp;
-	<a href="SoCenterUIServlet">고객센터</a>
+	<a href="SManagementUIServlet"><span>상점 관리</span></a>&nbsp;&nbsp;
+	<a href="SoCenterUIServlet"><span>고객센터</span></a>
 </c:if>
-</div>
 
 
 

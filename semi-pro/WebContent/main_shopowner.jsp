@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
 	@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
@@ -19,7 +20,7 @@
 	.logo{
 		position: absolute;
 		font-size: 25px;
-		top:7%;
+		top:0%;
 		left:3%;
 		width:300px;
 	}
@@ -36,18 +37,9 @@
 		top:70%;
 		width:100%;	
 		text-align:center;
+		font-size: 20px;
 	}
 	
-
-	.sInfoEnrollForm {
-		position: fixed;
-		top:20%;
-		left:35%;
-		width: 450px;
-		height: 60%;
-	}
-	
-	/* 페이지 하단 */
 	.footer{
 		border: 1px solid grey;
 		position: fixed;
@@ -56,10 +48,21 @@
 		height: 13%;
 		text-align:center;
 	}
-
 </style>
 </head>
 <body>
+<c:if test="${! empty success}">
+   <script type="text/javascript">
+    alert('${success}');
+   </script>
+</c:if>
+
+<c:if test="${!empty logout}">
+	<script type="text/javascript">
+    	alert('${logout}');
+    </script>
+</c:if>
+
 <div class="wrapper">
 	<div class="mainwrapper">
 		<div class="logo">
@@ -73,14 +76,13 @@
 		</div>
 	</div>
 	
-	<div class="sInfoEnrollForm">
-		<h4>상점 기본 정보 등록</h4>
-		<jsp:include page="shop/sInfoEnrollForm.jsp" flush="true" />
+	<div class="content">
+	
 	</div>
 
 	<div class="footer">
-			footer
-	</div>
-</div>	
+		footer
+	</div>	
+</div>
 </body>
 </html>

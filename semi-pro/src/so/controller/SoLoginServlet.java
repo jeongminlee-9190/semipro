@@ -32,7 +32,7 @@ public class SoLoginServlet extends HttpServlet {
 			if (dto != null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("login", dto);
-				nextPage = "index_shopowner.jsp";
+				nextPage = "main_shopowner.jsp";
 			} else {
 				nextPage = "index_shopowner.jsp";
 			}

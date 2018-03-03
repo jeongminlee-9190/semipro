@@ -7,7 +7,6 @@
 <style>
 	.loginText{
 		font-size: 20px;
-	
 	}
 	.input_soId,.input_soPasswd{
 		margin-top: 10px;
@@ -31,7 +30,9 @@
 		border: 1px solid #99e6ff;
 		background-color: white;
 	}
-	
+	.state_login{
+		font-size:15px;	
+	}
 </style>
 
 <c:if test="${empty login}">
@@ -45,7 +46,7 @@
 </c:if>
 
 <c:if test="${!empty login}">
-	${login.soId}&nbsp;
-	<a href="SoLogoutServlet">로그아웃</a>
-	<a href="SoMyPageServlet">MyPage</a>
+	<span class="state_login">${login.soId}&nbsp;</span>
+	<a href="SoLogoutServlet"><span class="state_login">로그아웃</span></a>
+	<a href="SoMyPageServlet"><span class="state_login">MyPage</span></a>
 </c:if>

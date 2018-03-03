@@ -40,7 +40,7 @@ public class SoAddServlet extends HttpServlet {
 		String nextPage=null;
 		try {
 			service.soAdd(dto);
-			nextPage="index_shopowner.jsp";
+			nextPage="main_shopowner.jsp";
 			request.setAttribute("success", "회원가입 성공");
 		} catch (MyException e) {
 			// TODO Auto-generated catch block
