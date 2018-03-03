@@ -37,13 +37,12 @@
 		width:100%;	
 		text-align:center;
 	}
-	
 
 	.sInfoEnrollForm {
 		position: fixed;
 		top:20%;
-		left:35%;
-		width: 450px;
+		left:25%;
+		width: 900px;
 		height: 60%;
 	}
 	
@@ -74,7 +73,6 @@
 	</div>
 	
 	<div class="sInfoEnrollForm">
-		<h4>상점 기본 정보 등록</h4>
 		<jsp:include page="shop/sInfoEnrollForm.jsp" flush="true" />
 	</div>
 

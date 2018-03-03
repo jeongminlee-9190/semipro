@@ -12,11 +12,18 @@
 	span{
 		font-size: 20px;
 	}
- */
+ 	.main_menu{
+ 		background-color: #99e6ff; 
+ 		padding-top: 10px;
+ 		height: 40px;
+ 	
+ 	}
 </style>
 <c:if test="${!empty login}">
-	<a href="SManagementUIServlet"><span>상점 관리</span></a>&nbsp;&nbsp;
-	<a href="SoCenterUIServlet"><span>고객센터</span></a>
+	<div class="main_menu">
+		<a href="SManagementUIServlet"><span>상점 관리</span></a>&nbsp;&nbsp;
+		<a href="SoCenterUIServlet"><span>고객센터</span></a>
+	</div>
 </c:if>
 
 

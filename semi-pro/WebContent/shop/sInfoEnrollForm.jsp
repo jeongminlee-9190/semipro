@@ -6,12 +6,45 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <style>
-	h5{
+	span.stress{
 		color: red;
+		font-size: 10px;
 	}
+	span.title{
+		font-size: 20px;
+		font-weight: bold;
+	}
+	th{
+		width: 120px;
+		
+	}
+	td{
+		width: 300px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-right: 30px;
+	}
+	.sEnroll_title{
+		border-bottom: 1px solid grey;
+		text-align: center;
+	}
+	.sEnroll_tbl{
+		padding-top: 15px;
+	}
+	#sample6_postcode,#sample6_address{
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	
+	
+	
+	
+	
 </style>
 <form action="SInfoEnrollServlet" method="get">
-	<h5>상점은 한 곳만 등록 가능합니다.</h5>
+	<div class="sEnroll_title">
+		<span class="title">상점 기본 정보 등록</span>  <span class="stress"> *상점은 한 곳만 등록 가능합니다.</span>
+	</div>
 	<c:set var="dto" value="${login}"></c:set>
 	<!-- sCode를 위한 사업자번호 뒤 7자리 가져오기 -->
 	<c:set var="soLicense1" value="${dto.soLicense}"></c:set>
@@ -19,42 +52,61 @@
 	<!--  -->
 	<input Type="hidden" name="soId" id="soId" value="${dto.soId}">
 	<input Type="hidden" name="soLicense" id="soLicense" value="${soLicense}">
-
-	<table>
-		<tr>
-			<td>상점 이름: </td>
-			<td><input type="text" name="sName" id="sName" size="31" maxlength="20"> </td>
-		</tr>
-		
+	<div class="sEnroll_tbl">
+		<table>
 			<tr>
-			<td>상점 전화: </td>
-			<td><input type="text" name="sPhone1" id="sPhone1" size="3" maxlength="4"> -
-			<input type="text" name="sPhone2" id="sPhone2" size="3" maxlength="4"> -
-			<input type="text" name="sPhone3" id="sPhone3" size="3" maxlength="4"></td>
-		</tr>
-		<tr>
-			<td>상점 주소: </td>
-			<td><input type="text" name="post" id="sample6_postcode" size="5" placeholder="우편번호">
-			<input type="text" name="sAddr1" id="sample6_address" placeholder="주소">
-			<input type="button" onclick="sample6_execDaumPostcode()" value="주소 찾기"><br>
-			<input type="text" name="sAddr2" id="sample6_address2" placeholder="상세 주소"></td>
-		</tr>
-		<tr>
-			<td>카테고리: </td>
-			<td><select id="sCategory" name="sCategory">
-					<option value="c" selected="selected">카페</option>
-					<option value="d">디저트</option>
-					<option value="w">와인</option>
-			</select>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-			<input type="submit" name="submit" value="등록">
-			<a href="sManagement.jsp"><input type="button" name="cancel" value="취소"></a>
-			</td>
-		</tr>
-	</table>
+				<th>상점 이름 </th>
+				<td><input type="text" name="sName" id="sName" size="31" maxlength="20"> </td>
+				<th>주차</th>
+				<td><input type="radio" name="sParkinglot" id="sParkinglot" value="예" checked="checked">예
+				<input type="radio" name="sParkinglot" id="sParkinglot" value="아니오">아니오</td>
+			</tr>
+		
+				<tr>
+				<th>상점 전화 </th>
+				<td><input type="text" name="sPhone1" id="sPhone1" size="3" maxlength="4"> -
+				<input type="text" name="sPhone2" id="sPhone2" size="3" maxlength="4"> -
+				<input type="text" name="sPhone3" id="sPhone3" size="3" maxlength="4"></td>
+				<th>테라스</th>
+				<td><input type="radio" name="sTerrace" id="sTerrace" value="예" checked="checked">예
+				<input type="radio" name="sTerrace" id="sTerrace" value="아니오">아니오</td>
+			</tr>
+			<tr>
+				<th>상점 주소 </th>
+				<td><input type="text" name="post" id="sample6_postcode" size="5" placeholder="우편번호">
+				<input type="button" onclick="sample6_execDaumPostcode()" value="주소 찾기"><br>
+				<input type="text" name="sAddr1" id="sample6_address" placeholder="주소" size="40">				
+				<input type="text" name="sAddr2" id="sample6_address2" placeholder="상세 주소" size="40"></td>
+			</tr>
+			<tr>
+				<th>카테고리 </th>
+				<td><select id="sCategory" name="sCategory">
+						<option value="c" selected="selected">카페</option>
+						<option value="d">디저트</option>
+						<option value="w">와인</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th rowspan="3">영업시간<br>(00:00~24:00) </th><!-- 컬럼명: sBusinesshours  -->
+				<td>요일: <input type="text" name="sBusinessDay" id="sBusinessDay" size="10" maxlength="10" placeholder="매일,월-금 등등"></td>
+				
+				
+			</tr>
+			<tr>
+				<td>시작: <input type="text" name="sOpenTime" id="sOpenTime" size="6" maxlength="5" placeholder="(예)08:00"></td>
+			</tr>
+			<tr>
+				<td>종료: <input type="text" name="sCloseTime" id="sCloseTime" size="6" maxlength="5" placeholder="(예)23:00"></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+				<input type="submit" name="submit" value="등록">
+				<a href="sManagement.jsp"><input type="button" name="cancel" value="취소"></a>
+				</td>
+			</tr>
+		</table>
+	</div>
 </form>
 
 

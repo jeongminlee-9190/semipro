@@ -12,7 +12,7 @@
 		color: grey;
 	}
 	/* 회원정보 입력 테이블*/
-	.jointable {
+	.join_tbl {
 		position: fixed;
 		margin-top:15px;
 		height:700px;
@@ -254,7 +254,7 @@
   </script>
 <div class="joinWrapper">
 	<form action="SoAddServlet" method="get" onsubmit="formCheck(event)">
-		<div class="jointable">
+		<div class="join_tbl">
 		<!--  <span class="welcome">갬성갱단에서 상점을 등록하고 홍보할 수 있어요!</span>-->
 		<h2 style="text-align:center">회원 정보 입력</h2>
 		<table>
