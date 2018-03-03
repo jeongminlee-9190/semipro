@@ -53,6 +53,23 @@
 		width:100%;
 		text-align:center;
 	}
+	.btn_submit {
+		border: 1px solid #99e6ff;
+		background-color: #99e6ff;
+		margin-top: 20px;
+		height:35px;
+		width: 300px;
+		/*color: white;*/
+	}
+	
+	.btn_cancel{
+		border: 1px solid #99e6ff;
+		background-color: white;
+		margin-top: 10px;
+		height:35px;
+		width: 300px;
+		/*color: white;*/
+	}
 </style>
 <form action="SInfoEnrollServlet" method="get">
 	<div class="wrapper">
@@ -116,13 +133,13 @@
 			<table>
 				<tr>
 					<th>주차</th>
-					<td><input type="radio" name="sParkinglot" id="sParkinglot" value="예" checked="checked">예
-					<input type="radio" name="sParkinglot" id="sParkinglot" value="아니오">아니오</td>
+					<td><input type="radio" name="sParkinglot" id="sParkinglot" value="Y" checked="checked">예
+					<input type="radio" name="sParkinglot" id="sParkinglot" value="N">아니오</td>
 				</tr>
 				<tr>
 					<th>테라스</th>
-					<td><input type="radio" name="sTerrace" id="sTerrace" value="예" checked="checked">예
-					<input type="radio" name="sTerrace" id="sTerrace" value="아니오">아니오</td>
+					<td><input type="radio" name="sTerrace" id="sTerrace" value="Y" checked="checked">예
+					<input type="radio" name="sTerrace" id="sTerrace" value="N">아니오</td>
 				</tr>
 				<tr>
 					<th rowspan="6">메뉴판</th>
@@ -153,8 +170,8 @@
 		</div>
 	</div>
 	<div class="complete">
-		<input type="submit" name="submit" value="등록">
-		<a href="sManagement.jsp"><input type="button" name="cancel" value="취소"></a>
+		<input type="submit" name="submit" class="btn_submit" value="등록">
+		<a href="sManagement.jsp"><input type="button" name="cancel" class="btn_cancel" value="취소"></a>
 	</div>	
 </form>
 

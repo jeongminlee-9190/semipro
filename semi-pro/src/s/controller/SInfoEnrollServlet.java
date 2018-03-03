@@ -36,6 +36,27 @@ public class SInfoEnrollServlet extends HttpServlet {
 		String sAddr1 = request.getParameter("sAddr1");
 		String sAddr2 = request.getParameter("sAddr2");
 		String sCategory2 = request.getParameter("sCategory");
+		String sBusinessDay = request.getParameter("sBusinessDay");
+		String sOpenTime= request.getParameter("sOpenTime");
+		String sEndTime= request.getParameter("sEndTime");
+		String sParkinglot= request.getParameter("sParkinglot");
+		String sTerrace= request.getParameter("sTerrace");
+		String sMenu1= request.getParameter("sMenu1");
+		String sPrice1= request.getParameter("sPrice1");
+		String sMenu2= request.getParameter("sMenu2");
+		String sPrice2= request.getParameter("sPrice2");
+		String sMenu3= request.getParameter("sMenu3");
+		String sPrice3= request.getParameter("sPrice3");
+		String sMenu4= request.getParameter("sMenu4");
+		String sPrice4= request.getParameter("sPrice4");
+		String sMenu5= request.getParameter("sMenu5");
+		String sPrice5= request.getParameter("sPrice5");
+		String sCode = sCategory2+soLicense;
+		
+		////////////DTO에 맞게 재정의/////////////
+		String sPhone = sPhone1+"-"+sPhone2+"-"+sPhone3;
+		String sAddr = sAddr1+"/"+sAddr2;
+		
 		String sCategory=null;
 		if(sCategory2.equals("c")){
 			sCategory="cafe";
@@ -45,11 +66,20 @@ public class SInfoEnrollServlet extends HttpServlet {
 			sCategory="wine";
 		}
 		
-		String sPhone = sPhone1+"-"+sPhone2+"-"+sPhone3;
-		String sAddr = sAddr1+"/"+sAddr2;
-		String sCode = sCategory2+soLicense;
+		String sBusinesshours = sBusinessDay+"/"+sOpenTime+"/"+sEndTime;
+		String sMenu = sMenu1+":"+sPrice1+"/"+sMenu2+":"+sPrice2+"/"+sMenu3+":"+sPrice3+"/"+sMenu4+":"+sPrice4+"/"+sMenu5+":"+sPrice5;
 		
-		SDTO dto = new SDTO(sCode, sName, soId, sPost, sAddr, sPhone, sCategory);
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		SDTO dto = new SDTO(sCode, sName, soId, sPost, sAddr, sPhone, sCategory, sBusinesshours, sParkinglot, sTerrace, sMenu);
 		SService service = new SService();
 		String nextPage=null;
 		try {

@@ -42,7 +42,7 @@
 		position: fixed;
 		top:145px;
 		left:20%;
-		width: 63%;
+		width: 64%;
 		height: 60%;
 	}
 	
