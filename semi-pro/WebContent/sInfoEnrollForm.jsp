@@ -40,9 +40,9 @@
 
 	.sInfoEnrollForm {
 		position: fixed;
-		top:20%;
-		left:25%;
-		width: 900px;
+		top:145px;
+		left:20%;
+		width: 63%;
 		height: 60%;
 	}
 	

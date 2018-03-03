@@ -29,10 +29,8 @@ DROP SEQUENCE SEQ_soqnaboard_qnaNum;
  
 
 /* Create Sequences */
-CREATE SEQUENCE SEQ_coupon_couponNum INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_interest_iNum INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_noticetom_noticeNum INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_noticetoso_noticeNum INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_qnaboardreply_qnaReplyNum INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_qnaboard_qnaNum INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_reviewboard_rvNum INCREMENT BY 1 START WITH 1;
@@ -40,8 +38,12 @@ CREATE SEQUENCE SEQ_reviewreply_rpNum INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_soqnaboardrp_qnaReplyNum INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_soqnaboard_qnaNum INCREMENT BY 1 START WITH 1;
  
+
+
+
+
 /* Create Tables */
---------------------------------------------관리자------------------------------------------
+----------------------------------------------------------------관리자----------------------------------------------------------------
 CREATE TABLE admin
 (
  aId varchar2(10) NOT NULL,
@@ -49,23 +51,6 @@ CREATE TABLE admin
  PRIMARY KEY (aId)
 );
 --시퀀스 없음
---------------------------------------------쿠폰-------------------------------------------
-CREATE TABLE coupon
-(
- couponNum number(3) NOT NULL,
- couponTitle varchar2(30) NOT NULL,
- -- 사업자등록번호 뒤 7자리
- sCode varchar2(7),
- sName varchar2(20) NOT NULL,
- couponReadcnt number(3),
- couponContent varchar2(100) NOT NULL,
- couponImage varchar2(20) NOT NULL,
- couponErolldate date,
- PRIMARY KEY (couponNum)
-);
---시퀀스 SEQ_coupon_couponNum
---기본키: couponNum
---외래키: sCode(shop 테이블의 기본키)
 ------------------------------------------관심상점(좋아요 기능)-------------------------------------------
 CREATE TABLE interest
 (
@@ -107,20 +92,44 @@ CREATE TABLE noticetom
 );
 --시퀀스 SEQ_noticetom_noticeNum
 --기본키: noticeNum
---------------------------------------------관리자->상점회원 공지사항-------------------------------------------
+
+
+-------------------------------------------------------관리자->상점회원 공지사항-----------------------------------------------------------
+--0303 update
+--drop table noticetoso cascade constraint;
 CREATE TABLE noticetoso
 (
- noticeNum number(2) NOT NULL,
- noticeContent varchar2(2000) NOT NULL,
- noticeTitle varchar2(30) NOT NULL,
- noticeWritedate date DEFAULT sysdate NOT NULL,
- noticeWriter varchar2(6) DEFAULT '관리자' NOT NULL,
- noticeReadcnt number(2),
- PRIMARY KEY (noticeNum)
+	noticeNum number(3) PRIMARY KEY,
+	noticeContent varchar2(2000) NOT NULL,
+	noticeTitle varchar2(30) NOT NULL,
+	noticeWritedate date DEFAULT sysdate NOT NULL,
+	noticeWriter varchar2(6) DEFAULT '관리자' NOT NULL,
+	noticeReadcnt number(3)
 );
---시퀀스 SEQ_noticetoso_noticeNum
---기본키: noticeNum
---------------------------------------------개인회원->상점 문의 게시판-------------------------------------------
+
+CREATE SEQUENCE SEQ_noticetoso_noticeNum INCREMENT BY 1 START WITH 1;
+
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(1,'공지사항1','공지사항1');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(2,'공지사항2','공지사항2');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(3,'공지사항3','공지사항3');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(4,'공지사항4','공지사항4');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(5,'공지사항5','공지사항5');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(6,'공지사항6','공지사항6');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(7,'공지사항7','공지사항7');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(8,'공지사항8','공지사항8');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(9,'공지사항9','공지사항9');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(10,'공지사항10','공지사항10');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(11,'공지사항11','공지사항11');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(12,'공지사항12','공지사항12');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(13,'공지사항13','공지사항13');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(14,'공지사항114','공지사항14');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(15,'공지사항15','공지사항15');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(16,'공지사항16','공지사항16');
+commit;
+
+
+
+---------------------------------------------------------개인회원->상점 문의 게시판---------------------------------------------------------
 CREATE TABLE qnaboard
 (
  qnaNum number(2) NOT NULL,
@@ -180,6 +189,34 @@ CREATE TABLE reviewreply
 --시퀀스 SEQ_reviewreply_rpNum
 --기본키: rpNum
 --외래키: rvNum(reviewboard 테이블의 기본키)
+
+--------------------------------------------------------------------상점 회원----------------------------------------------------------
+--0303 update
+drop table shopowner cascade constraint;
+--alter table shopowner modify(soPasswd varchar2(10));
+select *from shopowner;
+commit;
+CREATE TABLE shopowner
+(
+	soId varchar2(30) PRIMARY KEY,
+	soPasswd varchar2(10) NOT NULL,
+	soName varchar2(20) NOT NULL,
+	soPhone varchar2(13) NOT NULL,
+	soLicense varchar2(10) NOT NULL UNIQUE,
+	soPost varchar2(5) NOT NULL,
+	soAddr varchar2(500) NOT NULL,
+	soLevel varchar2(1) default 0,
+	soJoindate date default sysdate
+);
+commit;
+
+update shopowner
+set sLevel =1
+where oId='bbb';
+commit;
+select *from shopowner;
+
+
 --------------------------------------------상점 등록(상점 회원)-------------------------------------------
 --0227 update
 drop table shop cascade constraint;
@@ -207,31 +244,27 @@ delete from shop where soId='aaaa';
 commit;
 --기본키: sCode
 --외래키: oId(shopowner 테이블의 기본키)
---------------------------------------------상점 회원-------------------------------------------
---0227 update
-CREATE TABLE shopowner
-(
-	soId varchar2(50) NOT NULL,
-	soPasswd varchar2(20) NOT NULL,
-	soName varchar2(20) NOT NULL,
-	soPhone varchar2(13) NOT NULL,
-	-- 하이픈 제외하고 숫자로만 10자리 입력
-	soLicense varchar2(10) NOT NULL UNIQUE,
-	soPost varchar2(5) NOT NULL,
-	soAddr varchar2(500) NOT NULL,
-	-- 0: 미승인 / 1: 승인, 체험 / 2: 승인, 유료
-	soLevel varchar2(1) default 0,
-	soJoindate date default sysdate,
-	PRIMARY KEY (soId)
+
+
+
+--------------------------------------------------------------상점 이미지 파일-----------------------------------------------------------
+--0303 update
+drop table sfile purge;
+CREATE TABLE sfile
+(   
+	fileNum number(5) primary key,
+	fileName1 varchar2(20),
+	fileName2 varchar2(20),
+	fileName3 varchar2(20),
+	fileName4 varchar2(20),
+	fileName5 varchar2(20),
+    sCode varchar2(9) references shop(sCode)
 );
 
---기본키: oId
-
-update shopowner
-set sLevel =1
-where oId='bbb';
+CREATE SEQUENCE SEQ_sfile_fileNum INCREMENT BY 1 START WITH 1;
 commit;
-select *from shopowner;
+
+
 --------------------------------------------상점 회원->관리자 1:1 문의(상점 회원)-------------------------------------------
 CREATE TABLE soqnaboard
 (
@@ -314,12 +347,8 @@ ALTER TABLE coupon
  ADD FOREIGN KEY (sCode)
  REFERENCES shop (sCode)
 ;
-ALTER TABLE shop
- ADD FOREIGN KEY (oId)
- REFERENCES shopowner (oId)
-;
 
-ALTER TABLE soqnaboard
+ALTER TABLE soqnaboard 
  ADD FOREIGN KEY (oId)
  REFERENCES shopowner (oId)
 ;
@@ -329,7 +358,3 @@ ALTER TABLE soqnaboardreply
  REFERENCES soqnaboard (qnaNum)
 ;
 
-CREATE TABLE sfile
-(   filename varchar2(50) primary key,
-    filerealname varchar2(50)
-);

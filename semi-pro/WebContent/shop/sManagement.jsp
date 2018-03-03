@@ -52,6 +52,7 @@
 <!-- 레벨이 0인 경우 메뉴를 클릭하면 다른페이지로 -->
 <br>
 <div class="shopbasicInfoform">
+	<h3>1단계</h3>
 	<span class="shopbasicinfo">상점 기본정보</span><br><br>
 	<a href="SInfoEnrollFormServlet">등록</a><br><br>
 	<a href="">수정</a><br><br>
@@ -59,6 +60,7 @@
 </div>
 
 <div class="shopimageInfoform">
+	<h3>2단계</h3>
 	<span class="shopimageinfo">상점 사진정보</span><br><br>
 	<a href="SImageUploadFormServlet">등록</a><br><br>
 	<a href="">수정</a><br><br>
