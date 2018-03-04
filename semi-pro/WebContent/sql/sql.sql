@@ -43,3 +43,16 @@ CREATE TABLE shop
 );
 commit;
 
+--------------------------------------------------------상점 이미지 등록---------------------------------------------------------------
+drop table sfile purge;
+CREATE TABLE sfile
+(   
+	fileNum number(5) primary key,
+	fileName varchar2(200),
+    sCode varchar2(9) references shop(sCode)
+);
+ALTER TABLE sfile ADD CONSTRAINT uk_sfile_sCode UNIQUE(sCode);
+
+CREATE SEQUENCE SEQ_sfile_fileNum INCREMENT BY 1 START WITH 1;
+commit;
+select *from sfile;

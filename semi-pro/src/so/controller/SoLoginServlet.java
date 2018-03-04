@@ -11,7 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dto.SDTO;
+import dto.SFileDTO;
 import dto.SoDTO;
+import sevice.SFileService;
+import sevice.SService;
 import sevice.SoService;
 
 @WebServlet("/SoLoginServlet")
@@ -32,6 +36,16 @@ public class SoLoginServlet extends HttpServlet {
 			if (dto != null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("login", dto);
+				
+				SService service2 = new SService();
+				SDTO sDTO= service2.sInfo(oId);
+				session.setAttribute("sinfo", sDTO);
+				String sCode = service2.sCodeInfo(oId);
+				
+				SFileService service3 = new SFileService();
+				SFileDTO sfDTO = service3.sImageInfo(sCode);
+				session.setAttribute("simageinfo", sfDTO);
+				
 				nextPage = "main_shopowner.jsp";
 			} else {
 				nextPage = "index_shopowner.jsp";

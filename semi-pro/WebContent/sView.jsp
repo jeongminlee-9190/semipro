@@ -45,7 +45,7 @@
 		/*  overflow-x:hidden;
 		overflow-y:hidden"*/
 		width: 99%;
-		height: 99%;
+		height: 1500px;
 	}
 	
 	.footer{

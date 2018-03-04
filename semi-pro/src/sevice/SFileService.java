@@ -5,6 +5,7 @@ import java.util.HashMap;
 import org.apache.ibatis.session.SqlSession;
 
 import dao.MySqlSessionFactory;
+import dto.SDTO;
 import dto.SFileDTO;
 import exception.MyException;
 
@@ -32,5 +33,20 @@ public class SFileService {
 		}finally {
 			session.close();
 		}
+	}
+	
+	public SFileDTO sImageInfo(String sCode) throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();
+		SFileDTO dto = null;
+		try {
+			dto=session.selectOne("SFileMapper.sImageInfo",sCode);
+			session.commit();
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new MyException("이미지 조회 에러");
+		}finally {
+			session.close();
+		}
+		return dto;
 	}
 }

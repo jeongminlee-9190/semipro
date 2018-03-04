@@ -52,7 +52,7 @@
 	}
 	.sManagement{
 		position: absolute;
-		top: 20%;
+		top: 100px;
 	}
 </style>
 </head>

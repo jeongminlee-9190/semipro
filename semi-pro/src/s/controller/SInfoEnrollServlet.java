@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dto.SDTO;
 import dto.SoDTO;
@@ -23,6 +24,7 @@ public class SInfoEnrollServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String soId= request.getParameter("soId");
 		System.out.println(soId);
 		String soLicense = request.getParameter("soLicense");
@@ -74,6 +76,9 @@ public class SInfoEnrollServlet extends HttpServlet {
 		String nextPage=null;
 		try {
 			service.sAdd(dto);
+			SDTO sDTO= service.sInfo(soId);
+			HttpSession session=request.getSession();
+			session.setAttribute("sinfo", sDTO);
 			nextPage="sManagement.jsp";
 			request.setAttribute("success", "상점 등록 성공");
 		} catch (MyException e) {

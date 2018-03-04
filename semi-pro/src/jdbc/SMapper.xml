@@ -8,9 +8,9 @@
 		values(#{sCode},#{sName},#{soId},#{sPost},#{sAddr},#{sPhone},#{sCategory},#{sBusinesshours},#{sParkinglot},#{sTerrace},#{sMenu})
 	</insert>
 	
-	<update id="sImageAdd" parameterType="hashmap">
-		update shop 
-		set sImage=#{sImage}
+	<update id="sImageAdd" parameterType="hashmap" timeout="20" flushCache="true">
+		update shop set 
+			sImage=#{sImage}
 		where sCode=#{sCode}
 	</update>
 	

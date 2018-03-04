@@ -7,4 +7,10 @@
 		insert into sfile(fileNum,fileName,sCode)
 		values(SEQ_sfile_fileNum.nextval,#{fileName},#{sCode})
 	</insert>
+	
+	<select id="sImageInfo" parameterType="string" resultType="sFileDTO">
+		select fileName
+		from sfile
+		where sCode=#{sCode}
+	</select>
 </mapper>

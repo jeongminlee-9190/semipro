@@ -8,7 +8,7 @@
 	#map{
 		border: 1px solid grey;
 		position: absolute;
-		top: 600px;
+		top: 700px;
 		left: 20%;
 	}
 	.sbasicInfo{
@@ -42,7 +42,7 @@
 	
 	.sbasicInfo_tbl2{
 		position: absolute;
-		top: 20%;
+		top: 150px;
 		left: 15%;
 	}
 	.sbasicInfo_tbl2 td{
@@ -51,14 +51,25 @@
 	
 	.sMenu_tbl{
 		position: absolute;
-		top: 20%;
+		top: 150px;
 		left: 60%;
+	}
+	.imageView{
+		position: absolute;
+		top: 400px;;
+		left: 15%;
+	}
+	.image1,.image2,.image3,.image4,.image5{
+		width:200px;
+		height:200px;
+
 	}
 </style>
 
 
 <c:set var="sdto" value="${sinfo}"></c:set>
 <c:set var="saddr" value="${sinfo.sAddr}"></c:set>
+<c:set var="simage" value="${simageinfo}"></c:set>
 
 <div class="wrapper">
 	<!-- 네이버 지도 api -->
@@ -172,17 +183,11 @@
 			</tr>
 		</table>
 	
-
-
-
-
-
-<!-- 
-<div class="sImg">
-	<img src="upload/${sinfo.sImage1}">
-</div>
- -->
-
-
-
+		<div class="imageView">
+			<img class="image1" src="upload/${fn: split(simage.fileName,'/')[0]}">
+			<img class="image2" src="upload/${fn: split(simage.fileName,'/')[1]}">
+			<img class="image3" src="upload/${fn: split(simage.fileName,'/')[2]}">
+			<img class="image4" src="upload/${fn: split(simage.fileName,'/')[3]}">
+			<img class="image5" src="upload/${fn: split(simage.fileName,'/')[4]}">
+		</div>
 </div>

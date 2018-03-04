@@ -86,7 +86,7 @@ public class SImageUploadServlet extends HttpServlet {
 						String contentType = item.getContentType().split("/")[1];
 						System.out.println(sCode);
 						map.put("sCode", sCode);
-						if(!contentType.equals("octet-stream")&&!contentType.equals("jpg")&&!contentType.equals("png")) {
+						if(!contentType.equals("octet-stream")&&(contentType.equals("jpeg")||contentType.equals("png"))) {
 							fileName = sCode+"_sImage"+i+"."+contentType;
 						
 							boolean isInMemory = item.isInMemory();
@@ -101,7 +101,11 @@ public class SImageUploadServlet extends HttpServlet {
 					}//end of if
 				}//end of while
 				service2.Imageupload(map);
-				service.sImageAdd(map);
+				//service.sImageAdd(map);
+				//session.setAttribute("sinfo", sDTO);
+				//SDTO sDTO= service.sInfo(soId);
+				SFileDTO sfDTO = service2.sImageInfo(sCode);
+				session.setAttribute("simageinfo", sfDTO);
 				request.setAttribute("success", "상점 이미지 등록 성공");
 			} catch (FileUploadException e) {
 				e.printStackTrace();
