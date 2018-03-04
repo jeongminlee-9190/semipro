@@ -4,13 +4,13 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="SFileMapper">
 	<insert id="imageUpload" parameterType="sFileDTO">
-		insert into sfile(fileNum,fileName,sCode)
-		values(SEQ_sfile_fileNum.nextval,#{fileName},#{sCode})
+		insert into sfile(fileNum,fileName,soId)
+		values(SEQ_sfile_fileNum.nextval,#{fileName},#{soId})
 	</insert>
 	
 	<select id="sImageInfo" parameterType="string" resultType="sFileDTO">
 		select fileName
 		from sfile
-		where sCode=#{sCode}
+		where soId=#{soId}
 	</select>
 </mapper>

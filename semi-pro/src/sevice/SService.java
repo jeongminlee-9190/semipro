@@ -32,7 +32,7 @@ public class SService {
 			session.commit();
 		}catch(Exception e){
 			e.printStackTrace();
-			throw new MyException("상점 등록 에러");
+			throw new MyException("상점 정보 조회 에러");
 		}finally {
 			session.close();
 		}

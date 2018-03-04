@@ -49,10 +49,46 @@ CREATE TABLE sfile
 (   
 	fileNum number(5) primary key,
 	fileName varchar2(200),
-    sCode varchar2(9) references shop(sCode)
+    soId varchar2(50) references shopowner(soId)
 );
-ALTER TABLE sfile ADD CONSTRAINT uk_sfile_sCode UNIQUE(sCode);
+ALTER TABLE sfile ADD CONSTRAINT uk_sfile_sCode UNIQUE(soId);
 
 CREATE SEQUENCE SEQ_sfile_fileNum INCREMENT BY 1 START WITH 1;
 commit;
 select *from sfile;
+
+
+
+
+-------------------------------------------------------관리자->상점회원 공지사항-----------------------------------------------------------
+--0303 update
+--drop table noticetoso cascade constraint;
+CREATE TABLE noticetoso
+(
+	noticeNum number(3) PRIMARY KEY,
+	noticeContent varchar2(2000) NOT NULL,
+	noticeTitle varchar2(30) NOT NULL,
+	noticeWritedate date DEFAULT sysdate NOT NULL,
+	noticeWriter varchar2(6) DEFAULT '관리자' NOT NULL,
+	noticeReadcnt number(3)
+);
+
+CREATE SEQUENCE SEQ_noticetoso_noticeNum INCREMENT BY 1 START WITH 1;
+
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(1,'공지사항1','공지사항1');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(2,'공지사항2','공지사항2');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(3,'공지사항3','공지사항3');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(4,'공지사항4','공지사항4');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(5,'공지사항5','공지사항5');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(6,'공지사항6','공지사항6');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(7,'공지사항7','공지사항7');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(8,'공지사항8','공지사항8');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(9,'공지사항9','공지사항9');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(10,'공지사항10','공지사항10');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(11,'공지사항11','공지사항11');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(12,'공지사항12','공지사항12');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(13,'공지사항13','공지사항13');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(14,'공지사항114','공지사항14');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(15,'공지사항15','공지사항15');
+insert into noticetoso(noticeNum,noticeTitle,noticeContent) values(16,'공지사항16','공지사항16');
+commit;

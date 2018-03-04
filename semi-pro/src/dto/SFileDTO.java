@@ -3,24 +3,24 @@ package dto;
 public class SFileDTO {
 	private String fileNum;
 	private String fileName;
-	private String sCode;
+	private String soId;
 	
 	public SFileDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public SFileDTO(String fileName, String sCode) {
+	public SFileDTO(String fileName, String soId) {
 		super();
 		this.fileName = fileName;
-		this.sCode = sCode;
+		this.soId = soId;
 	}
 
-	public SFileDTO(String fileNum, String fileName, String sCode) {
+	public SFileDTO(String fileNum, String fileName, String soId) {
 		super();
 		this.fileNum = fileNum;
 		this.fileName = fileName;
-		this.sCode = sCode;
+		this.soId = soId;
 	}
 
 	public String getFileNum() {
@@ -39,12 +39,12 @@ public class SFileDTO {
 		this.fileName = fileName;
 	}
 
-	public String getsCode() {
-		return sCode;
+	public String getsoId() {
+		return soId;
 	}
 
-	public void setsCode(String sCode) {
-		this.sCode = sCode;
+	public void setsoId(String soId) {
+		this.soId = soId;
 	}
 	
 }

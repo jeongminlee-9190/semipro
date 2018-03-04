@@ -43,8 +43,9 @@ public class SoLoginServlet extends HttpServlet {
 				String sCode = service2.sCodeInfo(oId);
 				
 				SFileService service3 = new SFileService();
-				SFileDTO sfDTO = service3.sImageInfo(sCode);
+				SFileDTO sfDTO = service3.sImageInfo(oId);
 				session.setAttribute("simageinfo", sfDTO);
+				
 				
 				nextPage = "main_shopowner.jsp";
 			} else {

@@ -13,7 +13,7 @@ public class SFileService {
 	public void Imageupload(HashMap<String, String> map) throws MyException {
 		SqlSession session = MySqlSessionFactory.getSession();
 		HashMap<String, String> map2 = new HashMap<>();
-		String sCode = map.get("sCode");
+		String soId = map.get("soId");
 		String sImage1 = map.get("fileName1");
 		String sImage2 = map.get("fileName2");
 		String sImage3 = map.get("fileName3");
@@ -21,8 +21,8 @@ public class SFileService {
 		String sImage5 = map.get("fileName5");
 		String fileName=sImage1+"/"+sImage2+"/"+sImage3+"/"+sImage4+"/"+sImage5;
 		
-		System.out.println(sCode);
-		SFileDTO dto = new SFileDTO(fileName, sCode);
+		System.out.println(soId);
+		SFileDTO dto = new SFileDTO(fileName, soId);
 		
 		try {
 			int n=session.insert("SFileMapper.imageUpload",dto);

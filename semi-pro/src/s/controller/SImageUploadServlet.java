@@ -104,7 +104,7 @@ public class SImageUploadServlet extends HttpServlet {
 				//service.sImageAdd(map);
 				//session.setAttribute("sinfo", sDTO);
 				//SDTO sDTO= service.sInfo(soId);
-				SFileDTO sfDTO = service2.sImageInfo(sCode);
+				SFileDTO sfDTO = service2.sImageInfo(soId);
 				session.setAttribute("simageinfo", sfDTO);
 				request.setAttribute("success", "상점 이미지 등록 성공");
 			} catch (FileUploadException e) {
