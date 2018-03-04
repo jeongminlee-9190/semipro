@@ -57,6 +57,13 @@
 </style>
 </head>
 <body>
+<c:if test="${! empty success}">
+   <script type="text/javascript">
+    alert('${success}');
+   </script>
+</c:if>
+
+
 <div class="wrapper">
 	<div class="mainwrapper">
 		<div class="logo">

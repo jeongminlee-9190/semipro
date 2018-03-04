@@ -3,9 +3,8 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="SFileMapper">
-	<insert id="fileUpload" parameterType="sFileDTO">
-		insert into sfile(filename,filerealname)
-		values(#{fileName},#{fileRealName})
-	
+	<insert id="imageUpload" parameterType="sFileDTO">
+		insert into sfile(fileNum,fileName,sCode)
+		values(SEQ_sfile_fileNum.nextval,#{fileName},#{sCode})
 	</insert>
 </mapper>

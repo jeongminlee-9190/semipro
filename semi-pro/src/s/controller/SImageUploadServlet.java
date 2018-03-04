@@ -23,8 +23,10 @@ import org.apache.ibatis.session.SqlSession;
 
 import dao.MySqlSessionFactory;
 import dto.SDTO;
+import dto.SFileDTO;
 import dto.SoDTO;
 import exception.MyException;
+import sevice.SFileService;
 import sevice.SService;
 
 /**
@@ -39,12 +41,13 @@ public class SImageUploadServlet extends HttpServlet {
 			HttpSession session=request.getSession();
 			SoDTO dto = (SoDTO)session.getAttribute("login");
 			String soId=dto.getSoId();
- 
+			
 			SService service = new SService();
+			SFileService service2= new SFileService();
 			String sCode=null;
 			
 			HashMap<String, String> map= new HashMap<>();
-			map.put("soId", soId);
+			
 			//이미지 업로드 소스
 			// Create a factory for disk-based file items
 			DiskFileItemFactory factory = new DiskFileItemFactory();
@@ -81,18 +84,20 @@ public class SImageUploadServlet extends HttpServlet {
 						String fieldName = item.getFieldName();
 						String contentType = item.getContentType().split("/")[1];
 						System.out.println(sCode);
+						map.put("sCode", sCode);
 						fileName = sCode+"_sImage"+i+"."+contentType;
 						boolean isInMemory = item.isInMemory();
 						sizeInBytes = item.getSize();
 						System.out.println(fieldName+"\t"+fileName+"\t"+contentType+"\t"+isInMemory+"\t"+sizeInBytes);
-						File uploadedFile = new File("C:\\semi-pro\\semi-pro\\WebContent\\upload",fileName);
+						File uploadedFile = new File("D:\\semipro\\semi-pro\\WebContent\\upload",fileName);
 						map.put("fieldName"+i, fieldName);
 						map.put("fileName"+i, fileName);
 						item.write(uploadedFile);
 						i++;
 					}//end of if
 				}//end of while
-				service.sImageAdd(map);
+				service2.Imageupload(map);
+				//service.sImageAdd(map);
 				request.setAttribute("success", "상점 이미지 등록 성공");
 			} catch (FileUploadException e) {
 				// TODO Auto-generated catch block

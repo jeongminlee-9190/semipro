@@ -60,14 +60,17 @@ public class SService {
 		String soId = map.get("soId");
 		String sImage1 = map.get("fileName1");
 		String sImage2 = map.get("fileName2");
-
-		map2.put("soId",soId);
-		map2.put("sImage1", sImage1);
-		map2.put("sImage2", sImage2);
+		String sImage3 = map.get("fileName3");
+		String sImage4 = map.get("fileName4");
+		String sImage5 = map.get("fileName5");
+		String sImage=sImage1+"/"+sImage2+"/"+sImage3+"/"+sImage4+"/"+sImage5;
 		
-		System.out.println(map2.get("sImage1"));
-		System.out.println(map2.get("sImage2"));
+		
+		map2.put("soId",soId);
+		map2.put("sImage", sImage);
+		System.out.println(map2.get("sImage"));
 		System.out.println(map2.get("soId"));
+		System.out.println(map2);
 		
 		try {
 			int n=session.update("SMapper.sImageAdd",map2);

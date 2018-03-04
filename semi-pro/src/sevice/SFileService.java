@@ -5,16 +5,30 @@ import java.util.HashMap;
 import org.apache.ibatis.session.SqlSession;
 
 import dao.MySqlSessionFactory;
+import dto.SFileDTO;
+import exception.MyException;
 
 public class SFileService {
-	public void upload(String fileName, String fileRealName) {
+	public void Imageupload(HashMap<String, String> map) throws MyException {
 		SqlSession session = MySqlSessionFactory.getSession();
-		HashMap<String, String> map = new HashMap<>();
-		map.put("fileName", fileName);
-		map.put("fileRealName", fileRealName);
+		HashMap<String, String> map2 = new HashMap<>();
+		String sCode = map.get("sCode");
+		String sImage1 = map.get("fileName1");
+		String sImage2 = map.get("fileName2");
+		String sImage3 = map.get("fileName3");
+		String sImage4 = map.get("fileName4");
+		String sImage5 = map.get("fileName5");
+		String fileName=sImage1+"/"+sImage2+"/"+sImage3+"/"+sImage4+"/"+sImage5;
+		
+		System.out.println(sCode);
+		SFileDTO dto = new SFileDTO(fileName, sCode);
+		
 		try {
-			int n = session.insert("fileUpload",map);//성공 여부 확인을 위한..
+			int n=session.insert("SFileMapper.imageUpload",dto);
 			session.commit();
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new MyException("이미지 DB 등록 에러");
 		}finally {
 			session.close();
 		}
