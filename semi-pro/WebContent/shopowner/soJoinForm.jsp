@@ -123,7 +123,9 @@
 		border: 1px solid grey;
 		height: 20px;
 	}
-	
+	.term_headline{
+		font-size: 12px;
+	}
 </style>
 
 <script>

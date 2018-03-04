@@ -18,5 +18,5 @@
 회원 레벨: <c:if test="${dto.soLevel eq 0}">미승인</c:if><c:if test="${dto.soLevel eq 1}">체험</c:if><c:if test="${dto.soLevel eq 2}">유료</c:if><br>
 가입일: ${dto.soJoindate}<br>
 <input type="submit" name="submit" value="수정">
-<a href="index_shopowner.jsp"><input type="button" name="cancel" id="cancel" value="취소"></a>
+<a href="main_shopowner.jsp"><input type="button" name="cancel" id="cancel" value="취소"></a>
 </form>

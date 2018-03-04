@@ -174,7 +174,7 @@
 		<span class="shopdelete">상점 삭제</span><hr><br>
 		<p class="shopdeletewarn">삭제하면 복원되지 않습니다.<p>
 		<br>
-		<a href="SViewServlet"><input type="button" class="btn_enroll"value="상점 삭제"></a><br><br>
+		<a href="SDeletionServlet"><input type="button" class="btn_enroll"value="상점 삭제"></a><br><br>
 	</div>
 	
 		

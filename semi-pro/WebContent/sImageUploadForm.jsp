@@ -54,7 +54,8 @@
 	}
 </style>
 </head>
-<body><div class="wrapper">
+<body>
+<div class="wrapper">
 	<div class="mainwrapper">
 		<div class="logo">
 			<span>(갬성갱단)상점 관리 센터</span><br>
@@ -73,7 +74,5 @@
 			footer
 	</div>
 </div>	
-
-
 </body>
 </html>

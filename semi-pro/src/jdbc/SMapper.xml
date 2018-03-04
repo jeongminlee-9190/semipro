@@ -25,4 +25,13 @@
 		from shop
 		where soId=#{soId}
 	</select>
+	
+	<delete id="sDel" parameterType="string">
+		delete from shop
+		where soId=#{soId}
+	</delete>
+	<delete id="simageDel" parameterType="string">
+		delete from sfile
+		where soId=#{soId}
+	</delete>
 </mapper>

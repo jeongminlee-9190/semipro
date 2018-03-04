@@ -81,4 +81,18 @@ public class SService {
 			
 		}
 	}
+	
+	public void sDel(String soId) throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();
+		try {
+			int n=session.delete("SMapper.sDel",soId);
+			int n2=session.delete("SMapper.simageDel",soId);
+			session.commit();
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new MyException("상점 삭제 에러");
+		}finally {
+			session.close();
+		}
+	}
 }
