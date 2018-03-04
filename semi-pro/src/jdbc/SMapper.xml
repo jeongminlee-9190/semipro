@@ -11,7 +11,7 @@
 	<update id="sImageAdd" parameterType="hashmap">
 		update shop 
 		set sImage=#{sImage}
-		where soId = #{soId}
+		where sCode=#{sCode}
 	</update>
 	
 	<select id="sInfo" parameterType="string" resultType="SDTO">

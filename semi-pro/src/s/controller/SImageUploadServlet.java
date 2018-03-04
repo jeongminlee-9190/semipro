@@ -48,8 +48,6 @@ public class SImageUploadServlet extends HttpServlet {
 			SFileService service2= new SFileService();
 			String sCode=null;
 			
-			
-			
 			//이미지 업로드 소스
 			// Create a factory for disk-based file items
 			DiskFileItemFactory factory = new DiskFileItemFactory();

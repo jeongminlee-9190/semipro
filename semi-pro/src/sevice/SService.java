@@ -57,7 +57,7 @@ public class SService {
 	public void sImageAdd(HashMap<String, String> map) throws MyException {
 		SqlSession session = MySqlSessionFactory.getSession();
 		HashMap<String, String> map2 = new HashMap<>();
-		String soId = map.get("soId");
+		String sCode = map.get("sCode");
 		String sImage1 = map.get("fileName1");
 		String sImage2 = map.get("fileName2");
 		String sImage3 = map.get("fileName3");
@@ -66,10 +66,10 @@ public class SService {
 		String sImage=sImage1+"/"+sImage2+"/"+sImage3+"/"+sImage4+"/"+sImage5;
 		
 		
-		map2.put("soId",soId);
+		map2.put("sCode",sCode);
 		map2.put("sImage", sImage);
 		System.out.println(map2.get("sImage"));
-		System.out.println(map2.get("soId"));
+		System.out.println(map2.get("sCode"));
 		System.out.println(map2);
 		
 		try {
