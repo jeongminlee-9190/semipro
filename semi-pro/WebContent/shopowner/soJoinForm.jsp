@@ -293,10 +293,11 @@
 		
 			<tr>
 				<th>주소</th>
-				<td><input type="text" name="post" id="sample6_postcode" size="5" placeholder="우편번호"><br>
-				<input type="text" name="soAddr1" id="sample6_address" placeholder="사업자 등록증 상의 주소" size="40px">
+				<td><input type="text" name="post" id="sample6_postcode" size="5" placeholder="우편번호">
 				<input type="button" class="btn_addr" onclick="sample6_execDaumPostcode()" value="주소 찾기"><br>
-				<input type="text" name="soAddr2" id="sample6_address2" placeholder="상세 주소" size="52px"></td>
+				<input type="text" name="soAddr1" id="sample6_address" placeholder="사업자 등록증 상의 주소" size="40px"><br>
+				
+				<input type="text" name="soAddr2" id="sample6_address2" placeholder="상세 주소" size="40px"></td>
 			</tr>
 		</table>
 		

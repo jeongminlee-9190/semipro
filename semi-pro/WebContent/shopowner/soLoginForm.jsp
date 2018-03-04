@@ -37,7 +37,7 @@
 
 <c:if test="${empty login}">
 	<form action="SoLoginServlet" method="post" >
-		<span class="loginText">로그인</span><br>
+		<span class="loginText">로그인을 해주세요!</span><br>
 		<input type="text" name="soId" class="input_soId" placeholder="아이디(이메일 형식)" maxlength="30"><br>
 		<input type="password" name="soPasswd" class="input_soPasswd" placeholder="비밀번호" maxlength="10"><br>
 		<input type="submit" class="btn_submit" value="로그인"><br>

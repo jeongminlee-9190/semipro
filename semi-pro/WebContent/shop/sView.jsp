@@ -182,7 +182,6 @@
 				<td>${fn: split(sMenu5,":")[0]} - ${fn: split(sMenu5,":")[1]}원</td>
 			</tr>
 		</table>
-	
 		<div class="imageView">
 			<img class="image1" src="upload/${fn: split(simage.fileName,'/')[0]}">
 			<img class="image2" src="upload/${fn: split(simage.fileName,'/')[1]}">

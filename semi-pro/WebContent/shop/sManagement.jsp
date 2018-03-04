@@ -158,7 +158,19 @@
 		<p>개인회원에게 보여지는 화면을</p>
 		<p>확인할 수 있습니다.</p>
 		<br>
-		<a href="SViewServlet"><input type="button" class="btn_enroll"value="상점 확인"></a><br><br>
+		<c:if test="${!empty sinfo.sCode && !empty simageinfo.fileName}">
+			<a href="SViewServlet"><input type="button" class="btn_enroll"value="상점 확인"></a><br><br>
+		</c:if>
+		<c:if test="${empty sinfo.sCode && !empty simageinfo.fileName}">
+			<p class="shopdeletewarn">기본 정보를 등록해주세요.</p>
+		</c:if>
+		<c:if test="${!empty sinfo.sCode && empty simageinfo.fileName}">
+			<p class="shopdeletewarn">사진 정보를 등록해주세요.</p>
+		</c:if>
+		<c:if test="${empty sinfo.sCode && empty simageinfo.fileName}">
+			<p class="shopdeletewarn">기본정보와 사진 정보를</p>
+			<p class="shopdeletewarn">등록해주세요.</p>
+		</c:if>
 	</div>
 	
 	<div class="shopModify">
@@ -166,15 +178,31 @@
 		<p>등록한 기본정보와 사진을 </p>
 		<p>수정할 수 있습니다.</p>
 		<br>
-		<a href="SViewServlet"><input type="button" class="btn_enroll"value="기본정보 수정"></a><br><br>
-		<a href="SViewServlet"><input type="button" class="btn_enroll"value="사진정보 수정"></a>
+		<c:if test="${!empty sinfo.sCode && empty simageinfo.fileName}">
+			<a href="SViewServlet"><input type="button" class="btn_enroll"value="기본정보 수정"></a><br><br>
+			<p class="shopdeletewarn">사진 정보를 등록해주세요.</p>
+		</c:if>
+		<c:if test="${empty sinfo.sCode && empty simageinfo.fileName}">
+			<p class="shopdeletewarn">기본 정보를 등록해주세요.</p>
+			<p class="shopdeletewarn">사진 정보를 등록해주세요.</p>
+		</c:if>
+		<c:if test="${!empty sinfo.sCode && !empty simageinfo.fileName}">
+			<a href="SViewServlet"><input type="button" class="btn_enroll"value="기본정보 수정"></a><br><br>
+			<a href="SViewServlet"><input type="button" class="btn_enroll"value="사진정보 수정"></a>
+		</c:if>
+		
 	</div>
 	
 	<div class="shopDeleteform">
 		<span class="shopdelete">상점 삭제</span><hr><br>
 		<p class="shopdeletewarn">삭제하면 복원되지 않습니다.<p>
 		<br>
-		<a href="SDeletionServlet"><input type="button" class="btn_enroll"value="상점 삭제"></a><br><br>
+		<c:if test="${(!empty sinfo.sCode && !empty simageinfo.fileName) ||(empty sinfo.sCode && !empty simageinfo.fileName) ||(!empty sinfo.sCode && empty simageinfo.fileName)}">
+			<a href="SDeletionServlet"><input type="button" class="btn_enroll"value="상점 삭제"></a><br><br>
+		</c:if>
+		<c:if test="${empty sinfo.sCode && empty simageinfo.fileName}">
+			<p class="shopdeletewarn">삭제할 정보가 없습니다.</p>
+		</c:if>
 	</div>
 	
 		
