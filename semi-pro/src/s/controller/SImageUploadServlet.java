@@ -41,12 +41,14 @@ public class SImageUploadServlet extends HttpServlet {
 			HttpSession session=request.getSession();
 			SoDTO dto = (SoDTO)session.getAttribute("login");
 			String soId=dto.getSoId();
+			HashMap<String, String> map= new HashMap<>();
+			map.put("soId", soId);
 			
 			SService service = new SService();
 			SFileService service2= new SFileService();
 			String sCode=null;
 			
-			HashMap<String, String> map= new HashMap<>();
+			
 			
 			//이미지 업로드 소스
 			// Create a factory for disk-based file items
@@ -73,35 +75,39 @@ public class SImageUploadServlet extends HttpServlet {
 				while (iter.hasNext()) {
 					FileItem item = iter.next();
 					if (item.isFormField()) { //type="text"
+						sCode =service.sCodeInfo(soId);
 						String realname = item.getFieldName();
-						String name = "상점이름"+realname;
+						String name = sCode+realname;
 						value = item.getString("UTF-8");//한글 표현
 						String ContentType=item.getContentType();
 						System.out.println(ContentType);
 						System.out.println(name+"\t"+value);
-					} else {//type="file" {
+					} else {//type="file"
 						sCode =service.sCodeInfo(soId);
 						String fieldName = item.getFieldName();
 						String contentType = item.getContentType().split("/")[1];
 						System.out.println(sCode);
 						map.put("sCode", sCode);
-						fileName = sCode+"_sImage"+i+"."+contentType;
-						boolean isInMemory = item.isInMemory();
-						sizeInBytes = item.getSize();
-						System.out.println(fieldName+"\t"+fileName+"\t"+contentType+"\t"+isInMemory+"\t"+sizeInBytes);
-						File uploadedFile = new File("D:\\semipro\\semi-pro\\WebContent\\upload",fileName);
-						map.put("fieldName"+i, fieldName);
-						map.put("fileName"+i, fileName);
-						item.write(uploadedFile);
-						i++;
+						if(!contentType.equals("octet-stream")&&!contentType.equals("jpg")&&!contentType.equals("png")) {
+							fileName = sCode+"_sImage"+i+"."+contentType;
+						
+							boolean isInMemory = item.isInMemory();
+							sizeInBytes = item.getSize();
+							System.out.println(fieldName+"\t"+fileName+"\t"+contentType+"\t"+isInMemory+"\t"+sizeInBytes);
+							File uploadedFile = new File("D:\\semipro\\semi-pro\\WebContent\\upload",fileName);
+							map.put("fieldName"+i, fieldName);
+							map.put("fileName"+i, fileName);
+							item.write(uploadedFile);
+							i++;
+						}
 					}//end of if
 				}//end of while
 				service2.Imageupload(map);
-				//service.sImageAdd(map);
+				service.sImageAdd(map);
 				request.setAttribute("success", "상점 이미지 등록 성공");
 			} catch (FileUploadException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
+				request.setAttribute("fail", "jpg, png 파일만 업로드 가능합니다.");
 			} catch (Exception e) {//item.write(uploadedFile)의 예외처리
 				// TODO Auto-generated catch block
 			e.printStackTrace();
