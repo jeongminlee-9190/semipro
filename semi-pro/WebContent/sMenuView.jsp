@@ -19,7 +19,7 @@
 	.logo{
 		position: absolute;
 		font-size: 25px;
-		top:7%;
+		top:0%;
 		left:3%;
 		width:300px;
 	}
@@ -36,19 +36,19 @@
 		top:70%;
 		width:100%;	
 		text-align:center;
+		font-size: 20px;
 	}
-
-	.sInfoEnrollForm {
+	.content{
 		border: 1px solid grey;
-		position: fixed;
-		margin-left: auto;
-		top:120px;
+		position: absolute;
+		top: 130px;
+		/*  overflow-x:hidden;
+		overflow-y:hidden"*/
 		width: 99%;
-		height: 67%;
-		
+		margin-left:auto;
+		height: 1500px;
 	}
 	
-	/* 페이지 하단 */
 	.footer{
 		border: 1px solid grey;
 		position: fixed;
@@ -57,7 +57,6 @@
 		height: 13%;
 		text-align:center;
 	}
-
 </style>
 </head>
 <body>
@@ -74,13 +73,14 @@
 		</div>
 	</div>
 	
-	<div class="sInfoEnrollForm">
-		<jsp:include page="shop/sInfoEnrollForm.jsp" flush="true" />
+	<div class="content">
+		<jsp:include page="shop/sView.jsp" flush="true" />
 	</div>
 
 	<div class="footer">
-			footer
-	</div>
-</div>	
+		footer
+	</div>	
+</div>
+
 </body>
 </html>

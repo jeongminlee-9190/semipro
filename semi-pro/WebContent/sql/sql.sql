@@ -29,17 +29,17 @@ CREATE TABLE shop
 	sCode varchar2(9) PRIMARY KEY,
 	sName varchar2(20) NOT NULL,
 	soId varchar2(50) references shopowner(soId),
-  	sPost varchar2(5) NOT NULL,
+    sPost varchar2(5) NOT NULL,
 	sAddr varchar2(500) NOT NULL,
 	sPhone varchar2(14) NOT NULL,
 	sBusinesshours varchar2(20) NOT NULL,
     sParkinglot varchar2(1) NOT NULL,
     sTerrace varchar2(1) NOT NULL,
-    sMenu varchar2(100) NOT NULL,
-	sCategory varchar2(10) NOT NULL,
+    sMenu1 varchar2(100) ,
+    sMenu2 varchar2(100) ,
+  	sCategory varchar2(10) NOT NULL,
     sImage varchar2(200),
-    sLike number(3) default 0,
-  	sHate number(3) default 0
+    sLike number(3) default 0
 );
 commit;
 

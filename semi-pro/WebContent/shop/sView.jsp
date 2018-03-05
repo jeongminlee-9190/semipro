@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
-<style>
 
+<style>
 	#map{
 		border: 1px solid grey;
 		position: absolute;
@@ -51,21 +51,100 @@
 	
 	.sMenu_tbl{
 		position: absolute;
-		top: 150px;
-		left: 60%;
+		top: 40%;
+		left: 5%;
+		width: 70%;
+		color: white;
+		border: 1px solid white;
 	}
 	.imageView{
 		position: absolute;
-		top: 400px;;
-		left: 15%;
+		top: 10px;
+		left: 0%;
 	}
 	.image1,.image2,.image3,.image4,.image5{
-		width:200px;
-		height:200px;
-
+		width:130px;
+		height:130px;
 	}
-</style>
+	
+	.btn_sMenuView{
+		background-color: #FA8072;
+		border: 1px solid white;
+		font-size: 15px;
+		font-weight: bold;
+		color: white;
+		padding: 5px 5px 5px 5px;
+	}
+	
+	.setDiv {
+        padding-top: 100px;
+        text-align: center;
+    }
+    
+    .mask {
+        position:absolute;
+        left:0;
+        top:0;
+        z-index:9999;
+        background-color:white;
+        display:none;
+    }
+    .window {
+        display: none;
+        background-color: #000;
+        width: 700px;
+        height: 500px;
+        z-index:99000;
+        text-align: left;
+    }
 
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+    function wrapWindowByMask(){
+        // 화면의 높이와 너비를 변수로 만듭니다.
+        var maskHeight = $(document).height();
+        var maskWidth = $(window).width();
+ 
+        // 마스크의 높이와 너비를 화면의 높이와 너비 변수로 설정합니다.
+        $('.mask').css({'width':maskWidth,'height':maskHeight});
+ 
+        // fade 애니메이션 : 1초 동안 검게 됐다가 80%의 불투명으로 변합니다.
+        $('.mask').fadeIn(1000);
+        $('.mask').fadeTo("slow",0.8);
+ 
+        // 레이어 팝업을 가운데로 띄우기 위해 화면의 높이와 너비의 가운데 값과 스크롤 값을 더하여 변수로 만듭니다.
+        var left = ( $(window).scrollLeft() + ( $(window).width() - $('.window').width()) / 2 );
+        var top = ( $(window).scrollTop() + ( $(window).height() - $('.window').height()) / 2 );
+ 
+        // css 스타일을 변경합니다.
+        $('.window').css({'left':left,'top':top, 'position':'absolute'});
+ 
+        // 레이어 팝업을 띄웁니다.
+        $('.window').show();
+    }
+ 
+    $(document).ready(function(){
+        // showMask를 클릭시 작동하며 검은 마스크 배경과 레이어 팝업을 띄웁니다.
+        $('.showMask').click(function(e){
+            // preventDefault는 href의 링크 기본 행동을 막는 기능입니다.
+            e.preventDefault();
+            wrapWindowByMask();
+        });
+ 
+        // 닫기(close)를 눌렀을 때 작동합니다.
+        $('.window .close').click(function (e) {
+            e.preventDefault();
+            $('.mask, .window').hide();
+        });
+ 
+        // 뒤 검은 마스크를 클릭시에도 모두 제거하도록 처리합니다.
+        $('.mask').click(function () {
+            $(this).hide();
+            $('.window').hide();
+        });
+    });
+</script>
 
 <c:set var="sdto" value="${sinfo}"></c:set>
 <c:set var="saddr" value="${sinfo.sAddr}"></c:set>
@@ -119,7 +198,7 @@
 				<td>후기</td>
 				<td></td>
 				<td></td>
-				<td>♥</td>
+				<td><input type="button" class="btn_sMenuView" id="btn_sMenuView" value="메뉴"></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -154,39 +233,97 @@
 			</tr>
 		</table>
 		
-		<c:set var="sMenu1" value="${fn: split(sdto.sMenu,'/')[0]}"></c:set>
-		<c:set var="sMenu2" value="${fn: split(sdto.sMenu,'/')[1]}"></c:set>
-		<c:set var="sMenu3" value="${fn: split(sdto.sMenu,'/')[2]}"></c:set>
-		<c:set var="sMenu4" value="${fn: split(sdto.sMenu,'/')[3]}"></c:set>
-		<c:set var="sMenu5" value="${fn: split(sdto.sMenu,'/')[4]}"></c:set>
 		
-		<table class="sMenu_tbl">
-			<tr>
-				<th align="left"><span>메뉴</span><th>
-			</tr>
-
-			<tr>
-				<td>${fn: split(sMenu1,":")[0]} - ${fn: split(sMenu1,":")[1]}원</td>
-			</tr>
-			<tr>
-				<td>${fn: split(sMenu2,":")[0]} - ${fn: split(sMenu2,":")[1]}원</td>
-			</tr>
+		
+		
+		<!--  
+		
+		-->
+		<div class="setDiv">
+    		<a href="#" class="showMask"><input type="button" class="btn_sMenuView" id="btn_sMenuView" value="메뉴"></a>
+ 			<div class="mask"></div>
+    		<div class="window">
+       			<input type="button" href="#" class="close" value="X"/>
+       			
+       			<div class="imageView">
+					<img class="image1" src="upload/${fn: split(simage.fileName,'/')[0]}">
+					<img class="image2" src="upload/${fn: split(simage.fileName,'/')[1]}">
+					<img class="image3" src="upload/${fn: split(simage.fileName,'/')[2]}">
+					<img class="image4" src="upload/${fn: split(simage.fileName,'/')[3]}">
+					<img class="image5" src="upload/${fn: split(simage.fileName,'/')[4]}">
+				</div>
+       			
+       			
+       			
+       			<c:set var="sMenuCategory1" value="${fn: split(sdto.sMenu1,'/')[0]}"></c:set>
+				<c:set var="sC1Menu1" value="${fn: split(sdto.sMenu1,'/')[1]}"></c:set>
+				<c:set var="sC1Menu2" value="${fn: split(sdto.sMenu1,'/')[2]}"></c:set>
+				<c:set var="sC1Menu3" value="${fn: split(sdto.sMenu1,'/')[3]}"></c:set>
+				
+				<c:set var="sMenuCategory2" value="${fn: split(sdto.sMenu2,'/')[0]}"></c:set>
+				<c:set var="sC2Menu1" value="${fn: split(sdto.sMenu2,'/')[1]}"></c:set>
+				<c:set var="sC2Menu2" value="${fn: split(sdto.sMenu2,'/')[2]}"></c:set>
+				<c:set var="sC2Menu3" value="${fn: split(sdto.sMenu2,'/')[3]}"></c:set>
+       			
+       			<table class="sMenu_tbl">
+       				<colgroup>
+       					<col width="25%"></col>
+       					<col width="40%"></col>
+       					<col width="10%"></col>
+       				</colgroup>
 			
-			<tr>
-				<td>${fn: split(sMenu3,":")[0]} - ${fn: split(sMenu3,":")[1]}원</td>
-			</tr>
-			<tr>
-				<td>${fn: split(sMenu4,":")[0]} - ${fn: split(sMenu4,":")[1]}원</td>
-			</tr>
-			<tr>
-				<td>${fn: split(sMenu5,":")[0]} - ${fn: split(sMenu5,":")[1]}원</td>
-			</tr>
-		</table>
-		<div class="imageView">
-			<img class="image1" src="upload/${fn: split(simage.fileName,'/')[0]}">
-			<img class="image2" src="upload/${fn: split(simage.fileName,'/')[1]}">
-			<img class="image3" src="upload/${fn: split(simage.fileName,'/')[2]}">
-			<img class="image4" src="upload/${fn: split(simage.fileName,'/')[3]}">
-			<img class="image5" src="upload/${fn: split(simage.fileName,'/')[4]}">
+					<tr><!-- 메뉴1 카테고리 -->
+						<td align="left" colspan="3">-${sMenuCategory1}-</td>
+					</tr>
+				
+					<tr>
+						<td scope="col">${fn: split(sC1Menu1,':')[0]}</td>
+						<td scope="col">${fn: split(sC1Menu1,':')[1]}</td>
+						<td scope="col">${fn: split(sC1Menu1,':')[2]}원</td>
+					</tr>
+				
+					<tr>
+						<td scope="col">${fn: split(sC1Menu2,':')[0]}</td>
+						<td scope="col">${fn: split(sC1Menu2,':')[1]}</td>
+						<td scope="col">${fn: split(sC1Menu2,':')[2]}원</td>
+					</tr>
+					<tr>
+						<td scope="col">${fn: split(sC1Menu3,':')[0]}</td>
+						<td scope="col">${fn: split(sC1Menu3,':')[1]}</td>
+						<td scope="col">${fn: split(sC1Menu3,':')[2]}원</td>
+					</tr>
+				
+					<tr><!-- 메뉴2카테고리 -->
+						<td align="left" colspan="3"><br>-${sMenuCategory2}-</td>
+					</tr>
+				
+					<tr>
+						<td scope="col">${fn: split(sC2Menu1,':')[0]}</td>
+						<td scope="col">${fn: split(sC2Menu1,':')[1]}</td>
+						<td scope="col">${fn: split(sC2Menu1,':')[2]}원</td>
+					</tr>
+				
+					<tr>
+						<td scope="col">${fn: split(sC2Menu2,':')[0]}</td>
+						<td scope="col">${fn: split(sC2Menu2,':')[1]}</td>
+						<td scope="col">${fn: split(sC2Menu2,':')[2]}원</td>
+					</tr>
+					<tr>
+						<td scope="col">${fn: split(sC2Menu3,':')[0]}</td>
+						<td scope="col">${fn: split(sC2Menu3,':')[1]}</td>
+						<td scope="col">${fn: split(sC2Menu3,':')[2]}원</td>
+					</tr>
+				</table>
+       			
+    		</div>
 		</div>
-</div>
+
+
+
+</div> <!--end of wrapper -->
+
+
+
+
+
+
