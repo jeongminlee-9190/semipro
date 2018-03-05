@@ -49,6 +49,7 @@ public class AdminService {
 	public AdminDTO login(HashMap<String, String> map)throws MyException{
 		SqlSession session = MySqlSessionFactory.getSession();
 		AdminDTO dto = null;
+		System.out.println(map);
 		try {
 			dto = session.selectOne("AdminMapper.adminlogin",map);
 		}catch(Exception e) {
@@ -57,6 +58,7 @@ public class AdminService {
 		}finally {
 			session.close();
 		}
+		System.out.println(dto);
 		return dto;
 	}
 

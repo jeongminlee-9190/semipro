@@ -12,6 +12,8 @@
    <typeAlias type="dto.SoQnaDTO" alias="SoQnaDTO"/>
    <typeAlias type="dto.SFileDTO" alias="SFileDTO"/>
    <typeAlias type="dto.SDTO" alias="SDTO"/>
+   <typeAlias type="dto.AdminDTO" alias="AdminDTO"/>
+   <typeAlias type="dto.MemberDTO" alias="MemberDTO"/>
   </typeAliases>
   
   
@@ -32,5 +34,6 @@
     <mapper resource="jdbc/SoQnaMapper.xml"/>
     <mapper resource="jdbc/SFileMapper.xml"/>
     <mapper resource="jdbc/SMapper.xml"/>
+    <mapper resource="jdbc/AdminMapper.xml"/>
   </mappers>
 </configuration>

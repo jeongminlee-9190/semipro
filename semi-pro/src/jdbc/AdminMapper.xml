@@ -17,9 +17,9 @@
    
 	<!-- admin 로그인 -->
 	<select id="adminlogin" parameterType="hashmap" resultType="AdminDTO">
-		select adminId,adminPasswd
+		select aId,aPasswd
 		from admin
-		where adminId = #{adminId} and adminPasswd= #{adminPasswd}
+		where aId = #{aId} and aPasswd= #{aPasswd}
 	</select>
 </mapper>
 
