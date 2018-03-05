@@ -39,7 +39,14 @@
 		text-align:center;
 		font-size: 20px;
 	}
-	
+	.contentwrapper{
+		position: absolute;
+		top:110px;
+		max-width:100%;	
+		height: 70%;
+		text-align:center;
+		font-size: 20px;
+	}
 	.footer{
 		border: 1px solid grey;
 		position: fixed;
@@ -76,8 +83,10 @@
 		</div>
 	</div>
 	
-	<div class="content">
-	
+	<div class="contentwrapper">
+		<div class="content_top">
+			<jsp:include page="shopowner/include/content_top.jsp" flush="true"/>
+		</div>
 	</div>
 
 	<div class="footer">

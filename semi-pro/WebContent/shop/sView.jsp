@@ -116,7 +116,6 @@
 			<tr>
 				<td>${sdto.sCategory}</td>
 				<td>좋아요</td>
-				<td>싫어요</td>
 				<td>후기</td>
 				<td></td>
 				<td></td>
@@ -125,7 +124,6 @@
 			<tr>
 				<td></td>
 				<td>${sdto.sLike}</td>
-				<td>${sdto.sHate}</td>
 				<td>0</td>
 				<td></td>
 				<td></td>
@@ -133,6 +131,8 @@
 			</tr>
 		</table>
 	</div>
+		
+		
 		
 		<table class="sbasicInfo_tbl2">
 			<tr>

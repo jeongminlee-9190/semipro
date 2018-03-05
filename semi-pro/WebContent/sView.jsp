@@ -45,6 +45,7 @@
 		/*  overflow-x:hidden;
 		overflow-y:hidden"*/
 		width: 99%;
+		margin-left:auto;
 		height: 1500px;
 	}
 	

@@ -39,11 +39,11 @@
 	}
 
 	.sInfoEnrollForm {
+		border: 1px solid grey;
 		position: fixed;
-		top:145px;
-		left:20%;
-		width: 64%;
-		height: 60%;
+		top:120px;
+		width: 99%;
+		height: 70%;
 	}
 	
 	/* 페이지 하단 */

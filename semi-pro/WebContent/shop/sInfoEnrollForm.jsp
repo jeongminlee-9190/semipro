@@ -30,11 +30,12 @@
 		border-bottom: 1px solid grey;
 		top: 0%;
 		width: 100%;
+		
 		text-align: center;
 	}
 	.sEnroll_tbl1{
 		position: absolute;
-		padding-top: 40px;
+		margin-top: 40px;
 		width:100%;
 	}
 	.sEnroll_tbl2{
@@ -49,7 +50,7 @@
 	}
 	.complete{
 		position: absolute;
-		top: 85%;
+		top: 96%;
 		width:100%;
 		text-align:center;
 	}
@@ -118,19 +119,15 @@
 				</tr>
 				<tr>
 					<th rowspan="3">영업시간<br>(00:00~24:00) </th><!-- 컬럼명: sBusinesshours  -->
-					<td>요일: <input type="text" name="sBusinessDay" id="sBusinessDay" size="10" maxlength="10" placeholder="매일,월-금 등등"></td>	
+					<td>평일: <input type="text" name="sWeekday" id="sWeekday" size="20" maxlength="20" placeholder="(예)08:00~23:00"></td>	
 				</tr>
 				<tr>
-					<td>시작: <input type="text" name="sOpenTime" id="sOpenTime" size="6" maxlength="5" placeholder="(예)08:00"></td>
+					<td>주말: <input type="text" name="sWeekend" id="sWeekend" size="20" maxlength="20" placeholder="(예)08:00~23:00"></td>
 				</tr>
 				<tr>
-					<td>종료: <input type="text" name="sEndTime" id="sEndTime" size="6" maxlength="5" placeholder="(예)23:00"></td>
+					<td>휴무: <input type="text" name="sDayOff" id="sDayOff" size="20" maxlength="20" placeholder="(예)둘째주 월요일  "></td>
 				</tr>
-			</table>
-		</div>
-		
-		<div class="sEnroll_tbl2">
-			<table>
+				
 				<tr>
 					<th>주차</th>
 					<td><input type="radio" name="sParkinglot" id="sParkinglot" value="Y" checked="checked">예
@@ -141,9 +138,15 @@
 					<td><input type="radio" name="sTerrace" id="sTerrace" value="Y" checked="checked">예
 					<input type="radio" name="sTerrace" id="sTerrace" value="N">아니오</td>
 				</tr>
+			</table>
+		</div>
+		
+		<div class="sEnroll_tbl2">
+			<table>
+				
 				<tr>
-					<th rowspan="6">메뉴판</th>
-					<td><br>*주력 메뉴 5가지만 입력해 주세요.</td>
+					<th rowspan="13">메뉴판</th>
+					<td>메뉴 카테고리1 <input type="text" name="sMenuCategory1" id="sMenuCategory1" size="11" maxlength="10"></td>
 				</tr>
 				
 				<tr>			
@@ -158,12 +161,18 @@
 					<td>메뉴3) 이름: <input type="text" name="sMenu3" id="sMenu3" size="11" maxlength="10">
 					                     가격: <input type="text" name="sPrice3" id="sPrice3" size="7" maxlength="6" placeholder="10,000">원</td>
 				</tr>
+					<td><br>메뉴 카테고리2 <input type="text" name="sMenuCategory1" id="sMenuCategory1" size="11" maxlength="10"></td>
 				<tr>
-					<td>메뉴4) 이름: <input type="text" name="sMenu4" id="sMenu4" size="11" maxlength="10">
+					<td>메뉴1) 이름: <input type="text" name="sMenu3" id="sMenu3" size="11" maxlength="10">
+					                     가격: <input type="text" name="sPrice3" id="sPrice3" size="7" maxlength="6" placeholder="10,000">원</td>
+				</tr>
+				
+				<tr>
+					<td>메뉴2) 이름: <input type="text" name="sMenu4" id="sMenu4" size="11" maxlength="10">
 					                     가격: <input type="text" name="sPrice4" id="sPrice4" size="7" maxlength="6" placeholder="10,000">원</td>
 				</tr>
 				<tr>
-					<td>메뉴5) 이름: <input type="text" name="sMenu5" id="sMenu5" size="11" maxlength="10">
+					<td>메뉴3) 이름: <input type="text" name="sMenu5" id="sMenu5" size="11" maxlength="10">
 					                     가격: <input type="text" name="sPrice5" id="sPrice5" size="7" maxlength="6" placeholder="10,000">원</td>
 				</tr>
 			</table>

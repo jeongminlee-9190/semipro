@@ -53,6 +53,9 @@
 	.sManagement{
 		position: absolute;
 		top: 100px;
+		width: 99%;
+		height: 50%;
+		margin: auto;
 	}
 </style>
 </head>

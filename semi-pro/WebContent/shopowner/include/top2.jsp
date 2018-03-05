@@ -22,7 +22,7 @@
 <c:if test="${!empty login}">
 	<div class="main_menu">
 		<a href="SManagementUIServlet"><span>상점 관리</span></a>&nbsp;&nbsp;
-		<a href="SoCenterUIServlet"><span>고객센터</span></a>
+		<a href="SoCenterUIServlet"><span>공지사항</span></a>
 	</div>
 </c:if>
 
