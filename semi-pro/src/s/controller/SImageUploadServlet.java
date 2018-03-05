@@ -86,13 +86,13 @@ public class SImageUploadServlet extends HttpServlet {
 						String contentType = item.getContentType().split("/")[1];
 						System.out.println(sCode);
 						map.put("sCode", sCode);
-						if(!contentType.equals("octet-stream")&&(contentType.equals("jpeg")||contentType.equals("png"))) {
+						if(!contentType.equals("octet-stream")&& ((contentType.equals("jpeg")||contentType.equals("png")))){
 							fileName = sCode+"_sImage"+i+"."+contentType;
 						
 							boolean isInMemory = item.isInMemory();
 							sizeInBytes = item.getSize();
 							System.out.println(fieldName+"\t"+fileName+"\t"+contentType+"\t"+isInMemory+"\t"+sizeInBytes);
-							File uploadedFile = new File("D:\\semipro\\semi-pro\\WebContent\\upload",fileName);
+							File uploadedFile = new File("C:\\semi-pro\\semi-pro\\WebContent\\upload",fileName);
 							map.put("fieldName"+i, fieldName);
 							map.put("fileName"+i, fileName);
 							item.write(uploadedFile);
