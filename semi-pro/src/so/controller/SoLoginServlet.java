@@ -14,9 +14,9 @@ import javax.servlet.http.HttpSession;
 import dto.SDTO;
 import dto.SFileDTO;
 import dto.SoDTO;
-import sevice.SFileService;
-import sevice.SService;
-import sevice.SoService;
+import service.SFileService;
+import service.SService;
+import service.SoService;
 
 @WebServlet("/SoLoginServlet")
 public class SoLoginServlet extends HttpServlet {

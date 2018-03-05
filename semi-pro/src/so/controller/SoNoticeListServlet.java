@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import dto.PageDTO;
 import dto.SoNoticeDTO;
 import exception.MyException;
-import sevice.SoBoardService;
+import service.SoBoardService;
 
 @WebServlet("/SoNoticeListServlet")
 public class SoNoticeListServlet extends HttpServlet {

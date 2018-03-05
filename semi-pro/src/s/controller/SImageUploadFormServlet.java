@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import dto.SDTO;
 import dto.SoDTO;
-import sevice.SService;
+import service.SService;
 
 /**
  * 이미지 등록 서블릿

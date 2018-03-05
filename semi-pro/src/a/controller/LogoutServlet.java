@@ -1,4 +1,4 @@
-package so.controller;
+package a.controller;
 
 import java.io.IOException;
 
@@ -8,28 +8,31 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import dto.SoQnaDTO;
-import service.SoQnaService;
+import dto.AdminDTO;
 
-@WebServlet("/soQnaRetrieveServlet")
-public class SoQnaRetrieveServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+
+@WebServlet("/LogoutServlet")
+public class LogoutServlet extends HttpServlet {
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String qnaNum = request.getParameter("qnaNum");
+
+		HttpSession session = request.getSession();
 		
-		SoQnaService service = new SoQnaService();
-		SoQnaDTO dto = service.retrieve(Integer.parseInt(qnaNum));
+		AdminDTO dto = (AdminDTO)session.getAttribute("login");
+		String nextPage="index_admin.jsp";
+		if(dto!=null) {
+			session.invalidate();
+			request.setAttribute("logout", "정상적으로 로그아웃.");
+		}
 		
-		request.setAttribute("retrieve", dto);
-		
-		RequestDispatcher dis = request.getRequestDispatcher("soQnaRetrieve.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher(nextPage);
 		dis.forward(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

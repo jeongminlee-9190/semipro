@@ -1,4 +1,4 @@
-package so.controller;
+package a.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -12,28 +12,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dto.SoDTO;
-import dto.SoQnaDTO;
+import dto.AdminDTO;
+import dto.MemberDTO;
 import exception.MyException;
-import service.SoBoardService;
-import service.SoQnaService;
+import service.AdminService;
 
-/**
- * 1:1 문의 답변 (관리자)
- */
-@WebServlet("/SoQnaReplyServlet")
-public class SoQnaReplyServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
+@WebServlet("/MemberListServlet")
+public class MemberListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*
-		SoBoardService service = new SoBoardService();
-		List<SoQnaDTO> list=service.list(map);
-		request.setAttribute("list", list);
-		//RequestDispatcher dis  = request.getRequestDispatcher(nextPage);
-		//dis.forward(request, response);
-		 * 
-		 */
+		
+		MemberDTO dto = new MemberDTO();
+		AdminService service = new AdminService();
+		String nextPage=null;
+		try {
+			List<MemberDTO> list = service.memberlist();
+			request.setAttribute("list", list);
+			 nextPage="admin/memberListForm.jsp";
+		} catch (MyException e) {
+			e.printStackTrace();
+			 nextPage="error.jsp";
+			 request.setAttribute("fail", e.getMessage());
+		}
+		RequestDispatcher dis = request.getRequestDispatcher(nextPage);
+		dis.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

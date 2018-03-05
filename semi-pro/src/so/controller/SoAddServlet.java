@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dto.SoDTO;
 import exception.MyException;
-import sevice.SoService;
+import service.SoService;
 
 /**
  * Servlet implementation class MemberAddServlet

@@ -26,8 +26,8 @@ import dto.SDTO;
 import dto.SFileDTO;
 import dto.SoDTO;
 import exception.MyException;
-import sevice.SFileService;
-import sevice.SService;
+import service.SFileService;
+import service.SService;
 
 /**
  * 이미지 업로드 서블릿

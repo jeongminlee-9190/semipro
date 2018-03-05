@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import dto.SDTO;
 import dto.SoDTO;
 import exception.MyException;
-import sevice.SService;
+import service.SService;
 
 /**
  * 상점 페이지 미리보기 기능 *아직 미완성

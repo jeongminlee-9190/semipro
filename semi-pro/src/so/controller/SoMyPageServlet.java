@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dto.SoDTO;
-import sevice.SoService;
+import service.SoService;
 
 @WebServlet("/SoMyPageServlet")
 public class SoMyPageServlet extends HttpServlet {

@@ -16,8 +16,8 @@ import dto.PageDTO;
 import dto.SoDTO;
 import dto.SoQnaDTO;
 import exception.MyException;
-import sevice.SoQnaService;
-import sevice.SoService;
+import service.SoQnaService;
+import service.SoService;
 
 /**
  * Servlet implementation class SoQnaServlet

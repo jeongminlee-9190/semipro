@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import sevice.SoService;
+import service.SoService;
 
 @WebServlet("/SoIdCheckServlet")
 public class SoIdCheckServlet extends HttpServlet {

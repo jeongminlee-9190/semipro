@@ -13,8 +13,8 @@ import javax.servlet.http.HttpSession;
 import dto.SDTO;
 import dto.SoDTO;
 import exception.MyException;
-import sevice.SService;
-import sevice.SoService;
+import service.SService;
+import service.SoService;
 
 /**
  * 상점 기본정보 등록 
