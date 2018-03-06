@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SoBoardMapper">
+
+	<select id="soNoticeList" parameterType="hashmap" resultType="SoNoticeDTO">
+		select noticeNum, noticeTitle, noticeContent, to_char(noticeWritedate,'YYYY-MM-DD') as noticeWritedate, noticeWriter, noticeReadcnt
+		from noticetoso
+		
+		<if test="searchName=='title'">
+			where noticeTitle like '%'||#{searchValue}||'%'
+		</if>
+		<if test="searchName=='content'">
+			where noticeContent like '%'||#{searchValue}||'%'
+		</if>
+		order by noticeNum desc
+	</select>
+
+
+	<select id="totalCnt" resultType="int">
+     select count(*)
+     from noticetoso
+    </select>
+    
+    <select id="totalSearchCnt" resultType="int" parameterType="hashmap">
+     select count(*)
+     from noticetoso
+     <if test="searchName == 'title'">
+	     where noticeTitle LIKE '%'||#{searchValue}||'%'
+	   </if>
+	   <if test="searchName == 'content'">
+	     where noticeContent LIKE '%'||#{searchValue}||'%'
+	   </if>
+    </select>
+</mapper>

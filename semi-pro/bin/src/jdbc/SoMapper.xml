@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SoMapper">
+	<select id="soIdCheck" parameterType="string" resultType="int">
+		select count(*) 
+		from shopowner
+		where oId=#{oId}
+	</select>
+	
+	<insert id="soAdd" parameterType="SoDTO">
+		insert into shopowner(oId,oPasswd,oName,oPhone,sName,sPhone,sLicense,sPost,sAddr)
+		values(#{oId},#{oPasswd},#{oName},#{oPhone},#{sName},#{sPhone},#{sLicense},#{sPost},#{sAddr})
+	</insert>
+	
+	<select id="login" parameterType="hashmap" resultType="SoDTO">
+    	select oId,oPasswd,oName,oPhone,sName,sPhone,sLicense,sPost,sAddr,sLevel,to_char(sJoindate,'YYYY-MM-DD') as sJoindate
+   		from shopowner
+   		where oId = #{oId} and oPasswd=#{oPasswd}
+  	</select>	
+  	
+  	<select id="myPage" parameterType="string" resultType="SoDTO">
+    	select oId,oPasswd,oName,oPhone,sName,sPhone,sLicense,sPost,sAddr,sLevel,to_char(sJoindate,'YYYY-MM-DD') as sJoindate
+   		from shopowner
+   		where oId = #{oId}
+	</select>	
+  
+</mapper>
