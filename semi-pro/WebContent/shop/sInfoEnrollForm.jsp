@@ -25,22 +25,28 @@
 		padding-bottom: 5px;
 		padding-right: 10px;
 	}
+	.sEnroll_tbl2 th{
+		width: 100px;
+	}
+	.sEnroll_tbl2 td{
+		width: 670px;
+	}
 	.sEnroll_title{
 		position: absolute;
-		border-bottom: 1px solid grey;
 		top: 0%;
 		width: 100%;
 		text-align: center;
 	}
 	.sEnroll_tbl1{
 		position: absolute;
-		padding-top: 40px;
+		margin-top: 40px;
+		margin-left: 20px;
 		width:100%;
 	}
 	.sEnroll_tbl2{
 		position: absolute;
 		padding-top: 40px;
-		left: 470px;
+		margin-left: 35%;
 		width:100%;
 	}
 	#sample6_postcode,#sample6_address{
@@ -102,10 +108,10 @@
 				</tr>
 				
 				<tr>
-					<td><input type="text" name="sAddr1" id="sample6_address" placeholder="주소" size="40"></td>				
+					<td><input type="text" name="sAddr1" id="sample6_address" placeholder="주소" size="31"></td>				
 				</tr>
 				<tr>
-					<td><input type="text" name="sAddr2" id="sample6_address2" placeholder="상세 주소" size="40"></td>
+					<td><input type="text" name="sAddr2" id="sample6_address2" placeholder="상세 주소" size="31"></td>
 				</tr>
 				<tr>
 					<th>카테고리 </th>
@@ -118,19 +124,15 @@
 				</tr>
 				<tr>
 					<th rowspan="3">영업시간<br>(00:00~24:00) </th><!-- 컬럼명: sBusinesshours  -->
-					<td>요일: <input type="text" name="sBusinessDay" id="sBusinessDay" size="10" maxlength="10" placeholder="매일,월-금 등등"></td>	
+					<td>평일: <input type="text" name="sWeekday" id="sWeekday" size="20" maxlength="20" placeholder="(예)08:00~23:00"></td>	
 				</tr>
 				<tr>
-					<td>시작: <input type="text" name="sOpenTime" id="sOpenTime" size="6" maxlength="5" placeholder="(예)08:00"></td>
+					<td>주말: <input type="text" name="sWeekend" id="sWeekend" size="20" maxlength="20" placeholder="(예)08:00~23:00"></td>
 				</tr>
 				<tr>
-					<td>종료: <input type="text" name="sEndTime" id="sEndTime" size="6" maxlength="5" placeholder="(예)23:00"></td>
+					<td>휴무: <input type="text" name="sDayOff" id="sDayOff" size="20" maxlength="20" placeholder="(예)둘째주 월요일  "></td>
 				</tr>
-			</table>
-		</div>
-		
-		<div class="sEnroll_tbl2">
-			<table>
+				
 				<tr>
 					<th>주차</th>
 					<td><input type="radio" name="sParkinglot" id="sParkinglot" value="Y" checked="checked">예
@@ -141,30 +143,47 @@
 					<td><input type="radio" name="sTerrace" id="sTerrace" value="Y" checked="checked">예
 					<input type="radio" name="sTerrace" id="sTerrace" value="N">아니오</td>
 				</tr>
+			</table>
+		</div>
+		
+		<div class="sEnroll_tbl2">
+			<table>
 				<tr>
-					<th rowspan="6">메뉴판</th>
-					<td><br>*주력 메뉴 5가지만 입력해 주세요.</td>
+					<th rowspan="13">메뉴판</th>
+					<td>메뉴 카테고리1 <input type="text" name="sMenuCategory1" id="sMenuCategory1" size="11" maxlength="10" placeholder="(예) 음료, 와인 "></td>
 				</tr>
 				
 				<tr>			
-					<td>메뉴1) 이름: <input type="text" name="sMenu1" id="sMenu1" size="11" maxlength="10">
-					                     가격: <input type="text" name="sPrice1" id="sPrice1" size="7" maxlength="6" placeholder="10,000">원</td>
+					<td>메뉴1) 이름: <input type="text" name="sC1Menu1" id="sC1Menu1" size="11" maxlength="10">
+							   설명: <input type="text" name="sC1Menu1_info" id="sC1Menu1_info" size="35" maxlength="20" placeholder="20자 내 간단한 설명">
+					                     가격: <input type="text" name="sC1Price1" id="sC1Price1" size="4" maxlength="6" placeholder="10,000">원</td>
 				</tr>
 				<tr>
-					<td>메뉴2) 이름: <input type="text" name="sMenu2" id="sMenu2" size="11" maxlength="10">
-					                     가격: <input type="text" name="sPrice2" id="sPrice2" size="7" maxlength="6" placeholder="10,000">원</td>
+					<td>메뉴2) 이름: <input type="text" name="sC1Menu2" id="sC1Menu2" size="11" maxlength="10">
+							   설명: <input type="text" name="sC1Menu2_info" id="sC1Menu2_info" size="35" maxlength="20" placeholder="20자 내 간단한 설명">
+					                     가격: <input type="text" name="sC1Price2" id="sC1Price2" size="4" maxlength="6" placeholder="10,000">원</td>
 				</tr>
 				<tr>
-					<td>메뉴3) 이름: <input type="text" name="sMenu3" id="sMenu3" size="11" maxlength="10">
-					                     가격: <input type="text" name="sPrice3" id="sPrice3" size="7" maxlength="6" placeholder="10,000">원</td>
+					<td>메뉴3) 이름: <input type="text" name="sC1Menu3" id="sC1Menu3" size="11" maxlength="10">
+							   설명: <input type="text" name="sC1Menu3_info" id="sC1Menu3_info" size="35" maxlength="20" placeholder="20자 내 간단한 설명">
+					                     가격: <input type="text" name="sC1Price3" id="sC1Price3" size="4" maxlength="6" placeholder="10,000">원</td>
+				</tr>
+					<td><br>메뉴 카테고리2 <input type="text" name="sMenuCategory2" id="sMenuCategory2" size="11" maxlength="10" placeholder="(예) 디저트,사이드"></td>
+				<tr>
+					<td>메뉴1) 이름: <input type="text" name="sC2Menu1" id="sC2Menu1" size="11" maxlength="10">
+					                      설명: <input type="text" name="sC2Menu1_info" id="sC2Menu1_info" size="35" maxlength="20" placeholder="20자 내 간단한 설명">
+					                     가격: <input type="text" name="sC2Price1" id="sC2Price1" size="4" maxlength="6" placeholder="10,000">원</td>
+				</tr>
+				
+				<tr>
+					<td>메뉴2) 이름: <input type="text" name="sC2Menu2" id="sC2Menu2" size="11" maxlength="10">
+							   설명: <input type="text" name="sC2Menu2_info" id="sC2Menu2_info" size="35" maxlength="20" placeholder="20자 내 간단한 설명">
+					                     가격: <input type="text" name="sC2Price2" id="sC2Price2" size="4" maxlength="6" placeholder="10,000">원</td>
 				</tr>
 				<tr>
-					<td>메뉴4) 이름: <input type="text" name="sMenu4" id="sMenu4" size="11" maxlength="10">
-					                     가격: <input type="text" name="sPrice4" id="sPrice4" size="7" maxlength="6" placeholder="10,000">원</td>
-				</tr>
-				<tr>
-					<td>메뉴5) 이름: <input type="text" name="sMenu5" id="sMenu5" size="11" maxlength="10">
-					                     가격: <input type="text" name="sPrice5" id="sPrice5" size="7" maxlength="6" placeholder="10,000">원</td>
+					<td>메뉴3) 이름: <input type="text" name="sC2Menu3" id="sC2Menu3" size="11" maxlength="10">
+						             설명: <input type="text" name="sC2Menu3_info" id="sC2Menu3_info" size="35" maxlength="20" placeholder="20자 내 간단한 설명">
+					                     가격: <input type="text" name="sC2Price3" id="sC2Price3" size="4" maxlength="6" placeholder="10,000">원</td>
 				</tr>
 			</table>
 		</div>

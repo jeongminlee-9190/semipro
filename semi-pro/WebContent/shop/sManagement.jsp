@@ -11,25 +11,16 @@
 	p{
 		font-size: 12px;
 	}
-	
 	/* 상점등록  */
 	.shopEnroll{
 		position: relative;
 		text-align: center;
-		top: 50px;
-		left: 180px;
+		top: 52px;
+		left: 5%;
 		width: 400px;
 		height: 300px;
 	}
 	
-	.shopEnroll_complete{
-		position: relative;
-		text-align: center;
-		top: 50px;
-		left: 180px;
-		width: 400px;
-		height: 300px;
-	}
 	.shopbasicInfoform {
 		position: absolute;
 		text-align: center;
@@ -50,7 +41,7 @@
 		position: absolute;
 		text-align: center;
 		top: 72px;
-		margin-left: 630px;
+		margin-left: 40%;
 		width: 200px;
 		height: 300px;
 	}
@@ -60,7 +51,7 @@
 		position: absolute;
 		text-align: center;
 		top: 72px;
-		margin-left: 880px;
+		margin-left: 60%;
 		width: 200px;
 		height: 300px;
 	}
@@ -70,7 +61,7 @@
 		position: absolute;
 		text-align: center;
 		top: 72px;
-		margin-left: 1130px;
+		margin-left: 80%;
 		width: 200px;
 		height: 300px;
 	}
@@ -139,15 +130,6 @@
 				<span>등록 완료</span>
 			</div>
 		</c:if>
-		<!-- 
-		<c:if test="${!empty sinfo.sImage}">
-			<div class="shopimageInfoform">
-				<h3>2단계</h3>
-				<span class="shopimageinfo">상점 사진정보</span><br><br>
-				<span>완료</span>
-			</div>
-		</c:if>
-		 -->
 	</div>
 	
 	
@@ -203,7 +185,5 @@
 		<c:if test="${empty sinfo.sCode && empty simageinfo.fileName}">
 			<p class="shopdeletewarn">삭제할 정보가 없습니다.</p>
 		</c:if>
-	</div>
-	
-		
+	</div>	
 </div>

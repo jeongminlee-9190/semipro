@@ -38,26 +38,43 @@ public class SInfoEnrollServlet extends HttpServlet {
 		String sAddr1 = request.getParameter("sAddr1");
 		String sAddr2 = request.getParameter("sAddr2");
 		String sCategory2 = request.getParameter("sCategory");
-		String sBusinessDay = request.getParameter("sBusinessDay");
-		String sOpenTime= request.getParameter("sOpenTime");
-		String sEndTime= request.getParameter("sEndTime");
+		String sWeekday = request.getParameter("sWeekday");
+		String sWeekend= request.getParameter("sWeekend");
+		String sDayOff= request.getParameter("sDayOff");
 		String sParkinglot= request.getParameter("sParkinglot");
 		String sTerrace= request.getParameter("sTerrace");
-		String sMenu1= request.getParameter("sMenu1");
-		String sPrice1= request.getParameter("sPrice1");
-		String sMenu2= request.getParameter("sMenu2");
-		String sPrice2= request.getParameter("sPrice2");
-		String sMenu3= request.getParameter("sMenu3");
-		String sPrice3= request.getParameter("sPrice3");
-		String sMenu4= request.getParameter("sMenu4");
-		String sPrice4= request.getParameter("sPrice4");
-		String sMenu5= request.getParameter("sMenu5");
-		String sPrice5= request.getParameter("sPrice5");
+		
+		//메뉴판 카테고리1
+		String sMenuCategory1= request.getParameter("sMenuCategory1");
+		String sC1Menu1= request.getParameter("sC1Menu1");
+		String sC1Menu1_info= request.getParameter("sC1Menu1_info");
+		String sC1Price1= request.getParameter("sC1Price1");
+		String sC1Menu2= request.getParameter("sC1Menu2");
+		String sC1Menu2_info= request.getParameter("sC1Menu2_info");
+		String sC1Price2= request.getParameter("sC1Price2");
+		String sC1Menu3= request.getParameter("sC1Menu3");
+		String sC1Menu3_info= request.getParameter("sC1Menu3_info");
+		String sC1Price3= request.getParameter("sC1Price3");
+		
+		//메뉴판 카테고리2
+		String sMenuCategory2= request.getParameter("sMenuCategory2");
+		String sC2Menu1= request.getParameter("sC2Menu1");
+		String sC2Menu1_info= request.getParameter("sC2Menu1_info");
+		String sC2Price1= request.getParameter("sC2Price1");
+		String sC2Menu2= request.getParameter("sC2Menu2");
+		String sC2Menu2_info= request.getParameter("sC2Menu2_info");
+		String sC2Price2= request.getParameter("sC2Price2");
+		String sC2Menu3= request.getParameter("sC2Menu3");
+		String sC2Menu3_info= request.getParameter("sC2Menu3_info");
+		String sC2Price3= request.getParameter("sC2Price3");
+		
 		String sCode = sCategory2+soLicense;
 		
 		////////////DTO에 맞게 재정의/////////////
 		String sPhone = sPhone1+"-"+sPhone2+"-"+sPhone3;
 		String sAddr = sAddr1+"/"+sAddr2;
+		String sMenu1= sMenuCategory1+"/"+sC1Menu1+":"+sC1Menu1_info+":"+sC1Price1+"/"+sC1Menu2+":"+sC1Menu2_info+":"+sC1Price2+"/"+sC1Menu3+":"+sC1Menu3_info+":"+sC1Price3;
+		String sMenu2= sMenuCategory2+"/"+sC2Menu1+":"+sC2Menu1_info+":"+sC2Price1+"/"+sC2Menu2+":"+sC2Menu2_info+":"+sC2Price2+"/"+sC2Menu3+":"+sC2Menu3_info+":"+sC2Price3;	
 		
 		String sCategory=null;
 		if(sCategory2.equals("c")){
@@ -68,10 +85,8 @@ public class SInfoEnrollServlet extends HttpServlet {
 			sCategory="wine";
 		}
 		
-		String sBusinesshours = sBusinessDay+"/"+sOpenTime+"/"+sEndTime;
-		String sMenu = sMenu1+":"+sPrice1+"/"+sMenu2+":"+sPrice2+"/"+sMenu3+":"+sPrice3+"/"+sMenu4+":"+sPrice4+"/"+sMenu5+":"+sPrice5;
-		
-		SDTO dto = new SDTO(sCode, sName, soId, sPost, sAddr, sPhone, sCategory, sBusinesshours, sParkinglot, sTerrace, sMenu);
+		String sBusinesshours = sWeekday+"/"+sWeekend+"/"+sDayOff;		
+		SDTO dto = new SDTO(sCode, sName, soId, sPost, sAddr, sPhone, sCategory, sBusinesshours, sParkinglot, sTerrace, sMenu1, sMenu2);
 		SService service = new SService();
 		String nextPage=null;
 		try {

@@ -4,8 +4,8 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="SMapper">
 	<insert id="sAdd" parameterType="SDTO">
-		insert into shop(sCode,sName,soId,sPost,sAddr,sPhone,sCategory,sBusinesshours,sParkinglot,sTerrace,sMenu)
-		values(#{sCode},#{sName},#{soId},#{sPost},#{sAddr},#{sPhone},#{sCategory},#{sBusinesshours},#{sParkinglot},#{sTerrace},#{sMenu})
+		insert into shop(sCode,sName,soId,sPost,sAddr,sPhone,sCategory,sBusinesshours,sParkinglot,sTerrace,sMenu1,sMenu2)
+		values(#{sCode},#{sName},#{soId},#{sPost},#{sAddr},#{sPhone},#{sCategory},#{sBusinesshours},#{sParkinglot},#{sTerrace},#{sMenu1},#{sMenu2})
 	</insert>
 	
 	<update id="sImageAdd" parameterType="hashmap" timeout="20" flushCache="true">
@@ -15,7 +15,7 @@
 	</update>
 	
 	<select id="sInfo" parameterType="string" resultType="SDTO">
-		select sCode,sName,soId,sPost,sAddr,sPhone,sCategory,sBusinesshours,sParkinglot,sTerrace,sImage,sLike,sHate,sMenu
+		select sCode,sName,soId,sPost,sAddr,sPhone,sCategory,sBusinesshours,sParkinglot,sTerrace,sImage,sLike,sMenu1,sMenu2
 		from shop
 		where soId=#{soId}
 	</select>

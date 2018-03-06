@@ -6,21 +6,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
  
 <style>	
-	a{
-		text-decoration: none;
+	.content_top{
+		width:100%;
+		background-color: #99e6ff;
 	}
-	span{
-		font-size: 20px;
-	}
- 	.main_menu{
- 		background-color: #99e6ff; 
- 		padding-top: 10px;
- 		height: 40px;
- 	
- 	}
 </style>
 <c:if test="${!empty login}">
-	<div class="main_menu">
+	<div class="content_top">
 		<a href="SManagementUIServlet"><span>상점 관리</span></a>&nbsp;&nbsp;
 		<a href="SoCenterUIServlet"><span>공지사항</span></a>
 	</div>
