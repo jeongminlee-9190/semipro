@@ -66,6 +66,18 @@ public class SoService {
 		return dto;
 	}//end of login
 	
+	
+	public void soUpdate(HashMap<String, String> map) throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();
+		try {
+			int n = session.update("SoMapper.soUpdate",map);
+			session.commit();
+		}catch(Exception e){
+			throw new MyException("shopowner 정보 수정 에러");
+		}finally {
+			session.close();
+		}
+	}
 	/*
 	public void memberAdd(MemberDTO dto) throws MyException{
 		SqlSession session = MySqlSessionFactory.getSession();

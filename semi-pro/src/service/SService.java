@@ -85,7 +85,6 @@ public class SService {
 		SqlSession session = MySqlSessionFactory.getSession();
 		try {
 			int n=session.delete("SMapper.sDel",soId);
-			int n2=session.delete("SMapper.simageDel",soId);
 			session.commit();
 		}catch(Exception e){
 			e.printStackTrace();

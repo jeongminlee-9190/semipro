@@ -30,8 +30,4 @@
 		delete from shop
 		where soId=#{soId}
 	</delete>
-	<delete id="simageDel" parameterType="string">
-		delete from sfile
-		where soId=#{soId}
-	</delete>
 </mapper>

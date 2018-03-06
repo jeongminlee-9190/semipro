@@ -32,7 +32,6 @@ public class SDeletionServlet extends HttpServlet {
 			service.sDel(soId);
 			request.setAttribute("success", "상점 삭제 성공");
 			session.setAttribute("sinfo", null);
-			session.setAttribute("simageinfo", null);
 			nextPage="sManagement.jsp";
 		} catch (MyException e) {
 			// TODO Auto-generated catch block

@@ -25,5 +25,11 @@
    		from shopowner
    		where soId = #{soId}
 	</select>	
+	
+	<update id="soUpdate" parameterType="hashmap">
+		update shopowner
+		set soPasswd=#{soPasswd}, soPhone=#{soPhone}
+		where soId=#{soId}
+	</update>
   
 </mapper>
