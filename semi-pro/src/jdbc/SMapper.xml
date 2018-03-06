@@ -9,9 +9,9 @@
 	</insert>
 	
 	<update id="sImageAdd" parameterType="hashmap" timeout="20" flushCache="true">
-		update shop set 
-			sImage=#{sImage}
-		where sCode=#{sCode}
+		update shop 
+		set sImage = #{sImage}
+		where sCode = #{sCode}
 	</update>
 	
 	<select id="sInfo" parameterType="string" resultType="SDTO">

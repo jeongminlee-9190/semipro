@@ -68,12 +68,11 @@ public class SService {
 		
 		map2.put("sCode",sCode);
 		map2.put("sImage", sImage);
-		System.out.println(map2.get("sImage"));
-		System.out.println(map2.get("sCode"));
-		System.out.println(map2);
 		
 		try {
 			int n=session.update("SMapper.sImageAdd",map2);
+			System.out.println(n);
+			session.commit();
 		}catch(Exception e){
 			e.printStackTrace();
 			throw new MyException("이미지 DB 등록 에러");

@@ -78,11 +78,11 @@ public class SInfoEnrollServlet extends HttpServlet {
 		
 		String sCategory=null;
 		if(sCategory2.equals("c")){
-			sCategory="cafe";
+			sCategory="Cafe";
 		}else if(sCategory2.equals("d")) {
-			sCategory="dessert";
+			sCategory="Dessert";
 		}else if(sCategory2.equals("w")) {
-			sCategory="wine";
+			sCategory="Wine";
 		}
 		
 		String sBusinesshours = sWeekday+"/"+sWeekend+"/"+sDayOff;		

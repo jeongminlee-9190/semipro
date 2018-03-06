@@ -45,7 +45,6 @@ public class SImageUploadServlet extends HttpServlet {
 			map.put("soId", soId);
 			
 			SService service = new SService();
-			SFileService service2= new SFileService();
 			String sCode=null;
 			
 			//이미지 업로드 소스
@@ -100,24 +99,22 @@ public class SImageUploadServlet extends HttpServlet {
 						}
 					}//end of if
 				}//end of while
-				service2.Imageupload(map);
-				//service.sImageAdd(map);
-				//session.setAttribute("sinfo", sDTO);
-				//SDTO sDTO= service.sInfo(soId);
-				SFileDTO sfDTO = service2.sImageInfo(soId);
-				session.setAttribute("simageinfo", sfDTO);
+				
+				
+				//이미지를 등록하고 sInfo를 호출하여 정보를 가져온다음 setAttribute로 저장한다.
+				service.sImageAdd(map);
+				SDTO sDTO= service.sInfo(soId);
+				session.setAttribute("sinfo", sDTO);
 				request.setAttribute("success", "상점 이미지 등록 성공");
+				
+				
 			} catch (FileUploadException e) {
 				e.printStackTrace();
 				request.setAttribute("fail", "jpg, png 파일만 업로드 가능합니다.");
 			} catch (Exception e) {//item.write(uploadedFile)의 예외처리
 				// TODO Auto-generated catch block
 			e.printStackTrace();
-			}
-			request.setAttribute("value", value);
-			request.setAttribute("fileName", fileName);
-			request.setAttribute("sizeInBytes", sizeInBytes);
-		
+			}		
 			//이미지 업로드 소스 끝
 		RequestDispatcher dis = request.getRequestDispatcher("sManagement.jsp");
 		dis.forward(request, response);

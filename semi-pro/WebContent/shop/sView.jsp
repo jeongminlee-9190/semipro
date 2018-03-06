@@ -8,15 +8,17 @@
 	#map{
 		border: 1px solid grey;
 		position: absolute;
-		top: 700px;
-		left: 20%;
+		margin-top: 150px;
+		margin-left: 25%;
+		margin-right: 25%;
 	}
+	
 	.sbasicInfo{
 		position: absolute;
 		top: 0px;
 		padding: 10px 0px 10px 0px;
 		left: 0px;
-		height: 100px;
+		height: 110px;
 		background-color: #FA8072;
 		width: 100%;
 	}
@@ -36,18 +38,24 @@
 	}
 	.sbasicInfo_tbl1 td{
 		width: 150px;
-		text-align: center;
+		height: 13px;
 		
 	}
 	
 	.sbasicInfo_tbl2{
 		position: absolute;
-		top: 150px;
-		left: 15%;
+		top: 20%;
+		margin-left: 20%;
+		color: white;
 	}
+	.sbasicInfo_tbl2_header{
+    	text-align: center;
+    	color: white;
+    }
 	.sbasicInfo_tbl2 td{
 		padding: 10px 0px 10px 0px;
 	}
+	
 	
 	.sMenu_tbl{
 		position: absolute;
@@ -55,8 +63,9 @@
 		left: 5%;
 		width: 70%;
 		color: white;
-		border: 1px solid white;
 	}
+	
+	
 	.imageView{
 		position: absolute;
 		top: 10px;
@@ -67,7 +76,7 @@
 		height:130px;
 	}
 	
-	.btn_sMenuView{
+	.btn_sInfoView{
 		background-color: #FA8072;
 		border: 1px solid white;
 		font-size: 15px;
@@ -77,11 +86,20 @@
 	}
 	
 	.setDiv {
-        padding-top: 100px;
         text-align: center;
     }
-    
+    .setDiv2 {
+        text-align: center;
+    }
     .mask {
+        position:absolute;
+        left:0;
+        top:0;
+        z-index:9999;
+        background-color:white;
+        display:none;
+    }
+    .mask2 {
         position:absolute;
         left:0;
         top:0;
@@ -92,11 +110,27 @@
     .window {
         display: none;
         background-color: #000;
-        width: 700px;
-        height: 500px;
+        width: 750px;
+        height: 450px;
         z-index:99000;
         text-align: left;
     }
+    .close{
+    	float:right;
+    	background-color: black;
+    	border: 1px solid black;
+    	color: white;
+    }
+     .window2 {
+        display: none;
+        background-color: #000;
+        width: 750px;
+        height: 450px;
+        z-index:99000;
+        text-align: left;
+    }
+    
+
 
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -115,7 +149,7 @@
  
         // 레이어 팝업을 가운데로 띄우기 위해 화면의 높이와 너비의 가운데 값과 스크롤 값을 더하여 변수로 만듭니다.
         var left = ( $(window).scrollLeft() + ( $(window).width() - $('.window').width()) / 2 );
-        var top = ( $(window).scrollTop() + ( $(window).height() - $('.window').height()) / 2 );
+        var top = ( $(window).scrollTop() + ( $(window).height() - $('.window').height()) / 4);
  
         // css 스타일을 변경합니다.
         $('.window').css({'left':left,'top':top, 'position':'absolute'});
@@ -124,6 +158,29 @@
         $('.window').show();
     }
  
+    function wrapWindowByMask2(){
+        // 화면의 높이와 너비를 변수로 만듭니다.
+        var maskHeight = $(document).height();
+        var maskWidth = $(window).width();
+ 
+        // 마스크의 높이와 너비를 화면의 높이와 너비 변수로 설정합니다.
+        $('.mask2').css({'width':maskWidth,'height':maskHeight});
+ 
+        // fade 애니메이션 : 1초 동안 검게 됐다가 80%의 불투명으로 변합니다.
+        $('.mask2').fadeIn(1000);
+        $('.mask2').fadeTo("slow",0.8);
+ 
+        // 레이어 팝업을 가운데로 띄우기 위해 화면의 높이와 너비의 가운데 값과 스크롤 값을 더하여 변수로 만듭니다.
+        var left = ( $(window).scrollLeft() + ( $(window).width() - $('.window2').width()) / 2 );
+        var top = ( $(window).scrollTop() + ( $(window).height() - $('.window2').height()) / 4);
+ 
+        // css 스타일을 변경합니다.
+        $('.window2').css({'left':left,'top':top, 'position':'absolute'});
+ 
+        // 레이어 팝업을 띄웁니다.
+        $('.window2').show();
+    }
+    
     $(document).ready(function(){
         // showMask를 클릭시 작동하며 검은 마스크 배경과 레이어 팝업을 띄웁니다.
         $('.showMask').click(function(e){
@@ -131,17 +188,39 @@
             e.preventDefault();
             wrapWindowByMask();
         });
- 
+
         // 닫기(close)를 눌렀을 때 작동합니다.
         $('.window .close').click(function (e) {
             e.preventDefault();
             $('.mask, .window').hide();
         });
- 
-        // 뒤 검은 마스크를 클릭시에도 모두 제거하도록 처리합니다.
+        
+    	// 뒤 검은 마스크를 클릭시에도 모두 제거하도록 처리합니다.
         $('.mask').click(function () {
             $(this).hide();
             $('.window').hide();
+        });
+        
+        
+        
+      
+        $('.showMask2').click(function(e){
+            // preventDefault는 href의 링크 기본 행동을 막는 기능입니다.
+            e.preventDefault();
+            wrapWindowByMask2();
+        });
+ 
+ 
+     // 닫기(close)를 눌렀을 때 작동합니다.
+        $('.window2 .close').click(function (e) {
+            e.preventDefault();
+            $('.mask2, .window2').hide();
+        });
+ 
+     // 뒤 검은 마스크를 클릭시에도 모두 제거하도록 처리합니다.
+        $('.mask2').click(function () {
+            $(this).hide();
+            $('.window2').hide();
         });
     });
 </script>
@@ -154,7 +233,7 @@
 	<!-- 네이버 지도 api -->
 	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=ip9MzYUcGqHV9etI8TeJ&submodules=geocoder"></script>
    	 <input Type="hidden" value="${saddr}" id="sAddr">
-   	 <div id="map" style="width:900px;height:300px;"></div>
+   	 <div id="map" style="width:600px;height:200px;"></div>
    	 <script>
       var map = new naver.maps.Map('map');
       var myaddress = document.getElementById("sAddr").value;// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
@@ -189,137 +268,153 @@
       });
      </script>
 
+
+	<!-- 상점명, 좋아요 개수, 후기 개수, 메뉴 보기 버튼, 상점정보 보기 버튼 -->
 	<div class="sbasicInfo">
 		<span class="sName">${sdto.sName}</span>
 		<table class="sbasicInfo_tbl1">
+			<colgroup>
+       			<col width="15%"></col>
+       			<col width="15%"></col>
+       			<col width="15%"></col>
+       			<col width="50%"></col>
+       		</colgroup>
 			<tr>
-				<td>${sdto.sCategory}</td>
-				<td>좋아요</td>
-				<td>후기</td>
-				<td></td>
-				<td></td>
-				<td><input type="button" class="btn_sMenuView" id="btn_sMenuView" value="메뉴"></td>
+				<td align="center">${sdto.sCategory}</td>
+				<td align="center">좋아요</td>
+				<td align="center">후기</td>
+				<td align="right" rowspan="2"><a href="#" class="showMask"><input type="button" class="btn_sInfoView" value="메뉴"></a>
+				<a href="#" class="showMask2"><input type="button" class="btn_sInfoView" value="상점 정보"></a></td>
 			</tr>
 			<tr>
 				<td></td>
-				<td>${sdto.sLike}</td>
-				<td>0</td>
-				<td></td>
-				<td></td>
-				<td></td>	
+				<td align="center">${sdto.sLike}</td>
+				<td align="center">0</td>
 			</tr>
 		</table>
 	</div>
 		
 		
 		
-		<table class="sbasicInfo_tbl2">
-			<tr>
-				<td>(상점 주소)</td>
-				<td>${sdto.sAddr}<br></td> 
-			</tr>
-			<tr>
-				<td>(상점 전화)</td>
-				<td>${sdto.sPhone}<br></td> 
-			</tr>
+<!-- 메뉴 레이어 팝업  -->
+	<div class="setDiv">
+		<div class="mask"></div>
+    	<div class="window">
+       		<input type="button" href="#" class="close" value="닫기"/ >
+       		<div class="imageView">
+				<img class="image1" src="upload/${fn: split(sdto.sImage,'/')[0]}">
+				<img class="image2" src="upload/${fn: split(sdto.sImage,'/')[1]}">
+				<img class="image3" src="upload/${fn: split(sdto.sImage,'/')[2]}">
+				<img class="image4" src="upload/${fn: split(sdto.sImage,'/')[3]}">
+				<img class="image5" src="upload/${fn: split(sdto.sImage,'/')[4]}">
+			</div>
+       			
+       		<c:set var="sMenuCategory1" value="${fn: split(sdto.sMenu1,'/')[0]}"></c:set>
+			<c:set var="sC1Menu1" value="${fn: split(sdto.sMenu1,'/')[1]}"></c:set>
+			<c:set var="sC1Menu2" value="${fn: split(sdto.sMenu1,'/')[2]}"></c:set>
+			<c:set var="sC1Menu3" value="${fn: split(sdto.sMenu1,'/')[3]}"></c:set>
+				
+			<c:set var="sMenuCategory2" value="${fn: split(sdto.sMenu2,'/')[0]}"></c:set>
+			<c:set var="sC2Menu1" value="${fn: split(sdto.sMenu2,'/')[1]}"></c:set>
+			<c:set var="sC2Menu2" value="${fn: split(sdto.sMenu2,'/')[2]}"></c:set>
+			<c:set var="sC2Menu3" value="${fn: split(sdto.sMenu2,'/')[3]}"></c:set>
+       			
+       		<table class="sMenu_tbl">
+       			<colgroup>
+       				<col width="25%"></col>
+       				<col width="40%"></col>
+       				<col width="10%"></col>
+       			</colgroup>
 			
-			<tr>
-				<td>(테라스)${sdto.sTerrace}</td>
-				<td>(주차)${sdto.sParkinglot}<br></td> 
-			</tr>
-			<tr>
-				<td>(영업시간)</td>
-				<td>${fn: split(sdto.sBusinesshours,"/")[0]}&nbsp;${fn: split(sdto.sBusinesshours,"/")[1]}~${fn: split(sdto.sBusinesshours,"/")[2]}<br></td> 
-			</tr>
-		</table>
-		
-		
-		
-		
-		<!--  
-		
-		-->
-		<div class="setDiv">
-    		<a href="#" class="showMask"><input type="button" class="btn_sMenuView" id="btn_sMenuView" value="메뉴"></a>
- 			<div class="mask"></div>
-    		<div class="window">
-       			<input type="button" href="#" class="close" value="X"/>
-       			
-       			<div class="imageView">
-					<img class="image1" src="upload/${fn: split(simage.fileName,'/')[0]}">
-					<img class="image2" src="upload/${fn: split(simage.fileName,'/')[1]}">
-					<img class="image3" src="upload/${fn: split(simage.fileName,'/')[2]}">
-					<img class="image4" src="upload/${fn: split(simage.fileName,'/')[3]}">
-					<img class="image5" src="upload/${fn: split(simage.fileName,'/')[4]}">
-				</div>
-       			
-       			
-       			
-       			<c:set var="sMenuCategory1" value="${fn: split(sdto.sMenu1,'/')[0]}"></c:set>
-				<c:set var="sC1Menu1" value="${fn: split(sdto.sMenu1,'/')[1]}"></c:set>
-				<c:set var="sC1Menu2" value="${fn: split(sdto.sMenu1,'/')[2]}"></c:set>
-				<c:set var="sC1Menu3" value="${fn: split(sdto.sMenu1,'/')[3]}"></c:set>
+				<tr><!-- 메뉴1 카테고리 -->
+					<td align="left" colspan="3">-${sMenuCategory1}-</td>
+				</tr>
 				
-				<c:set var="sMenuCategory2" value="${fn: split(sdto.sMenu2,'/')[0]}"></c:set>
-				<c:set var="sC2Menu1" value="${fn: split(sdto.sMenu2,'/')[1]}"></c:set>
-				<c:set var="sC2Menu2" value="${fn: split(sdto.sMenu2,'/')[2]}"></c:set>
-				<c:set var="sC2Menu3" value="${fn: split(sdto.sMenu2,'/')[3]}"></c:set>
-       			
-       			<table class="sMenu_tbl">
-       				<colgroup>
-       					<col width="25%"></col>
-       					<col width="40%"></col>
-       					<col width="10%"></col>
-       				</colgroup>
-			
-					<tr><!-- 메뉴1 카테고리 -->
-						<td align="left" colspan="3">-${sMenuCategory1}-</td>
-					</tr>
+				<tr>
+					<td scope="col">${fn: split(sC1Menu1,':')[0]}</td>
+					<td scope="col">${fn: split(sC1Menu1,':')[1]}</td>
+					<td scope="col">${fn: split(sC1Menu1,':')[2]}원</td>
+				</tr>
 				
-					<tr>
-						<td scope="col">${fn: split(sC1Menu1,':')[0]}</td>
-						<td scope="col">${fn: split(sC1Menu1,':')[1]}</td>
-						<td scope="col">${fn: split(sC1Menu1,':')[2]}원</td>
-					</tr>
+				<tr>
+					<td scope="col">${fn: split(sC1Menu2,':')[0]}</td>
+					<td scope="col">${fn: split(sC1Menu2,':')[1]}</td>
+					<td scope="col">${fn: split(sC1Menu2,':')[2]}원</td>
+				</tr>
+				<tr>
+					<td scope="col">${fn: split(sC1Menu3,':')[0]}</td>
+					<td scope="col">${fn: split(sC1Menu3,':')[1]}</td>
+					<td scope="col">${fn: split(sC1Menu3,':')[2]}원</td>
+				</tr>
 				
-					<tr>
-						<td scope="col">${fn: split(sC1Menu2,':')[0]}</td>
-						<td scope="col">${fn: split(sC1Menu2,':')[1]}</td>
-						<td scope="col">${fn: split(sC1Menu2,':')[2]}원</td>
-					</tr>
-					<tr>
-						<td scope="col">${fn: split(sC1Menu3,':')[0]}</td>
-						<td scope="col">${fn: split(sC1Menu3,':')[1]}</td>
-						<td scope="col">${fn: split(sC1Menu3,':')[2]}원</td>
-					</tr>
+				<tr><!-- 메뉴2카테고리 -->
+					<td align="left" colspan="3"><br>-${sMenuCategory2}-</td>
+				</tr>
 				
-					<tr><!-- 메뉴2카테고리 -->
-						<td align="left" colspan="3"><br>-${sMenuCategory2}-</td>
-					</tr>
+				<tr>
+					<td scope="col">${fn: split(sC2Menu1,':')[0]}</td>
+					<td scope="col">${fn: split(sC2Menu1,':')[1]}</td>
+					<td scope="col">${fn: split(sC2Menu1,':')[2]}원</td>
+				</tr>
 				
-					<tr>
-						<td scope="col">${fn: split(sC2Menu1,':')[0]}</td>
-						<td scope="col">${fn: split(sC2Menu1,':')[1]}</td>
-						<td scope="col">${fn: split(sC2Menu1,':')[2]}원</td>
-					</tr>
-				
-					<tr>
-						<td scope="col">${fn: split(sC2Menu2,':')[0]}</td>
-						<td scope="col">${fn: split(sC2Menu2,':')[1]}</td>
-						<td scope="col">${fn: split(sC2Menu2,':')[2]}원</td>
-					</tr>
-					<tr>
-						<td scope="col">${fn: split(sC2Menu3,':')[0]}</td>
-						<td scope="col">${fn: split(sC2Menu3,':')[1]}</td>
-						<td scope="col">${fn: split(sC2Menu3,':')[2]}원</td>
-					</tr>
-				</table>
-       			
-    		</div>
+				<tr>
+					<td scope="col">${fn: split(sC2Menu2,':')[0]}</td>
+					<td scope="col">${fn: split(sC2Menu2,':')[1]}</td>
+					<td scope="col">${fn: split(sC2Menu2,':')[2]}원</td>
+				</tr>
+				<tr>
+					<td scope="col">${fn: split(sC2Menu3,':')[0]}</td>
+					<td scope="col">${fn: split(sC2Menu3,':')[1]}</td>
+					<td scope="col">${fn: split(sC2Menu3,':')[2]}원</td>
+				</tr>
+			</table>
 		</div>
+	</div>
+		
+		
+<!-- 상점 정보 레이어 팝업  -->		
+	<div class="setDiv2">
+		<div class="mask2"></div>
+    	<div class="window2">
+       		<input type="button" href="#" class="close" value="닫기"/>
+       		<h3 class="sbasicInfo_tbl2_header">상점 정보</h3>
+       		 		 		
+       		<table class="sbasicInfo_tbl2">
+       			<colgroup>
+       				<col width="25%"></col>
+       				<col width="60%"></col>
+       			</colgroup>
+       			<tr>
+					<td>상점명 </td>
+					<td>${sdto.sName}<br></td> 
+				</tr>
+				<tr>
+					<td>상점 주소 </td>
+					<td>${sdto.sAddr}<br></td> 
+				</tr>
+				<tr>
+					<td>전화번호 </td>
+					<td>${sdto.sPhone}<br></td> 
+				</tr>
+				<tr>
+					<td>영업시간 </td>
+					<td>평일  ${fn: split(sdto.sBusinesshours,"/")[0]}<br>
+					         주말  ${fn: split(sdto.sBusinesshours,"/")[1]}<br>
+					        휴무  ${fn: split(sdto.sBusinesshours,"/")[2]}<br></td> 
+				</tr>
 
-
-
+				<tr>
+					<td>테라스 </td>
+					<td>${sdto.sTerrace}<br></td> 
+				</tr>
+				<tr>
+					<td>주차</td>
+					<td>${sdto.sParkinglot}<br></td> 
+				</tr>
+				
+			</table>
+		</div>
+	</div>
 </div> <!--end of wrapper -->
 
 

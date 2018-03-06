@@ -39,13 +39,7 @@ public class SoLoginServlet extends HttpServlet {
 				
 				SService service2 = new SService();
 				SDTO sDTO= service2.sInfo(oId);
-				session.setAttribute("sinfo", sDTO);
-				String sCode = service2.sCodeInfo(oId);
-				
-				SFileService service3 = new SFileService();
-				SFileDTO sfDTO = service3.sImageInfo(oId);
-				session.setAttribute("simageinfo", sfDTO);
-				
+				session.setAttribute("sinfo", sDTO);			
 				
 				nextPage = "main_shopowner.jsp";
 			} else {
