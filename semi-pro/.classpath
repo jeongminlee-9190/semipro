@@ -9,10 +9,10 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/install/logback/lib/logback-access-1.1.7.jar"/>
-	<classpathentry kind="lib" path="C:/install/logback/lib/logback-classic-1.1.7.jar"/>
-	<classpathentry kind="lib" path="C:/install/logback/lib/logback-core-1.1.7.jar"/>
-	<classpathentry kind="lib" path="C:/install/logback/lib/jcl-over-slf4j-1.7.21.jar"/>
-	<classpathentry kind="lib" path="C:/install/logback/lib/slf4j-api-1.7.7.jar"/>
+	<classpathentry kind="lib" path="C:/Log/logback/lib/jcl-over-slf4j-1.7.21.jar"/>
+	<classpathentry kind="lib" path="C:/Log/logback/lib/logback-access-1.1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Log/logback/lib/logback-classic-1.1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Log/logback/lib/logback-core-1.1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Log/logback/lib/slf4j-api-1.7.7.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

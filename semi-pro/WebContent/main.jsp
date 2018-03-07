@@ -8,14 +8,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<style media="screen">
-  header {text-align: center;}
-</style>
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<link href="css/search.css" rel="stylesheet" type="text/css">
+<title>Gaemseong-Gaengdan</title>
 </head>
 <body>
-  <header>
-    <h1 id="title">GAEMSEONG<br>GAENDAN</h1>
+  <header id="header">
+  	<div id="logo">
+  		<img src="images/logo.png">
+  	</div>
     <jsp:include page="search/search.jsp" flush="true"/>
   </header>
   <br><br>

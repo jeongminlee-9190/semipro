@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+#header {
+	position:relative; 
+	top:0; 
+	height:350px; 
+	min-width:1200px;
+	background:url('../images/main_bg01.jpg') no-repeat;
+	background-position:center center;
+	background-size:cover;
+}
+
+#logo {
+	display:block; 
+	margin-left:50%; 
+	width:274px; 
+	height:88px;
+	position:absolute; 
+	top:90px; 
+	left:-137px;
+}
+
+#logo img {width:100%;}
