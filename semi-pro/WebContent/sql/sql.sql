@@ -16,7 +16,9 @@ CREATE TABLE member
 	mId varchar2(50) PRIMARY KEY,
 	mPasswd varchar2(20) NOT NULL,
 	mName varchar2(10) NOT NULL UNIQUE,
-	mPhone varchar2(13) NOT NULL
+	mPhone1 varchar2(3),
+  	mPhone2 varchar2(4),
+  	mPhone3 varchar2(4)
 );
 
 ----------------------------------------------------개인회원>리뷰----------------------------------------------------------

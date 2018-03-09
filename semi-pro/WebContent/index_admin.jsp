@@ -8,8 +8,8 @@
 </head>
 <body>
 <form action="LoginServlet" method="post">
-아이디<input type="text" name="aId"><br>
-비밀번호<input type="password" name="aPasswd"><br>
+아이디<input type="text" name="adminId"><br>
+비밀번호<input type="password" name="adminPasswd"><br>
 <input type="submit" value="로그인">
 <input type="reset" value="취소">
 </form>
