@@ -4,7 +4,7 @@
 #search {
 	width:485px; 
 	height:46px;
-	margin-left:50%;
+	maring-left:50%;
 	padding-left:15px;
 	position:absolute; 
 	top:250px; 
@@ -34,3 +34,9 @@
 	background-color:#ffa827;
 	border:1px solid #fff;
 }
+
+/* 지하철 wrap */
+#subway {
+	border:1px solid red;
+}
+
