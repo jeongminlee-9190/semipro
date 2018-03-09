@@ -48,5 +48,5 @@
 <c:if test="${!empty login}">
 	<span class="state_login">${login.soId}&nbsp;</span>
 	<a href="SoLogoutServlet"><span class="state_login">로그아웃</span></a>
-	<a href="SoMyPageServlet"><span class="state_login">MyPage</span></a>
+	<a href="SoPwCheckUIServlet"><span class="state_login">MyPage</span></a>
 </c:if>

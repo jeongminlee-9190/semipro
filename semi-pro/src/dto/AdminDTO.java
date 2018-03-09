@@ -1,27 +1,36 @@
 package dto;
 
 public class AdminDTO {
-	private String aId;
-	private String aPasswd;
+	private String adminId;
+	private String adminPasswd;
+	
+	public AdminDTO(String adminId, String adminPasswd) {
+		this.adminId = adminId;
+		this.adminPasswd = adminPasswd;
+	}
 	public AdminDTO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	public AdminDTO(String aId, String aPasswd) {
-		super();
-		this.aId = aId;
-		this.aPasswd = aPasswd;
+	
+	public String getAdminId() {
+		return adminId;
 	}
-	public String getaId() {
-		return aId;
+	public void setAdminId(String adminId) {
+		this.adminId = adminId;
 	}
-	public void setaId(String aId) {
-		this.aId = aId;
+	public String getAdminPasswd() {
+		return adminPasswd;
 	}
-	public String getaPasswd() {
-		return aPasswd;
+	public void setAdminPasswd(String adminPasswd) {
+		this.adminPasswd = adminPasswd;
 	}
-	public void setaPasswd(String aPasswd) {
-		this.aPasswd = aPasswd;
+	@Override
+	public String toString() {
+		return "AdminDTO [adminId=" + adminId + ", adminPasswd=" + adminPasswd + "]";
 	}
+
+
+
+	
+	
 }

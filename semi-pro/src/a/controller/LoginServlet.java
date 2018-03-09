@@ -20,12 +20,12 @@ import service.AdminService;
 public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String aId = request.getParameter("aId");
-		String aPasswd = request.getParameter("aPasswd");
+		String adminId = request.getParameter("adminId");
+		String adminPasswd = request.getParameter("adminPasswd");
 		
 		HashMap<String, String> map = new HashMap<>();
-		map.put("aId", aId);
-		map.put("aPasswd", aPasswd);
+		map.put("adminId", adminId);
+		map.put("adminPasswd", adminPasswd);
 		
 		AdminService service = new AdminService();
 		String nextPage= null;

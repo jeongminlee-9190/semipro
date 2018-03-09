@@ -10,8 +10,8 @@
 		margin-left: auto;
 	}
 	.soInfoView_tbl {
-		margin-top: 2%;
-		margin-left: 30%;
+		margin-top: 4%;
+		margin-left: 32%;
 		border: 1px solid #99e6ff;
 		width: 550px;
 	}
@@ -24,15 +24,15 @@
 		font-size: 14px;
 		width: 350px;
 	}
-	.soInfoUpdateComplete{
-		position: absolute;
-	}
-	.btn_submit {
+	.btn_pw_submit{
 		border: 1px solid #99e6ff;
 		background-color: #99e6ff;
-		margin-top: 20px;
-		height:35px;
-		width: 150px;
+		height:25px;
+		width: 50px;
+	}
+	
+	.btn_submit {
+		
 		/*color: white;*/
 	}
 	
@@ -100,8 +100,7 @@
 			<tr>
 			<tr>
 				<th>비밀번호</th>
-				<td><input type="text" name="soPasswd" id="soPasswd" size="13" maxlength="10" placeholder="새로운 비밀번호">&nbsp;<input type="text" name="soPasswd2" id="soPasswd2" size="13" maxlength="10" placeholder="재입력">
-				<span class="result1"></span><br></td>
+				<td><a href="soPwUpdateFormServlet"><input type="button" name="submit" class="btn_pw_submit" value="변경"></a></td>
 			<tr>
 			<tr>
 				<th>사업주 이름</th>
@@ -109,10 +108,7 @@
 			<tr>
 			<tr>
 				<th>사업주 전화번호</th>
-				<td><input type="text" value="${fn:split(dto.soPhone,'-')[0]}" size="4" maxlength="4" name="soPhone1" id="soPhone1">-
-				<input type="text" value="${fn:split(dto.soPhone,'-')[1]}" size="4" maxlength="4" name="soPhone2" id="soPhone2">-
-				<input type="text" value="${fn:split(dto.soPhone,'-')[2]}" size="4" maxlength="4" name="soPhone3" id="soPhone3">
-				<span class="result2"></span><br></td>
+				<td>${dto.soPhone} <input type="button" name="submit" class="btn_pw_submit" value="변경"></td>
 			<tr>
 			<tr>
 				<th>사업자 번호</th>
@@ -131,10 +127,6 @@
 				<td>${dto.soJoindate}</td>
 			<tr>
 
-			<tr>
-				<td colspan="2" align="center"><input type="submit" name="submit" class="btn_submit" value="수정">
-				<a href="main_shopowner.jsp"><input type="button" name="cancel" class="btn_cancel" value="취소"></a></td>
-			</tr>
 		</table>
 	</div>
 </form>
