@@ -13,6 +13,34 @@ import exception.MyException;
 
 public class AdminService {
 	
+	public void m_delete(String mId)throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();		
+		try {
+			int n = session.delete("AdminMapper.m_delete",mId);	
+			session.commit();
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new MyException("멤버 삭제 에러");
+		}finally {
+			session.close();
+		}
+		
+	}
+	
+	public void m_update(HashMap map)throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();		
+		try {
+			int n = session.update("AdminMapper.m_update",map);	
+			session.commit();
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new MyException("멤버 수정 에러");
+		}finally {
+			session.close();
+		}
+		
+	}
+	
 	public MemberDTO m_updatelist(int rownum)throws MyException{
 		SqlSession session = MySqlSessionFactory.getSession();		
 		MemberDTO dto = null;
@@ -49,7 +77,6 @@ public class AdminService {
 	public AdminDTO login(HashMap<String, String> map)throws MyException{
 		SqlSession session = MySqlSessionFactory.getSession();
 		AdminDTO dto = null;
-		System.out.println(map);
 		try {
 			dto = session.selectOne("AdminMapper.adminlogin",map);
 		}catch(Exception e) {
@@ -58,7 +85,6 @@ public class AdminService {
 		}finally {
 			session.close();
 		}
-		System.out.println(dto);
 		return dto;
 	}
 

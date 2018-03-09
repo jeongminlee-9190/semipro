@@ -8,10 +8,11 @@ public class MemberDTO {
    private int mPhone1;
    private int mPhone2;
    private int mPhone3;
+   
    public MemberDTO() {
       super();
-      // TODO Auto-generated constructor stub
    }
+   
    public MemberDTO(int rownum,String mId, String mPasswd, String mName, int mPhone1, int mPhone2, int mPhone3) {
       super();
       this.rownum=rownum;
@@ -39,6 +40,7 @@ public String getmId() {
    }
    public void setmPasswd(String mPasswd) {
       this.mPasswd = mPasswd;
+      
    }
    public String getmName() {
       return mName;
@@ -64,7 +66,5 @@ public String getmId() {
    public void setmPhone3(int mPhone3) {
       this.mPhone3 = mPhone3;
    }
-   
-   
 
 }

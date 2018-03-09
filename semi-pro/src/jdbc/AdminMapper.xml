@@ -3,6 +3,20 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="AdminMapper">
+	
+	<delete id="m_delete" parameterType="string">
+		delete 
+		from member
+		where mId = #{mId,jdbcType=VARCHAR}
+	</delete>
+	
+	<update id="m_update" parameterType="hashmap">
+	  update member
+     set mPasswd = #{mPasswd,jdbcType=VARCHAR},mName = #{mName,jdbcType=VARCHAR},
+     		mPhone1 = #{mPhone1,jdbcType=VARCHAR},mPhone2 = #{mPhone2,jdbcType=VARCHAR},mPhone3 = #{mPhone3,jdbcType=VARCHAR}
+     where rownum = #{rownum,jdbcType=INTEGER}
+	</update>
+	
 	<select id="m_updatelist" parameterType="int" resultType="MemberDTO">
 		select rownum,mId,mPasswd,mName,mPhone1,mPhone2,mPhone3
 		from (select rownum as rnum, t.mId,t.mPasswd,t.mName, 
@@ -17,9 +31,9 @@
    
 	<!-- admin 로그인 -->
 	<select id="adminlogin" parameterType="hashmap" resultType="AdminDTO">
-		select aId,aPasswd
+		select adminId,adminPasswd
 		from admin
-		where aId = #{aId} and aPasswd= #{aPasswd}
+		where adminId = #{adminId} and adminPasswd= #{adminPasswd}
 	</select>
 </mapper>
 

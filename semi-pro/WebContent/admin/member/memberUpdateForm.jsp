@@ -9,32 +9,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
-<script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
+<!-- <script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
 <script type="text/javascript">
-
 $(document).ready(function(){
-	
-	$("#pwd").attr("readonly",true).attr("disabled",false); //입력불가
-	
-	$("#readonly_f").click(function(){
-		$("#pwd").attr("readonly",false).attr("disabled",false); //입력가능
-	}); 
-	
-	/* $('#Btn').click(function() { 
-		var result = confirm('수정 하시겠습니까?'); 
-		if(result) { 
-		window.close();
-		}else{ 
-			$(location).attr('href','memberListForm.jsp');
-		} 
-	}); */
+	$("#Btn").on('click',function(){
+		debugger;
+		slef.close();
+		location.href="";
+	});
 });
+</script> -->
+<script type="text/javascript">
+function b1(){
+	debugger;
+	window.opener.loction.href="../admin/member/memberListForm.jsp";
+	window.close();	
+}
 </script>
 </head>
 <body>
 
-<form action="mUpdateServlet" method="get">
+<form action="mUpdateServlet" method="get" onsubmit="javascript:b1()">
+	<input type="hidden" name="rownum"value="${dto.rownum}"/>
 	<table border="1">
 		<tr>
 			<td>아이디:${dto.mId }</td>
@@ -42,7 +38,6 @@ $(document).ready(function(){
 		
 		<tr>
 			<td>비밀번호:<input type="password" name="mPasswd" id="pwd" value="${dto.mPasswd }">
-			<input type="button" id="readonly_f" value="비밀번호변경" /></td>
 		</tr>
 		
 		<tr>
