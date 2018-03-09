@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
+/* ================================= header ================================= */
 #header {
 	position:relative; 
-	top:0; 
 	height:350px; 
 	min-width:1200px;
 	background:url('../images/main_bg01.jpg') no-repeat;
@@ -21,3 +21,12 @@
 }
 
 #logo img {width:100%;}
+
+/* ================================= center ================================= */
+#center_wrapper {
+	position:relative;
+	display:block;
+	min-width:1200px;
+}
+
+/* ================================= footer ================================= */

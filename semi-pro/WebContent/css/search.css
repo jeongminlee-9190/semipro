@@ -1,10 +1,11 @@
 @charset "UTF-8";
 
+/* ================================= search ================================= */
 /* 검색 창 */
 #search {
 	width:485px; 
 	height:46px;
-	maring-left:50%;
+	margin-left:50%;
 	padding-left:15px;
 	position:absolute; 
 	top:250px; 
@@ -35,8 +36,51 @@
 	border:1px solid #fff;
 }
 
+/* ================================= subway ================================= */
 /* 지하철 wrap */
 #subway_wrap {
+	position:absolute;
+	top:50px;
+	left:-305px;
+	margin-left:50%;
+	width:610px;
+	height:60px;
 	border:1px solid red;
 }
+
+/* 호 */
+#line {
+	width:300px;
+	height:60px;
+	font-size:21px;
+	outline:none;
+	text-align: center;
+  	text-align-last: center;
+	/* 화살표 없애기 */
+	-webkit-appearance: none; /* 화살표 없애기 for chrome*/
+	-moz-appearance: none;    /* 화살표 없애기 for firefox*/
+	appearance: none;         /* 화살표 없애기 공통*/
+}
+
+#line option {
+	text-align:center;
+  	text-align-last: center;
+}
+
+#line option:first-child {
+	width:300px;
+	height:60px;
+	border:2px solid #273c97;
+	color:red;
+	text-align-last:center;
+}
+
+#line option:first-child span{
+	border:2px solid #273c97;
+}
+/* 화살표 없애기 */
+#line::-ms-expand {
+	display: none;	/* 화살표 없애기 for IE10, 11*/
+}
+
 
