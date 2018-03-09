@@ -26,9 +26,15 @@
    		where soId = #{soId}
 	</select>	
 	
-	<update id="soUpdate" parameterType="hashmap">
+	<update id="soPasswdUpdate" parameterType="hashmap">
 		update shopowner
-		set soPasswd=#{soPasswd}, soPhone=#{soPhone}
+		set soPasswd=#{soPasswd}
+		where soId=#{soId}
+	</update>
+	
+	<update id="soPhoneUpdate" parameterType="hashmap">
+		update shopowner
+		set soPhone=#{soPhone}
 		where soId=#{soId}
 	</update>
   
