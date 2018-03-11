@@ -33,7 +33,7 @@ public class CaptchaFormServlet extends HttpServlet {
     
 	  	Captcha captcha = Captcha.load(request, "formCaptcha");
 	  	boolean messageValid = true;
-	  	String destinationPage = "/soPwUpdateForm.jsp"; //입력한 캡차 값이 일치하지 않는 경우
+	  	String destinationPage = "shopowner/soPwUpdateForm.jsp"; //입력한 캡차 값이 일치하지 않는 경우
 
 	  	session = request.getSession(true);
 

@@ -24,7 +24,7 @@ public class SoQnaRetrieveServlet extends HttpServlet {
 		
 		request.setAttribute("retrieve", dto);
 		
-		RequestDispatcher dis = request.getRequestDispatcher("soQnaRetrieve.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("shopowner/soQnaRetrieve.jsp");
 		dis.forward(request, response);
 	}
 

@@ -1,69 +1,81 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
 <style>
-	input{
-		width: 150px;
-		height: 25px;
+	@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+	body { font-family:"Nanum Gothic"; }
+	.mainwrapper {
+		/*background-color: #99e6ff;*/
+		position: relative;
+		top:0px;
+		left:0px;
+		max-width:100%;
+		height: 80px;
+	}
+	.logo{
+		position: absolute;
+		font-size: 25px;
+		top:7%;
+		left:3%;
+		width:300px;
+	}
+	.loginForm{
+		position: absolute;
+		top:3%;
+		margin-left: 400px;
+		text-align:right;
+		width:70%;	
+		float:right;
+	}
+	.mainmenu{
+		position: absolute;
+		top:70%;
+		width:100%;	
+		text-align:center;
+	}
+	
+	/* 페이지 하단 */
+	.footer{
+		border: 1px solid grey;
+		position: fixed;
+		top: 85%;
+		width: 99%;
+		height: 13%;
+		text-align:center;
 	}
 	.soPwCheck{
-		position: relative;
-		margin-left: auto;
-		margin-top: auto;
-	}
-	.soPwCheck_tbl {
-		text-align: center;
-		margin-top: 13%;
-		margin-left: 30%;
-		border: 1px solid #99e6ff;
-		width: 550px;
-	}
-	.soInfoView_tbl th{
-		height: 30px;
-	}
-	.soInfoView_tbl td{
-		height: 30px;
-		font-size: 14px;
-	}
-	.btn_submit {
-		border: 1px solid #99e6ff;
-		background-color: #99e6ff;
-		margin-top: 20px;
-		height:35px;
-		width: 150px;
-		/*color: white;*/
-	}
-	
-	.btn_cancel{
-		border: 1px solid #99e6ff;
-		background-color: white;
-		margin-top: 10px;
-		height:35px;
-		width: 150px;
-		/*color: white;*/
+		position: absolute;
+		top: 50%;
+		width: 99%;
 	}
 </style>
+</head>
+<body>
 
 
-<c:set var="dto" value="${login}"></c:set>
-<form action="SoPwCheckServlet" method="post">
-	<div class="soPwCheck">
-		<table class="soPwCheck_tbl">
-			<tr>
-				<th>비밀번호를 입력해주세요</th>
-			<tr>
-			
-			<tr>
-				<td><input type="password" name="soPasswdchk" id="soPasswdchk" size="13" maxlength="10" placeholder="비밀번호"></td>
-			</tr>
-			
-			<tr>
-				<td  align="center"><input type="submit" name="submit" class="btn_submit" value="확인"><br>
-			</tr>
-	
-		</table>
+<div class="wrapper">
+	<div class="mainwrapper">
+		<div class="logo">
+			<span>(갬성갱단)상점 관리 센터</span><br>
+		</div>
+		<div class="loginForm">
+			<jsp:include page="soLoginForm2.jsp" flush="true"/>
+		</div>
+		<div class="mainmenu">
+			<jsp:include page="include/top2.jsp" flush="true"/>
+		</div>
 	</div>
-</form>
+	<div class="soPwCheck">
+		<jsp:include page="include2/soPwCheck.jsp" flush="true"/>
+	</div>
+	<div class="footer">
+			footer
+	</div>
+</div>	
+</body>
+</html>

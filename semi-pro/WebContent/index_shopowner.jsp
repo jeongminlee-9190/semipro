@@ -40,7 +40,7 @@
 </div>
 
 <div class="loginForm">
-<jsp:include page="soLoginForm.jsp" flush="true"/>
+<jsp:include page="shopowner/soLoginForm.jsp" flush="true"/>
 </div>
 </body>
 </html>

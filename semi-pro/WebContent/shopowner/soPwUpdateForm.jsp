@@ -1,96 +1,81 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.*"%> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@page trimDirectiveWhitespaces="true"%>
-<%@taglib prefix="botDetect" uri="https://captcha.com/java/jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
 <style>
-	p{
-		font-size: 13px;
+	@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+	body { font-family:"Nanum Gothic"; }
+	.mainwrapper {
+		/*background-color: #99e6ff;*/
+		position: relative;
+		top:0px;
+		left:0px;
+		max-width:100%;
+		height: 80px;
 	}
-	input{
-		width: 191px;
-		height: 25px;
+	.logo{
+		position: absolute;
+		font-size: 25px;
+		top:7%;
+		left:3%;
+		width:300px;
+	}
+	.loginForm{
+		position: absolute;
+		top:3%;
+		margin-left: 400px;
+		text-align:right;
+		width:70%;	
+		float:right;
+	}
+	.mainmenu{
+		position: absolute;
+		top:70%;
+		width:100%;	
+		text-align:center;
+	}
+	
+	/* 페이지 하단 */
+	.footer{
+		border: 1px solid grey;
+		position: fixed;
+		top: 85%;
+		width: 99%;
+		height: 13%;
+		text-align:center;
 	}
 	.soPwUpdateForm{
-		position: relative;
-		margin-left: auto;
-		margin-top: auto;
-	}
-	.soPwUpdateFormField{
 		position: absolute;
-		border: 1px solid #99e6ff;
-		margin-left: 35%;
-		margin-top: 5%;
-		width: 400px;
+		top: 50%;
+		width: 99%;
 	}
-	
-	.btn_submit {
-		border: 1px solid #99e6ff;
-		background-color: #99e6ff;
-		margin-top: 20px;
-		height:35px;
-		width: 195px;
-		/*color: white;*/
-	}
-	
-	.btn_cancel{
-		border: 1px solid #99e6ff;
-		background-color: white;
-		margin-top: 10px;
-		height:35px;
-		width: 195px;
-		/*color: white;*/
-	}
-	.captchaView{
-		
-	
-	}
-	
-	#div01{
-		position: absolute;
-		margin-left: 35%;
-		margin-top: 25%;
-		width: 400px;
-	}	
 </style>
+</head>
+<body>
 
-<c:set var="dto" value="${login}"></c:set>
-<form action="SoPwUpdateServlet" method="post">
-	<div class="soPwUpdateForm">
-		<fieldset class="soPwUpdateFormField">
-			<h3>비밀번호 변경</h3>
-			<p>*비밀번호는 특수문자는 불가하며, 8자 이상 10자 이하만 가능합니다.</p>
-			<p>*이전에 사용한 적 없는 비밀번호가 안전합니다.</p>
-			<input type="password" maxlength="10" size="35" id="soPasswd" name="soPasswd" placeholder="새 비밀번호">
-			<input type="password" maxlength="10" size="35" id="soPasswd2" name="soPasswd2" placeholder="새 비밀번호 확인"><br>
-			
-			<%
-       			if (request.getSession().getAttribute("isCaptchaSolved") == null) {
-      		%>
-          	<p>아래 이미지를 보이는 대로 입력해주세요.</p>
-			
-		  	<div class="captchaView">
-         	 	<!-- Adding BotDetect Captcha to the page -->
-          		<botDetect:captcha id="formCaptcha" 
-                    userInputID="captchaCode"
-                    codeLength="3"
-                    imageWidth="200"
-                    codeStyle="ALPHA" />
-		  	</div>
-          <div class="validationDiv">
-            <input id="captchaCode" type="text" name="captchaCode" />
-            <label class="incorrect" for="captchaCode">${messages.captchaIncorrect}</label>
-          </div>
-      <%
-        }
-      %>
-			<input type="submit" name="submit" class="btn_submit" value="변경">
-			<a href="main_shopowner.jsp"><input type="button" name="submit" class="btn_cancel" value="취소"></a>
-		</fieldset>	
+
+<div class="wrapper">
+	<div class="mainwrapper">
+		<div class="logo">
+			<span>(갬성갱단)상점 관리 센터</span><br>
+		</div>
+		<div class="loginForm">
+			<jsp:include page="soLoginForm2.jsp" flush="true"/>
+		</div>
+		<div class="mainmenu">
+			<jsp:include page="include/top2.jsp" flush="true"/>
+		</div>
 	</div>
-	
-</form>
+	<div class="soPwUpdateForm">
+		<jsp:include page="include2/soPwUpdateForm.jsp" flush="true"/>
+	</div>
+	<div class="footer">
+			footer
+	</div>
+</div>	
+</body>
+</html>

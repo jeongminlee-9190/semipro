@@ -43,7 +43,7 @@ public class SoNoticeListServlet extends HttpServlet {
 		
 		request.setAttribute("list", list);
 		
-		RequestDispatcher dis = request.getRequestDispatcher("soNoticeList.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("shopowner/soNoticeList.jsp");
 		dis.forward(request, response);
 	}
 

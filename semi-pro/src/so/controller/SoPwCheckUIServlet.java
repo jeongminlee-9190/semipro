@@ -37,7 +37,7 @@ public class SoPwCheckUIServlet extends HttpServlet {
 			String soId = dto.getSoId();
 			String soPasswd = dto.getSoPasswd();
 			session.setAttribute("pwCheck",soPasswd);
-			nextPage="soPwCheck.jsp";
+			nextPage="shopowner/soPwCheck.jsp";
 		}
 		
 		RequestDispatcher dis = request.getRequestDispatcher(nextPage);
