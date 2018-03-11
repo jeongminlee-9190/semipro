@@ -94,7 +94,7 @@ public class SInfoEnrollServlet extends HttpServlet {
 			SDTO sDTO= service.sInfo(soId);
 			HttpSession session=request.getSession();
 			session.setAttribute("sinfo", sDTO);
-			nextPage="shop/sManagement.jsp";
+			nextPage="sManagement.jsp";
 			request.setAttribute("success", "상점 등록 성공");
 		} catch (MyException e) {
 			// TODO Auto-generated catch block

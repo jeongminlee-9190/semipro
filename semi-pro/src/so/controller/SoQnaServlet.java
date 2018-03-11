@@ -34,7 +34,7 @@ public class SoQnaServlet extends HttpServlet {
 		List<SoQnaDTO> list=null;
 		
 		if(dto==null) {
-			nextPage="shopowner/SoLoginForm.jsp";
+			nextPage="SoLoginForm.jsp";
 			session.setAttribute("mesg", "로그인이 되지 않았습니다.");
 		} else {
 			String soId=dto.getSoId();
@@ -48,7 +48,7 @@ public class SoQnaServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			request.setAttribute("list", list);
-			nextPage="shopowner/soQna.jsp";
+			nextPage="soQna.jsp";
 			
 		}//end of if			
 			

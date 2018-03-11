@@ -1,78 +1,79 @@
+<%@page import="java.io.File"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
 <style>
-	@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
-	body { font-family:"Nanum Gothic"; }
-	.mainwrapper {
-		/*background-color: #99e6ff;*/
+	.imageUpload_tbl{
+		border: 1px solid grey;
 		position: relative;
-		top:0px;
-		left:0px;
-		max-width:100%;
-		height: 80px;
+		padding-left: 35%;
+		width: 100%;
+		text-align: center;
 	}
-	.logo{
-		position: absolute;
-		font-size: 25px;
-		top:7%;
-		left:3%;
-		width:300px;
+	.imageUpload_tbl th{
+		width: 150px;
 	}
-	.loginForm{
-		position: absolute;
-		top:3%;
-		margin-left: 400px;
-		text-align:right;
-		width:70%;	
-		float:right;
+	.imageUpload_tbl td{
+		width: 100px;
 	}
-	.mainmenu{
-		position: absolute;
-		top:70%;
-		width:100%;	
-		text-align:center;
+	.btn_submit {
+		border: 1px solid #99e6ff;
+		background-color: #99e6ff;
+		margin-top: 20px;
+		height:35px;
+		width: 100px;
+		/*color: white;*/
 	}
 	
-	/* 페이지 하단 */
-	.footer{
-		border: 1px solid grey;
-		position: fixed;
-		top: 85%;
-		width: 99%;
-		height: 13%;
-		text-align:center;
-	}
-	.sImageUploadForm{
-		position: absolute;
-		top: 20%;
-		width: 99%;
+	.btn_cancel{
+		border: 1px solid #99e6ff;
+		background-color: white;
+		margin-top: 10px;
+		height:35px;
+		width: 100px;
+		/*color: white;*/
 	}
 </style>
-</head>
-<body>
-<div class="wrapper">
-	<div class="mainwrapper">
-		<div class="logo">
-			<span>(갬성갱단)상점 관리 센터</span><br>
-		</div>
-		<div class="loginForm">
-			<jsp:include page="../shopowner/soLoginForm2.jsp" flush="true"/>
-		</div>
-		<div class="mainmenu">
-			<jsp:include page="../shopowner/include/top2.jsp" flush="true"/>
-		</div>
+
+<form action="SImageUploadServlet" method="post" enctype="multipart/form-data">	
+	<c:set var="sdto" value="${sinfo}"></c:set>
+	<input Type="hidden" name="soId" id="soId" value="${sdto.soId}"><br>
+	
+	<div class="imageUpload_tbl">
+	
+		<table>
+			<tr>
+				<th>이미지1 </th>
+				<td><input type="file" name="sImage1" id="sImage1"></td>
+			</tr>
+		
+			<tr>
+				<th>이미지2 </th>
+				<td><input type="file" name="sImage2" id="sImage2"></td>
+			</tr>
+			<tr>
+				<th>이미지3 </th>
+				<td><input type="file" name="sImage3" id="sImage3"></td>
+			</tr>
+			
+			<tr>
+				<th>이미지4 </th>
+				<td><input type="file" name="sImage4" id="sImage4"></td>
+			</tr>
+			
+			<tr>
+				<th>이미지5 </th>
+				<td><input type="file" name="sImage5" id="sImage5"></td>
+			</tr>
+			<tr>
+				<td colspan="2">*이미지는 최대 5개까지 등록 가능합니다.<br>
+				<input type="submit" class="btn_submit" value="등록">
+				<a href="sManagement.jsp"><input type="button" class="btn_cancel" value="취소"></a></td>
+			</tr>
+	</table>
 	</div>
-	<div class="sImageUploadForm">
-		<jsp:include page="include/sImageUploadForm.jsp" flush="true"/>
-	</div>
-	<div class="footer">
-			footer
-	</div>
-</div>	
-</body>
-</html>
+</form>

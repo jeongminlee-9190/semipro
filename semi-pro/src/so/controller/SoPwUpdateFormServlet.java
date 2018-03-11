@@ -22,7 +22,7 @@ public class SoPwUpdateFormServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dis = request.getRequestDispatcher("shopowner/soPwUpdateForm.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("soPwUpdateForm.jsp");
 		dis.forward(request, response);
 	}
 

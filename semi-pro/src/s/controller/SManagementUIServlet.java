@@ -17,7 +17,7 @@ public class SManagementUIServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		response.sendRedirect("shop/sManagement.jsp");
+		response.sendRedirect("sManagement.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

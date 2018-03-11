@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="include2/soLoginForm.jsp" flush="true" />
+<jsp:include page="shopowner/soNoticePaging.jsp" flush="true"/>
 </body>
 </html>

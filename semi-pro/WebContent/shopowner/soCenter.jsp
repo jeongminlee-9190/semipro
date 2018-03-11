@@ -1,78 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<style>
-	@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
-	body { font-family:"Nanum Gothic"; }
-	.mainwrapper {
-		/*background-color: #99e6ff;*/
-		position: relative;
-		top:0px;
-		left:0px;
-		max-width:100%;
-		height: 80px;
-	}
-	.logo{
-		position: absolute;
-		font-size: 25px;
-		top:7%;
-		left:3%;
-		width:300px;
-	}
-	.loginForm{
-		position: absolute;
-		top:3%;
-		margin-left: 400px;
-		text-align:right;
-		width:70%;	
-		float:right;
-	}
-	.mainmenu{
-		position: absolute;
-		top:70%;
-		width:100%;	
-		text-align:center;
-	}
-	
-	/* 페이지 하단 */
-	.footer{
-		border: 1px solid grey;
-		position: fixed;
-		top: 85%;
-		width: 99%;
-		height: 13%;
-		text-align:center;
-	}
-	.soCenter{
-		position: absolute;
-		top: 100px;
-	}
-</style>
-</head>
-<body>
-<div class="wrapper">
-	<div class="mainwrapper">
-		<div class="logo">
-			<span>(갬성갱단)상점 관리 센터</span><br>
-		</div>
-		<div class="loginForm">
-			<jsp:include page="soLoginForm2.jsp" flush="true"/>
-		</div>
-		<div class="mainmenu">
-			<jsp:include page="include/top2.jsp" flush="true"/>
-		</div>
-	</div>
-	<div class="soCenter">
-		<jsp:include page="include2/soCenter.jsp" flush="true"/>
-	</div>
-	<div class="footer">
-			footer
-	</div>
-</div>	
-
-</body>
-</html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>   
+<!--  
+<c:if test="${!empty login}">
+	${login.soId}&nbsp;
+	<a href="SoLogoutServlet">로그아웃</a>
+	<a href="SoMyPageServlet">MyPage</a>
+</c:if>
+-->
+<br>
+<a href="SoNoticeListServlet">공지사항</a>
+<a href="">자주하는 질문</a>
+<a href="SoQnaServlet">1:1 문의</a>
+<a href="SoQnaReplyServlet">1:1 문의 답변하기(관리자)</a>
+<a href="SoQnaReplyServlet">1:1 문의 답변하기(상점)</a>

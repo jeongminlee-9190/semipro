@@ -39,9 +39,9 @@ public class SoPwCheckServlet extends HttpServlet {
 			System.out.println(pwCheck);
 			System.out.println(soPasswdIn);
 			if(pwCheck.equals(soPasswdIn)) {
-				nextPage="shopowner/soMyPage.jsp";
+				nextPage="soMyPage.jsp";
 			}else {
-				nextPage="shopowner/soPwCheck.jsp";
+				nextPage="soPwCheck.jsp";
 				session.setAttribute("mesg", "비밀번호가 일치하지 않습니다.");
 			}
 		}

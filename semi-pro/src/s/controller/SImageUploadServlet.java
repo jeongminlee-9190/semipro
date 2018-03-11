@@ -114,7 +114,7 @@ public class SImageUploadServlet extends HttpServlet {
 			e.printStackTrace();
 			}		
 			//이미지 업로드 소스 끝
-		RequestDispatcher dis = request.getRequestDispatcher("shop/sManagement.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("sManagement.jsp");
 		dis.forward(request, response);
 	}
 

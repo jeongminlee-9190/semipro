@@ -23,7 +23,7 @@ public class SoMyPageServlet extends HttpServlet {
 		String nextPage="index_shopowner.jsp";
 		SoDTO dto = (SoDTO) session.getAttribute("login");
 		if(dto==null) {
-			nextPage="shopowner/SoLoginForm.jsp";
+			nextPage="SoLoginForm.jsp";
 			session.setAttribute("mesg", "로그인이 되지 않았습니다.");
 		} else {
 			String soId=dto.getSoId();
@@ -31,7 +31,7 @@ public class SoMyPageServlet extends HttpServlet {
 			try {
 				SoDTO xxx= service.myPage(soId);
 				session.setAttribute("login",xxx);
-				nextPage="shopowner/soMyPage.jsp";
+				nextPage="soMyPage.jsp";
 			}catch(Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -6,7 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/so_main.css">
+<link rel="stylesheet" type="text/css" href="css/so/so_mainwrapper.css">
+<link rel="stylesheet" type="text/css" href="css/so/content/so_maincontent.css">
+<link rel="stylesheet" type="text/css" href="css/so/so_footer.css">
 </head>
 <body>
 <c:if test="${! empty success}">
@@ -28,7 +30,7 @@
 			<span>(갬성갱단)상점 관리 센터</span><br>
 		</div>
 		<div class="loginForm">
-			<jsp:include page="shopowner/soLoginForm2.jsp" flush="true"/>
+			<jsp:include page="soLoginForm2.jsp" flush="true"/>
 		</div>
 		<div class="mainmenu">
 			<jsp:include page="shopowner/include/top2.jsp" flush="true"/>

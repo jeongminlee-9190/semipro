@@ -8,8 +8,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="jquery/main.js"></script>
 <title>Insert title here</title>
 <style media="screen">
   header {text-align: center;}
@@ -20,9 +18,7 @@
     <h1 id="title">GAEMSEONG<br>GAENDAN</h1>
     <jsp:include page="search/search.jsp" flush="true"/>
   </header>
-  <div id="center_wrapper">
-	  <jsp:include page="search/subway.jsp" flush="true" />
-	  <%-- <jsp:include page="search/keyword.jsp" flush="true" /> --%>
-  </div>
+  <br><br>
+  <jsp:include page="search/keyword.jsp" flush="true"></jsp:include>
 </body>
 </html>

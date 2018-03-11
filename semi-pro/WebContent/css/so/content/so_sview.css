@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+	body { font-family:"Nanum Gothic"; }
+	.sView{
+		border: 1px solid grey;
+		position: absolute;
+		top: 130px;
+		/*  overflow-x:hidden;
+		overflow-y:hidden"*/
+		width: 99%;
+		margin-left:auto;
+		height: 1500px;
+	}

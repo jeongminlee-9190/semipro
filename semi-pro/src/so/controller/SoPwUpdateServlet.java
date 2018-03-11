@@ -26,7 +26,7 @@ public class SoPwUpdateServlet extends HttpServlet {
 	 @Override
 	  protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	      throws ServletException, IOException {
-		  	request.setCharacterEncoding("UTF-8");
+		 request.setCharacterEncoding("UTF-8");
 		  	response.setCharacterEncoding("UTF-8");
 		  	response.setContentType("text/html;charset=UTF-8");
 		  
@@ -61,13 +61,14 @@ public class SoPwUpdateServlet extends HttpServlet {
 		  			try {
 						service.soPasswdUpdate(map);
 						dto2=service.myPage(soId);
-						session.setAttribute("login",dto2);
-						nextPage="/shopowner/soMyPage.jsp";
+						session.setAttribute("sinfo",dto2);
+						nextPage="/soMyPage.jsp";
 					}catch(Exception e) {
 						e.printStackTrace();
 						nextPage="/error.jsp";
 					}
 		  			session.setAttribute("isCaptchaSolved", true);
+		  			
 		  			
 		  		} else {
 		  			// Captcha validation failed, show error message

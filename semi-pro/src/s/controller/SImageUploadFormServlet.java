@@ -34,7 +34,7 @@ public class SImageUploadFormServlet extends HttpServlet {
 			try {
 				SDTO sDTO= service.sInfo(soId);
 				session.setAttribute("sinfo", sDTO);
-				nextPage="shop/sImageUploadForm.jsp";
+				nextPage="sImageUploadForm.jsp";
 			}catch(Exception e) {
 				e.printStackTrace();
 				nextPage="error.jsp";

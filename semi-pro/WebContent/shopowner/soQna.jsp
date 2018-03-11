@@ -1,15 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<span class="logo">(로고)상점 관리 센터</span><br>
-<jsp:include page="include/top.jsp" flush="true" />
-<jsp:include page="include2/soCenter.jsp" flush="true" />
-<jsp:include page="include2/soQna.jsp" flush="true" />
-</body>
-</html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<table border="1">
+ <tr>
+  <td>문의유형</td>
+  <td>제목</td>
+  <td>문의날짜</td>
+  <td>답변상태</td>
+  <td>삭제</td>
+ </tr>
+
+<c:forEach var="dto" items="${list}" varStatus="status">
+ <tr>
+  <td>${dto.qnaCategory}</td>
+  <td><a href="soQnaRetrieveServlet?qnaNum=${dto.qnaNum}">${dto.qnaTitle}</a></td>
+  <td>${dto.qnaWritedate}</td>
+  <td>${dto.qnaComplete}</td>
+  <td><input type="button" value="X"></td>
+ </tr>
+</c:forEach>
+</table>
+<a href ="">1:1 문의하기</a>

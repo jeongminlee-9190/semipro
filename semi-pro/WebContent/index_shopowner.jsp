@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/so_index.css">
+<link rel="stylesheet" type="text/css" href="css/so/so_index.css">
 </head>
 <body>
 <c:if test="${! empty success}">
@@ -23,10 +23,11 @@
 
 <div class="main">
 	<span class="logo">(갬성갱단)<br>상점 관리 센터</span><br>
+	<jsp:include page="shopowner/include/top.jsp" flush="true"/>
 </div>
 
 <div class="loginForm">
-<jsp:include page="shopowner/soLoginForm.jsp" flush="true"/>
+<jsp:include page="soLoginForm.jsp" flush="true"/>
 </div>
 </body>
 </html>

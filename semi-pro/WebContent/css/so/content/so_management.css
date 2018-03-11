@@ -1,0 +1,91 @@
+@charset "UTF-8";
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+	body { font-family:"Nanum Gothic"; }
+	.sManagement{
+		position: absolute;
+		top: 100px;
+		width: 99%;
+		height: 50%;
+		margin: auto;
+	}
+	
+	
+	hr{
+		border: 2px solid #99e6ff;
+	}
+	p{
+		font-size: 12px;
+	}
+	/* 상점등록  */
+	.shopEnroll{
+		position: relative;
+		text-align: center;
+		top: 52px;
+		left: 5%;
+		width: 400px;
+		height: 300px;
+	}
+	
+	.shopbasicInfoform {
+		position: absolute;
+		text-align: center;
+		left: 6%;
+		width: 40%;
+		height: 50%;	
+	}
+	.shopimageInfoform {
+		position: absolute;
+		text-align: center;
+		left: 53%;
+		width: 40%;
+		height: 50%;	
+	}
+	
+	/* 상점 정보 확인 */
+	.shopView{
+		position: absolute;
+		text-align: center;
+		top: 72px;
+		margin-left: 40%;
+		width: 200px;
+		height: 300px;
+	}
+	
+	/* 상점 정보 수정 */
+	.shopModify{
+		position: absolute;
+		text-align: center;
+		top: 72px;
+		margin-left: 60%;
+		width: 200px;
+		height: 300px;
+	}
+
+	/* 상점 정보 삭제 */
+	.shopDeleteform {
+		position: absolute;
+		text-align: center;
+		top: 72px;
+		margin-left: 80%;
+		width: 200px;
+		height: 300px;
+	}
+	
+	
+	.shopbasicinfo,.shopimageinfo,.shopdelete {
+		font-size: 20px;
+		text-align: center;
+	}
+	
+	
+	.shopdeletewarn{
+		color: red;
+	}
+
+	.btn_enroll{
+		border: 1px solid #99e6ff;
+		background-color: #99e6ff;
+		margin-top: 10px;
+		height:35px;
+		width: 100px;
+	}

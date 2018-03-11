@@ -1,0 +1,8 @@
+@charset "UTF-8";
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+	body { font-family:"Nanum Gothic"; }
+	.soPwUpdateForm{
+		position: absolute;
+		top: 50%;
+		width: 99%;
+	}
