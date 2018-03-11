@@ -2,188 +2,90 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>   
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="css/so_management.css">
+<title>Insert title here</title>
 <style>
-	hr{
-		border: 2px solid #99e6ff;
-	}
-	p{
-		font-size: 12px;
-	}
-	/* 상점등록  */
-	.shopEnroll{
+	@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+	body { font-family:"Nanum Gothic"; }
+	.mainwrapper {
+		/*background-color: #99e6ff;*/
 		position: relative;
-		text-align: center;
-		top: 52px;
-		left: 5%;
-		width: 400px;
-		height: 300px;
+		top:0px;
+		left:0px;
+		max-width:100%;
+		height: 80px;
 	}
-	
-	.shopbasicInfoform {
+	.logo{
 		position: absolute;
-		text-align: center;
-		left: 6%;
-		width: 40%;
-		height: 50%;	
+		font-size: 25px;
+		top:7%;
+		left:3%;
+		width:300px;
 	}
-	.shopimageInfoform {
+	.loginForm{
 		position: absolute;
-		text-align: center;
-		left: 53%;
-		width: 40%;
-		height: 50%;	
+		top:3%;
+		margin-left: 400px;
+		text-align:right;
+		width:70%;	
+		float:right;
 	}
-	
-	/* 상점 정보 확인 */
-	.shopView{
+	.mainmenu{
 		position: absolute;
-		text-align: center;
-		top: 72px;
-		margin-left: 40%;
-		width: 200px;
-		height: 300px;
+		top:70%;
+		width:100%;	
+		text-align:center;
 	}
 	
-	/* 상점 정보 수정 */
-	.shopModify{
+	/* 페이지 하단 */
+	.footer{
+		border: 1px solid grey;
+		position: fixed;
+		top: 85%;
+		width: 99%;
+		height: 13%;
+		text-align:center;
+	}
+	.sManagement{
 		position: absolute;
-		text-align: center;
-		top: 72px;
-		margin-left: 60%;
-		width: 200px;
-		height: 300px;
-	}
-
-	/* 상점 정보 삭제 */
-	.shopDeleteform {
-		position: absolute;
-		text-align: center;
-		top: 72px;
-		margin-left: 80%;
-		width: 200px;
-		height: 300px;
-	}
-	
-	
-	.shopbasicinfo,.shopimageinfo,.shopdelete {
-		font-size: 20px;
-		text-align: center;
-	}
-	
-	
-	.shopdeletewarn{
-		color: red;
-	}
-
-	.btn_enroll{
-		border: 1px solid #99e6ff;
-		background-color: #99e6ff;
-		margin-top: 10px;
-		height:35px;
-		width: 100px;
+		top: 100px;
+		width: 99%;
+		height: 50%;
+		margin: auto;
 	}
 </style>
+</head>
+<body>
+<c:if test="${! empty success}">
+   <script type="text/javascript">
+    alert('${success}');
+   </script>
+</c:if>
 
 
-<input type="hidden" value="${sinfo}">
-<!-- 레벨이 0인 경우 메뉴를 클릭하면 다른페이지로 -->
-<br>
 <div class="wrapper">
-	<div class="shopEnroll">
-		<span>상점 등록</span><hr><br>
-		<c:if test="${empty sinfo.sCode && empty sinfo.sImage}">	
-			<div class="shopbasicInfoform">
-				<h3>1단계</h3>
-				<span class="shopbasicinfo">상점 기본정보</span><br><br>
-				<a href="SInfoEnrollFormServlet"><input type="button" class="btn_enroll"value="등록"></a><br><br>
-			</div>
-			<div class="shopimageInfoform">
-				<h3>2단계</h3>
-				<span class="shopimageinfo">상점 사진정보</span><br><br>
-				<p class="shopdeletewarn">기본정보 먼저 등록해주세요.</p>
-			</div>
-		</c:if>
-		<c:if test="${!empty sinfo.sCode && empty sinfo.sImage}">
-  			<div class="shopbasicInfoform">
-  				<h3>1단계</h3>
-				<span class="shopbasicinfo">상점 기본정보</span><br><br>
-				<span>등록 완료</span>
-			</div>
-			<div class="shopimageInfoform">
-				<h3>2단계</h3>
-				<span class="shopimageinfo">상점 사진정보</span><br><br>
-				<a href="SImageUploadFormServlet"><input type="button" class="btn_enroll"value="등록"></a><br><br>
-			</div>
-		</c:if>
-		
-		<c:if test="${!empty sinfo.sCode && !empty sinfo.sImage}">
-			<div class="shopbasicInfoform">
-  				<h3>1단계</h3>
-				<span class="shopbasicinfo">상점 기본정보</span><br><br>
-				<span>등록 완료</span>
-			</div>
-			<div class="shopimageInfoform">
-				<h3>2단계</h3>
-				<span class="shopimageinfo">상점 사진정보</span><br><br>
-				<span>등록 완료</span>
-			</div>
-		</c:if>
+	<div class="mainwrapper">
+		<div class="logo">
+			<span>(갬성갱단)상점 관리 센터</span><br>
+		</div>
+		<div class="loginForm">
+			<jsp:include page="../shopowner/soLoginForm2.jsp" flush="true"/>
+		</div>
+		<div class="mainmenu">
+			<jsp:include page="../shopowner/include/top2.jsp" flush="true"/>
+		</div>
 	</div>
-	
-	
-	<div class="shopView">
-		<span>상점 확인</span><hr><br>
-		<p>등록한 기본정보와 사진을 </p>
-		<p>확인할 수 있으며,</p>
-		<p>개인회원에게 보여지는 화면을</p>
-		<p>확인할 수 있습니다.</p>
-		<br>
-		<c:if test="${!empty sinfo.sCode && !empty sinfo.sImage}">
-			<a href="SViewServlet"><input type="button" class="btn_enroll"value="상점 확인"></a><br><br>
-		</c:if>
-		<c:if test="${empty sinfo.sCode && !empty sinfo.sImage}">
-			<p class="shopdeletewarn">기본 정보를 등록해주세요.</p>
-		</c:if>
-		<c:if test="${!empty sinfo.sCode && empty sinfo.sImage}">
-			<p class="shopdeletewarn">사진 정보를 등록해주세요.</p>
-		</c:if>
-		<c:if test="${empty sinfo.sCode && empty sinfo.sImage}">
-			<p class="shopdeletewarn">기본정보와 사진 정보를</p>
-			<p class="shopdeletewarn">등록해주세요.</p>
-		</c:if>
+	<div class="sManagement">
+		<jsp:include page="include/sManagement.jsp" flush="true" />
 	</div>
-	
-	<div class="shopModify">
-		<span>상점 수정</span><hr><br>
-		<p>등록한 기본정보와 사진을 </p>
-		<p>수정할 수 있습니다.</p>
-		<br>
-		<c:if test="${!empty sinfo.sCode && empty sinfo.sImage}">
-			<a href="SViewServlet"><input type="button" class="btn_enroll"value="기본정보 수정"></a><br><br>
-			<p class="shopdeletewarn">사진 정보를 등록해주세요.</p>
-		</c:if>
-		<c:if test="${empty sinfo.sCode && empty sinfo.sImage}">
-			<p class="shopdeletewarn">기본 정보를 등록해주세요.</p>
-			<p class="shopdeletewarn">사진 정보를 등록해주세요.</p>
-		</c:if>
-		<c:if test="${!empty sinfo.sCode && !empty sinfo.sImage}">
-			<a href="SViewServlet"><input type="button" class="btn_enroll"value="기본정보 수정"></a><br><br>
-			<a href="SViewServlet"><input type="button" class="btn_enroll"value="사진정보 수정"></a>
-		</c:if>
-		
+	<div class="footer">
+			footer
 	</div>
-	
-	<div class="shopDeleteform">
-		<span class="shopdelete">상점 삭제</span><hr><br>
-		<p class="shopdeletewarn">삭제하면 복원되지 않습니다.<p>
-		<br>
-		<c:if test="${(!empty sinfo.sCode && !empty sinfo.sImage) ||(empty sinfo.sCode && !empty sinfo.sImage) ||(!empty sinfo.sCode && empty sinfo.sImage)}">
-			<a href="SDeletionServlet"><input type="button" class="btn_enroll"value="상점 삭제"></a><br><br>
-		</c:if>
-		<c:if test="${empty sinfo.sCode && empty sinfo.sImage}">
-			<p class="shopdeletewarn">삭제할 정보가 없습니다.</p>
-		</c:if>
-	</div>	
-</div>
+</div>	
+</body>
+</html>

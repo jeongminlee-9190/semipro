@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <style>
-	@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
 	body { font-family:"Nanum Gothic"; }
 	.welcome{
 		margin-top: 70px;
@@ -126,8 +126,9 @@
 	.term_headline{
 		font-size: 12px;
 	}
-</style>
 
+
+</style>
 <script>
 /*idCheck*/
 //요청용
@@ -136,7 +137,7 @@
 		xmlRequest=new XMLHttpRequest();
   		xmlRequest.onreadystatechange=x;	
   		// MemberIdCheckServlet에 요청
-  		xmlRequest.open("get","SoIdCheckServlet?soId="+id, true);
+  		xmlRequest.open("get","../SoIdCheckServlet?soId="+id, true);
   		xmlRequest.send(null); // null은 get일때
   	
   		console.log(id.length);
@@ -255,7 +256,7 @@
 	  
   </script>
 <div class="joinWrapper">
-	<form action="SoAddServlet" method="get" onsubmit="formCheck(event)">
+	<form action="../SoAddServlet" method="get" onsubmit="formCheck(event)">
 		<div class="join_tbl">
 		<!--  <span class="welcome">갬성갱단에서 상점을 등록하고 홍보할 수 있어요!</span>-->
 		<h2 style="text-align:center">회원 정보 입력</h2>
@@ -304,7 +305,7 @@
 		<table class="joincomplete">
 			<tr>
 				<th colspan="2"><input type="submit" value="모두 동의하고 회원가입하기" class="btn_submit">
-				<a href="index_shopowner.jsp"><input type="button" value="취소" class="btn_cancel"></a></th>
+				<a href="../index_shopowner.jsp"><input type="button" value="취소" class="btn_cancel"></a></th>
 			</tr>
 		</table>
 	</div>
@@ -371,21 +372,8 @@
 			</dd>
 		</dl>
 	</div>
-
-</div>
-</form>
-
-
-
-
-
-
-
-
-
-
-
-
+	</form>
+ </div>
 
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>

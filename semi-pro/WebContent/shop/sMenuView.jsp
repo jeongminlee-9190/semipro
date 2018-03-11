@@ -66,15 +66,15 @@
 			<span>(갬성갱단)상점 관리 센터</span><br>
 		</div>
 		<div class="loginForm">
-			<jsp:include page="shopowner/soLoginForm2.jsp" flush="true"/>
+			<jsp:include page="../shopowner/soLoginForm2.jsp" flush="true"/>
 		</div>
 		<div class="mainmenu">
-			<jsp:include page="shopowner/include/top2.jsp" flush="true"/>
+			<jsp:include page="../shopowner/include/top2.jsp" flush="true"/>
 		</div>
 	</div>
 	
 	<div class="content">
-		<jsp:include page="shop/sView.jsp" flush="true" />
+		<jsp:include page="include/sView.jsp" flush="true" />
 	</div>
 
 	<div class="footer">

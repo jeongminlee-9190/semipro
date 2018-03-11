@@ -35,7 +35,7 @@ public class SViewServlet extends HttpServlet {
 			try {
 				SDTO sDTO= service.sInfo(soId);
 				session.setAttribute("sinfo", sDTO);
-				nextPage="sView.jsp";
+				nextPage="shop/sView.jsp";
 			}catch(Exception e) {
 				e.printStackTrace();
 				nextPage="error.jsp";

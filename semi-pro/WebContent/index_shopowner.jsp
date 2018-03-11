@@ -6,20 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-	@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
-	body { font-family:"Nanum Gothic"; }
-	
-	.main {
-		/*background-color: #99e6ff;*/
-		text-align: center;
-		padding-top: 5%;
-	}
-	.logo{
-		
-		font-size: 40px;
-	}
-</style>
+<link rel="stylesheet" type="text/css" href="css/so_index.css">
 </head>
 <body>
 <c:if test="${! empty success}">
@@ -36,7 +23,6 @@
 
 <div class="main">
 	<span class="logo">(갬성갱단)<br>상점 관리 센터</span><br>
-	<jsp:include page="shopowner/include/top.jsp" flush="true"/>
 </div>
 
 <div class="loginForm">

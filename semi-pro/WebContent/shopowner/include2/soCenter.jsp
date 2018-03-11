@@ -11,8 +11,8 @@
 </c:if>
 -->
 <br>
-<a href="SoNoticeListServlet">공지사항</a>
+<a href="../SoNoticeListServlet">공지사항</a>
 <a href="">자주하는 질문</a>
-<a href="SoQnaServlet">1:1 문의</a>
-<a href="SoQnaReplyServlet">1:1 문의 답변하기(관리자)</a>
-<a href="SoQnaReplyServlet">1:1 문의 답변하기(상점)</a>
+<a href="../SoQnaServlet">1:1 문의</a>
+<a href="../SoQnaReplyServlet">1:1 문의 답변하기(관리자)</a>
+<a href="../SoQnaReplyServlet">1:1 문의 답변하기(상점)</a>
