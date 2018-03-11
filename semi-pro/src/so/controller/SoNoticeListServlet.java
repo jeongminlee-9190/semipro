@@ -41,7 +41,7 @@ public class SoNoticeListServlet extends HttpServlet {
 		
 	//	List<SoNoticeDTO> list = service.list();
 		
-		request.setAttribute("list", list);
+		request.setAttribute("noticelist", list);
 		
 		RequestDispatcher dis = request.getRequestDispatcher("soNoticeList.jsp");
 		dis.forward(request, response);

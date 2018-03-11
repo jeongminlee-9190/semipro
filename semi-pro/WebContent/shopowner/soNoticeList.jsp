@@ -57,11 +57,12 @@
   				<th scope="col">조회수</th>
  			</tr>
  
-			<c:set var="pageDTO" value="${list}"></c:set>
+			<c:set var="pageDTO" value="${noticelist}"></c:set>
+			<input type="hidden" name="num" value="${noticelist}">
 			<c:forEach var="dto" items="${pageDTO.list}" varStatus="status">
  				<tr>
   					<td align="center">${dto.noticeNum}</td>
-  					<td>${dto.noticeTitle}</td>
+  					<td><a href="SoNoticeRetrieveServlet?num=${dto.noticeNum}">${dto.noticeTitle}</a></td>
   					<td align="center">${dto.noticeWriter}</td>
   					<td align="center">${dto.noticeWritedate}</td>
   					<td align="center">${dto.noticeReadcnt}</td>

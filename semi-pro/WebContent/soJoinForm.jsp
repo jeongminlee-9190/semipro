@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
-<link rel="stylesheet" type="text/css" href="css/so_join.css">
+<link rel="stylesheet" type="text/css" href="css/so/so_join.css">
 </head>
 <body>
 <jsp:include page="shopowner/soJoinForm.jsp" flush="true"/>
