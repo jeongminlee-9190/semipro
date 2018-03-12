@@ -32,28 +32,29 @@ public class soInfoUpdateServlet extends HttpServlet {
 		map.put("soPasswd",soPasswd);
 		map.put("soPhone",soPhone);
 		
-		if(dto==null) {
-			nextPage="SoLoginForm.jsp";
-			session.setAttribute("mesg", "로그인이 되지 않았습니다.");
-		} else { //로그인이 되어 있으면
-			String soId=dto.getSoId();
-			map.put("soId", soId);
-			SoService service = new SoService();
-			try {
-				service.soUpdate(map);
-				dto = service.myPage(soId);
-				session.setAttribute("login", dto);
-				session.setAttribute("soMyPage", "정보가 수정되었습니다.");
-				nextPage="soMyPage.jsp";
-			}catch(Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				nextPage="error.jsp";
-			}
-		}//end of if
 		
-		RequestDispatcher dis = request.getRequestDispatcher(nextPage);
-		dis.forward(request, response);
+//		if(dto==null) {
+//			nextPage="SoLoginForm.jsp";
+//			session.setAttribute("mesg", "로그인이 되지 않았습니다.");
+//		} else { //로그인이 되어 있으면
+//			String soId=dto.getSoId();
+//			map.put("soId", soId);
+//			SoService service = new SoService();
+//			try {
+//				service.soUpdate(map);
+//				dto = service.myPage(soId);
+//				session.setAttribute("login", dto);
+//				session.setAttribute("soMyPage", "정보가 수정되었습니다.");
+//				nextPage="soMyPage.jsp";
+//			}catch(Exception e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//				nextPage="error.jsp";
+//			}
+//		}//end of if
+		
+//		RequestDispatcher dis = request.getRequestDispatcher(nextPage);
+//		dis.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
