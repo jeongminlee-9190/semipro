@@ -4,9 +4,9 @@
 
 <div id="subway_wrap">
 	<select id="line" name="line">
-		<option value=""><span>1</span></option>
-		<option value="line1"><span>2</span></option>
-		<option value="line2"><span>3</span></option>
+		<option value="line1"><span>1</span></option>
+		<option value="line2"><span>2</span></option>
+		<option value="line3"><span>3</span></option>
 	</select>
 	<select id="station" class="" name="station" >
 		<option value="">역을 선택하세요</option>
