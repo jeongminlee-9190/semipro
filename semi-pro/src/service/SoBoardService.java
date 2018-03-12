@@ -10,6 +10,7 @@ import dao.MySqlSessionFactory;
 import dto.PageDTO;
 import dto.SoDTO;
 import dto.SoNoticeDTO;
+import dto.SoQnaDTO;
 import exception.MyException;
 
 public class SoBoardService {
@@ -43,5 +44,18 @@ public class SoBoardService {
 			session.close();
 		}
 		return pageDTO;
+	}
+	
+	public SoNoticeDTO retrieve(int noticeNum) {
+		//1. 세션 얻기
+			SqlSession session = MySqlSessionFactory.getSession();
+			SoNoticeDTO dto = null;
+			try {
+				dto = session.selectOne("SoBoardMapper.soNoticeRetrieve", noticeNum);
+			}finally {
+				session.close();
+			}
+			return dto;
+		
 	}
 }

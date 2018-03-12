@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<c:set var="pageDTO" value="${list}"/>
+<c:set var="pageDTO" value="${noticelist}"/>
 <c:set var="curPage" value="${pageDTO.curPage}"/>
 <c:set var="perPage" value="${pageDTO.perPage}"/>
 <c:set var="totalCnt" value="${pageDTO.totalCnt}"/>
