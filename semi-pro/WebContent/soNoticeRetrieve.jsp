@@ -12,7 +12,6 @@
 <link rel="stylesheet" type="text/css" href="css/so/so_footer.css">
 </head>
 <body>
-
 <div class="wrapper">
 	<div class="mainwrapper">
 		<div class="logo">
@@ -25,8 +24,8 @@
 			<jsp:include page="shopowner/include/top2.jsp" flush="true"/>
 		</div>
 	</div>
-	<div class="soNoticeList">
-		<jsp:include page="shopowner/soNoticeList.jsp" flush="true"/>
+	<div class="soNoticeRetrieve">
+		<jsp:include page="shopowner/soNoticeRetrieve.jsp" flush="true"/>
 	</div>
 	<div class="footer">
 			footer
