@@ -7,3 +7,9 @@
 <c:set var="dto" value="${shopdto }" scope="request"></c:set>
 
 <h1>${dto.sName }</h1>
+
+<h1>MENU</h1>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+
+</script>

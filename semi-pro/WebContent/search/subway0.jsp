@@ -16,6 +16,6 @@
   </select>
   
   
-<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="javascript/station.js"></script>
   

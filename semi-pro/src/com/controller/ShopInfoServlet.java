@@ -20,12 +20,14 @@ public class ShopInfoServlet extends HttpServlet {
 	
 		String sCode = request.getParameter("sCode");
 		
-		String nextPage = "search/shopinfo.jsp";
+		String nextPage = "search/shopinfo0.jsp";
 		
 		ShopService service = new ShopService();
 		
 		try {
 			ShopDTO dto = service.selectShop(sCode);
+			String [] sBusinessHoursArr = dto.getsBusinessHours().split("/");
+			request.setAttribute("businessHours", sBusinessHoursArr);
 			request.setAttribute("shopdto", dto);
 		} catch (MyException e) {
 			// TODO Auto-generated catch block

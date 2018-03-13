@@ -16,7 +16,7 @@ public class ShopService {
 		
 		List<ShopDTO> list = null; 
 		try {
-			list = session.selectList("hjSMapper.selectAll");
+			list = session.selectList("ShopMapper.selectAll");
 		}catch(Exception e){
 			e.printStackTrace();
 			throw new MyException("상점 정보 로딩 실패");
@@ -31,7 +31,7 @@ public class ShopService {
 		
 		ShopDTO dto = null; 
 		try {
-			dto = session.selectOne("hjSMapper.selectShop",sCode);
+			dto = session.selectOne("ShopMapper.selectShop",sCode);
 		}catch(Exception e){
 			e.printStackTrace();
 			throw new MyException("상점 정보 로딩 실패");
@@ -39,6 +39,21 @@ public class ShopService {
 			session.close();
 		}
 		return dto;
+	}
+	
+	public List<ShopDTO> selectByStation(String station)throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();
+		
+		List<ShopDTO> list = null; 
+		try {
+			list = session.selectList("ShopMapper.selectByStation", station);
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new MyException("역으로 검색 로딩 실패");
+		}finally {
+			session.close();
+		}
+		return list;
 	}
 
 }

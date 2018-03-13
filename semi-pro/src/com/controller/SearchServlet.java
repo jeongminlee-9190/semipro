@@ -37,8 +37,8 @@ public class SearchServlet extends HttpServlet {
 		ShopService service = new ShopService();
 		
 		try {
-			List<ShopDTO> shopList = service.selectAll();
-			request.setAttribute("shopList", shopList);
+			List<ShopDTO> shopListByStation = service.selectByStation(station) ;
+			request.setAttribute("shopList", shopListByStation);
 		} catch (MyException e) {
 			e.printStackTrace();
 			nextPage = "error.jsp";
