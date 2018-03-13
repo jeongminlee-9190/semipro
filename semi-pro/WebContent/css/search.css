@@ -45,42 +45,43 @@
 	margin-left:50%;
 	width:610px;
 	height:60px;
+}
+
+#prettydropdown-line ul {
+	position:absolute;
+	top:0;
+	right:0;
+	width:300px;
+	text-align:center;
+	border:none;
+}
+
+#prettydropdown-line ul > #item1520844833614-1{
+	background-color:#273c97;
+}
+
+#prettydropdown-line ul > #item1520844650256-2{
+	background-color:#3cb54c;
+}
+
+#prettydropdown-line ul > #item1520844650256-3{
+	background-color:red;
+}
+
+#prettydropdown-line ul li span{
+	display:none;
 	border:1px solid red;
 }
 
-/* 호 */
-#line {
+#prettydropdown-station ul {
+	position:absolute;
+	top:0;
+	right:0;
 	width:300px;
-	height:60px;
-	font-size:21px;
-	outline:none;
-	text-align: center;
-  	text-align-last: center;
-	/* 화살표 없애기 */
-	-webkit-appearance: none; /* 화살표 없애기 for chrome*/
-	-moz-appearance: none;    /* 화살표 없애기 for firefox*/
-	appearance: none;         /* 화살표 없애기 공통*/
-}
-
-#line option {
 	text-align:center;
-  	text-align-last: center;
 }
 
-#line option:first-child {
-	width:300px;
-	height:60px;
-	border:2px solid #273c97;
-	color:red;
-	text-align-last:center;
+#prettydropdown-station ul li span{
+	display:none;
+	border:1px solid red;
 }
-
-#line option:first-child span{
-	border:2px solid #273c97;
-}
-/* 화살표 없애기 */
-#line::-ms-expand {
-	display: none;	/* 화살표 없애기 for IE10, 11*/
-}
-
-

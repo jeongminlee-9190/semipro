@@ -5,20 +5,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<style>
-	.Notice{
-		margin-left: 27%;
-	
-	}
-	.notice_tbl,.noticesearch_tbl{
-		width: 700px;
-		border-bottom: 1px solid grey;
-	}
-	.notice_tbl td{
-		border-top: 1px solid lightgrey;
-	}
-
-</style>
 
 <div class="wrapper">
 	<div class="Notice">

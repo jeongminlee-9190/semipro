@@ -33,4 +33,12 @@
 	     where noticeContent LIKE '%'||#{searchValue}||'%'
 	   </if>
     </select>
+    
+    
+     <!-- 공지사항 자세히 보기 -->
+    <select id="soNoticeRetrieve" parameterType="int" resultType="SoNoticeDTO">
+		select noticeNum, noticeTitle, noticeContent, to_char(noticeWritedate,'YYYY-MM-DD') as noticeWritedate, noticeWriter, noticeReadcnt
+		from noticetoso
+		where noticeNum=#{noticeNum}
+	</select>
 </mapper>
