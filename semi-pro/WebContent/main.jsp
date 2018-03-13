@@ -8,18 +8,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- css -->
+<!-- reset -->
+<link rel="stylesheet" href="css/reset.css">
+<!-- font -->
+<link rel="stylesheet" href="css/font.css">
+
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/search.css">
+
+<!-- jquery -->
+<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="jquery/main.js"></script>
-
-<!-- ====================== select plugin ======================= -->
-<link rel="stylesheet" href="css/subway/line/prettydropdowns.css">
-<link rel="stylesheet" href="css/subway/station/prettydropdowns.css">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="js/line/jquery.prettydropdowns.js"></script>
-<script src="js/station/jquery.prettydropdowns.js"></script>
-<!-- ============================================================ -->
+<script src="jquery/subway.js"></script>
 
 <title>갬성갱단</title>
 <style media="screen">
