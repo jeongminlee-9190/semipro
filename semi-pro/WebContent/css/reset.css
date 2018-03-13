@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+* {margin:0; padding:0;}
+ul, li, ol {list-style-type:none;}
+table {border-collapse:collapse;}
+a {text-decoration:none; color:inherit;}
+select {font-size:inherit; font-family:inherit;}
+
+.clearfix {*zoom:1; /*zoom:1*/}
+.clearfix:after {content:''; display:block; clear:both;}
