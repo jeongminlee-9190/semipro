@@ -23,7 +23,7 @@
 		height:30px;
 		margin-top: 5px;
 	}
-	#result1,#result2,#result3{
+	#result1,#result2{
 		font-size:10px;
 		color: red;
 	}
@@ -58,7 +58,7 @@
 	}
 
 	/* 약관  */
-	.term_1,.term_2,.term_3{
+	.term_1,.term_2{
 		position: fixed;
 		left:40%;
 		font-size: 13px;
@@ -68,9 +68,6 @@
 	}
 	.term_2{
 		margin-top:210px;
-	}
-	.term_3{
-		margin-top:400px;
 	}
 	/* 약관 동의 체크박스 */
 	#term_1{
@@ -102,9 +99,7 @@
 	.bx_term_agree_2 {
 		margin-top:240px;
 	}
-	.bx_term_agree_3 {
-		margin-top:430px;
-	}
+	
 	dt,dd{
 		font-size: 12px;
 	}

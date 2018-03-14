@@ -39,6 +39,7 @@
 	<jsp:include page="search/subway.jsp" flush="true" />
 	<%-- <jsp:include page="search/keyword.jsp" flush="true" /> --%>
 </div>
-
+<a href="MJoinFormServlet">회원가입</a>
+<a href="">로그인</a>
 </body>
 </html>
