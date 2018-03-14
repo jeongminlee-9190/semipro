@@ -19,14 +19,12 @@
 
 <!-- jquery -->
 <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
-<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="jquery/main.js"></script>
-<script src="jquery/subway.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/subway.js"></script>
 
 <title>갬성갱단</title>
-<style media="screen">
-  header {text-align: center;}
-</style>
+
 </head>
 <body>
 
