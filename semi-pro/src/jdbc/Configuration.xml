@@ -14,6 +14,7 @@
    <typeAlias type="dto.SDTO" alias="SDTO"/>
    <typeAlias type="dto.AdminDTO" alias="AdminDTO"/>
    <typeAlias type="dto.MemberDTO" alias="MemberDTO"/>
+   <typeAlias type="com.dto.ShopDTO" alias="ShopDTO" />
   </typeAliases>
   
   
@@ -35,5 +36,6 @@
     <mapper resource="jdbc/SFileMapper.xml"/>
     <mapper resource="jdbc/SMapper.xml"/>
     <mapper resource="jdbc/AdminMapper.xml"/>
+    <mapper resource="com/jdbc/ShopMapper.xml"/>
   </mappers>
 </configuration>

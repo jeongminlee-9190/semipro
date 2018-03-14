@@ -13,6 +13,7 @@
   <header>
     <jsp:include page="search0.jsp" flush="true"></jsp:include>
     <jsp:include page="subway0.jsp" flush="true"></jsp:include>
+    <jsp:include page="keyword0.jsp" flush="true"></jsp:include>
     <jsp:include page="memberUI0.jsp" flush="true"></jsp:include>
     <hr>
   </header>

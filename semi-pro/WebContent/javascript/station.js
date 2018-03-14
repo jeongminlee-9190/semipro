@@ -3,7 +3,7 @@ $("#line").on("change",function(){
   var station;
   $.ajax({
     type : "get",
-    url : "station/line1.jsp",
+    url : "station/line.jsp",
     dataType : "json",
     success : function(data,status,xhr){
   	  //var x = JSON.parse(data);

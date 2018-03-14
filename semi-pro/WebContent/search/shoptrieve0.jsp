@@ -6,10 +6,9 @@
 
 <c:set var="dto" value="${shopdto }" scope="request"></c:set>
 
-<%-- <jsp:include page="shopimage0.jsp" flush="true"></jsp:include> --%>
 <h1>${dto.sName }</h1>
 <hr>
-shop images
+<jsp:include page="shopimage0.jsp" flush="true"></jsp:include>
 <hr>
 <button id="shopInfo">상점정보</button>
 <button id="shopMenu">메뉴</button>
@@ -18,10 +17,13 @@ map information
 <hr>
 <jsp:include page="review0.jsp"></jsp:include>
 
-<script src="jquery-3.3.1.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
 <script>
 $("#shopInfo").on("click",function(){
-	window.open("ShopInfoServlet?sCode=${dto.sCode}","상점정보","width=600,height=700");
+	window.open("ShopInfoServlet?sCode=${dto.sCode}","상점정보","width=500,height=600");
+});
+$("#shopMenu").on("click",function(){
+	window.open("ShopMenuServlet?sCode=${dto.sCode}","상점메뉴","width=500,height=600");
 });
 
 </script>
