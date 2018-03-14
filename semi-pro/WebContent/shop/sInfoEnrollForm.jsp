@@ -55,7 +55,7 @@
 	}
 	.complete{
 		position: absolute;
-		top: 85%;
+		top: 90%;
 		width:100%;
 		text-align:center;
 	}
