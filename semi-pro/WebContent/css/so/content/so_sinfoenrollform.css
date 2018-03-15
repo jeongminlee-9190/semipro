@@ -10,3 +10,75 @@
 		height: 67%;
 		
 	}
+	
+	
+	span.stress{
+		color: red;
+		font-size: 10px;
+	}
+	span.title{
+		font-size: 20px;
+		font-weight: bold;
+	}
+	th{
+		width: 150px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	td{
+		width: 350px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-right: 10px;
+	}
+	.sEnroll_tbl2 th{
+		width: 100px;
+	}
+	.sEnroll_tbl2 td{
+		width: 670px;
+	}
+	.sEnroll_title{
+		position: absolute;
+		top: 0%;
+		width: 100%;
+		text-align: center;
+	}
+	.sEnroll_tbl1{
+		position: absolute;
+		margin-top: 40px;
+		margin-left: 20px;
+		width:100%;
+	}
+	.sEnroll_tbl2{
+		position: absolute;
+		padding-top: 40px;
+		margin-left: 35%;
+		width:100%;
+	}
+	#sample6_postcode,#sample6_address{
+		margin-top: 2px;
+		margin-bottom: 2px;
+	}
+	.complete{
+		position: absolute;
+		top: 90%;
+		width:100%;
+		text-align:center;
+	}
+	.btn_submit {
+		border: 1px solid #99e6ff;
+		background-color: #99e6ff;
+		margin-top: 20px;
+		height:35px;
+		width: 300px;
+		/*color: white;*/
+	}
+	
+	.btn_cancel{
+		border: 1px solid #99e6ff;
+		background-color: white;
+		margin-top: 10px;
+		height:35px;
+		width: 300px;
+		/*color: white;*/
+	}

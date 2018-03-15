@@ -15,6 +15,7 @@ public class SDTO {
 	private String sMenu2;
 	private String sImage;
 	private String sLike;
+	private String sSubway;
 
 	
 	public SDTO() {
@@ -24,7 +25,7 @@ public class SDTO {
 
 
 	public SDTO(String sCode, String sName, String soId, String sPost, String sAddr, String sPhone, String sCategory,
-			String sBusinesshours, String sParkinglot, String sTerrace, String sMenu1, String sMenu2) {
+			String sBusinesshours, String sParkinglot, String sTerrace, String sMenu1, String sMenu2, String sSubway) {
 		super();
 		this.sCode = sCode;
 		this.sName = sName;
@@ -38,13 +39,14 @@ public class SDTO {
 		this.sTerrace = sTerrace;
 		this.sMenu1 = sMenu1;
 		this.sMenu2 = sMenu2;
+		this.sSubway = sSubway;
 
 	}
 
 
 	public SDTO(String sCode, String sName, String soId, String sPost, String sAddr, String sPhone, String sCategory,
 			String sBusinesshours, String sParkinglot, String sTerrace, String sMenu1, String sMenu2, String sImage,
-			String sLike) {
+			String sLike,String sSubway) {
 		super();
 		this.sCode = sCode;
 		this.sName = sName;
@@ -60,6 +62,7 @@ public class SDTO {
 		this.sMenu2 = sMenu2;
 		this.sImage = sImage;
 		this.sLike = sLike;
+		this.sSubway = sSubway;
 	}
 
 
@@ -202,4 +205,13 @@ public class SDTO {
 		this.sLike = sLike;
 	}
 
+
+	public String getsSubway() {
+		return sSubway;
+	}
+
+
+	public void setsSubway(String sSubway) {
+		this.sSubway = sSubway;
+	}
 }

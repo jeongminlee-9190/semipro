@@ -67,6 +67,9 @@ public class SInfoEnrollServlet extends HttpServlet {
 		String sC2Menu3= request.getParameter("sC2Menu3");
 		String sC2Menu3_info= request.getParameter("sC2Menu3_info");
 		String sC2Price3= request.getParameter("sC2Price3");
+		String sSubway1=request.getParameter("sSubway1");
+		String sSubway2=request.getParameter("sSubway2");
+		
 		
 		String sCode = sCategory2+soLicense;
 		
@@ -75,6 +78,7 @@ public class SInfoEnrollServlet extends HttpServlet {
 		String sAddr = sAddr1+"/"+sAddr2;
 		String sMenu1= sMenuCategory1+"/"+sC1Menu1+":"+sC1Menu1_info+":"+sC1Price1+"/"+sC1Menu2+":"+sC1Menu2_info+":"+sC1Price2+"/"+sC1Menu3+":"+sC1Menu3_info+":"+sC1Price3;
 		String sMenu2= sMenuCategory2+"/"+sC2Menu1+":"+sC2Menu1_info+":"+sC2Price1+"/"+sC2Menu2+":"+sC2Menu2_info+":"+sC2Price2+"/"+sC2Menu3+":"+sC2Menu3_info+":"+sC2Price3;	
+		String sSubway = sSubway1+"/"+sSubway2;
 		
 		String sCategory=null;
 		if(sCategory2.equals("c")){
@@ -86,7 +90,8 @@ public class SInfoEnrollServlet extends HttpServlet {
 		}
 		
 		String sBusinesshours = sWeekday+"/"+sWeekend+"/"+sDayOff;		
-		SDTO dto = new SDTO(sCode, sName, soId, sPost, sAddr, sPhone, sCategory, sBusinesshours, sParkinglot, sTerrace, sMenu1, sMenu2);
+		
+		SDTO dto = new SDTO(sCode, sName, soId, sPost, sAddr, sPhone, sCategory, sBusinesshours, sParkinglot, sTerrace, sMenu1, sMenu2,sSubway);
 		SService service = new SService();
 		String nextPage=null;
 		try {
