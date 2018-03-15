@@ -38,6 +38,7 @@
     <mapper resource="jdbc/SFileMapper.xml"/>
     <mapper resource="jdbc/SMapper.xml"/>
     <mapper resource="jdbc/AdminMapper.xml"/>
+    <mapper resource="jdbc/MemberMapper.xml"/>
     <mapper resource="com/jdbc/ShopMapper.xml"/>
   </mappers>
 </configuration>

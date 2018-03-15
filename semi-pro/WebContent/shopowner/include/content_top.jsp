@@ -53,8 +53,9 @@
 		</div>
 		<div class="content_right">
 			<h4>상점⇔갬성갱단</h4>
-			<a href=""><span>서비스 결제</span></a>&nbsp;&nbsp;
+			<a href=""><span>공지사항</span></a>&nbsp;&nbsp;
 			<a href="SoCenterUIServlet"><span>F&Q</span></a>
+			<a href="SoCenterUIServlet"><span>1:1 문의</span></a>
 		</div>
 </div>
 

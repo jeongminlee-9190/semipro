@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberMapper">
+	<insert id="memberJoin" parameterType="MemberDTO">
+		insert into member(mId,mPasswd,mName,mPhone,mBirth)
+		values(#{mId},#{mPasswd},#{mName},#{mPhone},#{mBirth})
+	</insert>
+	
+	<select id="mIdCheck" parameterType="string" resultType="int">
+		select count(*) 
+		from member
+		where mId=#{mId}
+	</select>
+	
+	<select id="mNameCheck" parameterType="string" resultType="int">
+		select count(*) 
+		from member
+		where mName=#{mName}
+	</select>
+</mapper>

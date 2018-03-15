@@ -41,11 +41,11 @@
 #subway_wrap {
 	position:absolute;
 	top:50px;
-	left:-305px;
+	left:-322px;
 	margin-left:50%;
-	width:610px;
-	height:60px;
+	width:644px;
 	text-align:center;
+	border:1px solid red;
 }
 
 #line_wrap {
@@ -68,16 +68,15 @@
 }
 
 #line_wrap ul {
-	display:block;
-	height:244px;
-	overflow-y:scroll;
+	display:none;
+	/* height:244px;
+	overflow-y:scroll; */
 }
 
 #line_wrap ul li {
-	display:block;
-	width:296px; /* border : 2px * 2px */
+	width:296px; /* border : 2px 2px */
 	max-width:300px;
-	height:56px; /* border : 2px * 2px */
+	height:56px; /* border : 2px 2px */
 	margin-top:1px;
 	font-size:21px;
 	color:#fff;
@@ -144,8 +143,11 @@
 #station_wrap {
 	display:block;
 	float:right;
+	margin-right:17px;
 	width:300px;
-	max-width:300px;
 	border:1px solid blue;
 }
 
+#station {
+	display:none;
+}
