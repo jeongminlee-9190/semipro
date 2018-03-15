@@ -18,4 +18,29 @@
 		where ssubway = #{station}
 	</select>
 
+	<select id="search" parameterType="arraylist" resultType="ScoreDTO">
+		select scategory, scode, good, bad
+		from score
+		where scategory in
+		<foreach collection="list" item="item" separator=",">
+			#{item}
+		</foreach>
+	</select>
+	
+	<select id="isInterest" parameterType="hashmap" resultType="InterestDTO">
+		select iNum from interest
+		where mId = #{mId} or sCode = #{sCode}
+	</select>
+	
+	<insert id="insertInterest" parameterType="hashmap">
+		insert into interest(iNum, mId, sCode)
+		values (#{iCode}, #{mId}, #{sCdoe})
+	</insert>
+	
+	<delete id="deleteInterest" parameterType="hashmap">
+		delete from interest
+		where iNum=#{iCode}
+	</delete>
+	
+	
 </mapper>

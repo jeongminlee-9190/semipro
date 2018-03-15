@@ -44,6 +44,14 @@ public class ShopDTO {
 		this.sInterest = sInterest;
 		this.sSubway = sSubway;
 	}
+	@Override
+	public String toString() {
+		return "ShopDTO [sCode=" + sCode + ", sName=" + sName + ", soId=" + soId + ", sPost=" + sPost + ", sAddr="
+				+ sAddr + ", sPhone=" + sPhone + ", sBusinessHours=" + sBusinessHours + ", sParkingLot=" + sParkingLot
+				+ ", sTerrace=" + sTerrace + ", sMenu1=" + sMenu1 + ", sMenu2=" + sMenu2 + ", sCategory=" + sCategory
+				+ ", sImage=" + sImage + ", sLike=" + sLike + ", sHate=" + sHate + ", sInterest=" + sInterest
+				+ ", sSubway=" + sSubway + "]";
+	}
 	public String getsCode() {
 		return sCode;
 	}

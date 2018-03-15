@@ -10,3 +10,8 @@
 1.loginUI + memberName
 2.review details
 3.keyword and score
+
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+	
+</script>

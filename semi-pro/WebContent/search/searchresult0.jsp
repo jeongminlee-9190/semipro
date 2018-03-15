@@ -17,13 +17,6 @@
     <jsp:include page="memberUI0.jsp" flush="true"></jsp:include>
     <hr>
   </header>
-  <c:set var="shopList" value="${shopList }" scope="request"></c:set>
-  <c:forEach var="shop" items="${shopList }">
-  	<a href="ShopTrieveServlet?sCode=${shop.sCode }" >shop : ${shop.sName }</a>  <br>
-  	address : ${shop.sAddr }<br>
-  	tel : ${shop.sPhone }<br>
-  	<a href="InterestServlet?sCode=${shop.sCode }">관심</a><br>
-  	<hr>
-  </c:forEach>
+	<jsp:include page="searchresultlist.jsp" flush="true"></jsp:include>
 </body>
 </html>

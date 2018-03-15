@@ -15,6 +15,8 @@
    <typeAlias type="dto.AdminDTO" alias="AdminDTO"/>
    <typeAlias type="dto.MemberDTO" alias="MemberDTO"/>
    <typeAlias type="com.dto.ShopDTO" alias="ShopDTO" />
+   <typeAlias type="com.dto.ScoreDTO" alias="ScoreDTO" />
+   <typeAlias type="com.dto.InterestDTO" alias="InterestDTO" />
   </typeAliases>
   
   

@@ -21,17 +21,16 @@ public class SearchServlet extends HttpServlet {
 	
 		String keywords = request.getParameter("search");
 		String station = request.getParameter("station");
-		System.out.println(station);
 		
-//		String[] keywordsArray = keywords.split(",");
+		String[] keywordsArray = keywords.split(",");
 
-//		List<String> keywordsList = new ArrayList<>();
-//		
-//		for(int i=0; i<keywordsArray.length; i++) {
-//			keywordsList.add(keywordsArray[i]);
-//		}
-//		
-//		request.setAttribute("keywordsList", keywordsList);
+		List<String> keywordsList = new ArrayList<>();
+		
+		for(int i=0; i<keywordsArray.length; i++) {
+			keywordsList.add(keywordsArray[i]);
+		}
+		
+		request.setAttribute("keywordsList", keywordsList);
 		
 		String nextPage = "search/searchresult0.jsp";
 		ShopService service = new ShopService();
