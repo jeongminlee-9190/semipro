@@ -29,6 +29,14 @@
 </head>
 <body>
 
+<!-- 로그아웃 처리-->
+<c:if test="${!empty memberlogout}">
+	<script type="text/javascript">
+    	alert('${memberlogout}');
+    </script>
+</c:if>
+
+
 <header id="header">
 	<jsp:include page="login/login.jsp" flush="true"/>
 	<div id="logo">
