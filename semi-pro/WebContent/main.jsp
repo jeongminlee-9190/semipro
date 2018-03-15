@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="css/font.css">
 
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/login.css">
 <link rel="stylesheet" href="css/search.css">
 
 <!-- jquery -->
@@ -29,6 +30,7 @@
 <body>
 
 <header id="header">
+	<jsp:include page="login/login.jsp" flush="true"/>
 	<div id="logo">
 		<img src="images/logo.png" title="logo">
 	</div>
@@ -39,7 +41,6 @@
 	<jsp:include page="search/subway.jsp" flush="true" />
 	<%-- <jsp:include page="search/keyword.jsp" flush="true" /> --%>
 </div>
-<a href="MJoinFormServlet">회원가입</a>
-<a href="">로그인</a>
+
 </body>
 </html>
