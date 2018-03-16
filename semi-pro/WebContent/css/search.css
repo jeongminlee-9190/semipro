@@ -41,7 +41,7 @@
 #subway_wrap {
 	position:absolute;
 	top:50px;
-	left:-317px;
+	left:-305px;
 	margin-left:50%;
 	width:610px;
 	text-align:center;
@@ -147,7 +147,6 @@
 	float:right;
 	width:300px;
 	max-width:300px;
-	font-family: 'Open Sans', sans-serif;
 }
 
 #station_btn{

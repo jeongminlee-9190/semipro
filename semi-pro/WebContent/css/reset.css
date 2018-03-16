@@ -21,3 +21,7 @@ html {
 ::-webkit-scrollbar-thumb {
     background: #FF0000;
 }
+
+body{
+	font-family: 'Open Sans', sans-serif;
+}
