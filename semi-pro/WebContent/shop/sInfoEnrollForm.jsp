@@ -18,11 +18,8 @@
 	var nowongu=["선택","공릉(7)","노원(4,7)","당고개(4)","마들(7)","상계(4)","석계역(1,6)", "수락산(7)", "중계(7)", "태릉입구(6,7)","하계(7)","화랑대(6)"];
 	var dobonggu=["선택","도봉산(1,7)","쌍문(4)","창동(4)"];
 	var dongdaemoongu=["선택","신설동(1,2)","용두(2)", "장한평역(5)","제기동(1)","청량리(1)"];
-	
-	
 	var dongjakgu=["선택","남성(7)","노들(9)","노량진(9)","동작(4,9)","보라매(7)","사당(2,4)","상도(7)","숭실대입구(7)","신대방(2)","신대방삼거리(7)","장승배기(7)","총신대(4,7)","흑석(9)"];
 	var mapogu=["선택","공덕(5,6)","광흥창(6)","대흥(6)","디지털미디어시티(6)","마포(5)","마포구청(6)","망원(6)","상수(6)","신촌(2)","아현(2)","애오개(5)","양평(5)","월드컵경기장(6)","이대(2)","합정(2,6)","홍대입구(2)"];
-	
 	var seodaemungu=["선택","독립문(3)","무악재(3)","충정로(2,5)","홍제(3)"];
 	var seochogu=["선택","고속터미널(3,7,9)","교대(2,3)","구반포(9)","남부터미널(3)","남태령(4)","내방(7)","반포(7)","방배(2)","사평(9)","서초(2)","신반포(9)","양재(3)","잠원(3)"];
 	var seongdonggu=["선택","금호(3)","뚝섬(2)","상왕십리(2)","성수(2)","신답(2)","옥수(3)","왕십리(2)","용답(2)","한양대(2)"];
@@ -35,95 +32,244 @@
 	var jongnogu=["선택","경복궁(3)","광화문(5)","동대문(1,4)","동묘앞(1,6)","서대문(5)","안국(3)","종각(1)","종로3가(1,3,5)","종로5가(1)","창신(6)","혜화(4)"];
 	var junggu=["선택","동대문역사문화공원(2,4,5)","동대입구(3)","명동(4)","버티고개(6)","서울(1)","시청(1,2)","신당(2,6)","약수(3,6)","을지로3가(2,3)","을지로4가(2,5)","을지로입구(2)","청구(5,6)","충무로(4)","회현(4)"];
 	var jungnanggu=["선택","먹골(7)","면목(7)","봉화산(6)","사가정(7)","상봉(7)","용마산(7)","중화(7)"]; 
-	var item;
+	var sSubway1,sSubway2,item;
+	
 	
 	
 	$(document).ready(function(){
-		$("#sSubway1").on("change",function(event){
-			var sSubway1= $("#sSubway1").val();
-			if($("#sSubway1").val()=="강남구"){
-				item = gangnamgu;
-				console.log(sSubway1);
-			}else if($("#sSubway1").val()=="강동구"){
-				item = gangdonggu;
-			}
-			else if($("#sSubway1").val()=="강북구"){
-				item = gangbukgu;
-			}
-			else if($("#sSubway1").val()=="강서구"){
-				item = gangseogu;
-			}
-			else if($("#sSubway1").val()=="관악구"){
-				item = gwanakgu;
-			}
-			else if($("#sSubway1").val()=="광진구"){
-				item = qwangjingu;
-			}
-			else if($("#sSubway1").val()=="구로구"){
-				item = gurogu;
-			}
-			else if($("#sSubway1").val()=="금천구"){
-				item = geumcheongu;
-			}
-			else if($("#sSubway1").val()=="노원구"){
-				item = nowongu;
-			}
-			else if($("#sSubway1").val()=="도봉구"){
-				item = dobonggu;
-			}
-			else if($("#sSubway1").val()=="동대문구"){
-				item = dongdaemoongu;
-			}
-			else if($("#sSubway1").val()=="동작구"){
-				item = dongjakgu;
-			}
-			else if($("#sSubway1").val()=="마포구"){
-				item = mapogu;
-			}
-			else if($("#sSubway1").val()=="서대문구"){
-				item = seodaemungu;
-			}
-			else if($("#sSubway1").val()=="서초구"){
-				item = seochogu;
-			}
-			else if($("#sSubway1").val()=="성동구"){
-				item = seongdonggu;
-			}
-			else if($("#sSubway1").val()=="성북구"){
-				item = seongbukgu;
-			}
-			else if($("#sSubway1").val()=="송파구"){
-				item = songpagu;
-			}
-			else if($("#sSubway1").val()=="양천구"){
-				item = yangcheongu;
-			}
-			else if($("#sSubway1").val()=="영등포구"){
-				item = yeongdeungpogu;
-			}
-			else if($("#sSubway1").val()=="용산구"){
-				item = yongsangu;
-			}
-			else if($("#sSubway1").val()=="은평구"){
-				item = eunpyeonggu;
-			}
-			else if($("#sSubway1").val()=="종로구"){
-				item = jungnanggu;
-			}
-			else if($("#sSubway1").val()=="중구"){
-				item = junggu;
-			}
-			else if($("#sSubway1").val()=="중랑구"){
-				item = jungnanggu;
-			}
-			
-			
-			
+		$("#sample6_address2").focus(function(){
+			$('#sSubway1').empty();
 			$('#sSubway2').empty();
-			
-			for(var count = 0; count < item.length; count++){                
-                var option = $("<option>"+item[count]+"</option>");
-                $('#sSubway2').append(option);
+			var address = $("#sample6_address").val();
+			console.log(address);
+			if(address.includes("강남구")){
+				sSubway1="강남구";
+				sSubway2=gangnamgu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("강동구")){
+				sSubway1="강동구";
+				sSubway2=gangdonggu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("강북구")){
+				sSubway1="강북구";
+				sSubway2=gangbukgu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("강서구")){
+				sSubway1="강서구";
+				sSubway2=gangseogu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("관악구")){
+				sSubway1="관악구";
+				sSubway2=gwanakgu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("광진구")){
+				sSubway1="광진구";
+				sSubway2=qwangjingu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}
+			else if(address.includes("구로구")){
+				sSubway1="구로구";
+				sSubway2=gurogu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("금천구")){
+				sSubway1="금천구";
+				sSubway2=geumcheongu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("노원구")){
+				sSubway1="노원구";
+				sSubway2=nowongu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("도봉구")){
+				sSubway1="도봉구";
+				sSubway2=dobonggu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("동대문구")){
+				sSubway1="동대문구";
+				sSubway2=dongdaemoongu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("동작구")){
+				sSubway1="동작구";
+				sSubway2=dongjakgu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("마포구")){
+				sSubway1="마포구";
+				sSubway2=mapogu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("서대문구")){
+				sSubway1="서대문구";
+				sSubway2=seodaemungu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("서초구")){
+				sSubway1="서초구";
+				sSubway2=seochogu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("성동구")){
+				sSubway1="성동구";
+				sSubway2=seongdonggu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("성북구")){
+				sSubway1="성북구";
+				sSubway2=seongbukgu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("송파구")){
+				sSubway1="송파구";
+				sSubway2=songpagu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("양천구")){
+				sSubway1="양천구";
+				sSubway2=yangcheongu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("영등포구")){
+				sSubway1="영등포구";
+				sSubway2=yeongdeungpogu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("용산구")){
+				sSubway1="용산구";
+				sSubway2=yongsangu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("은평구")){
+				sSubway1="은평구";
+				sSubway2=eunpyeonggu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}
+			else if(address.includes("종로구")){
+				sSubway1="종로구";
+				sSubway2=jongnogu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}
+			else if(address.includes("중구")){
+				sSubway1="중구";
+				sSubway2=junggu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
+			}else if(address.includes("중랑구")){
+				sSubway1="중랑구";
+				sSubway2=jungnanggu;
+				var option = $("<option>"+sSubway1+"</option>");
+	            $('#sSubway1').append(option);
+	            for(var count = 0; count < sSubway2.length; count++){                
+	                var option2 = $("<option>"+sSubway2[count]+"</option>");
+	                $('#sSubway2').append(option2);
+				}
 			}
 		});
 		
@@ -169,42 +315,17 @@
 					<td><input type="text" name="sAddr1" id="sample6_address" placeholder="주소" size="31"></td>				
 				</tr>
 				<tr>
-					<td><input type="text" name="sAddr2" id="sample6_address2" placeholder="상세 주소" size="31"></td>
+					<td><input type="text" name="sAddr2" id="sample6_address2" placeholder="(예) 1층 갬성갱단" size="31"></td>
 				</tr>
 				<tr>
 					<th>지하철역 </th>
 					<td><select id="sSubway1" name="sSubway1">
-							<option>강남구</option>
-							<option selected="selected">강동구</option>
-							<option>강북구</option>
-							<option>강서구</option>
-							<option>관악구</option>
-							<option>광진구</option>
-							<option>구로구</option>
-							<option>금천구</option>
-							<option>노원구</option>
-							<option>도봉구</option>
-							<option>동대문구</option>
-							<option>동작구</option>
-							<option>마포구</option>
-							<option>서대문구</option>
-							<option>서초구</option>
-							<option>성동구</option>
-							<option>성북구</option>
-							<option>송파구</option>
-							<option>양천구</option>
-							<option>영등포구</option>
-							<option>용산구</option>
-							<option>은평구</option>
-							<option>종로구</option>
-							<option>중구</option>
-							<option>중랑구</option>
+							
 						</select>
 						
 						<select id="sSubway2" name="sSubway2">
 						
 						</select>
-						
 					</td>
 				</tr>
 				<tr>
