@@ -21,7 +21,7 @@
 	var dongjakgu=["선택","남성(7)","노들(9)","노량진(9)","동작(4,9)","보라매(7)","사당(2,4)","상도(7)","숭실대입구(7)","신대방(2)","신대방삼거리(7)","이수(7)","장승배기(7)","총신대(4,7)","흑석(9)"];
 	var mapogu=["선택","공덕(5,6)","광흥창(6)","대흥(6)","디지털미디어시티(6)","마포(5)","마포구청(6)","망원(6)","상수(6)","신촌(2)","아현(2)","애오개(5)","양평(5)","월드컵경기장(6)","이대(2)","합정(2,6)","홍대입구(2)"];
 	var seodaemungu=["선택","독립문(3)","무악재(3)","충정로(2,5)","홍제(3)"];
-	var seochogu=["선택","고속터미널(3,7,9)","교대(2,3)","구반포(9)","남부터미널(3)","남태령(4)","내방(7)","반포(7)","방배(2)","사평(9)","서초(2)","신반포(9)","양재(3)","잠원(3)"];
+	var seochogu=["선택","강남(2)","고속터미널(3,7,9)","교대(2,3)","구반포(9)","남부터미널(3)","남태령(4)","내방(7)","반포(7)","방배(2)","사평(9)","서초(2)","신논현(9)","신반포(9)","양재(3)","잠원(3)"];
 	var seongdonggu=["선택","금호(3)","뚝섬(2)","상왕십리(2)","성수(2)","신답(2)","옥수(3)","왕십리(2)","용답(2)","한양대(2)"];
 	var seongbukgu=["선택","고려대(6)","길음(4)","답십리(5)", "돌곶이(6)","마장(5)","보문(6)","상월곡(6)","성신여대입구(4)","신금호(5)","안암(6)","왕십리(5)","월곡(6)","한성대입구(4)","행당(5)"];
 	var songpagu=["선택","가락시장(3,8)","개롱(5)","거여(5)","경찰병원(3)","마천(5)","문정(8)","몽촌토성(8)","방이(5)","복정(8)","석촌(8)","송파(8)","오금(3)","올림픽공원(5)","잠실(2,8)","잠실나루(2)","잠실새내(2)","장지(8)","종합운동장(2,9)"];
@@ -272,16 +272,75 @@
 				}
 			}
 		});
-		
-		$("#sSubway2").on("change",function(event){
-			console.log($("#sSubway2").val());
-		});
 	});
 
+	
+	/* 유효성 체크*/
+	function formCheck(e){
+		var sName = document.querySelector("#sName").value;
+		if(sName.length==0){
+			alert("상점 이름을 입력하세요");
+			document.querySelector("#sName").focus();
+			e.preventDefault();
+		}
+		
+		/* 전화번호 */
+		var sPhone1 = document.querySelector("#sPhone1").value;
+		if(sPhone1.length==0){
+			alert("전화번호를 입력하세요");
+			document.querySelector("#sPhone1").focus();
+			e.preventDefault();
+		}
+		var sPhone2 = document.querySelector("#sPhone2").value;
+		if(sPhone2.length==0){
+			alert("전화번호를 입력하세요");
+			document.querySelector("#sPhone2").focus();
+			e.preventDefault();
+		}
+		var sPhone3 = document.querySelector("#sPhone3").value;
+		if(sPhone3.length==0){
+			alert("전화번호를 입력하세요");
+			document.querySelector("#sPhone3").focus();
+			e.preventDefault();
+		}
+		
+		var sAddr2 = document.querySelector("#sample6_address2").value;
+		if(sAddr2.length==0){
+			alert("주소를 입력하세요");
+			document.querySelector("#sample6_address2").focus();
+			e.preventDefault();
+		}
+		var sSubway = document.querySelector("#sSubway2").value;
+		if(sSubway=="선택"){
+			alert("지하철 역을  선택 하세요");
+			document.querySelector("#sSubway2").focus();
+			e.preventDefault();
+		}
+		var sWeekday = document.querySelector("#sWeekday").value;
+		if(sWeekday.length==0){
+			alert("영업시간을 입력하세요");
+			document.querySelector("#sWeekday").focus();
+			e.preventDefault();
+		}
+		
+		var sWeekend = document.querySelector("#sWeekend").value;
+		if(sWeekend.length==0){
+			alert("영업시간을 입력하세요");
+			document.querySelector("#sWeekend").focus();
+			e.preventDefault();
+		}
+		
+		var sDayOff = document.querySelector("#sDayOff").value;
+		if(sDayOff.length==0){
+			alert("영업시간을 입력하세요");
+			document.querySelector("#sDayOff").focus();
+			e.preventDefault();
+		}
+	}
 </script>
 
 
-<form action="SInfoEnrollServlet" method="get">
+<form action="SInfoEnrollServlet" method="get" onsubmit="formCheck(event)">
 	<div class="wrapper">
 		<div class="sEnroll_title">
 			<span class="title">상점 기본 정보 등록</span>  <span class="stress"> *상점은 한 곳만 등록 가능합니다.</span>
