@@ -1,5 +1,7 @@
 package service;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
@@ -52,5 +54,19 @@ public class MemberService{
 			session.close();
 		}
 		return count;
+	}
+	
+	public MemberDTO mLogin(HashMap<String, String> map) throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();
+		MemberDTO dto = null;
+		try {
+			dto=session.selectOne("MemberMapper.mLogin", map);
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new MyException("로그인 에러");
+		}finally {
+			session.close();
+		}
+		return dto;
 	}
 }

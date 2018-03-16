@@ -19,4 +19,10 @@
 		from member
 		where mName=#{mName}
 	</select>
+	
+	<select id="mLogin" parameterType="hashmap" resultType="MemberDTO">
+		select mId,mPasswd,mName,mPhone,mBirth 
+		from member
+		where mId=#{mId} and mPasswd=#{mPasswd}
+	</select>
 </mapper>
