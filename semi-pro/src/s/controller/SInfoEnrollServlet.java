@@ -26,11 +26,8 @@ public class SInfoEnrollServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String soId= request.getParameter("soId");
-		System.out.println(soId);
 		String soLicense = request.getParameter("soLicense");
-		System.out.println(soLicense);
 		String sName = request.getParameter("sName");
-		System.out.println(sName);
 		String sPhone1 = request.getParameter("sPhone1");
 		String sPhone2 = request.getParameter("sPhone2");
 		String sPhone3 = request.getParameter("sPhone3");
@@ -67,9 +64,8 @@ public class SInfoEnrollServlet extends HttpServlet {
 		String sC2Menu3= request.getParameter("sC2Menu3");
 		String sC2Menu3_info= request.getParameter("sC2Menu3_info");
 		String sC2Price3= request.getParameter("sC2Price3");
-		String sSubway1=request.getParameter("sSubway1");
-		String sSubway2=request.getParameter("sSubway2");
-		
+		String sSubway=request.getParameter("sSubway2");
+		System.out.println(sSubway);
 		
 		String sCode = sCategory2+soLicense;
 		
@@ -78,7 +74,6 @@ public class SInfoEnrollServlet extends HttpServlet {
 		String sAddr = sAddr1+"/"+sAddr2;
 		String sMenu1= sMenuCategory1+"/"+sC1Menu1+":"+sC1Menu1_info+":"+sC1Price1+"/"+sC1Menu2+":"+sC1Menu2_info+":"+sC1Price2+"/"+sC1Menu3+":"+sC1Menu3_info+":"+sC1Price3;
 		String sMenu2= sMenuCategory2+"/"+sC2Menu1+":"+sC2Menu1_info+":"+sC2Price1+"/"+sC2Menu2+":"+sC2Menu2_info+":"+sC2Price2+"/"+sC2Menu3+":"+sC2Menu3_info+":"+sC2Price3;	
-		String sSubway = sSubway1+"/"+sSubway2;
 		
 		String sCategory=null;
 		if(sCategory2.equals("c")){

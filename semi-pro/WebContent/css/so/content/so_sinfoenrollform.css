@@ -7,11 +7,9 @@
 		margin-left: auto;
 		top:120px;
 		width: 99%;
-		height: 67%;
+		height: 80%;
 		
 	}
-	
-	
 	span.stress{
 		color: red;
 		font-size: 10px;
@@ -61,7 +59,7 @@
 	}
 	.complete{
 		position: absolute;
-		top: 90%;
+		top: 87%;
 		width:100%;
 		text-align:center;
 	}
