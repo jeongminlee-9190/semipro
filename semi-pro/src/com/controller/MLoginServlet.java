@@ -1,7 +1,6 @@
 package com.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
@@ -10,49 +9,40 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import com.dto.InterestDTO;
 import com.service.ShopService;
 
+import dto.MemberDTO;
 import exception.MyException;
 
-@WebServlet("/InterestServlet")
-public class InterestServlet extends HttpServlet {
+@WebServlet("/MLoginServlet")
+public class MLoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		PrintWriter out = response.getWriter();
-		
-		String sCode = request.getParameter("sCode");
-		String mId = request.getParameter("mId");
-		String iCode= mId+sCode;
+		String mId = request.getParameter("userid");
+		String mPasswd = request.getParameter("userpw");
 		
 		HashMap<String, String> map = new HashMap<>();
-		map.put("iCode", iCode);
 		map.put("mId", mId);
-		map.put("sCode", sCode);
+		map.put("mPasswd", mPasswd);
 		
 		ShopService service = new ShopService();
-		InterestDTO dto = null;
-		
-		if(mId==null) {
-			RequestDispatcher dis = request.getRequestDispatcher("search/login.jsp");
-			dis.forward(request, response);
-		}else {
-			try {
-				dto = service.interest(map);
-			} catch (MyException e) {
-				e.printStackTrace();
-			}
-			if(dto==null) {
-				System.out.println("1");
-				out.print("1");
-			}else{
-				System.out.println("0");
-				out.print("0");
-			}
+		MemberDTO dto = null;
+		try {
+			dto = service.login(map);
+		} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		HttpSession session = request.getSession();
+		session.setAttribute("loginInfo", dto);
+		
+		RequestDispatcher dis = request.getRequestDispatcher("main0.jsp");
+		dis.forward(request, response);
+		
+	
 	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

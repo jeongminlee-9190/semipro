@@ -6,6 +6,10 @@
 
 
 <style>
+  .memberUI {
+  text-align: right;
+  }
+
   li {
     list-style-type: none;
   }
@@ -15,15 +19,15 @@
 
 <c:if test="${empty loginInfo }">
 <ul class="memberUI">
-  <li><a href="LoginServlet">로그인이 필요합니다<a></li>
+  <li><a href="MLoginUIServlet">로그인이 필요합니다<a></li>
 </ul>
 </c:if>
 
 <c:if test="${!empty loginInfo }">
 <ul class="memberUI">
-  <li><a href="MyShopServlet">나의 맛집</a></li>
-  <li><a href="ProfileServlet">프로필 정보</a></li>
-  <li><a href="QNAServlet">문의 사항</a></li>
-  <li><a href="LogoutServlet">로그아웃</a></li>
+  <li><a href="#">나의 맛집</a></li>
+  <li><a href="#">프로필 정보</a></li>
+  <li><a href="#">문의 사항</a></li>
+  <li><a href="MLogoutServlet">로그아웃</a></li>
 </ul>
 </c:if>

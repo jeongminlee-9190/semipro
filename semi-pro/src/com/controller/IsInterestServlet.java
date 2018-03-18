@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,8 +15,9 @@ import com.service.ShopService;
 
 import exception.MyException;
 
-@WebServlet("/InterestServlet")
-public class InterestServlet extends HttpServlet {
+@WebServlet("/IsInterestServlet")
+public class IsInterestServlet extends HttpServlet {
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		PrintWriter out = response.getWriter();
@@ -34,23 +34,19 @@ public class InterestServlet extends HttpServlet {
 		ShopService service = new ShopService();
 		InterestDTO dto = null;
 		
-		if(mId==null) {
-			RequestDispatcher dis = request.getRequestDispatcher("search/login.jsp");
-			dis.forward(request, response);
-		}else {
-			try {
-				dto = service.interest(map);
-			} catch (MyException e) {
-				e.printStackTrace();
-			}
-			if(dto==null) {
-				System.out.println("1");
-				out.print("1");
-			}else{
-				System.out.println("0");
-				out.print("0");
-			}
+		try {
+			dto = service.isInterest(map);
+		} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		
+		if(dto!=null) {
+			out.print("1");
+		}else {
+			out.print("0");
+		}
+	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

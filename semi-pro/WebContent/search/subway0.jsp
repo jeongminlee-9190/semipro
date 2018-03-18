@@ -2,10 +2,10 @@
     pageEncoding="UTF-8"%>
     
  <style>
- 	* {text-align:center;}
+ 	#subway {text-align:center;}
  </style>   
     
-    
+<div id='subway'>
   <select id="line" name="line">
     <option value="">호선</option>
     <option value="line1">1호선</option>
@@ -14,6 +14,7 @@
   <select id="station" class="" name="station" >
   <option>역</option>
   </select>
+</div>
   
   
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
