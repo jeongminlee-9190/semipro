@@ -61,18 +61,18 @@ public class SoPwUpdateServlet extends HttpServlet {
 		  			try {
 						service.soPasswdUpdate(map);
 						dto2=service.myPage(soId);
-						session.setAttribute("sinfo",dto2);
-						nextPage="/soMyPage.jsp";
+						session.setAttribute("login",dto2);
+						nextPage="/soResult.jsp";
+						session.setAttribute("result", "비밀번호");
 					}catch(Exception e) {
 						e.printStackTrace();
 						nextPage="/error.jsp";
 					}
 		  			session.setAttribute("isCaptchaSolved", true);
-		  			
-		  			
+	
 		  		} else {
 		  			// Captcha validation failed, show error message
-		  			messages.put("captchaIncorrect", "*");
+		  			messages.put("captchaIncorrect", "일치하지 않습니다.");
 		  			messageValid = false;
 		  		}
 		  	}
