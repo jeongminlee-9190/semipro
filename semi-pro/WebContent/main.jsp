@@ -39,6 +39,7 @@
 
 <header id="header">
 	<jsp:include page="login/login.jsp" flush="true"/>
+	<jsp:include page="member/mNoticeUI.jsp" flush="true"/>
 	<div id="logo">
 		<img src="images/logo.png" title="logo">
 	</div>

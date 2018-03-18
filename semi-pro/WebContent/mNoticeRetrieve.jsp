@@ -10,10 +10,9 @@
 <link rel="stylesheet" type="text/css" href="css/so/content/so_notice.css">
 </head>
 <body>
-
 <div class="wrapper">
-	<div class="soNoticeList">
-		<jsp:include page="member/mNoticeList.jsp" flush="true"/>
+	<div class="soNoticeRetrieve">
+		<jsp:include page="shopowner/soNoticeRetrieve.jsp" flush="true"/>
 	</div>
 </div>	
 
