@@ -54,6 +54,8 @@
   					<td align="center">${dto.noticeReadcnt}</td>
  				</tr>
 			</c:forEach>
+			
+			<a href="main.jsp">메인으로</a>
   <!-- 페이지번호 -->
   			<tr>
    				<td colspan="5" align="center">◀&nbsp;<jsp:include page="mNoticePaging.jsp" flush="true" />▶</td>

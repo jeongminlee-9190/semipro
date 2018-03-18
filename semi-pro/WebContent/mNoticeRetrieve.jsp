@@ -12,7 +12,7 @@
 <body>
 <div class="wrapper">
 	<div class="soNoticeRetrieve">
-		<jsp:include page="shopowner/soNoticeRetrieve.jsp" flush="true"/>
+		<jsp:include page="member/mNoticeRetrieve.jsp" flush="true"/>
 	</div>
 </div>	
 

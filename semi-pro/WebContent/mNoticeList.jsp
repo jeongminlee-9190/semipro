@@ -13,7 +13,7 @@
 
 <div class="wrapper">
 	<div class="soNoticeList">
-		<jsp:include page="shopowner/soNoticeList.jsp" flush="true"/>
+		<jsp:include page="member/mNoticeList.jsp" flush="true"/>
 	</div>
 </div>	
 
