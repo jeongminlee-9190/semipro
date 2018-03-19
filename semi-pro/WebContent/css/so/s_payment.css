@@ -1,8 +1,10 @@
 @charset "UTF-8";
 @import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
 	body { font-family:"Nanum Gothic"; }
-	.soMyPage{
-		position: absolute;
-		top: 20%;
-		width: 99%;
+	.sPayment{
+		position: relative;
+		border: 1px solid grey;
+		margin-top:30px;
+		width: 100%;
+		height: 450px;
 	}

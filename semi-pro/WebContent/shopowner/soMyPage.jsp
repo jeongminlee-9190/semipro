@@ -4,49 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<style>
-	.soInfoView{
-		position: relative;
-		margin-left: auto;
-	}
-	.soInfoView_tbl {
-		margin-top: 4%;
-		margin-left: 32%;
-		border: 1px solid #99e6ff;
-		width: 550px;
-	}
-	.soInfoView_tbl th{
-		height: 30px;
-		width: 200px;
-	}
-	.soInfoView_tbl td{
-		height: 30px;
-		font-size: 14px;
-		width: 350px;
-	}
-	.btn_pw_submit{
-		border: 1px solid #99e6ff;
-		background-color: #99e6ff;
-		height:25px;
-		width: 50px;
-	}
-	
-	.btn_leave{
-		border: 1px solid #99e6ff;
-		background-color: #99e6ff;
-		height:25px;
-		width: 100px;
-	}
-	
-	.btn_cancel{
-		border: 1px solid #99e6ff;
-		background-color: white;
-		margin-top: 10px;
-		height:35px;
-		width: 150px;
-		/*color: white;*/
-	}
-</style>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.js"></script>
 <!--  
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
@@ -90,7 +48,13 @@
 	});
 </script>
 -->
-
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".btn_pw_submit").click(function(){
+			$(".phone_modify").html("<form action='soPhoneUpdateServlet' method='get'><input type='text' name='soPhone1' id='soPhone1' size='3'>-<input type='text' name='soPhone2' id='soPhone2' size='3'>-<input type='text' name='soPhone3' id='soPhone2' size='3'><input type='submit' value='변경완료'></form>")
+		});
+	});
+</script>
 
 <c:set var="dto" value="${login}"></c:set>
 	<div class="soInfoView">
@@ -101,7 +65,7 @@
 			</tr>
 			<tr>
 				<th>비밀번호</th>
-				<td><a href="SoPwUpdateFormServlet"><input type="button" name="submit" class="btn_pw_submit" value="변경"></a></td>
+				<td><a href="SoPwUpdateFormServlet"><input type="button" name="pw_modify" class="btn_pw_submit" value="변경"></a></td>
 			</tr>
 			<tr>
 				<th>사업주 이름</th>
@@ -109,7 +73,8 @@
 			</tr>
 			<tr>
 				<th>사업주 전화번호</th>
-				<td>${dto.soPhone} <input type="button" name="submit" class="btn_pw_submit" value="변경"></td>
+				<td>${dto.soPhone} 
+				<div class="phone_modify"><input type="button" name="soPhone" class="btn_pw_submit" value="변경"></div></td>
 			</tr>
 			<tr>
 				<th>사업자 번호</th>
