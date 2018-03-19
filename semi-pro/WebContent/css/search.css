@@ -64,8 +64,7 @@
 	border:0;
 	outline:0;
 	cursor:pointer;
-	font-size:17px;
-	font-weight:900;
+	font-size:15px;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -83,17 +82,21 @@
 	font-size:21px;
 	color:#fff;
 	cursor:pointer;
+	font-family: gotham_Bold; 
+	font-style: normal; 
+	font-weight: normal;
 }
 
 #line_wrap ul .line_korean {
 	font-size:18px; 
 	font-weight:900;
+	font-family: 'Open Sans', sans-serif;
 }
 
 #line_wrap ul li span {
 	display:inline-block;
-	padding:3px 11px;
-	border-radius:25px;
+	padding:5px 10px;
+	border-radius:100px;
 	margin-top:11px;
 }
 
@@ -104,7 +107,7 @@
 
 /* 1호선 */
 #line_wrap ul li:first-child {border:2px solid #273c97;}
-#line_wrap ul li:first-child span {background-color:#273c97;}
+#line_wrap ul li:first-child span {background-color:#273c97; padding:5px 13px;}
 
 /* 2호선 */
 #line_wrap ul li:nth-child(2) {border:2px solid #3cb54c;}
@@ -147,6 +150,7 @@
 	float:right;
 	width:300px;
 	max-width:300px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 #station_btn{
@@ -158,9 +162,7 @@
 	border:0;
 	outline:0;
 	cursor:pointer;
-	font-size:17px;
-	font-weight:900;
-	font-family: 'Open Sans', sans-serif;
+	font-size:15px;
 }
 
 #station_wrap ul {
