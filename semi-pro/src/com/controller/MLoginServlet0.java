@@ -18,7 +18,7 @@ import dto.MemberDTO;
 import exception.MyException;
 
 @WebServlet("/MLoginServlet")
-public class MLoginServlet extends HttpServlet {
+public class MLoginServlet0 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		String mId = request.getParameter("userid");
@@ -53,7 +53,7 @@ import service.MemberService;
  * Servlet implementation class MLoginServlet
  */
 @WebServlet("/MLoginServlet0")
-public class MLoginServlet extends HttpServlet {
+public class MLoginServlet0 extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	

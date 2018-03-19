@@ -31,9 +31,11 @@
 		width: 50px;
 	}
 	
-	.btn_submit {
-		
-		/*color: white;*/
+	.btn_leave{
+		border: 1px solid #99e6ff;
+		background-color: #99e6ff;
+		height:25px;
+		width: 100px;
 	}
 	
 	.btn_cancel{
@@ -97,36 +99,39 @@
 			<tr>
 				<th>아이디</th>
 				<td>${dto.soId}</td>
-			<tr>
+			</tr>
 			<tr>
 				<th>비밀번호</th>
 				<td><a href="soPwUpdateFormServlet"><input type="button" name="submit" class="btn_pw_submit" value="변경"></a></td>
-			<tr>
+			</tr>
 			<tr>
 				<th>사업주 이름</th>
 				<td>${dto.soName}</td>
-			<tr>
+			</tr>
 			<tr>
 				<th>사업주 전화번호</th>
 				<td>${dto.soPhone} <input type="button" name="submit" class="btn_pw_submit" value="변경"></td>
-			<tr>
+			</tr>
 			<tr>
 				<th>사업자 번호</th>
 				<td>${dto.soLicense}</td>
-			<tr>
+			</tr>
 			<tr>
 				<th>주소</th>
 				<td>${dto.soPost}<br>${fn:split(dto.soAddr,'/')[0]}&nbsp;&nbsp;${fn:split(dto.soAddr,'/')[1]}</td>
-			<tr>
+			</tr>
 			<tr>
 				<th>회원 레벨</th>
 				<td><c:if test="${dto.soLevel eq 0}">미승인</c:if><c:if test="${dto.soLevel eq 1}">체험</c:if><c:if test="${dto.soLevel eq 2}">유료</c:if></td>
-			<tr>
+			</tr>
 			<tr>
 				<th>가입일</th>
 				<td>${dto.soJoindate}</td>
+			</tr>
+			
 			<tr>
-
+				<td colspan="2" align="center">갬성갱단을 더 이상 이용하고 싶지 않다면 <a href="SoLeaveServlet"><button class="btn_leave">회원탈퇴</button></a></td>
+			</tr>
 		</table>
 	</div>
 </form>

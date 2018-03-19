@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @WebServlet("/MLogoutServlet")
-public class MLogoutServlet extends HttpServlet {
+public class MLogoutServlet0 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		HttpSession session = request.getSession();
@@ -38,7 +38,7 @@ import dto.SoDTO;
  * Servlet implementation class MLogoutServlet
  */
 @WebServlet("/MLogoutServlet0")
-public class MLogoutServlet extends HttpServlet {
+public class MLogoutServlet0 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		MemberDTO dto = (MemberDTO) session.getAttribute("memberlogin"); 

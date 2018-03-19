@@ -18,6 +18,8 @@
    <typeAlias type="com.dto.ScoreDTO" alias="ScoreDTO" />
    <typeAlias type="com.dto.InterestDTO" alias="InterestDTO" />
    <typeAlias type="com.dto.SearchResultDTO" alias="SearchResultDTO" />
+   <typeAlias type="dto.MNoticeDTO" alias="MNoticeDTO"/>
+   <typeAlias type="dto.MPageDTO" alias="MPageDTO"/>
   </typeAliases>
   
   
@@ -40,6 +42,7 @@
     <mapper resource="jdbc/SMapper.xml"/>
     <mapper resource="jdbc/AdminMapper.xml"/>
     <mapper resource="jdbc/MemberMapper.xml"/>
+    <mapper resource="jdbc/MBoardMapper.xml"/>
     <mapper resource="com/jdbc/ShopMapper.xml"/>
   </mappers>
 </configuration>
