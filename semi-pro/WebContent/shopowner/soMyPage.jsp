@@ -93,7 +93,6 @@
 
 
 <c:set var="dto" value="${login}"></c:set>
-<form action="soInfoUpdateServlet" method="get">
 	<div class="soInfoView">
 		<table class="soInfoView_tbl">
 			<tr>
@@ -102,7 +101,7 @@
 			</tr>
 			<tr>
 				<th>비밀번호</th>
-				<td><a href="soPwUpdateFormServlet"><input type="button" name="submit" class="btn_pw_submit" value="변경"></a></td>
+				<td><a href="SoPwUpdateFormServlet"><input type="button" name="submit" class="btn_pw_submit" value="변경"></a></td>
 			</tr>
 			<tr>
 				<th>사업주 이름</th>
@@ -134,4 +133,3 @@
 			</tr>
 		</table>
 	</div>
-</form>

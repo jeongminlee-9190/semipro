@@ -89,6 +89,21 @@ public class SoService {
 			session.close();
 		}
 	}
+	
+	
+	public void soLeave(String soId) throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();
+		try {
+			int n=session.delete("SoMapper.soLeave",soId);
+			session.commit();
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new MyException("상점 회원 탈퇴 에러");
+		}finally {
+			session.close();
+		}
+	}
+	
 	/*
 	public void memberAdd(MemberDTO dto) throws MyException{
 		SqlSession session = MySqlSessionFactory.getSession();

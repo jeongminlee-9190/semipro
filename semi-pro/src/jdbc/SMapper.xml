@@ -26,10 +26,7 @@
 		where soId=#{soId}
 	</select>
 	
-	<delete id="sDel" parameterType="string">
-		delete from shop
-		where soId=#{soId}
-	</delete>
+	
 	
 	<insert id="sScoreInsert1" parameterType="string">
 		insert into score (category,sCode)	values ('식사',#{sCode})
@@ -46,4 +43,25 @@
 	<insert id="sScoreInsert4" parameterType="string">
 		insert into score (category,sCode)	values ('파티',#{sCode})
 	</insert>
+	
+	
+	<delete id="sDel" parameterType="string">
+		delete from shop
+		where soId=#{soId}
+	</delete>
+	
+	<delete id="sDelScore" parameterType="string">
+		delete from score
+		where sCode=#{sCode}
+	</delete>
+	
+	<delete id="sDelInterest" parameterType="string">
+		delete from interest
+		where sCode=#{sCode}
+	</delete>
+	
+	<delete id="sDelReview" parameterType="string">
+		delete from review
+		where sCode=#{sCode}
+	</delete>
 </mapper>

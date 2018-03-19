@@ -87,6 +87,22 @@ public class SService {
 		}
 	}
 	
+	
+	public void sDelAll(String sCode) throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();
+		try {
+			int n=session.delete("SMapper.sDelScore",sCode);
+			int n2=session.delete("SMapper.sDelInterest",sCode);
+			int n3=session.delete("SMapper.sDelReview",sCode);
+			session.commit();
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new MyException("상점 삭제 에러1");
+		}finally {
+			session.close();
+		}
+	}
+	
 	public void sDel(String soId) throws MyException{
 		SqlSession session = MySqlSessionFactory.getSession();
 		try {
@@ -94,9 +110,11 @@ public class SService {
 			session.commit();
 		}catch(Exception e){
 			e.printStackTrace();
-			throw new MyException("상점 삭제 에러");
+			throw new MyException("상점 삭제 에러2");
 		}finally {
 			session.close();
 		}
 	}
+	
+	
 }

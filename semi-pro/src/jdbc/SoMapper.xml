@@ -37,5 +37,10 @@
 		set soPhone=#{soPhone}
 		where soId=#{soId}
 	</update>
+	
+	<delete id="soLeave" parameterType="string">
+		delete from shopowner
+		where soId=#{soId}
+	</delete>
   
 </mapper>

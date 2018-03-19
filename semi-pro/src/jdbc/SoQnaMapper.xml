@@ -5,10 +5,10 @@
 <mapper namespace="SoQnaMapper">
     <!-- 1:1 문의 리스트 -->
 	<select id="soQnaList" parameterType="string" resultType="SoQnaDTO">
-		select qnaNum, oId, sName, qnaTitle, qnaContent,
+		select qnaNum, soId, qnaTitle , qnaContent,
 		to_char(qnaWritedate,'YYYY-MM-DD') as qnaWritedate,qnaComplete,qnaCategory
-		from soqnaboard
-		where oId=#{oId}
+		from soqna
+		where soId=#{soId}
 		order by qnaNum desc
 	</select>
 
@@ -21,10 +21,14 @@
     
     <!-- 1:1 문의 자세히 보기 -->
     <select id="soQnaRetrieve" parameterType="int" resultType="SoQnaDTO">
-		select qnaNum, oId, sName, qnaTitle, qnaContent,
+		select qnaNum, soId,qnaTitle, qnaContent,
 		to_char(qnaWritedate,'YYYY-MM-DD') as qnaWritedate,qnaComplete,qnaCategory
-		from soqnaboard
+		from soqna
 		where qnaNum=#{qnaNum}
 	</select>
     
+    <delete id="soDelQna">
+    	delete from soqna
+    	where soId=#{soId}
+    </delete>
 </mapper>
