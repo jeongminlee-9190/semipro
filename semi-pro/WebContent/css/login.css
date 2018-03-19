@@ -8,14 +8,18 @@
 #login_wrap a {
 	display:block;
 	position:absolute;
-	top:0;
-	right:0;
+	top:10px;
+	right:20px;
+	font-family: gotham_Medium; 
+	font-style: normal; 
+	font-weight: normal;
 }
 
 #login_wrap #login {
 	display:block;
 	float:left;
 	margin-top:9px;
+	padding-right:15px;
 	font-size:16px;
 	color:#fff;
 }

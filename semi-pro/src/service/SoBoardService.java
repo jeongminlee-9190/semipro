@@ -44,18 +44,33 @@ public class SoBoardService {
 			session.close();
 		}
 		return pageDTO;
-	}
+	}//end of list
 	
+
 	public SoNoticeDTO retrieve(int noticeNum) {
+		//조회수 증가
+		readCnt(noticeNum);
 		//1. 세션 얻기
-			SqlSession session = MySqlSessionFactory.getSession();
-			SoNoticeDTO dto = null;
-			try {
-				dto = session.selectOne("SoBoardMapper.soNoticeRetrieve", noticeNum);
-			}finally {
-				session.close();
-			}
-			return dto;
-		
-	}
+		SqlSession session = MySqlSessionFactory.getSession();
+		SoNoticeDTO dto = null;
+		try {
+			dto = session.selectOne("SoBoardMapper.soNoticeRetrieve", noticeNum);
+		}finally {
+			session.close();
+		}
+		return dto;
+	}//end of retrieve
+	
+	
+	private void readCnt(int noticeNum) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		System.out.println("readCnt1");
+		try {
+			int n = session.update("SoBoardMapper.soNoticeReadCnt",noticeNum);
+			session.commit();
+			System.out.println("readCnt2:"+noticeNum);
+		}finally {
+			session.close();
+		}
+	}//end of readCnt
 }

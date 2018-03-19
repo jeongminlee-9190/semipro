@@ -12,7 +12,7 @@
 <!-- reset -->
 <link rel="stylesheet" href="css/reset.css">
 <!-- font -->
-<link rel="stylesheet" href="css/font.css">
+<link rel="stylesheet" href="css/fonts.css">
 
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/login.css">
@@ -20,7 +20,7 @@
 
 <!-- jquery -->
 <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
 <script src="js/main.js"></script>
 <script src="js/subway.js"></script>
 
@@ -39,6 +39,7 @@
 
 <header id="header">
 	<jsp:include page="login/login.jsp" flush="true"/>
+	<jsp:include page="member/mNoticeUI.jsp" flush="true"/>
 	<div id="logo">
 		<img src="images/logo.png" title="logo">
 	</div>

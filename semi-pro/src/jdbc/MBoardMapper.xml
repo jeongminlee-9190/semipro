@@ -2,11 +2,11 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="SoBoardMapper">
+<mapper namespace="MBoardMapper">
 
-	<select id="soNoticeList" parameterType="hashmap" resultType="SoNoticeDTO">
+	<select id="mNoticeList" parameterType="hashmap" resultType="MNoticeDTO">
 		select noticeNum, noticeTitle, noticeContent, to_char(noticeWritedate,'YYYY-MM-DD') as noticeWritedate, noticeWriter, noticeReadcnt
-		from noticetoso
+		from noticetom
 		
 		<if test="searchName=='title'">
 			where noticeTitle like '%'||#{searchValue}||'%'
@@ -20,12 +20,12 @@
 
 	<select id="totalCnt" resultType="int">
      select count(*)
-     from noticetoso
+     from noticetom
     </select>
     
     <select id="totalSearchCnt" resultType="int" parameterType="hashmap">
      select count(*)
-     from noticetoso
+     from noticetom
      <if test="searchName == 'title'">
 	     where noticeTitle LIKE '%'||#{searchValue}||'%'
 	   </if>
@@ -36,15 +36,15 @@
     
     
      <!-- 공지사항 자세히 보기 -->
-    <select id="soNoticeRetrieve" parameterType="int" resultType="SoNoticeDTO">
+    <select id="mNoticeRetrieve" parameterType="int" resultType="MNoticeDTO">
 		select noticeNum, noticeTitle, noticeContent, to_char(noticeWritedate,'YYYY-MM-DD') as noticeWritedate, noticeWriter, noticeReadcnt
-		from noticetoso
+		from noticetom
 		where noticeNum=#{noticeNum}
 	</select>
 	
 	<!-- 조회수 증가 -->
-	<update id="soNoticeReadCnt" parameterType="int">
-	    update noticetoso 
+	<update id="mNoticeReadCnt" parameterType="int">
+	    update noticetom
 	    set noticeReadcnt = noticeReadcnt + 1
 	    where noticeNum = #{noticeNum}
 	</update>
