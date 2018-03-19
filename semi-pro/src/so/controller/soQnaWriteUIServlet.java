@@ -9,30 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dto.SoNoticeDTO;
-import service.SoBoardService;
-
-/**
- * 공지사항 자세히 보기 
- */
-@WebServlet("/SoNoticeRetrieveServlet")
-public class SoNoticeRetrieveServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
+@WebServlet("/soQnaWriteUIServlet")
+public class soQnaWriteUIServlet extends HttpServlet {
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String noticeNum = request.getParameter("num");
-		SoBoardService service = new SoBoardService();
-		SoNoticeDTO dto = service.retrieve(Integer.parseInt(noticeNum));
-		
-		request.setAttribute("sonoticeretrieve", dto);
-		
-		RequestDispatcher dis = request.getRequestDispatcher("soNoticeRetrieve.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("soQnaWrite.jsp");
 		dis.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);	
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

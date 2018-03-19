@@ -49,6 +49,7 @@ public class SoBoardService {
 
 	public SoNoticeDTO retrieve(int noticeNum) {
 		//조회수 증가
+		System.out.println("SoNoticeDTO retrieve");
 		readCnt(noticeNum);
 		//1. 세션 얻기
 		SqlSession session = MySqlSessionFactory.getSession();
