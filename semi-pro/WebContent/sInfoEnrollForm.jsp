@@ -26,10 +26,6 @@
 	<div class="sInfoEnrollForm">
 		<jsp:include page="shop/sInfoEnrollForm.jsp" flush="true" />
 	</div>
-
-	<div class="footer">
-			footer
-	</div>
 </div>	
 </body>
 </html>

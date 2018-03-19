@@ -13,7 +13,13 @@ public class SService {
 	public void sAdd(SDTO dto) throws MyException{
 		SqlSession session = MySqlSessionFactory.getSession();
 		try {
+			String sCode=dto.getsCode();
+			System.out.println(sCode);
 			int n=session.insert("SMapper.sAdd",dto);
+			int n2=session.insert("SMapper.sScoreInsert1",sCode);
+			int n3=session.insert("SMapper.sScoreInsert2",sCode);
+			int n4=session.insert("SMapper.sScoreInsert3",sCode);
+			int n5=session.insert("SMapper.sScoreInsert4",sCode);
 			session.commit();
 		}catch(Exception e){
 			e.printStackTrace();

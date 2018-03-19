@@ -26,11 +26,8 @@ public class SInfoEnrollServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String soId= request.getParameter("soId");
-		System.out.println(soId);
 		String soLicense = request.getParameter("soLicense");
-		System.out.println(soLicense);
 		String sName = request.getParameter("sName");
-		System.out.println(sName);
 		String sPhone1 = request.getParameter("sPhone1");
 		String sPhone2 = request.getParameter("sPhone2");
 		String sPhone3 = request.getParameter("sPhone3");
@@ -67,6 +64,8 @@ public class SInfoEnrollServlet extends HttpServlet {
 		String sC2Menu3= request.getParameter("sC2Menu3");
 		String sC2Menu3_info= request.getParameter("sC2Menu3_info");
 		String sC2Price3= request.getParameter("sC2Price3");
+		String sSubway=request.getParameter("sSubway2");
+		System.out.println(sSubway);
 		
 		String sCode = sCategory2+soLicense;
 		
@@ -86,7 +85,8 @@ public class SInfoEnrollServlet extends HttpServlet {
 		}
 		
 		String sBusinesshours = sWeekday+"/"+sWeekend+"/"+sDayOff;		
-		SDTO dto = new SDTO(sCode, sName, soId, sPost, sAddr, sPhone, sCategory, sBusinesshours, sParkinglot, sTerrace, sMenu1, sMenu2);
+		
+		SDTO dto = new SDTO(sCode, sName, soId, sPost, sAddr, sPhone, sCategory, sBusinesshours, sParkinglot, sTerrace, sMenu1, sMenu2,sSubway);
 		SService service = new SService();
 		String nextPage=null;
 		try {

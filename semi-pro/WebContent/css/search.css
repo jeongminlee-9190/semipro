@@ -4,7 +4,7 @@
 /* 검색 창 */
 #search {
 	width:485px; 
-	height:46px;
+	height:48px; /* border 1px */
 	margin-left:50%;
 	padding-left:15px;
 	position:absolute; 
@@ -41,18 +41,17 @@
 #subway_wrap {
 	position:absolute;
 	top:50px;
-	left:-322px;
+	left:-305px;
 	margin-left:50%;
-	width:644px;
+	width:610px;
 	text-align:center;
-	border:1px solid red;
 }
 
 #line_wrap {
 	display:block;
 	float:left;
-	width:317px;
-	max-width:317px;
+	width:300px;
+	max-width:300px;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -65,12 +64,15 @@
 	border:0;
 	outline:0;
 	cursor:pointer;
+	font-size:17px;
+	font-weight:900;
+	font-family: 'Open Sans', sans-serif;
 }
 
 #line_wrap ul {
 	display:none;
-	/* height:244px;
-	overflow-y:scroll; */
+	height:252px;
+	overflow-y:scroll;
 }
 
 #line_wrap ul li {
@@ -143,11 +145,44 @@
 #station_wrap {
 	display:block;
 	float:right;
-	margin-right:17px;
 	width:300px;
-	border:1px solid blue;
+	max-width:300px;
 }
 
-#station {
+#station_btn{
+	display:block;
+	width:300px;
+	height:60px;
+	background-color:#ffa827;
+	color:#fff;
+	border:0;
+	outline:0;
+	cursor:pointer;
+	font-size:17px;
+	font-weight:900;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#station_wrap ul {
 	display:none;
+	height:252px;
+	overflow-y:scroll;
+}
+
+#station_1 li {
+	display:block;
+	width:296px; /* border : 2px 2px */
+	max-width:300px;
+	height:56px; /* border : 2px 2px */
+	margin-top:1px;
+	font-size:18px;
+	font-weight:900;
+	color:#273c97;
+	border:2px solid #273c97;
+	cursor:pointer;
+}
+
+#station_1 li span {
+	display:inline-block;
+	padding-top:15px;
 }

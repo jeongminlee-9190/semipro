@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+#login_wrap {
+	diaplay:block;
+	position:relative;
+}
+
+#login_wrap a {
+	display:block;
+	position:absolute;
+	top:10px;
+	right:20px;
+	font-family: gotham_Medium; 
+	font-style: normal; 
+	font-weight: normal;
+}
+
+#login_wrap #login {
+	display:block;
+	float:left;
+	margin-top:9px;
+	padding-right:15px;
+	font-size:16px;
+	color:#fff;
+}
+
+#lgoin_icon {
+	float:right;
+}

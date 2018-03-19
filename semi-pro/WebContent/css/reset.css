@@ -8,3 +8,20 @@ select {font-size:inherit; font-family:inherit;}
 
 .clearfix {*zoom:1; /*zoom:1*/}
 .clearfix:after {content:''; display:block; clear:both;}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+}
