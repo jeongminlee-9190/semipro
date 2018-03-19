@@ -1,6 +1,6 @@
 shopowner 완료)1.공통: 회원 탈퇴
 2. 공통: 아이디/비번 찾기
-3. shopowner: QNA 글쓰기, 수정(삭제는 하지 않을 예정)
+3. shopowner: QNA 글쓰기, 수정 //삭제는 불가
 4. admin: shopowner sLevel 수정
 5. admin: shopower가 작성한 QNA 답변 작성 후 상태를 "처리완료"로 바꾸기
 6. shopowner: shop 등록 정보 수정
