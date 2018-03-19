@@ -11,6 +11,7 @@
 </head>
 <body>
   <header>
+  	<h1><a href="main0.jsp">GAEMSEONG GAENGDAN</a></h1>
     <jsp:include page="search0.jsp" flush="true"></jsp:include>
     <jsp:include page="subway0.jsp" flush="true"></jsp:include>
     <jsp:include page="keyword0.jsp" flush="true"></jsp:include>

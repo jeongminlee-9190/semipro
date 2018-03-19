@@ -18,29 +18,58 @@
 		where ssubway = #{station}
 	</select>
 
-	<select id="search" parameterType="arraylist" resultType="ScoreDTO">
+<!-- 	<select id="search" parameterType="arraylist" resultType="ScoreDTO">
 		select scategory, scode, good, bad
 		from score
 		where scategory in
 		<foreach collection="list" item="item" separator=",">
 			#{item}
 		</foreach>
-	</select>
+	</select> -->
 	
 	<select id="isInterest" parameterType="hashmap" resultType="InterestDTO">
-		select iNum from interest
-		where mId = #{mId} or sCode = #{sCode}
+		select * from interest
+		where mId = #{mId} and sCode = #{sCode}
 	</select>
 	
 	<insert id="insertInterest" parameterType="hashmap">
-		insert into interest(iNum, mId, sCode)
-		values (#{iCode}, #{mId}, #{sCdoe})
+		insert into interest(iCode, mId, sCode)
+		values (#{iCode}, #{mId}, #{sCode})
 	</insert>
 	
 	<delete id="deleteInterest" parameterType="hashmap">
 		delete from interest
-		where iNum=#{iCode}
+		where iCode=#{iCode}
 	</delete>
+	
+	<select id="login" parameterType="hashmap" resultType="MemberDTO">
+		select * from member
+		where mId = #{mId} and mPasswd = #{mPasswd}
+	</select>
+	
+	<select id="search" parameterType="hashmap" resultType="SearchResultDTO">
+		SELECT S.SCODE, sum(S.GOOD-S.BAD) SCORESUM, 
+			SH.SNAME,SH.SSUBWAY,SH.SOID,SH.SOID,SH.SPOST,SH.SADDR, 
+         SH.SPHONE,SH.SBUSINESSHOURS,SH.SPARKINGLOT,SH.STERRACE,
+         SH.SMENU1,SH.SMENU2,SH.SCATEGORY,SH.SIMAGE,SH.SLIKE,SH.SHATE,SH.SINTEREST
+		FROM SCORE S, SHOP SH
+		WHERE S.SCODE = SH.SCODE
+		<if test="station != ''">
+		AND SH.SSUBWAY =#{station} 
+		</if>
+		<if test="keyword != null">
+		AND S.CATEGORY IN
+		<foreach collection="keyword" item="item" separator="," open="(" close=")">
+			#{item}
+		</foreach>
+		</if>
+		GROUP BY S.SCODE,SH.SNAME,SH.SSUBWAY,SH.SOID,SH.SPOST,SH.SADDR,
+          SH.SPHONE,SH.SBUSINESSHOURS,SH.SPARKINGLOT,SH.STERRACE,
+          SH.SMENU1,SH.SMENU2,SH.SCATEGORY,SH.SIMAGE,SH.SLIKE,SH.SHATE,SH.SINTEREST
+		ORDER BY SCORESUM DESC 
+	</select>
+	
+	
 	
 	
 </mapper>

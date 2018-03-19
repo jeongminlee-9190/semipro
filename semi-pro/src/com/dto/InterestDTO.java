@@ -2,24 +2,24 @@ package com.dto;
 
 public class InterestDTO {
 
-	private int iNum;
+	private String iCode;
 	private String mId;
 	private String sCode;
 	public InterestDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public InterestDTO(int iNum, String mId, String sCode) {
+	public InterestDTO(String iCode, String mId, String sCode) {
 		super();
-		this.iNum = iNum;
+		this.iCode = iCode;
 		this.mId = mId;
 		this.sCode = sCode;
 	}
-	public int getiNum() {
-		return iNum;
+	public String getiCode() {
+		return iCode;
 	}
-	public void setiNum(int iNum) {
-		this.iNum = iNum;
+	public void setiCode(String iCode) {
+		this.iCode = iCode;
 	}
 	public String getmId() {
 		return mId;
@@ -33,6 +33,5 @@ public class InterestDTO {
 	public void setsCode(String sCode) {
 		this.sCode = sCode;
 	}
-	
 	
 }

@@ -5,7 +5,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:set var="dto" value="${shopdto }" scope="request"></c:set>
-
+  <jsp:include page="memberUI0.jsp" flush="true" />
+  <jsp:include page="search0.jsp" flush="true"/>
+  
+  <jsp:include page="subway0.jsp" flush="true"></jsp:include>
+  <jsp:include page="keyword0.jsp" flush="true"></jsp:include><br>
 <h1>${dto.sName }</h1>
 <hr>
 <jsp:include page="shopimage0.jsp" flush="true"></jsp:include>

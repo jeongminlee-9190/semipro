@@ -2,6 +2,7 @@ package com.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dto.ScoreDTO;
+import com.dto.SearchResultDTO;
 import com.dto.ShopDTO;
 import com.service.ShopService;
 
@@ -26,9 +29,17 @@ public class SearchServlet extends HttpServlet {
 
 		List<String> keywordsList = new ArrayList<>();
 		
-		for(int i=0; i<keywordsArray.length; i++) {
-			keywordsList.add(keywordsArray[i]);
+		System.out.println(keywords);
+		if(keywords == "") {
+			keywordsList=null;
+		}else {
+			for(int i=0; i<keywordsArray.length; i++) {
+				keywordsList.add(keywordsArray[i]);
+			}
 		}
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("station", station);
+		map.put("keyword", keywordsList);
 		
 		request.setAttribute("keywordsList", keywordsList);
 		
@@ -36,7 +47,7 @@ public class SearchServlet extends HttpServlet {
 		ShopService service = new ShopService();
 		
 		try {
-			List<ShopDTO> shopListByStation = service.selectByStation(station) ;
+			List<SearchResultDTO> shopListByStation = service.search(map);
 			request.setAttribute("shopList", shopListByStation);
 		} catch (MyException e) {
 			e.printStackTrace();

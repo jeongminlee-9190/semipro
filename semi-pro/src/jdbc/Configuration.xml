@@ -17,6 +17,7 @@
    <typeAlias type="com.dto.ShopDTO" alias="ShopDTO" />
    <typeAlias type="com.dto.ScoreDTO" alias="ScoreDTO" />
    <typeAlias type="com.dto.InterestDTO" alias="InterestDTO" />
+   <typeAlias type="com.dto.SearchResultDTO" alias="SearchResultDTO" />
    <typeAlias type="dto.MNoticeDTO" alias="MNoticeDTO"/>
    <typeAlias type="dto.MPageDTO" alias="MPageDTO"/>
   </typeAliases>
