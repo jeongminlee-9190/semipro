@@ -1,10 +1,10 @@
-1.공통: 회원 탈퇴
+shopowner 완료)1.공통: 회원 탈퇴
 2. 공통: 아이디/비번 찾기
 3. shopowner: QNA 글쓰기, 수정(삭제는 하지 않을 예정)
 4. admin: shopowner sLevel 수정
 5. admin: shopower가 작성한 QNA 답변 작성 후 상태를 "처리완료"로 바꾸기
 6. shopowner: shop 등록 정보 수정
-7. shopowner: shop 정보 삭제 시 SCORE 테이블도 삭제되어야
+완료)7. shopowner: shop 정보 삭제 시 SCORE 테이블도 삭제되어야
 8. member: 예약하기 구현
 9. shopowner: 예약 접수 현황, 예약 확정하기 구현
 10. shopowner: 체험 시작일, 유료 자동 결제일 관련 컬럼 또는 테이블 생성해야 함

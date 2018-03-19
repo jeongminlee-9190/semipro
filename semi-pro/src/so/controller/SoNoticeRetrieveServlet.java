@@ -22,11 +22,10 @@ public class SoNoticeRetrieveServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String noticeNum = request.getParameter("num");
-		//System.out.println(noticeNum);
 		SoBoardService service = new SoBoardService();
 		SoNoticeDTO dto = service.retrieve(Integer.parseInt(noticeNum));
 		
-		request.setAttribute("noticeretrieve", dto);
+		request.setAttribute("sonoticeretrieve", dto);
 		
 		RequestDispatcher dis = request.getRequestDispatcher("soNoticeRetrieve.jsp");
 		dis.forward(request, response);
