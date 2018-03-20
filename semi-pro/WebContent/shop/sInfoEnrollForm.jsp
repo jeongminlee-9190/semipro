@@ -39,7 +39,7 @@
 	$(document).ready(function(){
 		$("#sample6_address2").focus(function(){
 			$('#sSubway1').empty();
-			$('#sSubway2').empty();
+			//$('#sSubway2').empty();
 			var address = $("#sample6_address").val();
 			console.log(address);
 			if(address.includes("강남구")){
@@ -272,75 +272,79 @@
 				}
 			}
 		});
-	});
+		
+		/* 유효성 체크 */
+		$("#sInfoEnrollForm").submit(function(e){
+			var re_phone1=/^[0-9]{2,4}$/;
+			var re_phone2=/^[0-9]{3,4}$/;
+			var re_phone3=/^[0-9]{4,4}$/;
+			if($("#sName").val().length==0){
+				alert('상점 이름을 입력하세요');
+				$("#sName").focus();
+				e.preventDefault();
+			}
+			
+			/* 전화번호 */
+			if(re_phone1.test($("#soPhone1").val())!= true){
+				alert('유효한 전화번호1를 입력하세요');
+				$("#soPhone1").focus();
+				e.preventDefault();
+			}
+			if(re_phone2.test($("#soPhone2").val())!= true){
+				alert('유효한 전화번호2를 입력하세요');
+				$("#soPhone2").focus();
+				e.preventDefault();
+			}
+			if(re_phone3.test($("#soPhone3").val())!= true){
+				alert('유효한 전화번호3를 입력하세요');
+				$("#soPhone3").focus();
+				e.preventDefault();
+			}	
 
-	
-	/* 유효성 체크*/
-	function formCheck(e){
-		var sName = document.querySelector("#sName").value;
-		if(sName.length==0){
-			alert("상점 이름을 입력하세요");
-			document.querySelector("#sName").focus();
-			e.preventDefault();
-		}
-		
-		/* 전화번호 */
-		var sPhone1 = document.querySelector("#sPhone1").value;
-		if(sPhone1.length==0){
-			alert("전화번호를 입력하세요");
-			document.querySelector("#sPhone1").focus();
-			e.preventDefault();
-		}
-		var sPhone2 = document.querySelector("#sPhone2").value;
-		if(sPhone2.length==0){
-			alert("전화번호를 입력하세요");
-			document.querySelector("#sPhone2").focus();
-			e.preventDefault();
-		}
-		var sPhone3 = document.querySelector("#sPhone3").value;
-		if(sPhone3.length==0){
-			alert("전화번호를 입력하세요");
-			document.querySelector("#sPhone3").focus();
-			e.preventDefault();
-		}
-		
-		var sAddr2 = document.querySelector("#sample6_address2").value;
-		if(sAddr2.length==0){
-			alert("주소를 입력하세요");
-			document.querySelector("#sample6_address2").focus();
-			e.preventDefault();
-		}
-		var sSubway = document.querySelector("#sSubway2").value;
-		if(sSubway=="선택"){
-			alert("지하철 역을  선택 하세요");
-			document.querySelector("#sSubway2").focus();
-			e.preventDefault();
-		}
-		var sWeekday = document.querySelector("#sWeekday").value;
-		if(sWeekday.length==0){
-			alert("영업시간을 입력하세요");
-			document.querySelector("#sWeekday").focus();
-			e.preventDefault();
-		}
-		
-		var sWeekend = document.querySelector("#sWeekend").value;
-		if(sWeekend.length==0){
-			alert("영업시간을 입력하세요");
-			document.querySelector("#sWeekend").focus();
-			e.preventDefault();
-		}
-		
-		var sDayOff = document.querySelector("#sDayOff").value;
-		if(sDayOff.length==0){
-			alert("영업시간을 입력하세요");
-			document.querySelector("#sDayOff").focus();
-			e.preventDefault();
-		}
-	}
+			/* 주소 */
+			if($("#sample6_address").val().length==0){
+				alert('주소를 입력하세요');
+				$("#sample6_address").focus();
+				e.preventDefault();
+			}
+			
+			if($("#sample6_address2").val().length==0){
+				alert('주소를 입력하세요');
+				$("#sample6_address2").focus();
+				e.preventDefault();
+			}
+			
+			/* 지하철역 */
+			if($("#sSubway2").text().length==0 || $("#sSubway2").text()=="선택"){
+				alert('지하철 역을  선택하세요');
+				$("#sSubway2").focus();
+				e.preventDefault();
+			}
+			
+			/* 영업시간 */
+			if($("#sWeekday").val().length==0){
+				alert('평일 영업시간을 입력하세요');
+				$("#sWeekday").focus();
+				e.preventDefault();
+			}
+			
+			if($("#sWeekend").val().length==0){
+				alert('주말 영업시간을 입력하세요');
+				$("#sWeekend").focus();
+				e.preventDefault();
+			}
+			
+			if($("#sDayOff").val().length==0){
+				alert('휴무일 입력하세요');
+				$("#sDayOff").focus();
+				e.preventDefault();
+			}
+		});
+	});
 </script>
 
 
-<form action="SInfoEnrollServlet" method="get" onsubmit="formCheck(event)">
+<form action="SInfoEnrollServlet" id="sInfoEnrollForm" method="get" >
 	<div class="wrapper">
 		<div class="sEnroll_title">
 			<span class="title">상점 기본 정보 등록</span>  <span class="stress"> *상점은 한 곳만 등록 가능합니다.</span>
