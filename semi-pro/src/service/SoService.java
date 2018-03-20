@@ -64,7 +64,31 @@ public class SoService {
 			session.close();
 		}
 		return dto;
-	}//end of login
+	}//end of myPage
+	
+	
+	public String findSoId(HashMap<String, String> map) throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();
+		String soId = null;
+		try {
+			soId= session.selectOne("SoMapper.findSoId",map);
+			System.out.println(soId);
+		}catch(Exception e) {
+			throw new MyException("아이디 찾기 에러");
+		}
+		return soId;
+	}//end of findSoId
+	
+	public String findSoPasswd(HashMap<String, String> map) throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();
+		String soPasswd = null;
+		try {
+			soPasswd= session.selectOne("SoMapper.findSoPasswd",map);
+		}catch(Exception e) {
+			throw new MyException("비밀번호 찾기 에러");
+		}
+		return soPasswd;
+	}//end of findSoId
 	
 	public void soPasswdUpdate(HashMap<String, String> map) throws MyException{
 		SqlSession session = MySqlSessionFactory.getSession();

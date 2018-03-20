@@ -30,6 +30,13 @@
 		border: 1px solid #99e6ff;
 		background-color: white;
 	}
+	.btn_find{
+		margin-top: 10px; 
+		height: 35px;
+		width: 150px;
+		border: 1px solid #99e6ff;
+		background-color: white;
+	}
 	.state_login{
 		font-size:15px;	
 	}
@@ -41,7 +48,8 @@
 		<input type="text" name="soId" class="input_soId" placeholder="아이디(이메일 형식)" maxlength="30"><br>
 		<input type="password" name="soPasswd" class="input_soPasswd" placeholder="비밀번호" maxlength="10"><br>
 		<input type="submit" class="btn_submit" value="로그인"><br>
-		<a href="SoJoinUIServlet"><input type="button" class="btn_join" value="회원가입"></a>
+		<a href="SoJoinUIServlet"><input type="button" class="btn_join" value="회원가입"></a><br>
+		<a href="SoFindsoIdServlet"><input type="button" class="btn_find" value="아이디 찾기"></a>&nbsp;<a href="SoFindsoPasswdServlet"><input type="button" class="btn_find" value="비밀번호 찾기"></a>
 	</form>
 </c:if>
 

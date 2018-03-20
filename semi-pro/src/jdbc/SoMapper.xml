@@ -26,6 +26,18 @@
    		where soId = #{soId}
 	</select>	
 	
+	<select id="findSoId" parameterType="hashmap" resultType="string">
+    	select soId
+   		from shopowner
+   		where soLicense = #{soLicense} and soName = #{soName} and soPhone = #{soPhone}
+	</select>
+	
+	<select id="findSoPasswd" parameterType="hashmap" resultType="string">
+    	select soPasswd
+   		from shopowner
+   		where soId = #{soId} and soLicense = #{soLicense} and soName = #{soName} and soPhone = #{soPhone}
+	</select>
+	
 	<update id="soPasswdUpdate" parameterType="hashmap">
 		update shopowner
 		set soPasswd=#{soPasswd}
