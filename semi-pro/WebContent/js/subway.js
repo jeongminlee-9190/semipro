@@ -102,26 +102,38 @@ $(document).ready(function(){
 	});
 	
 	//호선 클릭시 역 클릭 가능
-	$("#station_btn").click(function(){
+	$("#line_wrap ul li").click(function(){ 
 		
-		//var line_n = $("#line_wrap ul li").click(function(){ $(this).index(); });
-		var line = $("#line_wrap ul li").index();
+		var line_n = $(this).index()+1; 
 		
-		if ( line == 0 ){
-			$("#station_wrap ul").css("visibility","hidden");
+		$("#station_btn").click(function(){
+			
+			if ( line_n >= 1 ){
+				$("#station_wrap ul").show();
+			} else if ($("#station_btn").text().length == empty){
+				$("#station_wrap ul").hide();
+				alert("역을 선택해 주세요.");
+			}
+			
+			console.log($("#station_btn").text().length);
+
+		});
+		
+		console.log("dd" + line_n);
+		
+	});
+	/*$("#station_btn").click(function(){
+		
+		var line = $("#line_wrap ul li").index()*0;
+		
+		if( line == 0){
+			$("#station_wrap ul").hide();
 			alert("역을 선택해 주세요.");
 			console.log("hello" + line);
+		} else {
+			$("#station_wrap ul").show();
 		}
-		
-		$("#line_wrap ul li").click(function(){
-			var line_n = $(this).index();
-			
-			if( line_n > 0){
-				$("#station_wrap ul").css("visibility","visible");
-				console.log("dd" + line_n);
-			}
-		});
 
-	});
+	});*/
 
 });
