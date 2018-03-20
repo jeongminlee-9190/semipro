@@ -52,8 +52,6 @@
 </script>
 
 
-
-
 <div class="wrapper">
 	<div class="soFindForm">
 		<h3>비밀번호 찾기</h3><hr><br>
