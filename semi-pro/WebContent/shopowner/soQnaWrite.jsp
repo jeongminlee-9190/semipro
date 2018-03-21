@@ -24,11 +24,11 @@
 				  		<option>이용불만</option>
 				  	 </select>
 				  </td>
-				  <td><input type="text" name="qnaTitle" size="70"></td>
+				  <td><input type="text" name="qnaTitle" size="76"></td>
 			 	</tr>
 			 	
 			 	<tr>
-			 		<td colspan="2"><textarea name="qnaContent" rows="15" cols="85"></textarea></td>
+			 		<td colspan="2"><textarea name="qnaContent" rows="15" cols="93"></textarea></td>
 			 	</tr>
 			 	<tr>
 			 		<td colspan="2"><input type="submit" class="btn_submit" value="접수"><a href="soQna.jsp">&nbsp;&nbsp;&nbsp;<input type="button" class="btn_cancel" value="취소"></a></td>

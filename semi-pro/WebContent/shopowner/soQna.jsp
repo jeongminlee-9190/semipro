@@ -22,13 +22,12 @@
 			  <td scope="col">답변상태</td>
 		 	</tr>
 		
-			<c:forEach var="dto" items="${list}" varStatus="status">
+			<c:forEach var="dto" items="${soQnaList}" varStatus="status">
 			 <tr>
 			  <td>${dto.qnaCategory}</td>
 			  <td><a href="soQnaRetrieveServlet?qnaNum=${dto.qnaNum}">${dto.qnaTitle}</a></td>
 			  <td>${dto.qnaWritedate}</td>
 			  <td>${dto.qnaComplete}</td>
-			  <td><input type="button" value="X"></td>
 			 </tr>
 			</c:forEach>
 		</table>

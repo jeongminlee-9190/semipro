@@ -2,6 +2,7 @@ package so.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dto.SoDTO;
+import dto.SoQnaDTO;
+import service.SoQnaService;
 import service.SoService;
 
 /**
@@ -35,8 +38,9 @@ public class soQnaWriteServlet extends HttpServlet {
 			try {
 				HashMap<String, String> map = new HashMap<>();
 				SoDTO dto = (SoDTO)session.getAttribute("login");
-				SoService service = new SoService();
-				
+				SoQnaService service = new  SoQnaService();
+				//SoService service = new SoService();
+			
 				String soId = dto.getSoId();
 				System.out.println(soId);
 				
@@ -49,6 +53,9 @@ public class soQnaWriteServlet extends HttpServlet {
 				map.put("qnaContent", qnaContent);
 				map.put("qnaCategory", qnaCategory);
 				service.soQnaWrite(map);
+				List<SoQnaDTO> list = service.list(soId);
+				session.setAttribute("soQnaList", list);
+				
 				nextPage="soQna.jsp";
 			}catch(Exception e) {
 				nextPage="error.jsp";

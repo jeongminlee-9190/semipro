@@ -38,16 +38,15 @@ public class SoQnaServlet extends HttpServlet {
 			session.setAttribute("mesg", "로그인이 되지 않았습니다.");
 		} else {
 			String soId=dto.getSoId();
-			map.put("soId", soId);
 			SoQnaService service = new SoQnaService();
 			try {
-				list = service.list(map);
+				list = service.list(soId);
 				
 			} catch (MyException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			request.setAttribute("list", list);
+			request.setAttribute("soQnaList", list);
 			nextPage="soQna.jsp";
 			
 		}//end of if			
