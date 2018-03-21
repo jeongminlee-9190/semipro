@@ -86,8 +86,8 @@
 			<p class="shopdeletewarn">사진 정보를 등록해주세요.</p>
 		</c:if>
 		<c:if test="${!empty sinfo.sCode && !empty sinfo.sImage}">
-			<a href="SViewServlet"><input type="button" class="btn_enroll"value="기본정보 수정"></a><br><br>
-			<a href="SViewServlet"><input type="button" class="btn_enroll"value="사진정보 수정"></a>
+			<a href="SInfoUpdateServlet"><input type="button" class="btn_enroll"value="기본정보 수정"></a><br><br>
+			<a href="SImageUpdateFormServlet"><input type="button" class="btn_enroll"value="사진정보 수정"></a>
 		</c:if>
 		
 	</div>

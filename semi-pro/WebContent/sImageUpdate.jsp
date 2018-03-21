@@ -7,17 +7,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="css/so/so_mainwrapper.css">
-<link rel="stylesheet" type="text/css" href="css/so/content/so_management.css">
+<link rel="stylesheet" type="text/css" href="css/so/content/so_sinfoenrollform.css">
 <link rel="stylesheet" type="text/css" href="css/so/so_footer.css">
-
 </head>
 <body>
-<c:if test="${! empty success}">
+<c:if test="${! empty fail}">
    <script type="text/javascript">
-    alert('${success}');
+    alert('${fail}');
    </script>
 </c:if>
-<c:remove var="success"/>
+<c:remove var="fail"/>
 
 <div class="wrapper">
 	<div class="mainwrapper">
@@ -31,11 +30,9 @@
 			<jsp:include page="shopowner/include/top2.jsp" flush="true"/>
 		</div>
 	</div>
-	<div class="sManagement">
-		<jsp:include page="shop/sManagement.jsp" flush="true" />
-	</div>
-	<div class="footer">
-			footer
+	
+	<div class="sInfoImageUpdate">
+		<jsp:include page="shop/sImageUpdate.jsp" flush="true" />
 	</div>
 </div>	
 </body>

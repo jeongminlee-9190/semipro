@@ -201,9 +201,6 @@
             $('.window').hide();
         });
         
-        
-        
-      
         $('.showMask2').click(function(e){
             // preventDefault는 href의 링크 기본 행동을 막는 기능입니다.
             e.preventDefault();
