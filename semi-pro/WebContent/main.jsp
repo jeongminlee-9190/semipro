@@ -23,6 +23,7 @@
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/main.js"></script>
 <script src="js/subway.js"></script>
+<script src="js/keyword.js"></script>
 
 <title>갬성갱단</title>
 
@@ -48,7 +49,7 @@
 
 <div id="center_wrapper">
 	<jsp:include page="search/subway.jsp" flush="true" />
-	<%-- <jsp:include page="search/keyword.jsp" flush="true" /> --%>
+	<jsp:include page="search/keyword.jsp" flush="true" />
 </div>
 
 </body>

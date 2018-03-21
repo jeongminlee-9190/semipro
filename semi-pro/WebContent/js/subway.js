@@ -3,12 +3,12 @@ $(document).ready(function(){
 	
 	//지하펄 button 클릭후 메뉴 보이기
 	//호선
-	$("#line_btn").click(function(){
+	$("#line_btn").on("click", function(){
 		$("#line").slideToggle("fast");
 	});
 	
 	//역
-	$("#station_btn").click(function(){
+	$("#station_btn").on("click", function(){
 		$("#station_1").slideToggle("fast");
 	});
 	
@@ -35,25 +35,24 @@ $(document).ready(function(){
 	//역
 	$("#station_wrap ul li").mouseover(function(){
 		
-		var color_change = $(this).css("color");
+		var line_btn_color = $("#line_btn").css("background-color");
 	
-		$(this).css({"background-color":color_change,"color":"#ffffff"});
+		$(this).css({"background-color":line_btn_color,"color":"#ffffff"});
 
 	});
 	
 	$("#station_wrap ul li").mouseout(function(){
-		
-		var color = $(this).css("background-color");
 	
-		$(this).css({"background-color":"#ffffff","color":color});
+		var line_btn_color = $("#line_btn").css("background-color");
+	
+		$(this).css({"background-color":"#ffffff","color":line_btn_color});
 
 	});
 	
 	
 	//지하펄 리스트중 하나 클릭 후 상단(button)으로 선택되기
 	//호선
-	
-	$("#line_wrap ul li").click(function(idx){
+	$("#line_wrap ul li").on("click", function(idx){
 		
 		var color_change = $(this).css("background-color");
 		
@@ -82,19 +81,23 @@ $(document).ready(function(){
 
 		$("#line").slideUp("fast");
 		
+		//호선 클릭하면 역 button, 역 list의 border, font 컬러 변경되기 
+		var line_btn_color = $("#line_btn").css("background-color");
+		$("#station_btn").css({"background-color":line_btn_color,"color":"#fff"});
+		$("#station_wrap ul li").css({"border-color":line_btn_color,"color":line_btn_color});
+		
 	});
 	
 	//역
-	$("#station_wrap ul li").click(function(idx){
-			
-		var color_change = $(this).css("background-color");
+	$("#station_wrap ul li").on("click", function(idx){
+		
+		var line_btn_color = $("#line_btn").css("background-color");
 		
 		var li = $(this);
 		$("#station_btn").html(function(){
 		    return "<span>" + $(li).find("span").text() + "</span>";
 		}) ;
 		
-		$("#station_btn").css({"background-color":color_change,"color":"#fff"});
 		$("#station_btn").find("span").css({"font-size":"18px","font-weight":"900",
 										 "padding-top":"15px","font-family":"'Open Sans', sans-serif"});
 		
@@ -102,38 +105,19 @@ $(document).ready(function(){
 	});
 	
 	//호선 클릭시 역 클릭 가능
-	$("#line_wrap ul li").click(function(){ 
+	$('#station_btn').on("click", function(){ 
 		
-		var line_n = $(this).index()+1; 
+		var line_btn = $("#line_btn").text().length;
 		
-		$("#station_btn").click(function(){
-			
-			if ( line_n >= 1 ){
-				$("#station_wrap ul").show();
-			} else if ($("#station_btn").text().length == empty){
-				$("#station_wrap ul").hide();
-				alert("역을 선택해 주세요.");
-			}
-			
-			console.log($("#station_btn").text().length);
-
-		});
-		
-		console.log("dd" + line_n);
+		if ( 10 > line_btn >= 1){
+			$("#station_wrap ul").show();
+		} else if ( line_btn == 10) { 
+			alert("호선을 선택해 주세요."); 
+			$("#line_wrap ul").slideDown("fast");
+			$("#station_wrap ul").hide();
+		}
 		
 	});
-	/*$("#station_btn").click(function(){
-		
-		var line = $("#line_wrap ul li").index()*0;
-		
-		if( line == 0){
-			$("#station_wrap ul").hide();
-			alert("역을 선택해 주세요.");
-			console.log("hello" + line);
-		} else {
-			$("#station_wrap ul").show();
-		}
 
-	});*/
 
 });
