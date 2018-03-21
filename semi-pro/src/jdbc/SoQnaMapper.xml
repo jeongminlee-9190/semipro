@@ -11,6 +11,11 @@
 		where soId=#{soId}
 		order by qnaNum desc
 	</select>
+	
+	<insert id="soQnaWrite" parameterType="SoQnaDTO">
+		insert into soqna (qnaNum, soId, qnaTitle , qnaContent,qnaWritedate,qnaComplete,qnaCategory)
+		values(SEQ_noticetoso_noticeNum.NEXTVAL, #{soId},#{qnaTitle},#{qnaContent},default,default,#{qnaCategory})
+	</insert>
 
 
 	<!--페이징 처리 

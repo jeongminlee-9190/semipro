@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="css/so/so_mainwrapper.css">
 <link rel="stylesheet" type="text/css" href="css/so/so_footer.css">
-<link rel="stylesheet" type="text/css" href="css/so/soQnaWrite.css">
+<link rel="stylesheet" type="text/css" href="css/so/so_qnaWrite.css">
 </head>
 <body>
 
@@ -23,7 +23,7 @@
 			<jsp:include page="shopowner/include/top2.jsp" flush="true"/>
 		</div>
 	</div>
-	<div class="soQna">
+	<div class="soQnaWrite">
 		<jsp:include page="shopowner/soQnaWrite.jsp" flush="true"/>
 	</div>
 	<div class="footer">

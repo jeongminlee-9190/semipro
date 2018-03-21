@@ -315,7 +315,7 @@
 			}
 			
 			/* 지하철역 */
-			if($("#sSubway2").text().length==0 || $("#sSubway2").text()=="선택"){
+			if($("#sSubway2").text().length==0 || $("#sSubway2").val()=="선택"){
 				alert('지하철 역을  선택하세요');
 				$("#sSubway2").focus();
 				e.preventDefault();

@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import dao.MySqlSessionFactory;
 import dto.SoDTO;
+import dto.SoQnaDTO;
 import exception.MyException;
 
 public class SoService {
@@ -127,6 +128,19 @@ public class SoService {
 		}
 	}
 	
+	public void soQnaWrite(HashMap<String, String> map) throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();
+		SoQnaDTO dto = null;
+		try {
+			int n = session.insert("SoQnaMapper.soQnaWrite",map);
+			session.commit();
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new MyException("1:1문의 에러");
+		}finally {
+			session.close();
+		}
+	}
 	/*
 	public void memberAdd(MemberDTO dto) throws MyException{
 		SqlSession session = MySqlSessionFactory.getSession();

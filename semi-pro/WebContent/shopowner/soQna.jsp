@@ -5,6 +5,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <div class="wrapper">
+
 	<div class="soQna_View">
 		<h3>1:1 문의</h3>
 		<table class="soQna_tbl">
@@ -21,16 +22,26 @@
 			  <td scope="col">답변상태</td>
 		 	</tr>
 		
-		<c:forEach var="dto" items="${list}" varStatus="status">
-		 <tr>
-		  <td>${dto.qnaCategory}</td>
-		  <td><a href="soQnaRetrieveServlet?qnaNum=${dto.qnaNum}">${dto.qnaTitle}</a></td>
-		  <td>${dto.qnaWritedate}</td>
-		  <td>${dto.qnaComplete}</td>
-		  <td><input type="button" value="X"></td>
-		 </tr>
-		</c:forEach>
+			<c:forEach var="dto" items="${list}" varStatus="status">
+			 <tr>
+			  <td>${dto.qnaCategory}</td>
+			  <td><a href="soQnaRetrieveServlet?qnaNum=${dto.qnaNum}">${dto.qnaTitle}</a></td>
+			  <td>${dto.qnaWritedate}</td>
+			  <td>${dto.qnaComplete}</td>
+			  <td><input type="button" value="X"></td>
+			 </tr>
+			</c:forEach>
 		</table>
-		<a href ="soQnaWriteUIServlet">1:1 문의하기</a>
+		
+		<form action="soQnaWriteServlet" method="post">
+			<table>
+				<tr>
+					<td>
+						<input type="hidden" name="soQnaWrite" value="soQnaWriteLink">
+						<input type="submit" class="btn_submit" value="1:1 문의하기">
+					</td>
+				</tr>
+			</table>
+		</form>
 	</div>
 </div>
