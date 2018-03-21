@@ -12,11 +12,21 @@
 		order by qnaNum desc
 	</select>
 	
-	<insert id="soQnaWrite" parameterType="SoQnaDTO">
+	<insert id="soQnaWrite" parameterType="hashmap">
 		insert into soqna (qnaNum, soId, qnaTitle , qnaContent,qnaWritedate,qnaComplete,qnaCategory)
 		values(SEQ_noticetoso_noticeNum.NEXTVAL, #{soId},#{qnaTitle},#{qnaContent},default,default,#{qnaCategory})
 	</insert>
+	
+	<update id="soQnaModify" parameterType="hashmap">
+		update soqna
+		set qnaTitle=#{qnaTitle}, qnaContent=#{qnaContent}
+		where soId=#{soId} and qnaNum=#{qnaNum}
+	</update>
 
+	<delete id="soQnaDelete" parameterType="hashmap">
+		delete from soqna
+		where soId=#{soId} and qnaNum=#{qnaNum}
+	</delete>
 
 	<!--페이징 처리 
 	<select id="totalCnt" parameterType="hashmap" resultType="int">
