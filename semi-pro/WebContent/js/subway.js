@@ -5,11 +5,15 @@ $(document).ready(function(){
 	//호선
 	$("#line_btn").on("click", function(){
 		$("#line").slideToggle("fast");
+		//지하철 호선 버튼 눌렀을때 배경 어둡게 - 보이기
+		$(".emphasized").show();
 	});
 	
 	//역
 	$("#station_btn").on("click", function(){
 		$("#station_1").slideToggle("fast");
+		//지하철 역 버튼 눌렀을때 배경 어둡게 - 보이기
+		$(".emphasized").show();
 	});
 	
 	//지하철 리스트 hover시 background-color 변경
@@ -86,6 +90,9 @@ $(document).ready(function(){
 		$("#station_btn").css({"background-color":line_btn_color,"color":"#fff"});
 		$("#station_wrap ul li").css({"border-color":line_btn_color,"color":line_btn_color});
 		
+		//지하철 호선 버튼 눌렀을때 배경 어둡게 - 숨기기
+		$(".emphasized").hide();
+		
 	});
 	
 	//역
@@ -102,6 +109,10 @@ $(document).ready(function(){
 										 "padding-top":"15px","font-family":"'Open Sans', sans-serif"});
 		
 		$("#station_wrap ul").slideUp("fast");
+		
+		//지하철 역 버튼 눌렀을때 배경 어둡게 - 숨기기
+		$(".emphasized").hide();
+		
 	});
 	
 	//호선 클릭시 역 클릭 가능

@@ -22,9 +22,9 @@
 <!-- jquery -->
 <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
 <script src="js/jquery-3.3.1.js"></script>
-<script src="js/main.js"></script>
 <script src="js/subway.js"></script>
 <script src="js/keyword.js"></script>
+<script src="js/main_bg_slider.js"></script>
 
 <title>갬성갱단</title>
 
@@ -37,8 +37,17 @@
     	alert('${memberlogout}');
     </script>
 </c:if>
-
+<div class="emphasized"></div>
 <div id="header">
+	<div class="demo">
+		<ul id="main_bg_slider" class="slide">
+			<li ></li>
+			<li ></li>
+			<li ></li>
+			<li ></li>
+			<li ></li>
+		</ul>
+	</div>
 	<jsp:include page="login/login.jsp" flush="true"/>
 	<jsp:include page="member/mNoticeUI.jsp" flush="true"/>
 	<div id="logo">

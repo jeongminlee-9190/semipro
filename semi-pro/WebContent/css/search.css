@@ -39,7 +39,7 @@
 /* ================================= subway ================================= */
 /* 지하철 wrap */
 #subway_wrap {
-	position:absolute;
+	position:relative;
 	top:50px;
 	left:-305px;
 	margin-left:50%;
@@ -192,13 +192,26 @@
 	padding-top:15px;
 }
 
+.emphasized {
+display: none;
+z-index: 10;
+position: fixed;
+left: 0; 
+top:0;
+width: 100%; 
+height: 100%;
+background-color: rgba(0,0,0,0.5);
+overflow-x: hidden;
+}
+
+
 
 /* ================================= keyword ================================= */
 
 /* 카테고리 3개 감싸고 있는 id */
 #cate_wrap {
 	display:block;
-	position:absolute;
+	position:relative;
 	top:140px;
 	left:-305px;
 	margin-left:50%;
@@ -215,6 +228,7 @@
 	margin-top:0px;
 }
 
+/* 카테고리 버튼 */
 .cate_btn {
 	display:block;
 	position:relative;
@@ -236,6 +250,14 @@
 
 }
 
+/* 2번째 버튼 color */
+#cate_wrap > div:nth-child(2) .cate_btn {
+	background-color:#fff;
+	border:2px solid #ffa827;
+	color:#ffa827;
+}
+
+/* 카테고리 버튼 icon */
 .cate_icon {
 	display:block;
 	position:absolute;
@@ -255,6 +277,12 @@
 	margin-top:0;
 }
 
+/* 2번째 버튼 icon color */
+#cate_wrap > div:nth-child(2) .cate_btn .cate_icon span{
+	background-color:#ffa827;
+}
+
+/* 카테고리 리스트 */
 .list {
 	display:block;
 	width:100%;

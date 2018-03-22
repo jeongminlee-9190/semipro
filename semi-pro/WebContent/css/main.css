@@ -3,11 +3,8 @@
 /* ================================= header ================================= */
 #header {
 	position:relative; 
-	height:350px; 
 	min-width:1200px;
-	background:url('../images/main_bg01.jpg') no-repeat;
-	background-position:center center;
-	background-size:cover;
+	height:350px; 
 }
 
 #logo {
@@ -22,13 +19,55 @@
 
 #logo img {width:100%;}
 
+.demo {
+    width:100%;
+}
+.slide {
+    list-style: none outside none;
+    padding-left: 0;
+    margin-bottom:0;
+}
+.slide li {
+    display: block;
+    position:absolute;
+    top:0;
+    margin-right: 6px;
+    height:350px; 
+    width:100%;
+}
+
+.slide li:first-child {
+	background:url('../images/main_bg01.jpg') no-repeat;
+	background-position:center center;
+	background-size:cover;
+}
+.slide li:nth-child(2) {
+	background:url('../images/main_bg02.jpg') no-repeat;
+	background-position:center center;
+	background-size:cover;
+}
+.slide li:nth-child(3) {
+	background:url('../images/main_bg03.jpg') no-repeat;
+	background-position:center center;
+	background-size:cover;
+}
+.slide li:nth-child(4) {
+	background:url('../images/main_bg04.jpg') no-repeat;
+	background-position:center center;
+	background-size:cover;
+}
+.slide li:last-child {
+	background:url('../images/main_bg05.jpg') no-repeat;
+	background-position:center center;
+	background-size:cover;
+}
+
 /* ================================= center ================================= */
 #content_wrapper {
 	position:relative;
 	display:block;
 	min-width:1200px;
-	min-height:100%;
-	padding-bottom:80px;
+	padding-bottom:140px;
 }
 
 *html #content_wrapper { height:100%;}
