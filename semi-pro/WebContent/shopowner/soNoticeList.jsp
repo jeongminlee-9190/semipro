@@ -43,8 +43,8 @@
   				<th scope="col">조회수</th>
  			</tr>
  
-			<c:set var="pageDTO" value="${noticelist}"></c:set>
-			<input type="hidden" name="num" value="${noticelist}">
+			<c:set var="pageDTO" value="${sonoticelist}"></c:set>
+			<input type="hidden" name="num" value="${sonoticelist}">
 			<c:forEach var="dto" items="${pageDTO.list}" varStatus="status">
  				<tr>
   					<td align="center">${dto.noticeNum}</td>

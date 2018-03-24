@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import dao.MySqlSessionFactory;
 import dto.SoDTO;
+import dto.SoQnaDTO;
 import exception.MyException;
 
 public class SoService {
@@ -64,7 +65,31 @@ public class SoService {
 			session.close();
 		}
 		return dto;
-	}//end of login
+	}//end of myPage
+	
+	
+	public String findSoId(HashMap<String, String> map) throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();
+		String soId = null;
+		try {
+			soId= session.selectOne("SoMapper.findSoId",map);
+			System.out.println(soId);
+		}catch(Exception e) {
+			throw new MyException("아이디 찾기 에러");
+		}
+		return soId;
+	}//end of findSoId
+	
+	public String findSoPasswd(HashMap<String, String> map) throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();
+		String soPasswd = null;
+		try {
+			soPasswd= session.selectOne("SoMapper.findSoPasswd",map);
+		}catch(Exception e) {
+			throw new MyException("비밀번호 찾기 에러");
+		}
+		return soPasswd;
+	}//end of findSoId
 	
 	public void soPasswdUpdate(HashMap<String, String> map) throws MyException{
 		SqlSession session = MySqlSessionFactory.getSession();
@@ -81,14 +106,29 @@ public class SoService {
 	public void soPhoneUpdate(HashMap<String, String> map) throws MyException{
 		SqlSession session = MySqlSessionFactory.getSession();
 		try {
-			int n = session.update("SoMapper.soUpdate",map);
+			int n = session.update("SoMapper.soPhoneUpdate",map);
 			session.commit();
 		}catch(Exception e){
-			throw new MyException("shopowner 정보 수정 에러");
+			throw new MyException("shopowner 전화번호 수정 에러");
 		}finally {
 			session.close();
 		}
 	}
+
+	public void soLeave(String soId) throws MyException{
+		SqlSession session = MySqlSessionFactory.getSession();
+		try {
+			int n=session.delete("SoMapper.soLeave",soId);
+			session.commit();
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new MyException("상점 회원 탈퇴 에러");
+		}finally {
+			session.close();
+		}
+	}
+	
+	
 	/*
 	public void memberAdd(MemberDTO dto) throws MyException{
 		SqlSession session = MySqlSessionFactory.getSession();

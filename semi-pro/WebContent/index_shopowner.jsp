@@ -21,9 +21,15 @@
     </script>
 </c:if>
 
+<c:if test="${!empty mesg}">
+	<script type="text/javascript">
+    	alert('${mesg}');
+    </script>
+</c:if>
+
+
 <div class="main">
 	<span class="logo">(갬성갱단)<br>상점 관리 센터</span><br>
-	<jsp:include page="shopowner/include/top.jsp" flush="true"/>
 </div>
 
 <div class="loginForm">

@@ -5,13 +5,28 @@
 <mapper namespace="SoQnaMapper">
     <!-- 1:1 문의 리스트 -->
 	<select id="soQnaList" parameterType="string" resultType="SoQnaDTO">
-		select qnaNum, oId, sName, qnaTitle, qnaContent,
+		select qnaNum, soId, qnaTitle , qnaContent,
 		to_char(qnaWritedate,'YYYY-MM-DD') as qnaWritedate,qnaComplete,qnaCategory
-		from soqnaboard
-		where oId=#{oId}
+		from soqna
+		where soId=#{soId}
 		order by qnaNum desc
 	</select>
+	
+	<insert id="soQnaWrite" parameterType="hashmap">
+		insert into soqna (qnaNum, soId, qnaTitle , qnaContent,qnaWritedate,qnaComplete,qnaCategory)
+		values(SEQ_noticetoso_noticeNum.NEXTVAL, #{soId},#{qnaTitle},#{qnaContent},default,default,#{qnaCategory})
+	</insert>
+	
+	<update id="soQnaModify" parameterType="hashmap">
+		update soqna
+		set qnaTitle=#{qnaTitle}, qnaContent=#{qnaContent}
+		where soId=#{soId} and qnaNum=#{qnaNum}
+	</update>
 
+	<delete id="soQnaDelete" parameterType="hashmap">
+		delete from soqna
+		where soId=#{soId} and qnaNum=#{qnaNum}
+	</delete>
 
 	<!--페이징 처리 
 	<select id="totalCnt" parameterType="hashmap" resultType="int">
@@ -21,10 +36,14 @@
     
     <!-- 1:1 문의 자세히 보기 -->
     <select id="soQnaRetrieve" parameterType="int" resultType="SoQnaDTO">
-		select qnaNum, oId, sName, qnaTitle, qnaContent,
+		select qnaNum, soId,qnaTitle, qnaContent,
 		to_char(qnaWritedate,'YYYY-MM-DD') as qnaWritedate,qnaComplete,qnaCategory
-		from soqnaboard
+		from soqna
 		where qnaNum=#{qnaNum}
 	</select>
     
+    <delete id="soDelQna">
+    	delete from soqna
+    	where soId=#{soId}
+    </delete>
 </mapper>

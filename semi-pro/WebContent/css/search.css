@@ -3,13 +3,13 @@
 /* ================================= search ================================= */
 /* 검색 창 */
 #search {
+	position:absolute; 
+	top:250px; 
+	left:-275px;
 	width:485px; 
 	height:48px; /* border 1px */
 	margin-left:50%;
 	padding-left:15px;
-	position:absolute; 
-	top:250px; 
-	left:-275px;
 	border:1px solid #fff;
 	outline:none;
 }
@@ -39,12 +39,13 @@
 /* ================================= subway ================================= */
 /* 지하철 wrap */
 #subway_wrap {
-	position:absolute;
+	position:relative;
 	top:50px;
 	left:-305px;
 	margin-left:50%;
 	width:610px;
 	text-align:center;
+	z-index:10;
 }
 
 #line_wrap {
@@ -64,8 +65,7 @@
 	border:0;
 	outline:0;
 	cursor:pointer;
-	font-size:17px;
-	font-weight:900;
+	font-size:15px;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -83,28 +83,33 @@
 	font-size:21px;
 	color:#fff;
 	cursor:pointer;
+	font-family: gotham_Bold; 
+	font-style: normal; 
+	font-weight: normal;
+	background-color:#fff;
 }
 
 #line_wrap ul .line_korean {
 	font-size:18px; 
 	font-weight:900;
+	font-family: 'Open Sans', sans-serif;
 }
 
 #line_wrap ul li span {
 	display:inline-block;
-	padding:3px 11px;
-	border-radius:25px;
+	padding:5px 10px;
+	border-radius:100px;
 	margin-top:11px;
 }
 
 #line_wrap ul .line_korean span {
-	padding:2px 11px 6px 11px;
+	padding:4px 11px;
 	border-radius:25px;
 }
 
 /* 1호선 */
 #line_wrap ul li:first-child {border:2px solid #273c97;}
-#line_wrap ul li:first-child span {background-color:#273c97;}
+#line_wrap ul li:first-child span {background-color:#273c97; padding:5px 13px;}
 
 /* 2호선 */
 #line_wrap ul li:nth-child(2) {border:2px solid #3cb54c;}
@@ -147,6 +152,7 @@
 	float:right;
 	width:300px;
 	max-width:300px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 #station_btn{
@@ -158,9 +164,7 @@
 	border:0;
 	outline:0;
 	cursor:pointer;
-	font-size:17px;
-	font-weight:900;
-	font-family: 'Open Sans', sans-serif;
+	font-size:15px;
 }
 
 #station_wrap ul {
@@ -180,9 +184,131 @@
 	color:#273c97;
 	border:2px solid #273c97;
 	cursor:pointer;
+	background-color:#fff;
 }
 
 #station_1 li span {
 	display:inline-block;
 	padding-top:15px;
+}
+
+.emphasized {
+display: none;
+z-index: 10;
+position: fixed;
+left: 0; 
+top:0;
+width: 100%; 
+height: 100%;
+background-color: rgba(0,0,0,0.5);
+overflow-x: hidden;
+}
+
+
+
+/* ================================= keyword ================================= */
+
+/* 카테고리 3개 감싸고 있는 id */
+#cate_wrap {
+	display:block;
+	position:relative;
+	top:140px;
+	left:-305px;
+	margin-left:50%;
+	text-align:center;
+}
+
+.category {
+	display:block;
+	width:610px;
+	margin-top:30px;
+}
+
+#cate_wrap > div:first-child {
+	margin-top:0px;
+}
+
+/* 카테고리 버튼 */
+.cate_btn {
+	display:block;
+	position:relative;
+	width:100%;
+	height:60px;
+	background-color:#ffa827;
+	color:#fff;
+	font-size:21px;
+	font-weight:900;
+	letter-spacing:64px;
+	cursor:pointer;
+}
+
+.cate_btn > p {
+	display:block;
+	position:absolute;
+	top:15px;
+	left:255px;
+
+}
+
+/* 2번째 버튼 color */
+#cate_wrap > div:nth-child(2) .cate_btn {
+	background-color:#fff;
+	border:2px solid #ffa827;
+	color:#ffa827;
+}
+
+/* 카테고리 버튼 icon */
+.cate_icon {
+	display:block;
+	position:absolute;
+	top:22px;
+	right:30px;
+}
+
+.cate_icon span {
+	display:block;
+	background-color:#fff;
+	width:20px;
+	height:2px;
+	margin-top:5px;
+}
+
+.cate_icon span:first-child{
+	margin-top:0;
+}
+
+/* 2번째 버튼 icon color */
+#cate_wrap > div:nth-child(2) .cate_btn .cate_icon span{
+	background-color:#ffa827;
+}
+
+/* 카테고리 리스트 */
+.list {
+	display:block;
+	width:100%;
+	height:110px;
+}
+
+.list li {
+	float:left;
+	margin:5px 3px 0 0;
+}
+
+.list li:nth-child(4n) {
+	float:right;
+	margin-right:0;
+}
+
+.list li button {
+	width:100%;
+	outline:0;
+	width:150px; 
+	height:50px; 
+	border-radius:10px;
+	border:2px solid #ffa827;
+	font-size:18px;
+	font-weight:900;
+	color:#ffa827;
+	background-color:#fff;
+	cursor:pointer;
 }

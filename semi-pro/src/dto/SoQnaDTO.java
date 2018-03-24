@@ -2,8 +2,7 @@ package dto;
 
 public class SoQnaDTO {
 	private int qnaNum;
-	private String oId;
-	private String sName;
+	private String soId;
 	private String qnaTitle;
 	private String qnaContent;
 	private String qnaWritedate;
@@ -13,12 +12,11 @@ public class SoQnaDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public SoQnaDTO(int qnaNum, String oId, String sName, String qnaTitle, String qnaContent, String qnaWritedate,
+	public SoQnaDTO(int qnaNum, String soId, String qnaTitle, String qnaContent, String qnaWritedate,
 			String qnaCategory, String qnaComplete) {
 		super();
 		this.qnaNum = qnaNum;
-		this.oId = oId;
-		this.sName = sName;
+		this.soId = soId;
 		this.qnaTitle = qnaTitle;
 		this.qnaContent = qnaContent;
 		this.qnaWritedate = qnaWritedate;
@@ -31,17 +29,11 @@ public class SoQnaDTO {
 	public void setQnaNum(int qnaNum) {
 		this.qnaNum = qnaNum;
 	}
-	public String getoId() {
-		return oId;
+	public String getsoId() {
+		return soId;
 	}
-	public void setoId(String oId) {
-		this.oId = oId;
-	}
-	public String getsName() {
-		return sName;
-	}
-	public void setsName(String sName) {
-		this.sName = sName;
+	public void setsoId(String soId) {
+		this.soId = soId;
 	}
 	public String getQnaTitle() {
 		return qnaTitle;

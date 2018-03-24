@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.js"></script>
 
 <script>
 /*idCheck*/
@@ -29,108 +29,98 @@
   		} //end if
 	}//end response()
 /*end of idCheck*/
-  	function pwCheck1(pw){
-		var mesg = null;
-		if(pw.length<8 || pw.length>10){
-			 mesg="비밀번호는 8자 이상 10자 이하여야 합니다.";
-		}
-		document.querySelector("#result2").innerText=mesg;
-	}
-	
-	function pwCheck2(pw){
-		var passwd1 = document.querySelector("#passwd").value;
-		console.log(passwd1);
-		var mesg = "비밀번호 일치";
-		  if(passwd1 != pw){
-			 mesg = "비밀번호 불일치";
-		  }
-		  document.querySelector("#result2").innerText=mesg;
-	}
-/* 유효성 체크*/
-	function formCheck(e){
-		var soId = document.querySelector("#soId").value;
-		if(soId.length==0){
-			alert("아이디를 입력하세요");
-			document.querySelector("#soId").focus();
-			e.preventDefault();
-		}
-		if(soId.includes("@")==false||soId.includes(".")==false){
-			alert("아이디가 이메일 형식이 아닙니다. 다시 입력해주세요.");
-			document.querySelector("#soId").focus();
-			e.preventDefault();
-		}
-		/* 비밀번호 체크  */
-		var passwd = document.querySelector("#passwd").value;
-		if(passwd.length==0){
-			alert("비밀번호를 입력하세요");
-			document.querySelector("#passwd").focus();
-			e.preventDefault();
-		}
-		var passwd2 = document.querySelector("#passwd2").value;
-		if(passwd2.length==0){
-			alert("비밀번호를 입력하세요");
-			document.querySelector("#passwd2").focus();
-			e.preventDefault();
-		}
-		if(passwd!=passwd2){
-			alert("비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
-			document.querySelector("#passwd2").focus();
-			e.preventDefault();
-		}
-		if(passwd.length<8 || passwd.length>10){
-			alert("비밀번호는 8자 이상 10자 이하여야 합니다.");
-			document.querySelector("#passwd2").focus();
-			e.preventDefault();
-		}
-		
-		/* 이름 체크 */
-		var soName = document.querySelector("#soName").value;
-		if(soName.length==0){
-			alert("이름을 입력하세요");
-			document.querySelector("#soName").focus();
-			e.preventDefault();
-		}
-		var soPhone1 = document.querySelector("#soPhone1").value;
-		if(soPhone1.length==0){
-			alert("전화번호를 입력하세요");
-			document.querySelector("#soPhone1").focus();
-			e.preventDefault();
-		}
-		var soPhone2 = document.querySelector("#soPhone2").value;
-		if(soPhone2.length==0){
-			alert("전화번호를 입력하세요");
-			document.querySelector("#soPhone2").focus();
-			e.preventDefault();
-		}
-		var soPhone3 = document.querySelector("#soPhone3").value;
-		if(soPhone3.length==0){
-			alert("전화번호를 입력하세요");
-			document.querySelector("#soPhone3").focus();
-			e.preventDefault();
-		}
-		var soLicense = document.querySelector("#soLicense").value;
-		if(soLicense.length==0){
-			alert("사업자번호를 입력하세요");
-			document.querySelector("#soLicense").focus();
-			e.preventDefault();
-		}
-		var sample6_address = document.querySelector("#sample6_address").value;
-		if(sample6_address.length==0){
-			alert("주소를 입력하세요");
-			document.querySelector("#sample6_address").focus();
-			e.preventDefault();
-		}
-		var sample6_address = document.querySelector("#sample6_address2").value;
-		if(sample6_address.length==0){
-			alert("주소를 입력하세요");
-			document.querySelector("#sample6_address2").focus();
-			e.preventDefault();
-		}
-	}
-	  
+ 	$(document).ready(function(){
+ 		$("#passwd").keyup(function(){
+ 			var re_pw = /^[a-z0-9]{8,10}$/; // 비밀번호 검사식
+ 			var mesg = "비밀번호 사용 가능";
+ 			if(re_pw.test($("#passwd").val())!=true){
+ 				mesg ="비밀번호는 8자 이상 10자 이하여야 하며, 특수문자는 사용 불가합니다.";
+ 			}
+ 			$("#result2").text(mesg); 
+ 		});
+ 		$("#passwd2").keyup(function(){
+ 			var mesg = "비밀번호 일치";
+ 			if($("#passwd").val()!=$("#passwd2").val()){
+ 				mesg="비밀번호 불일치";
+ 			}
+ 			$("#result2").text(mesg);
+ 		});
+ 		
+ 		$("#SoAddForm").submit(function(e){
+ 			var re_phone1=/^[0-9]{3,4}$/;
+ 			var re_phone2=/^[0-9]{4,4}$/;
+ 			var re_phone3=/^[0-9]{4,4}$/;
+ 			var re_license=/^[0-9]{10,10}$/;
+ 			var re_email=/^([\w\.-]+)@([a-z\d\.-]+)\.([a-z\.]{2,6})$/;
+ 			var re_pw = /^[a-z0-9]{8,10}$/; // 비밀번호 검사식
+ 			var mesg=null;
+ 			if(re_email.test($("#soId").val()) != true){
+ 				alert("아이디는 이메일 형식으로 입력해주세요.");
+ 				$("#soId").focus;
+ 				e.preventDefault();
+ 			}
+ 			
+ 			/* 비밀번호 체크  */
+ 			if(re_pw.test($("#passwd").val()) != true){
+ 				alert("유효한 비밀번호를 입력해주세요.");
+ 				$("#passwd").focus;
+ 				e.preventDefault();
+ 			}
+
+ 			if($("#passwd").val()!=$("#passwd2").val()){
+ 				alert("비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
+ 				$("#passwd2").focus;
+ 				e.preventDefault();
+ 			}
+ 			
+ 
+ 			/* 이름 체크 */
+ 			if($("#soName").val().length==0){
+ 				alert("이름을 입력하세요.");
+ 				$("#soName").focus;
+ 				e.preventDefault();
+ 			}
+ 			
+ 			
+ 			/* 전화번호 체크 */
+ 			if(re_phone1.test($("#soPhone1").val())!= true){
+				alert('유효한 전화번호를 입력하세요');
+				$("#soPhone1").focus();
+				e.preventDefault();
+			}
+			if(re_phone2.test($("#soPhone2").val())!= true){
+				alert('유효한 전화번호를 입력하세요');
+				$("#soPhone2").focus();
+				e.preventDefault();
+			}
+			if(re_phone3.test($("#soPhone3").val())!= true){
+				alert('유효한 전화번호를 입력하세요');
+				$("#soPhone3").focus();
+				e.preventDefault();
+			}	
+			
+			if(re_license.test($("#soLicense").val())!= true){
+				alert('유효한 사업자 번호를 입력하세요. 10자리&하이픈제거');
+				$("#soLicense").focus();
+				e.preventDefault();
+			}
+			
+			if($("#sample6_address").val().length==0){
+				alert('기본 주소를 입력하세요');
+				$("#sample6_address").focus();
+				e.preventDefault();
+			}
+			
+			if($("#sample6_address2").val().length==0){
+				alert('상세 주소를 입력하세요');
+				$("#sample6_address2").focus();
+				e.preventDefault();
+			}
+ 		});
+ 	});
   </script>
 <div class="joinWrapper">
-	<form action="SoAddServlet" method="get" onsubmit="formCheck(event)">
+	<form action="SoAddServlet" method="get" id="SoAddForm">
 		<div class="join_tbl">
 		<!--  <span class="welcome">갬성갱단에서 상점을 등록하고 홍보할 수 있어요!</span>-->
 		<h2 style="text-align:center">회원 정보 입력</h2>
@@ -143,8 +133,8 @@
 		
 			<tr>
 				<th>비밀번호</th>
-				<td><input type="password" name="soPasswd" id="passwd" placeholder="비밀번호" maxlength="10" size="13" onkeyup="pwCheck1(this.value)">
-			   	 <input type="password" id="passwd2" placeholder="비밀번호 재입력" maxlength="10" size="13" onkeyup="pwCheck2(this.value)">
+				<td><input type="password" name="soPasswd" id="passwd" placeholder="영어+숫자  8~10자리" maxlength="10" size="13">
+			   	 <input type="password" id="passwd2" placeholder="비밀번호 재입력" maxlength="10" size="13"><br>
 					<span id="result2"></span></td>
 			</tr>
 		
@@ -249,15 +239,6 @@
 
 </div>
 </form>
-
-
-
-
-
-
-
-
-
 
 
 

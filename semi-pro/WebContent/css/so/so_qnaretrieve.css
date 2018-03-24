@@ -1,0 +1,48 @@
+@charset "UTF-8";
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+	body { font-family:"Nanum Gothic"; }
+	.soQnaRetrieve{
+		position: relative;
+		margin-top:30px;
+		width: 100%;
+		height: 400px;
+	}
+	
+	.soQnaRetrieveForm{
+		position: absolute;
+		margin-top: 20px;
+		margin-left: 25%;
+		width: 700px;
+	}
+	
+	.soQnaRetrieve_tbl td,th{
+		border-top: 1px solid lightgrey;
+	}
+	
+	.btn_qnaModify{
+		border: 1px solid #99e6ff;
+		background-color: #99e6ff;
+		margin-top: 10px;
+		height:35px;
+		width: 75px;
+		/*color: white;*/
+	}
+	
+	.btn_qnaDelete{
+		border: 1px solid #99e6ff;
+		background-color: #99e6ff;
+		margin-top: 10px;
+		height:35px;
+		width: 75px;
+		/*color: white;*/
+	}
+	
+	.btn_qnaList{
+		border: 1px solid #99e6ff;
+		background-color: white;
+		margin-top: 10px;
+		height:35px;
+		width: 75px;
+		/*color: white;*/
+	}
+	

@@ -16,7 +16,7 @@ import dto.SoDTO;
 /**
  * soPasswd 변경
  */
-@WebServlet("/soPwUpdateFormServlet")
+@WebServlet("/SoPwUpdateFormServlet")
 public class SoPwUpdateFormServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

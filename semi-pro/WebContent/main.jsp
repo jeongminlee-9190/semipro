@@ -17,12 +17,14 @@
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/login.css">
 <link rel="stylesheet" href="css/search.css">
+<link rel="stylesheet" href="css/footer.css">
 
 <!-- jquery -->
 <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
 <script src="js/jquery-3.3.1.js"></script>
-<script src="js/main.js"></script>
 <script src="js/subway.js"></script>
+<script src="js/keyword.js"></script>
+<script src="js/main_bg_slider.js"></script>
 
 <title>갬성갱단</title>
 
@@ -35,20 +37,32 @@
     	alert('${memberlogout}');
     </script>
 </c:if>
-
-
-<header id="header">
+<div class="emphasized"></div>
+<div id="header">
+	<div class="demo">
+		<ul id="main_bg_slider" class="slide">
+			<li ></li>
+			<li ></li>
+			<li ></li>
+			<li ></li>
+			<li ></li>
+		</ul>
+	</div>
 	<jsp:include page="login/login.jsp" flush="true"/>
 	<jsp:include page="member/mNoticeUI.jsp" flush="true"/>
 	<div id="logo">
 		<img src="images/logo.png" title="logo">
 	</div>
 	<jsp:include page="search/search.jsp" flush="true"/>
-</header>
+</div>
 
-<div id="center_wrapper">
+<div id="content_wrapper">
 	<jsp:include page="search/subway.jsp" flush="true" />
-	<%-- <jsp:include page="search/keyword.jsp" flush="true" /> --%>
+	<jsp:include page="search/keyword.jsp" flush="true" />
+</div>
+
+<div id="footer">
+	<jsp:include page="footer/footer.jsp" flush="true" />
 </div>
 
 </body>
