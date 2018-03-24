@@ -31,6 +31,7 @@
    <script type="text/javascript">
     alert('${fail}');
    </script>
+   <c:remove var="fail" scope="session" />
 </c:if>
 
 <div class="main">

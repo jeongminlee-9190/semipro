@@ -33,6 +33,5 @@
 	</bean>
 <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->	
 
-	<bean id="soService" class="com.service.SoService"/>
-	<bean id="soDAO" class="com.dao.SoDAO"/>
+	
 </beans>

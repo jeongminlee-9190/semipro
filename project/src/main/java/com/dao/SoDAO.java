@@ -12,10 +12,17 @@ public class SoDAO {
 	SqlSessionTemplate template;
 	
 	public SoDTO login(HashMap<String, String> map) {
-		System.out.println("SoDAO1" + map);
 		SoDTO sDTO = template.selectOne("SoMapper.login",map);
-		System.out.println("sDTO"+sDTO);
-		System.out.println("SoDAO2");
 		return sDTO;
+	}
+	
+	public String findSoId(HashMap<String, String> map) {
+		String soId = template.selectOne("SoMapper.findSoId",map);
+		return soId;
+	}
+	
+	public String findSoPasswd(HashMap<String, String> map) {
+		String soPasswd = template.selectOne("SoMapper.findSoPasswd",map);
+		return soPasswd;
 	}
 }

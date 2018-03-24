@@ -17,4 +17,6 @@
 	<context:annotation-config/> <!-- @Autowired 활성화 -->
 	<bean id="homecontroller" class="com.controller.HomeController"/>
 	<bean id="socontroller" class="com.controller.SoController"/>
+	<bean id="soService" class="com.service.SoService"/>
+	<bean id="soDAO" class="com.dao.SoDAO"/>
 </beans>

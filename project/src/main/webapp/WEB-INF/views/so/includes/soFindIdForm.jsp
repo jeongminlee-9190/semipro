@@ -45,7 +45,7 @@
 <div class="wrapper">
 	<div class="soFindForm">
 		<h3>아이디 찾기</h3><hr><br>
-		<form action="SoFindServlet" id="SoFindForm" method="get">
+		<form action="SoFind" id="SoFindForm" method="get">
 			<input type="hidden" name="find" value="soId">
 			<table class="soFindsoIdForm_tbl">
 		 		<tr>
@@ -65,7 +65,7 @@
 				</tr>
 				
 				<tr>
-					<td colspan="2" align="center"><a href="index_shopowner.jsp"><input type="button" class="btn_loginPage" value="로그인 페이지로 가기"></a></td>
+					<td colspan="2" align="center"><a href="index_shopowner"><input type="button" class="btn_loginPage" value="로그인 페이지로 가기"></a></td>
 				</tr>			
 			</table>
 		</form>

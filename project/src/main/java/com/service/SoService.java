@@ -12,9 +12,16 @@ public class SoService {
 	SoDAO dao;
 	
 	public SoDTO login(HashMap<String, String> map) {
-		System.out.println("SoService " +map);
 		SoDTO sDTO = dao.login(map);
-		System.out.println("sDTO " +sDTO);
 		return sDTO;
+	}
+	
+	public String findSoId(HashMap<String, String> map) {
+		String soId = dao.findSoId(map);
+		return soId;
+	}
+	
+	public String findSoPasswd(HashMap<String, String> map) {
+		return dao.findSoPasswd(map);
 	}
 }
