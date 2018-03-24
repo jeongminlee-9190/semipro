@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/* 나눔고딕 */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+/* Gotham */
+@font-face {
+font-family: 'gotham_Medium'; 
+font-style: normal; 
+font-weight: 400; 
+src: url('../fonts/Gotham-Medium.eot') format('embedded-opentype'), /* IE8 이하 */
+     url('../fonts/Gotham-Medium.woff') format('woff') /* IE9 이상, 기타 웹브라우저, 모바일 */
+}
+
+@font-face {
+font-family: 'gotham_Bold'; 
+font-style: normal; 
+font-weight: 400; 
+src: url('../fonts/Gotham-Bold.eot') format('embedded-opentype'), /* IE8 이하 */
+     url('../fonts/Gotham-Bold.woff') format('woff') /* IE9 이상, 기타 웹브라우저, 모바일 */
+}

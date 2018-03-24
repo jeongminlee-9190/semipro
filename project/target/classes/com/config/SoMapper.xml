@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SoMapper">
+	<select id="soIdCheck" parameterType="string" resultType="int">
+		select count(*) 
+		from shopowner
+		where soId=#{soId}
+	</select>
+	
+	<insert id="soAdd" parameterType="SoDTO">
+		insert into shopowner(soId,soPasswd,soName,soPhone,soLicense,soPost,soAddr)
+		values(#{soId},#{soPasswd},#{soName},#{soPhone},#{soLicense},#{soPost},#{soAddr})
+	</insert>
+	
+	<select id="login" parameterType="hashmap" resultType="SoDTO">
+    	select soId,soPasswd,soName,soPhone,soLicense,soPost,soAddr,soLevel,to_char(soJoindate,'YYYY-MM-DD') as soJoindate
+   		from shopowner
+   		where soId = #{soId} and soPasswd=#{soPasswd}
+  	</select>	
+  	
+  	<select id="myPage" parameterType="string" resultType="SoDTO">
+    	select soId,soPasswd,soName,soPhone,soLicense,soPost,soAddr,soLevel,to_char(soJoindate,'YYYY-MM-DD') as soJoindate
+   		from shopowner
+   		where soId = #{soId}
+	</select>	
+	
+	<select id="findSoId" parameterType="hashmap" resultType="string">
+    	select soId
+   		from shopowner
+   		where soLicense = #{soLicense} and soName = #{soName} and soPhone = #{soPhone}
+	</select>
+	
+	<select id="findSoPasswd" parameterType="hashmap" resultType="string">
+    	select soPasswd
+   		from shopowner
+   		where soId = #{soId} and soLicense = #{soLicense} and soName = #{soName} and soPhone = #{soPhone}
+	</select>
+	
+	<update id="soPasswdUpdate" parameterType="hashmap">
+		update shopowner
+		set soPasswd=#{soPasswd}
+		where soId=#{soId}
+	</update>
+	
+	<update id="soPhoneUpdate" parameterType="hashmap">
+		update shopowner
+		set soPhone=#{soPhone}
+		where soId=#{soId}
+	</update>
+	
+	<delete id="soLeave" parameterType="string">
+		delete from shopowner
+		where soId=#{soId}
+	</delete>
+  
+</mapper>

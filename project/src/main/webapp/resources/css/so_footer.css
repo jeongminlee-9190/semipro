@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+	body { font-family:"Nanum Gothic"; }
+	
+	/* 페이지 하단 */
+	.footer{
+		border: 1px solid grey;
+		position: fixed;
+		top: 90%;
+		width: 99%;
+		height: 9%;
+		text-align:center;
+	}

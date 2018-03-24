@@ -1,0 +1,12 @@
+@charset "UTF-8";
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+	body { font-family:"Nanum Gothic"; }
+	
+	.main {
+		text-align: center;
+		padding-top: 5%;
+	}
+	
+	.logo{
+		font-size: 40px;
+	}
