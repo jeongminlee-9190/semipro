@@ -26,7 +26,7 @@ public class ShopMenuServlet extends HttpServlet {
 		
 		try {
 			ShopDTO dto = service.selectShop(sCode);
-			request.setAttribute("shopdto", dto);
+			request.setAttribute("shopInfo", dto);
 		} catch (MyException e) {
 			e.printStackTrace();
 		}

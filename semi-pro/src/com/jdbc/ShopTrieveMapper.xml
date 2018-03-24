@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ShopTrieveMapper">
+
+	<insert id="reviewWrite" parameterType="hashmap">
+		insert into review
+		values(SEQ_REVIEWBOARD_RVNUM.nextval, #{reviewContent}, #{mName}, sysdate, 
+		(select sLike from shop where sCode=#{sCode}),
+		(select sHate from shop where sCode=#{sCode}),
+		#{sCode} )
+	</insert>
+
+	<select id="reviewCheck" parameterType="hashmap" resultType="ReviewDTO">
+		select * from review
+		where mName = #{mName} and sCode = #{sCode}
+	</select>
+</mapper>

@@ -4,12 +4,4 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<c:set var="shop" value="${shopInfo }" scope="request"></c:set>
-
-<h1>${shop.sName }</h1>
-
-<h1>MENU</h1>
-<script src="js/jquery-3.3.1.js"></script>
-<script>
-
-</script>
+<input type="text">

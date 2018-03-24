@@ -32,8 +32,8 @@ public class ShopTrieveServlet extends HttpServlet {
 			for (String string : images) {
 				shopimages.add(string);
 			}
-			request.setAttribute("shopdto", dto);
-			request.setAttribute("images", shopimages);
+			request.setAttribute("shopInfo", dto);
+			request.setAttribute("shopImages", shopimages);
 			for(String image : shopimages) {
 				System.out.println(image);
 			}

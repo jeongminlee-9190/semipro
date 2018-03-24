@@ -11,7 +11,7 @@
   }
 </style>
 
-<c:set var="images" value="${images }" scope="request"></c:set>
+<c:set var="images" value="${shopImages }" scope="request"></c:set>
 <c:forEach var="image" items="${images }">
  <img src="upload/${image }">
 </c:forEach>
