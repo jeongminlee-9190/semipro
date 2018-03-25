@@ -39,17 +39,17 @@
 </c:if>
 <div class="emphasized"></div>
 <div id="header">
-	<div class="demo">
+	<div class="slide_wrap">
 		<ul id="main_bg_slider" class="slide">
-			<li ></li>
-			<li ></li>
-			<li ></li>
-			<li ></li>
-			<li ></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
 		</ul>
 	</div>
 	<jsp:include page="login/login.jsp" flush="true"/>
-	<jsp:include page="member/mNoticeUI.jsp" flush="true"/>
+	<%-- <jsp:include page="member/mNoticeUI.jsp" flush="true"/> --%>
 	<div id="logo">
 		<img src="images/logo.png" title="logo">
 	</div>

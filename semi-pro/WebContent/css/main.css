@@ -19,11 +19,10 @@
 
 #logo img {width:100%;}
 
-.demo {
+.slide_wrap {
     width:100%;
 }
 .slide {
-    list-style: none outside none;
     padding-left: 0;
     margin-bottom:0;
 }
@@ -31,7 +30,6 @@
     display: block;
     position:absolute;
     top:0;
-    margin-right: 6px;
     height:350px; 
     width:100%;
 }
