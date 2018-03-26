@@ -30,7 +30,7 @@
 				</tr>
 				<tr>
 					<th>문의내용</th>
-					<td><textarea rows="15" cols="93" name="qnaContent" >${soQnaRetrieve.qnaContent}</textarea></td>
+					<td><textarea rows="15" cols="85" name="qnaContent" >${soQnaRetrieve.qnaContent}</textarea></td>
 				</tr>
 				<tr>
 					<th>문의날짜</th>
@@ -56,6 +56,5 @@
 		</div>
 	</div>
 </form>
-<a href="SoQnaServlet">목록보기</a><br>
 </body>
 </html>

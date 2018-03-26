@@ -5,17 +5,21 @@
 		position: relative;
 		margin-top:30px;
 		width: 100%;
-		height: 400px;
+		height: 350px;
 	}
 	
 	.soQnaRetrieveForm{
 		position: absolute;
 		margin-top: 20px;
 		margin-left: 25%;
-		width: 700px;
+		width: 1000px;
 	}
 	
-	.soQnaRetrieve_tbl td,th{
+	.soQnaRetrieve_tbl th{
+		width: 100px;
+		border-top: 1px solid lightgrey;
+	}
+	.soQnaRetrieve_tbl th{
 		border-top: 1px solid lightgrey;
 	}
 	

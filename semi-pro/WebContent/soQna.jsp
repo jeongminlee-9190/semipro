@@ -16,6 +16,7 @@
     alert('${success}');
    </script>
 </c:if>
+<c:remove var="success"/>
 
 <div class="wrapper">
 	<div class="mainwrapper">
