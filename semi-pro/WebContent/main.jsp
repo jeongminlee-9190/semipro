@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="css/fonts.css">
 
 <link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/main_login.css">
 <link rel="stylesheet" href="css/search.css">
 <link rel="stylesheet" href="css/footer.css">
 
