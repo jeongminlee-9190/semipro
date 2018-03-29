@@ -20,7 +20,6 @@
 <link rel="stylesheet" href="css/footer.css">
 
 <!-- jquery -->
-<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/index_subway.js"></script>
 <script src="js/index_keyword.js"></script>

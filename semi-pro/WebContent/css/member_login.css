@@ -1,5 +1,121 @@
 @charset "UTF-8";
 
 #loginHeader {
-	
+	display:block;
+	position:relative;
+	width:100%;
+	min-width:1200px;
+	border-bottom:1px solid #e0e0e0;
+	padding-bottom:39px;
 }
+
+#member_logo {
+	display:block;
+	position:relative;
+	top:23px;
+	left:-85px;
+	margin-left:50%;
+}
+
+#login_content_wrapper {
+	position:relative;
+	display:block;
+	min-width:1200px;
+	padding-bottom:50px;
+}
+
+*html #login_content_wrapper { height:100%;}
+
+#login_title {
+	display:block;
+	position:relative;
+	left:-80px;
+	margin-top:80px;
+	margin-left:50%;
+	font-family: gotham_Bold; 
+	font-style: normal; 
+	font-weight: normal;
+	font-size:50px;
+	color:#5e5e5e;
+}
+
+#mLoginForm {
+	display:block;
+	position:relative;
+	left:-200px;
+	margin-top:50px;
+	margin-left:50%;
+}
+
+#mLoginForm input {
+	display:block;
+	outline:none;
+	-webkit-appearance: none;
+   	-webkit-border-radius: 0;
+}
+
+#mId {
+	width:383px; /* border 1px 1px */
+	height:38px; /* border 1px 1px */
+	border:1px solid #e0e0e0;
+	padding-left:15px;
+}
+
+#mPasswd {
+	width:383px; /* border 1px 1px */
+	height:38px; /* border 1px 1px */
+	margin-top:10px;
+	border:1px solid #e0e0e0;
+	padding-left:15px;
+}
+
+/* 검색 placeholder */
+#mId::-webkit-input-placeholder{font-size:14px;color:#a5a5a5; }  /* Chrome/Opera/Safari */
+#mId:-moz-placeholder{font-size:14px;color:#a5a5a5;}			   /* Mozilla Firefox 4 to 18 */
+#mId::-moz-placeholder{font-size:14px;color:#a5a5a5;}		   /* Mozilla Firefox 19+ */
+#mId:-ms-input-placeholder{font-size:14px;color:#a5a5a5;}	   /* Internet Explorer 10+ */
+#mPasswd::-webkit-input-placeholder{font-size:14px;color:#a5a5a5; }  /* Chrome/Opera/Safari */
+#mPasswd:-moz-placeholder{font-size:14px;color:#a5a5a5;}			   /* Mozilla Firefox 4 to 18 */
+#mPasswd::-moz-placeholder{font-size:14px;color:#a5a5a5;}		   /* Mozilla Firefox 19+ */
+#mPasswd:-ms-input-placeholder{font-size:14px;color:#a5a5a5;}	   /* Internet Explorer 10+ */
+
+#mLogin {
+	width:400px;
+	height:50px;
+	background-color:#faa72a;
+	border:none;
+	cursor:pointer;
+	margin-top:20px;
+	font-family: gotham_Bold; 
+	font-style: normal; 
+	font-weight: normal;
+	font-size:18px;
+	color:#fff;
+}
+
+#mLoginForm a {
+	display:inline-block;
+	margin-top:45px;
+}
+
+#mLoginForm a > input {
+	background-color:#fff;
+	border:1px solid #fff;
+	cursor:pointer;
+	color:#5e5e5e;
+}
+
+#mLoginForm a:nth-child(4) {
+	margin-left:60px;
+}
+
+#mLine {
+	display:inline-block;
+	width:1px;
+	height:16px;
+	background-color:#a0a0a0;
+	margin:0 40px;
+	margin-bottom:-2px;
+}
+
+

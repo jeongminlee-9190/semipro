@@ -6,31 +6,39 @@
 <meta charset="UTF-8">
 <!-- css -->
 <!-- reset -->
-<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="css/reset.css">
 <!-- font -->
-<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="css/fonts.css">
 
-<link rel="stylesheet" href="../css/member_login.css">
-<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="css/member_login.css">
+<link rel="stylesheet" href="css/footer.css">
+
+<!-- jquery -->
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/member_login.js"></script>
 
 <title>갬성갱단 로그인</title>
 </head>
 <body>
 
 <div id="loginHeader">
-	<a href="index.jsp">
+	<a href="index.jsp" id="member_logo">
 		<img src="images/logo_login.png" title="home">
 	</a>
 </div>
 
-<div id="login_title">
-	<p>LOGIN</p>
+<div id="login_content_wrapper">
+
+	<div id="login_title">
+		<p>LOGIN</p>
+	</div>
+	
+	<jsp:include page="member/mLoginForm.jsp" flush="true"/>
+
 </div>
 
-<jsp:include page="member/mLoginForm.jsp" flush="true"/>
-
 <div id="footer">
-	<jsp:include page="../footer/footer.jsp" flush="true" />
+	<jsp:include page="footer/footer.jsp" flush="true" />
 </div>
 
 </body>

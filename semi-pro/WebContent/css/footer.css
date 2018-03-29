@@ -2,6 +2,7 @@
 
 footer {
 	display:block;
+	min-width:1200px;
 	text-align:center;
 	background-color:#000;
 	color:#858585;
