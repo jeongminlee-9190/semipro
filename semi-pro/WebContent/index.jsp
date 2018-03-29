@@ -14,17 +14,17 @@
 <!-- font -->
 <link rel="stylesheet" href="css/fonts.css">
 
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/main_login.css">
-<link rel="stylesheet" href="css/search.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/index_login.css">
+<link rel="stylesheet" href="css/index_search.css">
 <link rel="stylesheet" href="css/footer.css">
 
 <!-- jquery -->
 <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
 <script src="js/jquery-3.3.1.js"></script>
-<script src="js/subway.js"></script>
-<script src="js/keyword.js"></script>
-<script src="js/main_bg_slider.js"></script>
+<script src="js/index_subway.js"></script>
+<script src="js/index_keyword.js"></script>
+<script src="js/index_bg_slider.js"></script>
 
 <title>갬성갱단</title>
 

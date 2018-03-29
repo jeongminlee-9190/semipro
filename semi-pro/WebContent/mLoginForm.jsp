@@ -10,6 +10,7 @@
 <!-- font -->
 <link rel="stylesheet" href="../css/fonts.css">
 
+<link rel="stylesheet" href="../css/member_login.css">
 <link rel="stylesheet" href="../css/footer.css">
 
 <title>갬성갱단 로그인</title>
@@ -17,7 +18,7 @@
 <body>
 
 <div id="loginHeader">
-	<a href="main.jsp">
+	<a href="index.jsp">
 		<img src="images/logo_login.png" title="home">
 	</a>
 </div>
