@@ -1,120 +1,83 @@
 @charset "UTF-8";
-@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
-	body { font-family:"Nanum Gothic"; }
-	.welcome{
-		margin-top: 70px;
-		margin-left: 50px;
-		font-size: 20px;
-		text-align: center;
-		color: grey;
-	}
-	/* 회원정보 입력 테이블*/
-	.join_tbl {
-		position: fixed;
-		margin-top:15px;
-		height:700px;
-		width: 500px;
-		left:3%;
-	}
-	th{
-		width: 150px;
-	}
-	input{
-		height:30px;
-		margin-top: 5px;
-	}
-	#result1,#result2{
-		font-size:10px;
-		color: red;
-	}
-	.btn_addr{
-		border: 1px solid #99e6ff;
-		background-color: white;
-	
-	}
-	
-	/* 회원가입 완료, 취소 테이블  */
-	.joincomplete{
-		margin-left: auto;
-        margin-right: auto;
-	}
-	
-	.btn_submit {
-		border: 1px solid #99e6ff;
-		background-color: #99e6ff;
-		margin-top: 20px;
-		height:35px;
-		width: 300px;
-		/*color: white;*/
-	}
-	
-	.btn_cancel{
-		border: 1px solid #99e6ff;
-		background-color: white;
-		margin-top: 10px;
-		height:35px;
-		width: 300px;
-		/*color: white;*/
-	}
 
-	/* 약관  */
-	.term_1,.term_2{
-		position: fixed;
-		left:40%;
-		font-size: 13px;
-	}
-	.term_1{
-		margin-top:20px;
-	}
-	.term_2{
-		margin-top:210px;
-	}
-	/* 약관 동의 체크박스 */
-	#term_1{
-		
-	}
-	.term_headline{
-	
-	}
-	.term_text{
-		font-size: 12px;
-	}
-	.term_stress{
-		color:red;	
-	}
-	.bx_term_agree_1,.bx_term_agree_2,.bx_term_agree_3{
-		position: fixed;
-		left:650px;
-		border:1px solid #ccc;
-		height:140px;
-		max-width: 800px;
-		overflow:hidden;
-		overflow-y:scroll;
-		color:#666;
-	}
-	
-	.bx_term_agree_1 {
-		margin-top:50px;
-	}
-	.bx_term_agree_2 {
-		margin-top:240px;
-	}
-	
-	dt,dd{
-		font-size: 12px;
-	}
-	.agree_tbl{
-		
-		text-align: center;
-	}
-	.agree_tbl th{
-		border: 1px solid grey;
-		height: 20px;
-	}
-	.agree_tbl td{
-		border: 1px solid grey;
-		height: 20px;
-	}
-	.term_headline{
-		font-size: 12px;
-	}
+#join_content_wrapper {
+	position:relative;
+	display:block;
+	min-width:1200px;
+	padding-bottom:90px;
+}
+
+*html #join_content_wrapper { height:100%;}
+
+#join_title {
+	display:block;
+	position:relative;
+	left:-105px;
+	margin-top:80px;
+	margin-left:50%;
+	font-family: gotham_Bold; 
+	font-style: normal; 
+	font-weight: normal;
+	font-size:50px;
+	color:#5e5e5e;
+}
+
+#join_content_wrapper {
+	display:block;
+	position:relative;
+	left:-221px;
+	margin-top:50px;
+	margin-left:50%;
+}
+
+.join_title{
+	display:inline-block;
+	width:120px;
+	padding:12px 0;
+	font-size:14px;
+	color:#5e5e5e;
+	margin-right:30px;
+}
+
+.join_text {
+	width:283px; /* border 1px 1px */
+	height:38px; /* border 1px 1px */
+	border:1px solid #e0e0e0;
+	padding-left:15px;
+}
+
+/* 검색 placeholder */
+.join_text::-webkit-input-placeholder{font-size:14px;color:#a5a5a5; }  /* Chrome/Opera/Safari */
+.join_text:-moz-placeholder{font-size:14px;color:#a5a5a5;}			   /* Mozilla Firefox 4 to 18 */
+.join_text::-moz-placeholder{font-size:14px;color:#a5a5a5;}		   /* Mozilla Firefox 19+ */
+.join_text:-ms-input-placeholder{font-size:14px;color:#a5a5a5;}	   /* Internet Explorer 10+ */
+
+#join_content_wrapper input {
+	outline:none;
+	-webkit-appearance: none;
+   	-webkit-border-radius: 0;
+}
+
+#join_content_wrapper button {
+	border:none;
+	cursor:pointer;
+}
+
+#mPhone1{
+	width:80px;
+	height:40px;
+}
+
+#mPhone_number {
+	width:80px;
+}
+
+#mPhone2{
+	width:80px;
+	height:40px;
+}
+
+#mPhone3{
+	width:80px;
+	height:40px;
+}

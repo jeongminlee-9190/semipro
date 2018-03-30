@@ -1,0 +1,18 @@
+@charset "UTF-8";
+	
+#loginHeader {
+	display:block;
+	position:relative;
+	width:100%;
+	min-width:1200px;
+	border-bottom:1px solid #e0e0e0;
+	padding-bottom:39px;
+}
+
+#member_logo {
+	display:block;
+	position:relative;
+	top:23px;
+	left:-85px;
+	margin-left:50%;
+}

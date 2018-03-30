@@ -10,14 +10,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- css -->
 <!-- reset -->
-<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
 <!-- font -->
-<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" type="text/css" href="css/fonts.css">
 
-<link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/index_login.css">
-<link rel="stylesheet" href="css/index_search.css">
-<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/index_login.css">
+<link rel="stylesheet" type="text/css" href="css/index_search.css">
+<link rel="stylesheet" type="text/css" href="css/footer.css">
 
 <!-- jquery -->
 <script src="js/jquery-3.3.1.js"></script>
@@ -60,9 +60,7 @@
 	<jsp:include page="search/keyword.jsp" flush="true" />
 </div>
 
-<div id="footer">
-	<jsp:include page="footer/footer.jsp" flush="true" />
-</div>
+<jsp:include page="footer/footer.jsp" flush="true" />
 
 </body>
 </html>
