@@ -38,7 +38,7 @@
 			<span class="join_title" ><strong>휴대전화</strong></span>
 			<button type="button" id="mPhone1">
 				010
-				<span><img src="../images/mPhone_icon.png" title="check"></span>
+				<span id="mPhone_icon"><img src="images/mPhone_icon.png" title="check"></span>
 			</button>
 			<ul id="mPhone_number">
 				<li>010</li>
@@ -49,20 +49,27 @@
 				<li>019</li>
 			</ul>
 			-
-			<input type="text" name="mPhone2" id="mPhone2" maxlength="4" placeholder="휴대전화">-
-			<input type="text" name="mPhone3" id="mPhone3" maxlength="4" placeholder="휴대전화">			
+			<input type="text" name="mPhone2" id="mPhone2" maxlength="4" > -
+			<input type="text" name="mPhone3" id="mPhone3" maxlength="4" >			
 		</div> <!-- End : mPhone_wrap -->
 		
 		<div id="mBirth_wrap">
 			<span class="join_title" ><strong>출생년도</strong></span>
-			<input type="text" name="mBirth" id="mBirth" placeholder="(예)1900" maxlength="4">
-			<span>* 입력하지 않을 경우 일부 카테고리 이용이 제한이 될 수 있습니다.</span>
+			<input type="text" name="mBirth" id="mBirth" placeholder="(예)1900" maxlength="4" class="join_text">
+			<span>* 입력하지 않을 경우 일부 카테고리 이용에<br>&nbsp;&nbsp;
+					제한이 될 수 있습니다.</span>
 		</div> <!-- End : mBirth_wrap -->
 		
 		<div id="mSMS_wrap">	
-			<span class="join_title" ><strong>SMS</strong></span>
-			<input type="checkbox" name="mSMS1" id="mSMS1"><span>이메일 수신동의</span>
-			<input type="checkbox" name="mSMS2" id="mSMS2"><span>SMS 수신동의</span>
+			<span class="join_title" ><strong>이벤트 수신동의</strong></span>
+			
+			<input type="checkbox" name="mSMS1" id="mSMS1">
+			<label for="mSMS1"></label>
+			<span class="mSMS_t">이메일 수신동의</span>
+			
+			<input type="checkbox" name="mSMS2" id="mSMS2">
+			<label for="mSMS2"></label>
+			<span>SMS 수신동의</span>
 		</div> <!-- End : mSMS_wrap -->
 		
 		<div id="mAgree_wrap">

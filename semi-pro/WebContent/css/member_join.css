@@ -12,8 +12,14 @@
 #join_title {
 	display:block;
 	position:relative;
-	left:-105px;
 	margin-top:80px;
+	min-width:1200px;
+}
+
+#join_title p{
+	display:block;
+	position:relative;
+	left:-105px;
 	margin-left:50%;
 	font-family: gotham_Bold; 
 	font-style: normal; 
@@ -44,6 +50,9 @@
 	height:38px; /* border 1px 1px */
 	border:1px solid #e0e0e0;
 	padding-left:15px;
+	outline:none;
+	-webkit-appearance: none;
+   	-webkit-border-radius: 0;
 }
 
 /* 검색 placeholder */
@@ -52,32 +61,102 @@
 .join_text::-moz-placeholder{font-size:14px;color:#a5a5a5;}		   /* Mozilla Firefox 19+ */
 .join_text:-ms-input-placeholder{font-size:14px;color:#a5a5a5;}	   /* Internet Explorer 10+ */
 
-#join_content_wrapper input {
-	outline:none;
-	-webkit-appearance: none;
-   	-webkit-border-radius: 0;
+#join_content_wrapper div {
+	margin-top:10px;
 }
 
 #join_content_wrapper button {
-	border:none;
+	outline:none;
 	cursor:pointer;
 }
 
 #mPhone1{
 	width:80px;
-	height:40px;
+	height:38px;
+	color:#5e5e5e;
+	font-size:14px;
+	background-color:#fff;
+	border:1px solid #e0e0e0;
+	margin-right:7px;
+}
+
+#mPhone_icon {
+	padding-left:10px;
 }
 
 #mPhone_number {
-	width:80px;
+	display:none;
+	width:78px;
+	position:relative;
+	left:154px;
+	text-align:center;
+	border-left:1px solid #e0e0e0;
+	border-right:1px solid #e0e0e0;
+	border-bottom:1px solid #e0e0e0;
+	color:#5e5e5e;
+	font-size:14px;
+	cursor:pointer;
+}
+
+#mPhone_number li {
+	padding:10px 0;
 }
 
 #mPhone2{
-	width:80px;
-	height:40px;
+	width:65px;
+	height:38px;
+	color:#5e5e5e;
+	font-size:14px;
+	background-color:#fff;
+	border:1px solid #e0e0e0;
+	padding-left:15px;
+	margin:0 7px;
+	outline:none;
+	-webkit-appearance: none;
+   	-webkit-border-radius: 0;
 }
 
 #mPhone3{
-	width:80px;
-	height:40px;
+	width:65px;
+	height:38px;
+	color:#5e5e5e;
+	font-size:14px;
+	background-color:#fff;
+	border:1px solid #e0e0e0;
+	padding-left:15px;
+	margin-left:7px;
+	outline:none;
+	-webkit-appearance: none;
+   	-webkit-border-radius: 0;
+}
+
+#mBirth_wrap span:last-child {
+	display:block;
+	font-size:11px;
+	margin-left:158px;
+	margin-top:5px;
+}
+
+#mSMS_wrap {
+	border:1px solid red;
+} 
+
+input[id="mSMS1"] {
+	display:none;
+}
+
+input[id="mSMS1"] + label {
+  display: inline-block;
+  width: 18px;
+  height:18px;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+}
+
+input[id="mSMS1"]:checked + label:after {
+  content:url(../images/check.gif);
+}
+
+.mSMS_t {
+	display:inline-block;
 }
