@@ -5,10 +5,12 @@
 	display:block;
 	min-width:1200px;
 	padding-bottom:90px;
+	font-size:14px;
 }
 
 *html #join_content_wrapper { height:100%;}
 
+/* SIGN US */
 #join_title {
 	display:block;
 	position:relative;
@@ -28,7 +30,8 @@
 	color:#5e5e5e;
 }
 
-#join_content_wrapper {
+/* 전체 감싼 form */
+#join_wrap {
 	display:block;
 	position:relative;
 	left:-221px;
@@ -36,15 +39,16 @@
 	margin-left:50%;
 }
 
+/* 아이디.....출생년도 텍스트 */
 .join_title{
 	display:inline-block;
 	width:120px;
 	padding:12px 0;
-	font-size:14px;
 	color:#5e5e5e;
 	margin-right:30px;
 }
 
+/* 아이디.....출생년도 사용자가 적는 텍스트 박스 */
 .join_text {
 	width:283px; /* border 1px 1px */
 	height:38px; /* border 1px 1px */
@@ -70,31 +74,34 @@
 	cursor:pointer;
 }
 
+/* 휴대전화 */
 #mPhone1{
 	width:80px;
 	height:38px;
 	color:#5e5e5e;
-	font-size:14px;
 	background-color:#fff;
 	border:1px solid #e0e0e0;
-	margin-right:7px;
+	margin-right:8px;
 }
 
 #mPhone_icon {
 	padding-left:10px;
 }
 
+/* 휴대전화 010 스크롤 */
 #mPhone_number {
 	display:none;
 	width:78px;
+	height:78px;
+	overflow:scroll;
 	position:relative;
+	top:-1px;
 	left:154px;
 	text-align:center;
 	border-left:1px solid #e0e0e0;
 	border-right:1px solid #e0e0e0;
 	border-bottom:1px solid #e0e0e0;
 	color:#5e5e5e;
-	font-size:14px;
 	cursor:pointer;
 }
 
@@ -106,11 +113,10 @@
 	width:65px;
 	height:38px;
 	color:#5e5e5e;
-	font-size:14px;
 	background-color:#fff;
 	border:1px solid #e0e0e0;
 	padding-left:15px;
-	margin:0 7px;
+	margin:0 8px;
 	outline:none;
 	-webkit-appearance: none;
    	-webkit-border-radius: 0;
@@ -120,43 +126,231 @@
 	width:65px;
 	height:38px;
 	color:#5e5e5e;
-	font-size:14px;
 	background-color:#fff;
 	border:1px solid #e0e0e0;
 	padding-left:15px;
-	margin-left:7px;
+	margin-left:8px;
 	outline:none;
 	-webkit-appearance: none;
    	-webkit-border-radius: 0;
 }
 
+/* 출생년도 */
 #mBirth_wrap span:last-child {
 	display:block;
 	font-size:11px;
 	margin-left:158px;
 	margin-top:5px;
+	color:#5e5e5e;
 }
 
-#mSMS_wrap {
-	border:1px solid red;
-} 
+/* 이벤트 수신 동의 */
+#mSMS_wrap{
+	margin-bottom:50px;
+}
 
 input[id="mSMS1"] {
 	display:none;
 }
 
 input[id="mSMS1"] + label {
-  display: inline-block;
-  width: 18px;
-  height:18px;
-  border: 1px solid #e0e0e0;
-  cursor: pointer;
+	display:inline-block;
+	width: 18px;
+	height:18px;
+	border: 1px solid #e0e0e0;
+	cursor: pointer;
+	margin-bottom:-4px;
 }
 
 input[id="mSMS1"]:checked + label:after {
-  content:url(../images/check.gif);
+	display:block;
+	content:''; 
+	width:20px;
+	height:23px;
+	margin-top:-4px;
+	background:url('../images/check.gif') no-repeat;
+	background-size:100%;
+	background-position:0px 3px;
+	border:none;
+}
+
+input[id="mSMS2"] {
+	display:none;
+}
+
+input[id="mSMS2"] + label {
+	display:inline-block;
+	width: 18px;
+	height:18px;
+	border: 1px solid #e0e0e0;
+	cursor: pointer;
+	margin-bottom:-4px;
+	margin-left:30px;
+}
+
+input[id="mSMS2"]:checked + label:after {
+	display:block;
+	content:''; 
+	width:20px;
+	height:23px;
+	margin-top:-4px;
+	background:url('../images/check.gif') no-repeat;
+	background-size:100%;
+	background-position:0px 3px;
+	border:none;
 }
 
 .mSMS_t {
+	color:#a5a5a5;
+}
+
+/* 이용약관 전체 */
+#mAgree_wrap {
+	display:block;
+	width:460px;
+	padding-top:11px;
+	border-top:1px solid #909090;
+	margin-bottom:55px;
+}
+
+#mAgree_title {
+	padding-bottom:11px;
+	border-bottom:1px solid #909090;
+	margin-bottom:15px;
+	color:#5e5e5e;
+	font-size:14px;
+}
+
+/* 이용약관 */
+input[id="mAgree1"] {
+	display:none;
+}
+
+input[id="mAgree1"] + label {
 	display:inline-block;
+	width: 18px;
+	height:18px;
+	border: 1px solid #e0e0e0;
+	cursor: pointer;
+	margin-bottom:-4px;
+}
+
+/* 개인정보 취급방침 */
+input[id="mAgree1"]:checked + label:after {
+	display:block;
+	content:''; 
+	width:20px;
+	height:23px;
+	margin-top:-4px;
+	background:url('../images/check.gif') no-repeat;
+	background-size:100%;
+	background-position:0px 3px;
+	border:none;
+}
+
+input[id="mAgree2"] {
+	display:none;
+}
+
+input[id="mAgree2"] + label {
+	display:inline-block;
+	width: 18px;
+	height:18px;
+	border: 1px solid #e0e0e0;
+	cursor: pointer;
+	margin-bottom:-4px;
+}
+
+input[id="mAgree2"]:checked + label:after {
+	display:block;
+	content:''; 
+	width:20px;
+	height:23px;
+	margin-top:-4px;
+	background:url('../images/check.gif') no-repeat;
+	background-size:100%;
+	background-position:0px 3px;
+	border:none;
+}
+
+.mAgree_t {
+	color:#a5a5a5;
+}
+
+.mAgree_btn {
+	float:right;
+	background-color:#fff;
+	border:none;
+	color:#979797;
+	font-size:12px;
+}
+
+#mAgree_wrap div:nth-child(3) {
+	padding-bottom:5px;
+}
+
+/* 전체동의 */
+#mAgree_all {
+	border-top:1px solid #909090;
+	text-align:right;
+	padding-top:15px;
+}
+
+input[id="mAgree3"] {
+	display:none;
+}
+
+input[id="mAgree3"] + label {
+	display:inline-block;
+	width: 18px;
+	height:18px;
+	border: 1px solid #e0e0e0;
+	cursor: pointer;
+	margin-bottom:-4px;
+}
+
+input[id="mAgree3"]:checked + label:after {
+	display:block;
+	content:''; 
+	width:20px;
+	height:23px;
+	margin-top:-4px;
+	background:url('../images/check.gif') no-repeat;
+	background-size:100%;
+	background-position:0px 3px;
+	border:none;
+}
+
+.mAgree_about {
+	display:none;
+}
+
+/* 가입하기 전체 */
+.joinComplete {
+	display:block;
+	width:460px;
+	text-align:right;
+}
+
+/* 가입하기 */
+.btn_submit {
+	display:block;
+	background-color:#faa72a;
+	width:100%;
+	border:none;
+	padding:17px;
+	color:#fff;
+	font-size:18px;
+	font-weight:900;
+	cursor:pointer;
+}
+
+/* 취소하기 */
+.btn_cancel {
+	border:none;
+	color:#5e5e5e;
+	background-color:#fff;
+	margin-top:15px;
+	outline:none;
+	cursor:pointer;
 }
