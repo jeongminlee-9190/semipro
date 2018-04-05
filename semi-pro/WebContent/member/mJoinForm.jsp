@@ -8,7 +8,7 @@
 	
 <div id="join_content_wrapper">
 
-	<form action="MJoinServlet" method="get" id="join_wrap">
+	<form action="MJoinServlet" method="post" id="join_wrap">
 
 		<div id="mId_wrap">
 		 	<span class="join_title" ><strong>아이디 또는 이메일</strong></span>
@@ -40,7 +40,7 @@
 				<span id="mPhone_icon"><img src="images/mPhone_icon.png" title="check"></span>
 			</button>
 				- <input type="text" name="mPhone2" id="mPhone2" maxlength="4" >
-				- <input type="text" name="mPhone3" id="mPhone3" maxlength="4" >
+				- <input type="text" name="mPhone2" id="mPhone3" maxlength="4" >
 			<ul id="mPhone_number">
 				<li>010</li>
 				<li>011</li>
@@ -133,8 +133,8 @@
 			</div>
 			
 			<div id="mAgree_all">
-				<input type="checkbox" name="mAgree2" id="mAgree3">
-				<label for="mAgree3"></label>
+				<input type="checkbox" name="mAgreeAll" id="mAgreeAll">
+				<label for="mAgreeAll"></label>
 				<span class="mAgree_t">전체동의</span>
 			</div>
 

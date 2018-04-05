@@ -296,11 +296,11 @@ input[id="mAgree2"]:checked + label:after {
 	padding-top:15px;
 }
 
-input[id="mAgree3"] {
+input[id="mAgreeAll"] {
 	display:none;
 }
 
-input[id="mAgree3"] + label {
+input[id="mAgreeAll"] + label {
 	display:inline-block;
 	width: 18px;
 	height:18px;
@@ -309,7 +309,7 @@ input[id="mAgree3"] + label {
 	margin-bottom:-4px;
 }
 
-input[id="mAgree3"]:checked + label:after {
+input[id="mAgreeAll"]:checked + label:after {
 	display:block;
 	content:''; 
 	width:20px;
