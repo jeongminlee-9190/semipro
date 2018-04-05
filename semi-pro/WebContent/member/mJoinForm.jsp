@@ -18,13 +18,12 @@
 		
 		<div id="mPasswd_wrap">
 			<span class="join_title" ><strong>비밀번호</strong></span>
-			<input type="password" name="mPasswd" id="mPasswd" maxlength="10" class="join_text">
-			<span id="result2"></span>
+			<input type="password" name="mPasswd" id="mPasswd" maxlength="16" class="join_text mPasswd">
 		</div> <!-- End : mPasswd_wrap -->
 		
 		<div id="mRePasswd_wrap">
 			<span class="join_title" ><strong>비밀번호 확인</strong></span>
-	   	 	<input type="password" id="mPasswd2" maxlength="10" class="join_text">
+	   	 	<input type="password" id="mPasswd2" maxlength="16" class="join_text mPasswd">
 			<span id="result2"></span>
 		</div> <!-- End : mPasswd_wrap -->
 		
@@ -37,7 +36,7 @@
 		<div id="mPhone_wrap">
 			<span class="join_title" ><strong>휴대전화</strong></span>
 			<button type="button" id="mPhone1">
-				010
+				<span id="m_number">010</span>
 				<span id="mPhone_icon"><img src="images/mPhone_icon.png" title="check"></span>
 			</button>
 				- <input type="text" name="mPhone2" id="mPhone2" maxlength="4" >

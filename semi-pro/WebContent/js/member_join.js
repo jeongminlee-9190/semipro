@@ -2,10 +2,104 @@
 //mPhone select
 $(document).ready(function(){
 	
-	$("#mPhone1").on("click",function(){
-		$("#mPhone_number").slideToggle("fast");
+	var mId = $("#mId");
+	var mPasswd = $("#mPasswd");
+	var mPasswd2 = $("#mPasswd2");
+	var mName = $("#mName");
+	var mBirth = $("#mBirth");
+	
+	console.log(mName.val());
+	
+	$(".btn_submit").on("click",function(){
+		
+		// 정규식 - 이메일 유효성 검사
+	    var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+	    // 정규식 -전화번호 유효성 검사
+	    var regPhone = /^((01[1|6|7|8|9])[1-9]+[0-9]{6,7})|(010[1-9][0-9]{7})$/;
+		
+	    //아이디 입력 체크
+		if(!mId.val()){
+			alert("아이디를 입력하세요");
+			mId.focus();
+			return false;
+		} else { 
+			if(!regEmail.test(mId.val())) { 
+				alert("이메일 주소가 유효하지 않습니다"); 
+				mId.focus();
+				return false;
+			} 
+		} 
+		
+		// 비밀번호 입력 체크
+		if(!$(".mPasswd").val()){
+			alert("비밀번호를 입력하세요");
+			mPasswd.focus();
+			return false;
+		}
+		
+		// 비밀번호 영문, 숫자 2종 이상 혼용
+		var chk = 0;
+		if(mPasswd.val().search(/[0-9]/g) != -1 ) chk ++;
+		if(mPasswd.val().search(/[a-z]/ig)  != -1 ) chk ++;
+		if(chk < 2){ 
+			alert("비밀번호는 숫자, 영문 두가지이상 혼용하여야 합니다.");
+			mPasswd.focus();
+			return false;
+		}
+		
+		// 비밀번호 길이
+		if(!/^[a-zA-Z0-9]{6,15}$/.test(mPasswd.val())){ 
+			alert("비밀번호는 숫자, 영문 조합으로 6~15자리를 사용해야 합니다."); 
+			mPasswd.focus();
+			return false;
+		}
+		
+		// 비밀번호 동일한 문자/숫자 4이상, 연속된 문자
+		if(/(\w)\1\1\1/.test(mPasswd.val()) || isContinuedValue(mPasswd.val())){
+			alert("비밀번호에 4자 이상의 연속 또는 반복 문자 및 숫자를 사용하실 수 없습니다."); 
+			mPasswd.focus();
+			return false;
+		}
+		
+		// 출생년도 입력 체크
+		if(!mBirth.val()){
+			alert("닉네임 입력하세요");
+			mBirth.focus();
+			return false;
+		}
+		
 	});
 	
+	
+	////비밀번호 재입력 일치 여부	
+	$(".mPasswd").on("keyup",function(){
+		
+		if (mPasswd.val() != mPasswd2.val()) {
+			$("#result2").text('').html("비밀번호 불일치").css("color","red");
+			return false;
+		} else {
+			$("#result2").text('').html("비밀번호 일치").css("color","blue");
+		}
+		
+	});
+	
+	//휴대전화 클릭시 슬라이드
+	$("#mPhone1").on("click",function(){
+		$("#mPhone_number").slideToggle("fast");
+		$(this).css("border-bottom","none");
+	});
+	
+	//휴대전화 번호 클릭시 해당 값 상단으로 출력
+	$("#mPhone_number li").on("click",function(){
+		
+		var n = $(this).text();
+		$("#mPhone1 #m_number").text(n);
+		$("#mPhone1").css("border-bottom","1px solid #e0e0e0");
+		$("#mPhone_number").slideUp("fast");
+		
+	});
+	
+	//휴대전화 번호 hover시 컬러 변경
 	$("#mPhone_number li").mouseover(function(){
 		$(this).css("background-color","#e0e0e0");
 	});
