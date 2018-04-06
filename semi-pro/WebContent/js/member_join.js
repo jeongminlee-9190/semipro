@@ -38,6 +38,8 @@ $(document).ready(function(){
 	var mPhone2 = $("#mPhone2");
 	var mPhone3 = $("#mPhone3");
 	var mBirth = $("#mBirth");
+	var mAgree_btn1 = $("#mAgree_btn1");
+	var mAgree_btn2 = $("#mAgree_btn2");
 	var mAgree1 = $("input:checkbox[id='mAgree1']");
 	var mAgree2 = $("input:checkbox[id='mAgree2']");
 	var mAgreeAll = $("input:checkbox[id='mAgreeAll']");
@@ -173,18 +175,18 @@ $(document).ready(function(){
         clearTimeout(checkAjaxSetTimeout);
         checkAjaxSetTimeout = setTimeout(function(){
 	        if ( $("#mId").val().length > 6) {
-	            var id = $(this).val();
+	            var mId = $(this).val();
 	            // ajax 실행
 	            $.ajax({
 	                type : 'POST',
 	                url : '/mJoinForm',
 	                data:
 	                {
-	                    id: id
+	                	"mId": mId
 	                },
-	                success : function(result){
-	                    console.log(result);
-	                    if (result == "ok") {
+	                success : function(data){
+	                    console.log(data);
+	                    if ($.trim(data) == 0) {
 	                        $("#result1").text('').html("사용 가능한 아이디 입니다.");
 	                    } else {
 	                        $("#result1").text('').html("사용 불가능한 아이디 입니다.");
@@ -230,6 +232,32 @@ $(document).ready(function(){
 	
 	$("#mPhone_number li").mouseout(function(){
 		$(this).css("background-color","#fff");
+	});
+	
+	//출생년도 나이 제한 두기 
+	$(mBirth).on("keyup",function(){
+		if(mBirth.val() >= 2000){
+			$("#result4").text('').html("카테고리 이용 불가한 나이 입니다.").css("color","red");
+			return false;
+		} else if(!mBirth.val()){
+			$("#result4").text('').html("");
+		} else if(!/^([0-9]{4})$/.test(mBirth.val())){
+			$("#result4").text('').html("올바른 출생년도가 아닙니다.").css("color","red");
+		} else {
+			$("#result4").text('').html("사용가능 합니다.").css("color","blue");
+		}
+	});
+	
+	//이용약관 내용 보기
+	$(mAgree_btn1).on("click",function(e){
+		$("#mAgree_about1").slideToggle("fast");
+		e.preventDefault();
+	});
+	
+	//이용약관 내용 보기
+	$(mAgree_btn2).on("click",function(e){
+		$("#mAgree_about2").slideToggle("fast");
+		e.preventDefault();
 	});
 	
 	//이용약관 전체 동의

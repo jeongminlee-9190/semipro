@@ -323,6 +323,18 @@ input[id="mAgreeAll"]:checked + label:after {
 
 .mAgree_about {
 	display:none;
+	font-size:11px;
+	color:#5e5e5e;
+	margin:10px;	
+}
+
+.mAgree_table {
+	margin-top:10px;
+}
+
+.mAgree_table tr,td,th {
+	border:1px solid #e0e0e0;
+	padding:5px;
 }
 
 /* 가입하기 전체 */

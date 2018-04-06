@@ -55,6 +55,7 @@
 		<div id="mBirth_wrap">
 			<span class="join_title" ><strong>출생년도</strong></span>
 			<input type="text" name="mBirth" id="mBirth" placeholder="1900" maxlength="4" class="join_text">
+			<span id="result4"></span>
 			<span>* 입력하지 않을 경우 일부 카테고리 이용에<br>&nbsp;&nbsp;
 					제한이 될 수 있습니다.</span>
 		</div> <!-- End : mBirth_wrap -->
@@ -80,8 +81,8 @@
 				<input type="checkbox" name="mAgree1" id="mAgree1">
 				<label for="mAgree1"></label>
 				<span class="mAgree_t">이용약관</span>
-				<button class="mAgree_btn" >내용보기</button>
-				<div class="mAgree_about">
+				<button id="mAgree_btn1" class="mAgree_btn" >내용보기</button>
+				<div id="mAgree_about1" class="mAgree_about">
 					<h4>제 1조 (목적)</h4>
 					<span>이 약관은 ㈜갬성갱단 (이하 "회사"라 합니다)가 운영하는 인터넷 사이트 갬성갱단에서 상점이 서비스를 이용하기 위해, 
 					갬성갱딘 사이트 (이하 "상점 사이트"라 합니다)를 이용함에 있어 "회사"와 “개인”간의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.</span>
@@ -100,14 +101,14 @@
 				<input type="checkbox" name="mAgree2" id="mAgree2">
 				<label for="mAgree2"></label>
 				<span class="mAgree_t">개인정보 취급방침</span>
-				<button class="mAgree_btn">내용보기</button>
-				<div class="mAgree_about">
+				<button id="mAgree_btn2" class="mAgree_btn">내용보기</button>
+				<div id="mAgree_about2" class="mAgree_about">
 					<h4>1. 개인정보의 수집 항목 및 수집 방법</h4>
 					<dl>
 						<dt>(1)</dt>
 						<dd>회사는 회원가입 및 각종 서비스의 제공을 위해 아래와 같이 개인정보를 수집∙이용합니다.</dd>
 						<dd>
-							<table border="1" cellspacing="0" cellpadding="0" summary="개인정보 수집 및 이용에 관한 안내">
+							<table class="mAgree_table" cellspacing="0" cellpadding="0" summary="개인정보 수집 및 이용에 관한 안내">
 								<colgroup>
 									<col width="15%">
 									<col width="15%">
